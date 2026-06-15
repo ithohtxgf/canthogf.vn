@@ -21,14 +21,26 @@ export default function AdminLoginClient({
   const [serverConfigured, setServerConfigured] = useState<boolean | null>(
     null,
   );
+  const [databaseReady, setDatabaseReady] = useState<boolean | null>(null);
+  const [databaseMessage, setDatabaseMessage] = useState("");
 
   useEffect(() => {
     void fetch("/api/admin/auth/login")
       .then((res) => res.json())
-      .then((data: { configured?: boolean }) => {
-        setServerConfigured(Boolean(data.configured));
-      })
-      .catch(() => setServerConfigured(null));
+      .then(
+        (data: {
+          configured?: boolean;
+          database?: { ready?: boolean; message?: string | null };
+        }) => {
+          setServerConfigured(Boolean(data.configured));
+          setDatabaseReady(data.database?.ready ?? null);
+          setDatabaseMessage(data.database?.message ?? "");
+        },
+      )
+      .catch(() => {
+        setServerConfigured(null);
+        setDatabaseReady(null);
+      });
   }, []);
 
   async function handleSubmit(event: FormEvent) {
@@ -77,6 +89,16 @@ export default function AdminLoginClient({
           Quản lý bài viết SEO và chương trình khuyến mãi
         </p>
 
+        {databaseReady === false && (
+          <div className="mb-4 text-sm text-red-900 bg-red-50 border border-red-200 rounded-lg px-3 py-3 space-y-1">
+            <p className="font-semibold">Database chưa cấu hình trên Vercel</p>
+            <p>
+              {databaseMessage ||
+                "Thêm NEXT_PUBLIC_SUPABASE_URL và SUPABASE_SERVICE_ROLE_KEY (Production) → Redeploy."}
+            </p>
+          </div>
+        )}
+
         {serverConfigured === false && (
           <div className="mb-4 text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded-lg px-3 py-3 space-y-1">
             <p className="font-semibold">Chưa cấu hình mật khẩu server</p>
@@ -112,7 +134,7 @@ export default function AdminLoginClient({
 
           <button
             type="submit"
-            disabled={loading || serverConfigured === false}
+            disabled={loading || serverConfigured === false || databaseReady === false}
             className="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:bg-primary-dark transition-colors disabled:opacity-60"
           >
             {loading ? "Đang đăng nhập..." : "Đăng nhập"}

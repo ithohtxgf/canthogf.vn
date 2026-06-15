@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { isAdminPasswordConfigured } from "@/lib/admin/auth-secret";
+import { getDatabaseSetupStatus } from "@/lib/db/config";
 import {
   ADMIN_SESSION_COOKIE,
   createSessionToken,
@@ -11,8 +12,11 @@ import {
 export const runtime = "nodejs";
 
 export async function GET() {
+  const database = getDatabaseSetupStatus();
+
   return NextResponse.json({
     configured: isAdminPasswordConfigured(),
+    database,
   });
 }
 
@@ -22,6 +26,18 @@ export async function POST(request: Request) {
       {
         error:
           "Server chưa cấu hình ADMIN_PASSWORD. Thêm biến này trong Vercel → Settings → Environment Variables (Production) rồi Redeploy.",
+      },
+      { status: 503 },
+    );
+  }
+
+  const database = getDatabaseSetupStatus();
+  if (!database.ready) {
+    return NextResponse.json(
+      {
+        error:
+          database.message ??
+          "Database chưa sẵn sàng. Cấu hình Supabase trên Vercel rồi Redeploy.",
       },
       { status: 503 },
     );

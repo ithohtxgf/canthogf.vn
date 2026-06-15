@@ -1,4 +1,5 @@
 import { isSupabaseEnabled, getDatabaseMode } from "@/lib/db/config";
+import { assertDatabaseReady } from "@/lib/db/config";
 import { listArticles } from "@/lib/db/articles";
 import { listAllPromotions } from "@/lib/db/promotions-db";
 import { isPromotionExpired } from "@/lib/admin/promotion-form-config";
@@ -15,6 +16,8 @@ export type AdminDashboardStats = {
 };
 
 export async function getAdminDashboardStats(): Promise<AdminDashboardStats> {
+  assertDatabaseReady();
+
   const [articles, promotions] = await Promise.all([
     listArticles(),
     listAllPromotions(),

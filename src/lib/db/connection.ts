@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import Database from "better-sqlite3";
+import { assertDatabaseReady } from "./config";
 import { runMigrations } from "./schema";
 import { seedDatabaseIfEmpty } from "./seed";
 
@@ -18,6 +19,8 @@ function getDbPath(): string {
 }
 
 export function getDb(): Database.Database {
+  assertDatabaseReady();
+
   if (globalThis.__canthogfDb) {
     return globalThis.__canthogfDb;
   }
