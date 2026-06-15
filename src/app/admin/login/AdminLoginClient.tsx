@@ -82,12 +82,9 @@ export default function AdminLoginClient() {
         <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary mx-auto mb-6">
           <Lock className="w-7 h-7" />
         </div>
-        <h1 className="text-2xl font-bold text-center text-slate-900 mb-2">
+        <h1 className="text-2xl font-bold text-center text-slate-900 mb-8">
           Cần Thơ GF Admin
         </h1>
-        <p className="text-center text-slate-500 text-sm mb-8">
-          Đăng nhập bằng tài khoản Supabase Auth
-        </p>
 
         {databaseReady === false && (
           <div className="mb-4 text-sm text-red-900 bg-red-50 border border-red-200 rounded-lg px-3 py-3 space-y-1">
@@ -121,7 +118,6 @@ export default function AdminLoginClient() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className={`${adminInputClass} pl-10`}
-                placeholder="admin@canthogf.vn"
                 autoComplete="email"
                 required
               />
@@ -137,7 +133,6 @@ export default function AdminLoginClient() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={adminInputClass}
-              placeholder="Mật khẩu Supabase Auth"
               autoComplete="current-password"
               required
             />
@@ -157,12 +152,6 @@ export default function AdminLoginClient() {
             {loading ? "Đang đăng nhập..." : "Đăng nhập"}
           </button>
         </form>
-
-        <p className="text-xs text-slate-400 text-center mt-6">
-          Tài khoản tạo trong Supabase Dashboard → Authentication → Users.
-          Email phải nằm trong{" "}
-          <code className="font-mono">ADMIN_ALLOWED_EMAILS</code> trên Vercel.
-        </p>
       </div>
     </div>
   );
