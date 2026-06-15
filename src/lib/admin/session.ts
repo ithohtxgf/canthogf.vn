@@ -1,18 +1,39 @@
-import { cookies } from "next/headers";
 import {
-  ADMIN_SESSION_COOKIE,
-  verifySessionToken,
-} from "@/lib/admin/auth";
+  isAdminAuthConfigured,
+  isAdminEmailAllowed,
+} from "@/lib/admin/auth-policy";
+import { createSupabaseAuthServerClient } from "@/lib/supabase/server";
 
 export async function isAdminAuthenticated(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const token = cookieStore.get(ADMIN_SESSION_COOKIE)?.value;
-  return verifySessionToken(token);
+  if (!isAdminAuthConfigured()) return false;
+
+  try {
+    const supabase = await createSupabaseAuthServerClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    return Boolean(user && isAdminEmailAllowed(user.email));
+  } catch {
+    return false;
+  }
 }
 
 export async function requireAdminSession(): Promise<void> {
   const ok = await isAdminAuthenticated();
   if (!ok) {
     throw new Error("UNAUTHORIZED");
+  }
+}
+
+export async function getAdminUserEmail(): Promise<string | null> {
+  try {
+    const supabase = await createSupabaseAuthServerClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user?.email || !isAdminEmailAllowed(user.email)) return null;
+    return user.email;
+  } catch {
+    return null;
   }
 }

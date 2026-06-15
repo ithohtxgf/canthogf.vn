@@ -2,8 +2,6 @@ import { Suspense } from "react";
 import AdminLoginPage from "./AdminLoginClient";
 
 export default function AdminLoginRoute() {
-  const isProduction = process.env.NODE_ENV === "production";
-
   return (
     <Suspense
       fallback={
@@ -12,7 +10,7 @@ export default function AdminLoginRoute() {
         </div>
       }
     >
-      <AdminLoginPage isProduction={isProduction} />
+      <AdminLoginPage />
     </Suspense>
   );
 }

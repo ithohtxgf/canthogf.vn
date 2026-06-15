@@ -1,0 +1,10 @@
+-- Supabase Auth cho Admin CMS
+-- Không cần chạy SQL — cấu hình trong Dashboard:
+--
+-- 1. Authentication → Providers → Email: bật "Email"
+-- 2. Authentication → Users → Add user → nhập email + mật khẩu admin
+-- 3. Vercel / .env: ADMIN_ALLOWED_EMAILS=email-vua-tao@domain.com
+-- 4. Redeploy site
+--
+-- Chỉ email trong ADMIN_ALLOWED_EMAILS mới vào được /admin
+-- (dù user Supabase Auth hợp lệ khác vẫn bị chặn)

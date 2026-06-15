@@ -2,25 +2,19 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
-import { Lock } from "lucide-react";
-import { sanitizeAdminRedirect } from "@/lib/admin/auth-secret";
+import { Lock, Mail } from "lucide-react";
+import { sanitizeAdminRedirect } from "@/lib/admin/auth-redirect";
 import { adminInputClass } from "@/components/admin/AdminShell";
 
-type AdminLoginClientProps = {
-  isProduction?: boolean;
-};
-
-export default function AdminLoginClient({
-  isProduction = false,
-}: AdminLoginClientProps) {
+export default function AdminLoginClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [serverConfigured, setServerConfigured] = useState<boolean | null>(
-    null,
-  );
+  const [authConfigured, setAuthConfigured] = useState<boolean | null>(null);
+  const [setupMessage, setSetupMessage] = useState("");
   const [databaseReady, setDatabaseReady] = useState<boolean | null>(null);
   const [databaseMessage, setDatabaseMessage] = useState("");
 
@@ -30,15 +24,17 @@ export default function AdminLoginClient({
       .then(
         (data: {
           configured?: boolean;
+          setupMessage?: string | null;
           database?: { ready?: boolean; message?: string | null };
         }) => {
-          setServerConfigured(Boolean(data.configured));
+          setAuthConfigured(Boolean(data.configured));
+          setSetupMessage(data.setupMessage ?? "");
           setDatabaseReady(data.database?.ready ?? null);
           setDatabaseMessage(data.database?.message ?? "");
         },
       )
       .catch(() => {
-        setServerConfigured(null);
+        setAuthConfigured(null);
         setDatabaseReady(null);
       });
   }, []);
@@ -51,7 +47,10 @@ export default function AdminLoginClient({
     const res = await fetch("/api/admin/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password: password.trim() }),
+      body: JSON.stringify({
+        email: email.trim(),
+        password,
+      }),
     });
 
     setLoading(false);
@@ -63,8 +62,7 @@ export default function AdminLoginClient({
         message = data.error ?? message;
       } catch {
         if (res.status === 503) {
-          message =
-            "Server chưa cấu hình ADMIN_PASSWORD trên Vercel. Xem hướng dẫn bên dưới.";
+          message = "Server chưa cấu hình Supabase Auth. Xem hướng dẫn bên dưới.";
         }
       }
       setError(message);
@@ -76,6 +74,8 @@ export default function AdminLoginClient({
     router.refresh();
   }
 
+  const blocked = authConfigured === false || databaseReady === false;
+
   return (
     <div className="min-h-screen bg-primary-dark flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8">
@@ -86,7 +86,7 @@ export default function AdminLoginClient({
           Cần Thơ GF Admin
         </h1>
         <p className="text-center text-slate-500 text-sm mb-8">
-          Quản lý bài viết SEO và chương trình khuyến mãi
+          Đăng nhập bằng tài khoản Supabase Auth
         </p>
 
         {databaseReady === false && (
@@ -99,13 +99,12 @@ export default function AdminLoginClient({
           </div>
         )}
 
-        {serverConfigured === false && (
+        {authConfigured === false && (
           <div className="mb-4 text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded-lg px-3 py-3 space-y-1">
-            <p className="font-semibold">Chưa cấu hình mật khẩu server</p>
+            <p className="font-semibold">Chưa cấu hình đăng nhập Supabase</p>
             <p>
-              Vercel → Settings → Environment Variables → thêm{" "}
-              <code className="font-mono text-xs">ADMIN_PASSWORD</code> (Production)
-              → Redeploy.
+              {setupMessage ||
+                "Tạo user trong Supabase → Authentication, rồi thêm ADMIN_ALLOWED_EMAILS trên Vercel."}
             </p>
           </div>
         )}
@@ -113,14 +112,32 @@ export default function AdminLoginClient({
         <form onSubmit={handleSubmit} className="space-y-4">
           <label className="block">
             <span className="text-sm font-semibold text-slate-700 mb-1.5 block">
-              Mật khẩu admin
+              Email admin
+            </span>
+            <div className="relative">
+              <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={`${adminInputClass} pl-10`}
+                placeholder="admin@canthogf.vn"
+                autoComplete="email"
+                required
+              />
+            </div>
+          </label>
+
+          <label className="block">
+            <span className="text-sm font-semibold text-slate-700 mb-1.5 block">
+              Mật khẩu
             </span>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={adminInputClass}
-              placeholder="Mật khẩu bạn đã đặt trên Vercel"
+              placeholder="Mật khẩu Supabase Auth"
               autoComplete="current-password"
               required
             />
@@ -134,25 +151,18 @@ export default function AdminLoginClient({
 
           <button
             type="submit"
-            disabled={loading || serverConfigured === false || databaseReady === false}
+            disabled={loading || blocked}
             className="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:bg-primary-dark transition-colors disabled:opacity-60"
           >
             {loading ? "Đang đăng nhập..." : "Đăng nhập"}
           </button>
         </form>
 
-        {!isProduction ? (
-          <p className="text-xs text-slate-400 text-center mt-6">
-            Dev local: mặc định <code className="font-mono">admin123</code> nếu
-            chưa có <code className="font-mono">ADMIN_PASSWORD</code> trong .env
-          </p>
-        ) : (
-          <p className="text-xs text-slate-400 text-center mt-6">
-            Dùng mật khẩu đã khai báo biến{" "}
-            <code className="font-mono">ADMIN_PASSWORD</code> trên Vercel — không
-            phải mật khẩu dev.
-          </p>
-        )}
+        <p className="text-xs text-slate-400 text-center mt-6">
+          Tài khoản tạo trong Supabase Dashboard → Authentication → Users.
+          Email phải nằm trong{" "}
+          <code className="font-mono">ADMIN_ALLOWED_EMAILS</code> trên Vercel.
+        </p>
       </div>
     </div>
   );

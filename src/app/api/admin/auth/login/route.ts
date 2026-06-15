@@ -1,36 +1,27 @@
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
-import { isAdminPasswordConfigured } from "@/lib/admin/auth-secret";
-import { getDatabaseSetupStatus } from "@/lib/db/config";
 import {
-  ADMIN_SESSION_COOKIE,
-  createSessionToken,
-  getSessionCookieOptions,
-  verifyAdminPassword,
-} from "@/lib/admin/auth";
+  getAdminAuthSetupMessage,
+  isAdminAuthConfigured,
+  isAdminEmailAllowed,
+} from "@/lib/admin/auth-policy";
+import { getDatabaseSetupStatus } from "@/lib/db/config";
+import { createSupabaseAuthServerClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
 
 export async function GET() {
   const database = getDatabaseSetupStatus();
+  const setupMessage = getAdminAuthSetupMessage();
 
   return NextResponse.json({
-    configured: isAdminPasswordConfigured(),
+    configured: isAdminAuthConfigured(),
+    authMode: "supabase",
+    setupMessage,
     database,
   });
 }
 
 export async function POST(request: Request) {
-  if (!isAdminPasswordConfigured()) {
-    return NextResponse.json(
-      {
-        error:
-          "Server chưa cấu hình ADMIN_PASSWORD. Thêm biến này trong Vercel → Settings → Environment Variables (Production) rồi Redeploy.",
-      },
-      { status: 503 },
-    );
-  }
-
   const database = getDatabaseSetupStatus();
   if (!database.ready) {
     return NextResponse.json(
@@ -43,32 +34,67 @@ export async function POST(request: Request) {
     );
   }
 
-  let body: { password?: string };
+  const setupMessage = getAdminAuthSetupMessage();
+  if (!isAdminAuthConfigured()) {
+    return NextResponse.json(
+      {
+        error:
+          setupMessage ??
+          "Chưa cấu hình Supabase Auth. Xem hướng dẫn trong .env.example.",
+      },
+      { status: 503 },
+    );
+  }
+
+  let body: { email?: string; password?: string };
   try {
-    body = (await request.json()) as { password?: string };
+    body = (await request.json()) as { email?: string; password?: string };
   } catch {
     return NextResponse.json({ error: "Dữ liệu không hợp lệ" }, { status: 400 });
   }
 
+  const email = body.email?.trim() ?? "";
   const password = body.password ?? "";
 
-  if (!password.trim()) {
+  if (!email || !password) {
     return NextResponse.json(
-      { error: "Vui lòng nhập mật khẩu" },
+      { error: "Vui lòng nhập email và mật khẩu" },
       { status: 400 },
     );
   }
 
-  if (!verifyAdminPassword(password)) {
-    return NextResponse.json({ error: "Mật khẩu không đúng" }, { status: 401 });
+  if (!isAdminEmailAllowed(email)) {
+    return NextResponse.json(
+      { error: "Email này không có quyền truy cập admin" },
+      { status: 403 },
+    );
   }
 
   try {
-    const token = createSessionToken();
-    const cookieStore = await cookies();
-    cookieStore.set(ADMIN_SESSION_COOKIE, token, getSessionCookieOptions());
+    const supabase = await createSupabaseAuthServerClient();
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
 
-    return NextResponse.json({ ok: true });
+    if (error) {
+      const message =
+        error.message === "Invalid login credentials"
+          ? "Email hoặc mật khẩu không đúng"
+          : error.message;
+      return NextResponse.json({ error: message }, { status: 401 });
+    }
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user || !isAdminEmailAllowed(user.email)) {
+      await supabase.auth.signOut();
+      return NextResponse.json(
+        { error: "Email này không có quyền truy cập admin" },
+        { status: 403 },
+      );
+    }
+
+    return NextResponse.json({ ok: true, email: user.email });
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "Không tạo được phiên đăng nhập";
