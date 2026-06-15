@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { AdminDbBadge } from "@/components/admin/AdminDbBadge";
+import { AdminDatabaseSetup } from "@/components/admin/AdminDatabaseSetup";
+import { getDatabaseSetupStatus } from "@/lib/db/config";
 
 export const metadata: Metadata = {
   title: "Admin",
@@ -12,6 +14,16 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const dbStatus = getDatabaseSetupStatus();
+
+  if (!dbStatus.ready) {
+    return (
+      <div className="admin-root min-h-screen antialiased">
+        <AdminDatabaseSetup message={dbStatus.message} />
+      </div>
+    );
+  }
+
   return (
     <div className="admin-root min-h-screen antialiased">
       {children}

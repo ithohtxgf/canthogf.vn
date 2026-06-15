@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AlertTriangle } from "lucide-react";
+import { AdminDatabaseSetup } from "@/components/admin/AdminDatabaseSetup";
 
 export default function AdminError({
   error,
@@ -11,16 +12,35 @@ export default function AdminError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const [dbMessage, setDbMessage] = useState<string | null>(null);
+  const [dbReady, setDbReady] = useState<boolean | null>(null);
+
   useEffect(() => {
     console.error("[admin]", error);
+    void fetch("/api/admin/auth/login")
+      .then((res) => res.json())
+      .then(
+        (data: {
+          database?: { ready?: boolean; message?: string | null };
+        }) => {
+          setDbReady(data.database?.ready ?? null);
+          setDbMessage(data.database?.message ?? null);
+        },
+      )
+      .catch(() => setDbReady(null));
   }, [error]);
 
   const message = error.message ?? "";
   const isDatabaseSetup =
+    dbReady === false ||
     message.includes("Supabase") ||
     message.includes("SUPABASE") ||
     message.includes("SQLite") ||
     message.includes("[supabase]");
+
+  if (isDatabaseSetup) {
+    return <AdminDatabaseSetup message={dbMessage} />;
+  }
 
   return (
     <div className="min-h-screen bg-slate-100 flex items-center justify-center p-6">
@@ -32,25 +52,14 @@ export default function AdminError({
           </h1>
         </div>
 
-        {isDatabaseSetup ? (
-          <div className="space-y-3 text-sm text-slate-700">
-            <p className="font-semibold text-amber-900">
-              Database chưa cấu hình đúng trên server
-            </p>
-            <p>
-              Đăng nhập thành công nhưng trang admin cần kết nối Supabase.
-              Trên Vercel → <strong>Settings → Environment Variables</strong>{" "}
-              (Production), thêm:
-            </p>
-            <ul className="list-disc pl-5 space-y-1 font-mono text-xs bg-slate-50 rounded-lg p-3 border border-slate-200">
-              <li>NEXT_PUBLIC_SUPABASE_URL</li>
-              <li>SUPABASE_SERVICE_ROLE_KEY</li>
-              <li>NEXT_PUBLIC_SUPABASE_ANON_KEY</li>
-            </ul>
-            <p>Sau đó <strong>Redeploy</strong> và chạy migration SQL trong Supabase Dashboard.</p>
-          </div>
-        ) : (
-          <p className="text-sm text-slate-600 whitespace-pre-wrap">{message || "Lỗi server không xác định."}</p>
+        <p className="text-sm text-slate-600">
+          {message ||
+            "Lỗi server khi render trang. Kiểm tra biến môi trường trên Vercel và thử lại."}
+        </p>
+        {error.digest && (
+          <p className="text-xs text-slate-400 mt-2 font-mono">
+            Mã lỗi: {error.digest}
+          </p>
         )}
 
         <div className="flex flex-wrap gap-3 mt-6">
