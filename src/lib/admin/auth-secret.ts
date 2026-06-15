@@ -14,6 +14,10 @@ export function getSessionSecret(): string {
   return getAdminPassword();
 }
 
+export function isAdminPasswordConfigured(): boolean {
+  return Boolean(process.env.ADMIN_PASSWORD?.trim());
+}
+
 /** Chỉ cho phép redirect nội bộ sau login */
 export function sanitizeAdminRedirect(next: string | null): string {
   const fallback = "/admin/articles";

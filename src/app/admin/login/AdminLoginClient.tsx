@@ -1,17 +1,35 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { Lock } from "lucide-react";
 import { sanitizeAdminRedirect } from "@/lib/admin/auth-secret";
 import { adminInputClass } from "@/components/admin/AdminShell";
 
-export default function AdminLoginPage() {
+type AdminLoginClientProps = {
+  isProduction?: boolean;
+};
+
+export default function AdminLoginClient({
+  isProduction = false,
+}: AdminLoginClientProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [serverConfigured, setServerConfigured] = useState<boolean | null>(
+    null,
+  );
+
+  useEffect(() => {
+    void fetch("/api/admin/auth/login")
+      .then((res) => res.json())
+      .then((data: { configured?: boolean }) => {
+        setServerConfigured(Boolean(data.configured));
+      })
+      .catch(() => setServerConfigured(null));
+  }, []);
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -21,14 +39,23 @@ export default function AdminLoginPage() {
     const res = await fetch("/api/admin/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
+      body: JSON.stringify({ password: password.trim() }),
     });
 
     setLoading(false);
 
     if (!res.ok) {
-      const data = (await res.json()) as { error?: string };
-      setError(data.error ?? "Đăng nhập thất bại");
+      let message = "Đăng nhập thất bại";
+      try {
+        const data = (await res.json()) as { error?: string };
+        message = data.error ?? message;
+      } catch {
+        if (res.status === 503) {
+          message =
+            "Server chưa cấu hình ADMIN_PASSWORD trên Vercel. Xem hướng dẫn bên dưới.";
+        }
+      }
+      setError(message);
       return;
     }
 
@@ -50,6 +77,17 @@ export default function AdminLoginPage() {
           Quản lý bài viết SEO và chương trình khuyến mãi
         </p>
 
+        {serverConfigured === false && (
+          <div className="mb-4 text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded-lg px-3 py-3 space-y-1">
+            <p className="font-semibold">Chưa cấu hình mật khẩu server</p>
+            <p>
+              Vercel → Settings → Environment Variables → thêm{" "}
+              <code className="font-mono text-xs">ADMIN_PASSWORD</code> (Production)
+              → Redeploy.
+            </p>
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <label className="block">
             <span className="text-sm font-semibold text-slate-700 mb-1.5 block">
@@ -60,7 +98,7 @@ export default function AdminLoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={adminInputClass}
-              placeholder="Nhập ADMIN_PASSWORD"
+              placeholder="Mật khẩu bạn đã đặt trên Vercel"
               autoComplete="current-password"
               required
             />
@@ -74,17 +112,25 @@ export default function AdminLoginPage() {
 
           <button
             type="submit"
-            disabled={loading}
+            disabled={loading || serverConfigured === false}
             className="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:bg-primary-dark transition-colors disabled:opacity-60"
           >
             {loading ? "Đang đăng nhập..." : "Đăng nhập"}
           </button>
         </form>
 
-        <p className="text-xs text-slate-400 text-center mt-6">
-          Mặc định dev: <code className="font-mono">admin123</code> — đặt{" "}
-          <code className="font-mono">ADMIN_PASSWORD</code> trên production
-        </p>
+        {!isProduction ? (
+          <p className="text-xs text-slate-400 text-center mt-6">
+            Dev local: mặc định <code className="font-mono">admin123</code> nếu
+            chưa có <code className="font-mono">ADMIN_PASSWORD</code> trong .env
+          </p>
+        ) : (
+          <p className="text-xs text-slate-400 text-center mt-6">
+            Dùng mật khẩu đã khai báo biến{" "}
+            <code className="font-mono">ADMIN_PASSWORD</code> trên Vercel — không
+            phải mật khẩu dev.
+          </p>
+        )}
       </div>
     </div>
   );

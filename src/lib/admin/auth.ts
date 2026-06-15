@@ -8,9 +8,17 @@ export const ADMIN_SESSION_COOKIE = "admin_session";
 const SESSION_MAX_AGE_SEC = 60 * 60 * 24 * 7;
 
 export function verifyAdminPassword(password: string): boolean {
-  const expected = getAdminPassword();
-  if (password.length !== expected.length) return false;
-  return crypto.timingSafeEqual(Buffer.from(password), Buffer.from(expected));
+  try {
+    const expected = getAdminPassword();
+    const normalized = password.trim();
+    if (normalized.length !== expected.length) return false;
+    return crypto.timingSafeEqual(
+      Buffer.from(normalized),
+      Buffer.from(expected),
+    );
+  } catch {
+    return false;
+  }
 }
 
 export function createSessionToken(): string {
