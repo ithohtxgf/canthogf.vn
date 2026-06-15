@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { AdminDbBadge } from "@/components/admin/AdminDbBadge";
 import { AdminDatabaseSetup } from "@/components/admin/AdminDatabaseSetup";
 import { getDatabaseSetupStatus } from "@/lib/db/config";
 
@@ -27,7 +26,6 @@ export default function AdminLayout({
   return (
     <div className="admin-root min-h-screen antialiased">
       {children}
-      <AdminDbBadge />
     </div>
   );
 }
