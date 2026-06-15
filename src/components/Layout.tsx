@@ -187,16 +187,16 @@ export default function Layout({
                   />
                 </a>
                 <a
-                  href="https://www.tiktok.com/@sulinhctgf"
+                  href="https://www.tiktok.com/@sulinh.ctgf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block h-10 w-10 shrink-0 opacity-90 transition-opacity hover:opacity-100"
-                  title="TikTok @sulinhctgf"
-                  aria-label="TikTok @sulinhctgf"
+                  title="TikTok @sulinh.ctgf"
+                  aria-label="TikTok @sulinh.ctgf"
                 >
                   <Image
                     src="/logo_tiktok.png"
-                    alt="TikTok @sulinhctgf"
+                    alt="TikTok @sulinh.ctgf"
                     width={40}
                     height={40}
                     className="h-10 w-10 object-contain"

@@ -11,7 +11,7 @@ export const CONTACT_EMAIL = "htxcanthogf@gmail.com";
 export const CONTACT_TAX_ID = "1801807608";
 export const CONTACT_ZALO_URL = "https://zalo.me/0916513720";
 export const CONTACT_FACEBOOK_URL = "https://www.facebook.com/canthogf";
-export const CONTACT_TIKTOK_URL = "https://www.tiktok.com/@sulinhctgf";
+export const CONTACT_TIKTOK_URL = "https://www.tiktok.com/@sulinh.ctgf";
 
 export const CONTACT_HOURS_WEEKDAY = "Thứ 2 – Thứ 7: 08:00 – 17:30";
 export const CONTACT_HOURS_SUNDAY = "Chủ nhật: 08:00 – 12:00";
