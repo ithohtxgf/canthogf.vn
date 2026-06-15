@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { getNewsArticleKeywords, getNewsById, NEWS_SEO } from "@/lib/content/news";
+import {
+  loadPublishedArticleById,
+  loadPublishedArticleIds,
+} from "@/lib/server/content-store";
+import { getNewsArticleKeywords } from "@/lib/content/news";
 import { getProductById, PRODUCTS_SEO } from "@/lib/content/products";
 import {
   createAlternates,
@@ -138,7 +142,9 @@ function parseNewsDate(date: string): string | undefined {
 }
 
 /** Metadata động theo slug URL (1.2) */
-export function resolveMetadataFromSlug(slug?: string[]): Metadata {
+export async function resolveMetadataFromSlug(
+  slug?: string[],
+): Promise<Metadata> {
   const segments = slug ?? [];
   const path =
     segments.length === 0 ? "/" : `/${segments.join("/")}`;
@@ -179,7 +185,7 @@ export function resolveMetadataFromSlug(slug?: string[]): Metadata {
   }
 
   if (segments.length === 2 && segments[0] === "tin-tuc") {
-    const article = getNewsById(segments[1]);
+    const article = await loadPublishedArticleById(segments[1]);
     if (article) {
       return buildPageMetadata({
         title: article.metaTitle,
@@ -203,7 +209,9 @@ export function resolveMetadataFromSlug(slug?: string[]): Metadata {
 }
 
 /** Pre-render các URL tĩnh và động cho SEO */
-export function getMetadataStaticParams(): { slug?: string[] }[] {
+export async function getMetadataStaticParams(): Promise<
+  { slug?: string[] }[]
+> {
   const staticSlugs = Object.keys(STATIC_PAGE_METADATA).map((path) => ({
     slug: path.slice(1).split("/"),
   }));
@@ -212,8 +220,8 @@ export function getMetadataStaticParams(): { slug?: string[] }[] {
     slug: ["san-pham", p.id],
   }));
 
-  const newsSlugs = NEWS_SEO.map((n) => ({
-    slug: ["tin-tuc", n.id],
+  const newsSlugs = (await loadPublishedArticleIds()).map((id) => ({
+    slug: ["tin-tuc", id],
   }));
 
   return [{}, ...staticSlugs, ...productSlugs, ...newsSlugs];

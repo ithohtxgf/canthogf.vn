@@ -8,10 +8,11 @@ import { SeoBannerImage, SeoContentImage } from "@/components/SeoImage";
 import {
   getNewsArticles,
   getNewsCategoryLabel,
+  type NewsArticle,
   type NewsCategory,
 } from "@/lib/content/news";
 
-export default function News() {
+export default function News({ articles: articlesProp }: { articles?: NewsArticle[] }) {
   const [activeCategory, setActiveCategory] = useState<"all" | NewsCategory>(
     "all",
   );
@@ -23,10 +24,12 @@ export default function News() {
     { id: "knowledge" as const, name: "Kiến thức xe điện" },
   ];
 
+  const allArticles = articlesProp ?? getNewsArticles();
+
   const filteredNews =
     activeCategory === "all"
-      ? getNewsArticles()
-      : getNewsArticles(activeCategory);
+      ? allArticles
+      : allArticles.filter((a) => a.category === activeCategory);
 
   return (
     <div className="bg-light min-h-screen pb-20">

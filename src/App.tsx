@@ -1,8 +1,11 @@
 "use client";
 
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Layout from "./components/Layout";
 import type { PageInitialData } from "./lib/page-data";
+import { hydrateNewsCatalog } from "./lib/content/news";
+import { hydratePromotionsCatalog } from "./lib/content/promotions";
 import { matchRoute, type MatchedRoute } from "./lib/routes";
 import About from "./views/About";
 import Contact from "./views/Contact";
@@ -26,10 +29,10 @@ function NotFound() {
   );
 }
 
-function renderPage(route: MatchedRoute) {
+function renderPage(route: MatchedRoute, initialData: PageInitialData) {
   switch (route.page) {
     case "home":
-      return <Home />;
+      return <Home newsArticles={initialData.newsArticles} />;
     case "about":
       return <About />;
     case "products":
@@ -39,9 +42,14 @@ function renderPage(route: MatchedRoute) {
     case "xanhsm":
       return <XanhSM />;
     case "news":
-      return <News />;
+      return <News articles={initialData.newsArticles} />;
     case "newsArticle":
-      return <NewsDetail id={route.id} />;
+      return (
+        <NewsDetail
+          id={route.id}
+          article={initialData.newsArticle}
+        />
+      );
     case "contact":
       return <Contact />;
     case "privacy":
@@ -66,5 +74,18 @@ export default function App({ initialData = DEFAULT_INITIAL_DATA }: AppProps) {
   const pathname = usePathname();
   const route = matchRoute(pathname || initialData.pathname);
 
-  return <Layout activePathname={pathname || initialData.pathname}>{renderPage(route)}</Layout>;
+  useEffect(() => {
+    hydrateNewsCatalog(initialData.newsCatalog ?? initialData.newsArticles);
+    hydratePromotionsCatalog(initialData.promotions);
+  }, [
+    initialData.newsCatalog,
+    initialData.newsArticles,
+    initialData.promotions,
+  ]);
+
+  return (
+    <Layout activePathname={pathname || initialData.pathname}>
+      {renderPage(route, initialData)}
+    </Layout>
+  );
 }

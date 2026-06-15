@@ -6,8 +6,8 @@ type RouteJsonLdProps = {
 };
 
 /** JSON-LD theo từng trang: Article, Product, BreadcrumbList… */
-export function RouteJsonLd({ slug }: RouteJsonLdProps) {
-  const data = getRouteJsonLd(slug);
+export async function RouteJsonLd({ slug }: RouteJsonLdProps) {
+  const data = await getRouteJsonLd(slug);
   if (!data) {
     return null;
   }

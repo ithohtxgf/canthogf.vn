@@ -2,12 +2,18 @@ import { SeoLink } from "@/components/SeoLink";
 import { SeoBannerImage } from "@/components/SeoImage";
 import { NewsArticleBody } from "@/components/news/NewsArticleBody";
 import { NewsArticleCro } from "@/components/news/NewsArticleCro";
-import { getNewsById } from "@/lib/content/news";
+import { getNewsById, type NewsArticle } from "@/lib/content/news";
 import { motion } from "motion/react";
 import { Calendar, User, ArrowLeft } from "lucide-react";
 
-export default function NewsDetail({ id }: { id: string }) {
-  const article = id ? getNewsById(id) : undefined;
+export default function NewsDetail({
+  id,
+  article: articleProp,
+}: {
+  id: string;
+  article?: NewsArticle;
+}) {
+  const article = articleProp ?? (id ? getNewsById(id) : undefined);
 
   if (!article) {
     return (

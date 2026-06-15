@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { NEWS_SEO } from "@/lib/content/news";
+import { loadPublishedArticles } from "@/lib/server/content-store";
 import { PRODUCTS_SEO } from "@/lib/content/products";
 import { getAbsoluteUrl, SITEMAP_ROUTES } from "@/lib/seo";
 
@@ -24,7 +24,7 @@ function parseNewsDate(date: string): Date {
  * Danh sách URL cho Googlebot — dùng bởi app/sitemap.ts → /sitemap.xml
  * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap
  */
-export function buildSitemap(): MetadataRoute.Sitemap {
+export async function buildSitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
 
   const staticEntries: MetadataRoute.Sitemap = SITEMAP_ROUTES.map((route) => ({
@@ -41,12 +41,16 @@ export function buildSitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  const newsEntries: MetadataRoute.Sitemap = NEWS_SEO.map((article) => ({
-    url: toAbsoluteSitemapUrl(`/tin-tuc/${article.id}`),
-    lastModified: parseNewsDate(article.date),
-    changeFrequency: "monthly",
-    priority: 0.65,
-  }));
+  const newsEntries: MetadataRoute.Sitemap = (
+    await loadPublishedArticles()
+  ).map(
+    (article) => ({
+      url: toAbsoluteSitemapUrl(`/tin-tuc/${article.id}`),
+      lastModified: parseNewsDate(article.date),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    }),
+  );
 
   return [...staticEntries, ...productEntries, ...newsEntries];
 }

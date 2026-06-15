@@ -1,4 +1,5 @@
-import { getNewsById, stripHtml, type NewsArticle } from "@/lib/content/news";
+import { stripHtml, type NewsArticle } from "@/lib/content/news";
+import { loadPublishedArticleById } from "@/lib/server/content-store";
 import { getProductById, PRODUCTS_SEO } from "@/lib/content/products";
 import { STATIC_PAGE_METADATA } from "@/lib/metadata";
 import { matchRouteFromSlug, type MatchedRoute } from "@/lib/routes";
@@ -167,7 +168,9 @@ function getItemListJsonLd(
   };
 }
 
-function buildGraphForRoute(route: MatchedRoute): Record<string, unknown>[] {
+async function buildGraphForRoute(
+  route: MatchedRoute,
+): Promise<Record<string, unknown>[]> {
   const graph: Record<string, unknown>[] = [];
 
   switch (route.page) {
@@ -260,7 +263,7 @@ function buildGraphForRoute(route: MatchedRoute): Record<string, unknown>[] {
       break;
     }
     case "newsArticle": {
-      const article = getNewsById(route.id);
+      const article = await loadPublishedArticleById(route.id);
       if (!article) break;
       const path = `/tin-tuc/${route.id}`;
       graph.push(
@@ -284,13 +287,15 @@ function buildGraphForRoute(route: MatchedRoute): Record<string, unknown>[] {
 }
 
 /** JSON-LD theo route — Article, Product, Breadcrumb, WebPage… */
-export function getRouteJsonLd(slug?: string[]): Record<string, unknown> | null {
+export async function getRouteJsonLd(
+  slug?: string[],
+): Promise<Record<string, unknown> | null> {
   const route = matchRouteFromSlug(slug);
   if (route.page === "notFound") {
     return null;
   }
 
-  const pageGraph = buildGraphForRoute(route);
+  const pageGraph = await buildGraphForRoute(route);
   if (pageGraph.length === 0) {
     return null;
   }

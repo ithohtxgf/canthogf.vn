@@ -1,10 +1,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { RouteJsonLd } from "@/components/seo/RouteJsonLd";
-import {
-  getMetadataStaticParams,
-  resolveMetadataFromSlug,
-} from "@/lib/metadata";
-import { getPageDataFromSlug } from "@/lib/page-data";
+import { getMetadataStaticParams, resolveMetadataFromSlug } from "@/lib/metadata";
+import { loadPageDataFromSlug } from "@/lib/page-data";
 import AppClient from "./AppClient";
 
 type PageProps = {
@@ -17,16 +14,16 @@ export async function generateMetadata(
   _parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const { slug } = await params;
-  return resolveMetadataFromSlug(slug);
+  return await resolveMetadataFromSlug(slug);
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return getMetadataStaticParams();
 }
 
 export default async function CatchAllPage({ params }: PageProps) {
   const { slug } = await params;
-  const pageData = getPageDataFromSlug(slug);
+  const pageData = await loadPageDataFromSlug(slug);
 
   return (
     <>

@@ -58,6 +58,17 @@ export type NewsArticle = {
 /** @deprecated Dùng NewsArticle — giữ alias cho metadata cũ */
 export type NewsSeo = NewsArticle;
 
+let runtimeArticles: NewsArticle[] | null = null;
+
+/** Gọi từ App khi server truyền catalog DB xuống client */
+export function hydrateNewsCatalog(articles: NewsArticle[] | null | undefined) {
+  runtimeArticles = articles?.length ? articles : null;
+}
+
+function getArticleCatalog(): NewsArticle[] {
+  return runtimeArticles ?? NEWS_ARTICLES;
+}
+
 export const NEWS_CATEGORY_LABELS: Record<NewsCategory, string> = {
   vinfast: "Tin tức VinFast",
   cantho: "Hoạt động tại Cần Thơ",
@@ -743,7 +754,7 @@ export const NEWS_BY_ID = Object.fromEntries(
 ) as Record<string, NewsArticle>;
 
 export function getNewsById(id: string): NewsArticle | undefined {
-  return NEWS_BY_ID[id];
+  return getArticleCatalog().find((n) => n.id === id);
 }
 
 export function getNewsArticleKeywords(article: NewsArticle): string[] {
@@ -758,8 +769,9 @@ export function getNewsCategoryLabel(category: NewsCategory): string {
 
 /** Lấy danh sách bài viết, có thể lọc theo category */
 export function getNewsArticles(category?: NewsCategory): NewsArticle[] {
-  if (!category) return [...NEWS_ARTICLES];
-  return NEWS_ARTICLES.filter((a) => a.category === category);
+  const source = getArticleCatalog();
+  if (!category) return [...source];
+  return source.filter((a) => a.category === category);
 }
 
 /** Plain text từ HTML — dùng cho FAQ Schema */

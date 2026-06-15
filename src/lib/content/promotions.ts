@@ -60,6 +60,17 @@ export type Promotion = {
   benefits?: string[];
 };
 
+let runtimePromotions: Promotion[] | null = null;
+
+/** Gọi từ App khi server truyền catalog KM từ DB */
+export function hydratePromotionsCatalog(promos: Promotion[] | null | undefined) {
+  runtimePromotions = promos?.length ? promos : null;
+}
+
+function getPromotionsCatalog(): Promotion[] {
+  return runtimePromotions ?? PROMOTIONS;
+}
+
 export const PROMOTIONS: Promotion[] = [
   {
     id: "promo-vf5-truoc-ba-top",
@@ -438,7 +449,7 @@ export function getActivePromotions(
   position: PromotionPosition,
   now = new Date(),
 ): Promotion[] {
-  return PROMOTIONS.filter(
+  return getPromotionsCatalog().filter(
     (promo) =>
       isPromotionValid(promo, now) &&
       promo.position === position &&
@@ -454,7 +465,7 @@ export function getActiveProductPromotions(
   position: PromotionPosition = "product-detail",
   now = new Date(),
 ): Promotion[] {
-  return PROMOTIONS.filter(
+  return getPromotionsCatalog().filter(
     (promo) =>
       isPromotionValid(promo, now) &&
       promo.position === position &&

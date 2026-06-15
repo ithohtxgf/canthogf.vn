@@ -1,12 +1,16 @@
 import { useRef, useState, type MouseEvent } from 'react';
 import { SeoLink } from '@/components/SeoLink';
-import { getNewsArticles, getNewsCategoryLabel } from '@/lib/content/news';
+import { getNewsArticles, getNewsCategoryLabel, type NewsArticle } from '@/lib/content/news';
 import { SeoBannerImage, SeoContentImage } from '@/components/SeoImage';
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2, Zap, Shield, BatteryCharging } from 'lucide-react';
 import { dispatchConsultationPopup } from '@/lib/contact';
 
-export default function Home() {
+export default function Home({
+  newsArticles: newsArticlesProp,
+}: {
+  newsArticles?: NewsArticle[];
+}) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -82,7 +86,7 @@ export default function Home() {
     },
   ];
 
-  const news = getNewsArticles().slice(0, 3).map((item) => ({
+  const news = (newsArticlesProp ?? getNewsArticles().slice(0, 3)).map((item) => ({
     id: item.id,
     title: item.title,
     image: item.image,

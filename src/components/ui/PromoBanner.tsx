@@ -296,6 +296,10 @@ function PromotionRenderer({ promo }: { promo: Promotion }) {
 /**
  * Banner khuyến mãi tái sử dụng — tự lọc từ Trung tâm khuyến mãi (promotions.ts).
  */
+export function PromotionPreview({ promo }: { promo: Promotion }) {
+  return <PromotionRenderer promo={promo} />;
+}
+
 export function PromoBanner(props: PromoBannerProps) {
   const activePromos =
     "productId" in props
