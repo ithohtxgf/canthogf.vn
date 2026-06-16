@@ -84,6 +84,12 @@ export const DEFAULT_DESCRIPTION =
 export const HOME_TITLE =
   "Cần Thơ GF | Hợp tác xã vận tải Cần Thơ — Ô tô VinFast & XanhSM";
 
+/** Ảnh OG/Twitter mặc định — hero banner trang chủ */
+export const DEFAULT_OG_IMAGE = "/banner-homepage.webp";
+export const DEFAULT_OG_IMAGE_WIDTH = 4608;
+export const DEFAULT_OG_IMAGE_HEIGHT = 3072;
+export const DEFAULT_OG_IMAGE_ALT = `${ORGANIZATION_NAME} — ${SITE_NAME}`;
+
 export const baseMetadata: Metadata = {
   /** Bắt buộc — sinh canonical / Open Graph dạng URL tuyệt đối */
   metadataBase: getMetadataBase(),
@@ -118,10 +124,10 @@ export const baseMetadata: Metadata = {
     description: DEFAULT_DESCRIPTION,
     images: [
       {
-        url: resolveMetadataImageUrl("/logo_cantho_gf.png"),
-        width: 512,
-        height: 512,
-        alt: `${ORGANIZATION_NAME} — ${SITE_NAME}`,
+        url: resolveMetadataImageUrl(DEFAULT_OG_IMAGE),
+        width: DEFAULT_OG_IMAGE_WIDTH,
+        height: DEFAULT_OG_IMAGE_HEIGHT,
+        alt: DEFAULT_OG_IMAGE_ALT,
       },
     ],
   },
@@ -129,7 +135,7 @@ export const baseMetadata: Metadata = {
     card: "summary_large_image",
     title: HOME_TITLE,
     description: DEFAULT_DESCRIPTION,
-    images: [resolveMetadataImageUrl("/logo_cantho_gf.png")],
+    images: [resolveMetadataImageUrl(DEFAULT_OG_IMAGE)],
   },
 };
 

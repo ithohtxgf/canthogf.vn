@@ -9,6 +9,10 @@ import { getRichProductDetail } from "@/lib/content/product-details";
 import {
   createAlternates,
   DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_ALT,
+  DEFAULT_OG_IMAGE_HEIGHT,
+  DEFAULT_OG_IMAGE_WIDTH,
   getAbsoluteUrl,
   HOME_TITLE,
   resolveMetadataImageUrl,
@@ -96,9 +100,20 @@ function buildOpenGraphImage(url: string, alt: string) {
   return [
     {
       url: resolveMetadataImageUrl(url),
-      width: 1200,
-      height: 630,
+      width: DEFAULT_OG_IMAGE_WIDTH,
+      height: DEFAULT_OG_IMAGE_HEIGHT,
       alt,
+    },
+  ];
+}
+
+function buildDefaultOpenGraphImages() {
+  return [
+    {
+      url: resolveMetadataImageUrl(DEFAULT_OG_IMAGE),
+      width: DEFAULT_OG_IMAGE_WIDTH,
+      height: DEFAULT_OG_IMAGE_HEIGHT,
+      alt: DEFAULT_OG_IMAGE_ALT,
     },
   ];
 }
@@ -119,7 +134,7 @@ function buildPageMetadata(options: {
         options.image,
         options.imageAlt ?? options.title,
       )
-    : baseMetadata.openGraph?.images;
+    : buildDefaultOpenGraphImages();
 
   return {
     title: options.title,
@@ -145,7 +160,7 @@ function buildPageMetadata(options: {
       description: options.description,
       images: options.image
         ? [resolveMetadataImageUrl(options.image)]
-        : baseMetadata.twitter?.images,
+        : [resolveMetadataImageUrl(DEFAULT_OG_IMAGE)],
     },
   };
 }
