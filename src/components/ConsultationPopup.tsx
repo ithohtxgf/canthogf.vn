@@ -98,9 +98,9 @@ export function ConsultationPopup({ isOpen, onClose }: ConsultationPopupProps) {
                   <Image
                     src="/logo_zalo.png"
                     alt=""
-                    width={28}
-                    height={28}
-                    className="h-6 w-auto object-contain"
+                    width={24}
+                    height={24}
+                    className="object-contain"
                     aria-hidden
                   />
                 </span>

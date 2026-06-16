@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { iconsMetadata } from "@/lib/icons-metadata";
 import { baseMetadata } from "@/lib/seo";
 import "../index.css";
@@ -22,7 +21,6 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <JsonLd />
         {children}
       </body>
     </html>

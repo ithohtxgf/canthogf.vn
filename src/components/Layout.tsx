@@ -186,9 +186,9 @@ export default function Layout({
                   <Image
                     src="/logo_zalo.png"
                     alt="Zalo 0916 513 720"
-                    width={80}
+                    width={88}
                     height={40}
-                    className="h-10 w-auto max-w-[5.5rem] object-contain"
+                    className="object-contain"
                   />
                 </a>
                 <a

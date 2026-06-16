@@ -5,6 +5,17 @@ export { ORGANIZATION_NAME };
 export const CONTACT_ADDRESS =
   "59, Đường Số 10, KDC Diệu Hiền, Phường Cái Răng, TP Cần Thơ";
 
+export const CONTACT_STREET_ADDRESS =
+  "59, Đường Số 10, KDC Diệu Hiền";
+export const CONTACT_ADDRESS_LOCALITY = "Phường Cái Răng";
+export const CONTACT_ADDRESS_REGION = "Cần Thơ";
+
+export const CONTACT_GEO_LATITUDE = 10.0045305;
+export const CONTACT_GEO_LONGITUDE = 105.7907429;
+
+export const CONTACT_MAPS_SHARE_URL =
+  "https://www.google.com/maps/search/?api=1&query=10.0045305%2C105.7907429";
+
 export const CONTACT_PHONE = "0916 513 720";
 export const CONTACT_PHONE_TEL = "+84916513720";
 export const CONTACT_EMAIL = "htxcanthogf@gmail.com";

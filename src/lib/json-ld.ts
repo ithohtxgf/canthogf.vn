@@ -17,7 +17,9 @@ import { matchRouteFromSlug, type MatchedRoute } from "@/lib/routes";
 import {
   DEFAULT_DESCRIPTION,
   HOME_TITLE,
-  getOrganizationJsonLd,
+  OG_SITE_NAME,
+  getLocalBusinessEntityRef,
+  getLocalBusinessJsonLd,
   getSiteUrl,
   getSitemapUrl,
   getWebSiteJsonLd,
@@ -38,8 +40,7 @@ function parseVndPrice(price: string): number | undefined {
 }
 
 function organizationRef() {
-  const siteUrl = getSiteUrl();
-  return { "@id": `${siteUrl}/#organization` };
+  return getLocalBusinessEntityRef();
 }
 
 function websiteRef() {
@@ -58,6 +59,51 @@ function getBreadcrumbJsonLd(
       name: item.name,
       item: getSitemapUrl(item.path),
     })),
+  };
+}
+
+function getAboutPageJsonLd(path: string) {
+  const url = `${getSitemapUrl(path)}/`;
+
+  return {
+    "@type": "AboutPage",
+    "@id": `${url}#about-page`,
+    url,
+    name: "Giới thiệu về HTX Cần Thơ GF",
+    description:
+      "Tìm hiểu về lịch sử hình thành, sứ mệnh và các dịch vụ vận tải, phân phối ô tô điện VinFast của HTX Cần Thơ GF.",
+    mainEntity: {
+      "@type": ["LocalBusiness", "AutomotiveBusiness"],
+      ...getLocalBusinessEntityRef(),
+      name: OG_SITE_NAME,
+    },
+  };
+}
+
+function getContactPageJsonLd(path: string) {
+  const url = `${getSitemapUrl(path)}/`;
+  const telephone = CONTACT_PHONE_TEL.replace(
+    /^\+84(\d{3})(\d{3})(\d{3,4})$/,
+    "+84-$1-$2-$3",
+  );
+
+  return {
+    "@type": "ContactPage",
+    "@id": `${url}#contact-page`,
+    url,
+    name: "Liên hệ HTX Cần Thơ GF",
+    description:
+      "Trang thông tin liên hệ chính thức của HTX Cần Thơ GF. Hỗ trợ thủ tục gia nhập HTX, mua xe VinFast và thuê xe ô tô.",
+    mainEntity: {
+      ...getLocalBusinessEntityRef(),
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone,
+      contactType: "customer service",
+      areaServed: "VN",
+      availableLanguage: "Vietnamese",
+    },
   };
 }
 
@@ -272,19 +318,41 @@ async function buildGraphForRoute(
   switch (route.page) {
     case "home": {
       graph.push(
+        getLocalBusinessJsonLd(),
+        getWebSiteJsonLd(),
         getWebPageJsonLdForPath("/", HOME_TITLE, DEFAULT_DESCRIPTION),
       );
       break;
     }
-    case "about":
+    case "about": {
+      const path = "/gioi-thieu";
+      const meta = STATIC_PAGE_METADATA[path];
+      graph.push(
+        getAboutPageJsonLd(path),
+        getBreadcrumbJsonLd([
+          { name: "Trang chủ", path: "/" },
+          { name: meta.title, path },
+        ]),
+      );
+      break;
+    }
+    case "contact": {
+      const path = "/lien-he";
+      const meta = STATIC_PAGE_METADATA[path];
+      graph.push(
+        getContactPageJsonLd(path),
+        getBreadcrumbJsonLd([
+          { name: "Trang chủ", path: "/" },
+          { name: meta.title, path },
+        ]),
+      );
+      break;
+    }
     case "xanhsm":
-    case "contact":
     case "privacy":
     case "terms": {
       const pathMap = {
-        about: "/gioi-thieu",
         xanhsm: "/dang-ky-xanhsm",
-        contact: "/lien-he",
         privacy: "/chinh-sach-bao-mat",
         terms: "/dieu-khoan-su-dung",
       } as const;
@@ -426,13 +494,5 @@ export async function getRouteJsonLd(
   return {
     "@context": SCHEMA_CONTEXT,
     "@graph": pageGraph,
-  };
-}
-
-/** JSON-LD toàn site — Organization + WebSite (layout) */
-export function getSiteJsonLd(): Record<string, unknown> {
-  return {
-    "@context": SCHEMA_CONTEXT,
-    "@graph": [getOrganizationJsonLd(), getWebSiteJsonLd()],
   };
 }

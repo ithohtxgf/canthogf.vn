@@ -199,9 +199,9 @@ export default function Contact() {
                       <Image
                         src="/logo_zalo.png"
                         alt=""
-                        width={28}
-                        height={28}
-                        className="h-6 w-auto object-contain"
+                        width={24}
+                        height={24}
+                        className="object-contain"
                         aria-hidden
                       />
                     </span>
@@ -338,9 +338,9 @@ export default function Contact() {
                       <Image
                         src="/logo_zalo.png"
                         alt="Zalo"
-                        width={80}
+                        width={88}
                         height={40}
-                        className="h-10 w-auto max-w-[5.5rem] object-contain"
+                        className="object-contain"
                       />
                     </a>
                     <a

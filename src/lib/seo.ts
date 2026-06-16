@@ -1,8 +1,25 @@
 import type { Metadata } from "next";
+import {
+  CONTACT_ADDRESS_LOCALITY,
+  CONTACT_ADDRESS_REGION,
+  CONTACT_FACEBOOK_URL,
+  CONTACT_GEO_LATITUDE,
+  CONTACT_GEO_LONGITUDE,
+  CONTACT_MAPS_SHARE_URL,
+  CONTACT_PHONE_TEL,
+  CONTACT_STREET_ADDRESS,
+  CONTACT_TIKTOK_URL,
+  CONTACT_ZALO_URL,
+} from "@/lib/contact";
 
 export const SITE_NAME = "Cần Thơ GF";
 export const SITE_NAME_ALT = "Can Tho GF";
+export const OG_SITE_NAME = "HTX Cần Thơ GF";
 export const ORGANIZATION_NAME = "Hợp tác xã vận tải Cần Thơ GF";
+export const LOCAL_BUSINESS_ENTITY_ID = "industrial-entity";
+
+export const SCHEMA_LOGO_PATH = "/logo_cantho_gf.png";
+export const SCHEMA_IMAGE_PATH = "/banner-homepage.webp";
 
 export const SEO_KEYWORDS = [
   "can tho gf",
@@ -79,10 +96,10 @@ export function createAlternates(canonicalPath: string): NonNullable<Metadata["a
 }
 
 export const DEFAULT_DESCRIPTION =
-  "Hợp tác xã vận tải Cần Thơ GF (Can Tho GF) — đại lý ô tô VinFast Cần Thơ, tư vấn mua xe điện và đăng ký XanhSM Cần Thơ. Hotline 0916 513 720.";
+  "HTX Cần Thơ GF - Đại lý ủy quyền ô tô điện VinFast tại Cần Thơ. Hỗ trợ trọn gói thủ tục gia nhập HTX, đăng ký chạy Xanh SM. Liên hệ ngay!";
 
 export const HOME_TITLE =
-  "Cần Thơ GF | Hợp tác xã vận tải Cần Thơ — Ô tô VinFast & XanhSM";
+  "Cần Thơ GF | Đại Lý Xe Điện VinFast & HTX Vận Tải";
 
 /** Ảnh OG/Twitter mặc định — hero banner trang chủ */
 export const DEFAULT_OG_IMAGE = "/banner-homepage.webp";
@@ -119,7 +136,7 @@ export const baseMetadata: Metadata = {
     type: "website",
     locale: "vi_VN",
     url: getAbsoluteUrl("/"),
-    siteName: SITE_NAME,
+    siteName: OG_SITE_NAME,
     title: HOME_TITLE,
     description: DEFAULT_DESCRIPTION,
     images: [
@@ -141,55 +158,98 @@ export const baseMetadata: Metadata = {
 
 export const homePageMetadata: Metadata = {
   ...baseMetadata,
-  title: HOME_TITLE,
+  title: { absolute: HOME_TITLE },
   alternates: createAlternates("/"),
 };
 
-export function getOrganizationJsonLd() {
-  const siteUrl = getSiteUrl();
+export function getLocalBusinessEntityRef() {
+  const siteUrl = getSiteUrl().replace(/\/$/, "");
+  return { "@id": `${siteUrl}/#${LOCAL_BUSINESS_ENTITY_ID}` };
+}
+
+export function getLocalBusinessJsonLd() {
+  const siteUrl = getSiteUrl().replace(/\/$/, "");
+  const telephone = CONTACT_PHONE_TEL.replace(
+    /^\+84(\d{3})(\d{3})(\d{3,4})$/,
+    "+84-$1-$2-$3",
+  );
+
   return {
-    "@type": "AutoDealer",
-    "@id": `${siteUrl}/#organization`,
-    name: ORGANIZATION_NAME,
-    alternateName: [SITE_NAME, SITE_NAME_ALT, "CanThoGF", "can tho gf"],
-    description: DEFAULT_DESCRIPTION,
-    url: siteUrl,
-    logo: `${siteUrl}/logo_cantho_gf.png`,
-    image: `${siteUrl}/logo_cantho_gf.png`,
-    telephone: "+84916513720",
-    email: "htxcanthogf@gmail.com",
-    taxID: "1801807608",
+    "@type": [
+      "LocalBusiness",
+      "AutomotiveBusiness",
+      "AutoDealer",
+      "AutoRental",
+    ],
+    "@id": `${siteUrl}/#${LOCAL_BUSINESS_ENTITY_ID}`,
+    name: OG_SITE_NAME,
+    url: `${siteUrl}/`,
+    logo: `${siteUrl}${SCHEMA_LOGO_PATH}`,
+    image: `${siteUrl}${SCHEMA_IMAGE_PATH}`,
+    telephone,
+    priceRange: "$$$",
+    hasMap: CONTACT_MAPS_SHARE_URL,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Cái Răng",
-      addressLocality: "Cần Thơ",
-      addressRegion: "Cần Thơ",
+      streetAddress: CONTACT_STREET_ADDRESS,
+      addressLocality: CONTACT_ADDRESS_LOCALITY,
+      addressRegion: CONTACT_ADDRESS_REGION,
       addressCountry: "VN",
     },
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: "Đồng bằng sông Cửu Long",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: CONTACT_GEO_LATITUDE,
+      longitude: CONTACT_GEO_LONGITUDE,
     },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "08:00",
+        closes: "17:30",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Sunday",
+        opens: "08:00",
+        closes: "12:00",
+      },
+    ],
+    sameAs: [
+      CONTACT_FACEBOOK_URL,
+      CONTACT_TIKTOK_URL,
+      CONTACT_ZALO_URL,
+    ],
     knowsAbout: [
-      "Ô tô VinFast Cần Thơ",
-      "Xe điện VinFast",
-      "XanhSM Cần Thơ",
-      "Hợp tác xã vận tải Cần Thơ",
+      "Hợp tác xã vận tải ô tô",
+      "Ô tô điện VinFast",
+      "Dịch vụ cho thuê xe ô tô",
+      "Thủ tục gia nhập tài xế Xanh SM",
     ],
   };
 }
 
+/** @deprecated Dùng getLocalBusinessJsonLd */
+export function getOrganizationJsonLd() {
+  return getLocalBusinessJsonLd();
+}
+
 export function getWebSiteJsonLd() {
-  const siteUrl = getSiteUrl();
+  const siteUrl = getSiteUrl().replace(/\/$/, "");
   return {
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
-    name: SITE_NAME,
-    alternateName: [SITE_NAME_ALT, "can tho gf", "cần thơ gf"],
-    url: siteUrl,
-    description: DEFAULT_DESCRIPTION,
-    inLanguage: "vi-VN",
-    publisher: { "@id": `${siteUrl}/#organization` },
+    name: OG_SITE_NAME,
+    alternateName: ["Cần Thơ GF", "Can Thơ GF Transport"],
+    url: `${siteUrl}/`,
+    publisher: getLocalBusinessEntityRef(),
   };
 }
 
