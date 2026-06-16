@@ -72,9 +72,7 @@ export function VinfastExclusiveOffers() {
           Ưu đãi chỉ có tại CanThoGF
         </p>
         <p className="text-xl sm:text-2xl font-bold mb-6 max-w-2xl mx-auto">
-          Đặt xe VinFast qua CanThoGF để nhận voucher, hỗ trợ trả góp và thủ
-          tục biển số Cần Thơ trọn gói — tiết kiệm thời gian hơn mua trực tiếp
-          tại showroom chính hãng.
+          Đặt xe VinFast qua CanThoGF để tiết kiệm thời gian.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button

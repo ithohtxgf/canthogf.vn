@@ -19,7 +19,7 @@ export const VF9_DETAIL: RichProductDetail = {
     "suv điện 7 chỗ vinfast",
     "mua vf9 cần thơ",
   ],
-  image: "https://picsum.photos/seed/vf9detail/1200/600",
+  image: "/vf9.webp",
   imageAlt: "VinFast VF 9 SUV điện 7 chỗ hạng sang tại Cần Thơ GF",
   listPrice: 1_499_000_000,
   listPriceLabel: "VF 9 Eco: 1.499.000.000 đ · VF 9 Plus: 1.699.000.000 đ (đã VAT)",

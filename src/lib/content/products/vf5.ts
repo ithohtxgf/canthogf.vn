@@ -20,7 +20,7 @@ export const VF5_DETAIL: RichProductDetail = {
     "vf5 plus",
     "xe điện đô thị cần thơ",
   ],
-  image: "https://picsum.photos/seed/vf5detail/1200/600",
+  image: "/vf5.webp",
   imageAlt: "VinFast VF 5 — A-SUV điện tại Cần Thơ GF",
   listPrice: 529_000_000,
   listPriceLabel: "529.000.000 VNĐ",

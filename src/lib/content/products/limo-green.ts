@@ -18,7 +18,7 @@ export const LIMO_GREEN_DETAIL: RichProductDetail = {
     "mua limo green cần thơ",
     "xe dịch vụ xanh vinfast",
   ],
-  image: "https://picsum.photos/seed/limodetail/1200/600",
+  image: "/Limo-Green.png",
   imageAlt:
     "VinFast Limo Green — ô tô điện 7 chỗ dịch vụ xanh tại Cần Thơ GF",
   listPrice: 749_000_000,

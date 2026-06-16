@@ -1,4 +1,3 @@
-import { SeoLink } from "@/components/SeoLink";
 import { VINFAST_SPOKE_ARTICLES } from "@/lib/content/vinfast-can-tho";
 import { ArrowRight, BookOpen } from "lucide-react";
 
@@ -16,13 +15,10 @@ export function VinfastSpokeArticles() {
       <ul className="space-y-3">
         {VINFAST_SPOKE_ARTICLES.map((article) => (
           <li key={article.id}>
-            <SeoLink
-              href={`/tin-tuc/${article.id}`}
-              className="group flex items-start gap-2 text-gray-700 hover:text-primary transition-colors"
-            >
-              <ArrowRight className="w-4 h-4 mt-1 shrink-0 text-secondary group-hover:translate-x-0.5 transition-transform" />
+            <div className="group flex items-start gap-2 text-gray-700">
+              <ArrowRight className="w-4 h-4 mt-1 shrink-0 text-secondary" />
               <span className="font-medium leading-snug">{article.title}</span>
-            </SeoLink>
+            </div>
           </li>
         ))}
       </ul>

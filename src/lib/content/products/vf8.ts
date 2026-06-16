@@ -19,7 +19,7 @@ export const VF8_DETAIL: RichProductDetail = {
     "xe điện d-suv vinfast",
     "mua vf8 cần thơ",
   ],
-  image: "https://picsum.photos/seed/vf8detail/1200/600",
+  image: "/vf8.webp",
   imageAlt: "VinFast VF 8 — D-SUV điện cao cấp tại Cần Thơ GF",
   listPrice: 1_019_000_000,
   listPriceLabel: "1.019.000.000 VNĐ (VF 8 Eco — giá gốc)",

@@ -19,7 +19,7 @@ export const MPV7_DETAIL: RichProductDetail = {
     "mpv7 giá",
     "mua mpv7 cần thơ",
   ],
-  image: "https://picsum.photos/seed/mpv7detail/1200/600",
+  image: "/mpv7.webp",
   imageAlt: "VinFast VF MPV 7 — MPV điện 7 chỗ tại Cần Thơ GF",
   listPrice: 0,
   listPriceLabel: "Liên hệ đại lý để nhận báo giá chính thức (kèm pin)",

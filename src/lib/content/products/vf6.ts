@@ -20,7 +20,7 @@ export const VF6_DETAIL: RichProductDetail = {
     "suv điện vinfast",
     "mua vf6 cần thơ",
   ],
-  image: "https://picsum.photos/seed/vf6detail/1200/600",
+  image: "/vf6.webp",
   imageAlt: "VinFast VF 6 — SUV điện hạng C tại Cần Thơ GF",
   listPrice: 689_000_000,
   listPriceLabel: "689.000.000 VNĐ (VF 6 Eco — giá gốc)",

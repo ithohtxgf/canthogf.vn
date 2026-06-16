@@ -96,7 +96,7 @@ export default function Home({
       <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
-            src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=1920&h=1080"
+            src="/banner-homepage.JPG"
             alt="Ô tô VinFast Cần Thơ — Hợp tác xã vận tải Cần Thơ GF"
             className="object-cover"
             priority

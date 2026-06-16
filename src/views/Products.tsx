@@ -115,7 +115,7 @@ export default function Products() {
       <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
-            src="https://images.unsplash.com/photo-1503377218671-5917865cbb66?auto=format&fit=crop&q=80&w=1920&h=600"
+            src="/banner-homepage.JPG"
             alt="Danh mục ô tô VinFast Cần Thơ tại Cần Thơ GF"
             className="object-cover opacity-30"
           />

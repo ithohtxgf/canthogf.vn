@@ -20,7 +20,7 @@ export const VF7_DETAIL: RichProductDetail = {
     "xe điện coupe suv vinfast",
     "mua vf7 cần thơ",
   ],
-  image: "https://picsum.photos/seed/vf7detail/1200/600",
+  image: "/vf7.webp",
   imageAlt: "VinFast VF 7 — Coupe-SUV điện tại Cần Thơ GF",
   listPrice: 789_000_000,
   listPriceLabel: "789.000.000 VNĐ (VF 7 Eco — giá gốc)",

@@ -19,7 +19,7 @@ export const VF8_ALL_NEW_DETAIL: RichProductDetail = {
     "vinfast vf8 2026",
     "mua vf8 all new",
   ],
-  image: "https://picsum.photos/seed/vf8allnew/1200/600",
+  image: "/vf8-all-new.png",
   imageAlt: "VinFast VF 8 Thế Hệ Mới 2026 tại Cần Thơ GF",
   listPrice: 0,
   listPriceLabel: "Liên hệ đại lý để nhận báo giá VF 8 All New 2026",

@@ -20,7 +20,7 @@ export const VF3_DETAIL: RichProductDetail = {
     "mua vf3 cần thơ",
     "xe điện mini vinfast",
   ],
-  image: "https://picsum.photos/seed/vf3detail/1200/600",
+  image: "/vf3.jpg",
   imageAlt: "VinFast VF 3 — mini car điện tại Cần Thơ GF",
   listPrice: 302_000_000,
   listPriceLabel: "302.000.000 VNĐ (VF 3 Eco — giá gốc)",
