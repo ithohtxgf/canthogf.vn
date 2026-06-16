@@ -35,8 +35,20 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     name: "Herio Green",
     description:
       "Định nghĩa lại trải nghiệm xe dịch vụ thời đại xanh. Herio Green — thiết kế hiện đại, quãng đường 326 km, giá từ 479 triệu tại Cần Thơ GF.",
+    metaTitle:
+      "VinFast Herio Green Cần Thơ: Giá 479 Triệu, Xe Dịch Vụ Điện 326 km",
+    metaDescription:
+      "VinFast Herio Green tại Cần Thơ — xe điện dịch vụ thương mại, giá từ 479 triệu, quãng đường 326 km NEDC, thiết kế hiện đại. Phù hợp tài xế XanhSM, taxi điện. Tư vấn tại Cần Thơ GF.",
     image: "/herio-green.png",
     price: "Từ 479.000.000 VNĐ",
+    keywords: [
+      "herio green cần thơ",
+      "vinfast herio green",
+      "herio green giá",
+      "xe điện dịch vụ vinfast",
+      "xe thương mại điện cần thơ",
+      "herio green xanhsm",
+    ],
   },
   {
     id: "vf5",
@@ -200,8 +212,20 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     name: "EC Van",
     description:
       "EC Van — xe điện vận tải đa năng, tiết kiệm chi phí vận hành, dung tích 2,6 m³. Giá từ 285 triệu tại Cần Thơ GF.",
+    metaTitle:
+      "VinFast EC Van Cần Thơ: Giá 285 Triệu, Xe Tải Điện 2,6 m³, 175 km",
+    metaDescription:
+      "VinFast EC Van tại Cần Thơ — xe điện vận tải đa năng giá 285 triệu, dung tích 2,6 m³, quãng đường 175 km/sạc, sạc nhanh 10–70% trong 42 phút. Tối ưu chi phí cho hộ kinh doanh. Tư vấn tại Cần Thơ GF.",
     image: "/ecvan.webp",
     price: "285.000.000 VNĐ",
+    keywords: [
+      "ec van cần thơ",
+      "vinfast ec van",
+      "ec van giá",
+      "xe tải điện vinfast",
+      "xe điện vận tải cần thơ",
+      "xe thương mại điện cần thơ",
+    ],
   },
 ];
 

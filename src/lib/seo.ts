@@ -29,6 +29,8 @@ export const SEO_KEYWORDS = [
   "ô tô vinfast cần thơ",
   "xanhsm cần thơ",
   "vinfast cần thơ",
+  "vinfast cần thơ 2026",
+  "mua xe vinfast 2026",
   "xe điện vinfast",
   "đại lý vinfast cần thơ",
 ] as const;

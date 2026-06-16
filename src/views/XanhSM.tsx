@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { dispatchConsultationPopup } from "@/lib/contact";
+import { dispatchConsultationPopup, GREEN_SM_APP_STORE_URL, GREEN_SM_GOOGLE_PLAY_URL } from "@/lib/contact";
 import {
   Car,
   Smartphone,
@@ -212,12 +212,22 @@ export default function XanhSM() {
                     </ul>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <button className="flex-1 bg-dark hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-xl transition-colors flex items-center justify-center">
+                      <a
+                        href={GREEN_SM_APP_STORE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-dark hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-xl transition-colors flex items-center justify-center"
+                      >
                         <Download className="w-5 h-5 mr-2" /> App Store
-                      </button>
-                      <button className="flex-1 bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-xl transition-colors flex items-center justify-center">
+                      </a>
+                      <a
+                        href={GREEN_SM_GOOGLE_PLAY_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-xl transition-colors flex items-center justify-center"
+                      >
                         <Download className="w-5 h-5 mr-2" /> Google Play
-                      </button>
+                      </a>
                     </div>
                   </div>
 

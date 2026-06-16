@@ -24,6 +24,11 @@ export const CONTACT_ZALO_URL = "https://zalo.me/0916513720";
 export const CONTACT_FACEBOOK_URL = "https://www.facebook.com/canthogf";
 export const CONTACT_TIKTOK_URL = "https://www.tiktok.com/@sulinh.ctgf";
 
+export const GREEN_SM_APP_STORE_URL =
+  "https://apps.apple.com/vn/app/green-sm-di-chuy%E1%BB%83n-thu%E1%BA%A7n-%C4%91i%E1%BB%87n/id6446425595?l=vi";
+export const GREEN_SM_GOOGLE_PLAY_URL =
+  "https://play.google.com/store/apps/details?id=com.gsm.customer";
+
 export const CONTACT_HOURS_WEEKDAY = "Thứ 2 – Thứ 7: 08:00 – 17:30";
 export const CONTACT_HOURS_SUNDAY = "Chủ nhật: Nghỉ";
 

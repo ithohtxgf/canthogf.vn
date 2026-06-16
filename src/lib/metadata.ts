@@ -53,7 +53,15 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
     title: "Ô tô VinFast Cần Thơ",
     description:
       "Danh mục xe điện VinFast tại Cần Thơ GF: VF 3, Herio Green, VF5, Limo Green, EC Van. Tư vấn giá, khuyến mãi và trả góp.",
-    keywords: ["ô tô vinfast cần thơ", "xe điện vinfast", "mua xe vinfast cần thơ"],
+    keywords: [
+      "ô tô vinfast cần thơ",
+      "xe điện vinfast",
+      "mua xe vinfast cần thơ",
+      "bảng giá xe vinfast cần thơ",
+      "xe điện cần thơ",
+      "danh mục xe vinfast 2026",
+      "xe vinfast trả góp cần thơ",
+    ],
   },
   "/vinfast-can-tho": {
     title: VINFAST_CAN_THO_META_TITLE,
@@ -61,19 +69,31 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
     description: VINFAST_CAN_THO_PAGE_DESCRIPTION,
     keywords: [
       "vinfast cần thơ",
+      "vinfast cần thơ 2026",
       "bảng giá vinfast cần thơ",
       "xe điện vinfast cần thơ",
       "mua xe vinfast cần thơ",
       "đại lý vinfast cần thơ",
       "giá lăn bánh vinfast",
       "vinfast trả góp cần thơ",
+      "xe thương mại vinfast cần thơ",
+      "herio green cần thơ",
+      "ec van cần thơ",
     ],
   },
   "/dang-ky-xanhsm": {
     title: "Đăng ký XanhSM Cần Thơ",
     description:
       "Đăng ký lái XanhSM Cần Thơ qua Hợp tác xã Cần Thơ GF. Hỗ trợ thủ tục, tư vấn xe điện VinFast và chính sách dành cho tài xế.",
-    keywords: ["đăng ký xanhsm cần thơ", "xanhsm cần thơ", "lái xanhsm"],
+    keywords: [
+      "đăng ký xanhsm cần thơ",
+      "xanhsm cần thơ",
+      "lái xanhsm",
+      "trở thành tài xế xanhsm",
+      "thu nhập tài xế xanhsm",
+      "điều kiện lái xanhsm",
+      "tài xế xe điện cần thơ",
+    ],
   },
   "/tin-tuc": {
     title: "Tin tức",
