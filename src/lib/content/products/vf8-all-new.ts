@@ -1,0 +1,208 @@
+import type { RichProductDetail } from "@/lib/content/product-details";
+
+export const VF8_ALL_NEW_DETAIL: RichProductDetail = {
+  id: "vf8-all-new",
+  officialName: "VinFast VF 8 Thế Hệ Mới",
+  segment: "D-SUV điện (Luxury SUV 5 chỗ) — The All New 2026",
+  shortName: "VF 8 All New",
+  slogan: "Tech Fluid — Dòng chảy công nghệ",
+  h1: "VinFast VF 8 All New 2026 Cần Thơ: D-SUV Điện Thế Hệ Mới",
+  metaTitle:
+    "VinFast VF 8 All New 2026 Cần Thơ: 170 kW, 500 km, ADAS, OTA",
+  metaDescription:
+    "VinFast VF 8 Thế Hệ Mới 2026 tại Cần Thơ: công suất 170 kW, pin 60,13 kWh, quãng đường 480-500 km NEDC, sạc nhanh dưới 30 phút, ADAS nâng cao, nội thất tiện nghi và kết nối thông minh.",
+  keywords: [
+    "vinfast vf8 all new",
+    "vf8 thế hệ mới 2026",
+    "vf8 all new cần thơ",
+    "d-suv điện vinfast",
+    "vinfast vf8 2026",
+    "mua vf8 all new",
+  ],
+  image: "https://picsum.photos/seed/vf8allnew/1200/600",
+  imageAlt: "VinFast VF 8 Thế Hệ Mới 2026 tại Cần Thơ GF",
+  listPrice: 0,
+  listPriceLabel: "Liên hệ đại lý để nhận báo giá VF 8 All New 2026",
+  positioningHtml: `<p><strong>VinFast VF 8 Thế Hệ Hoàn Toàn Mới 2026</strong> được phát triển theo triết lý <em>Tech Fluid — Dòng chảy công nghệ</em>, mang dáng SUV điện cỡ D hiện đại với đường nét liền mạch, khí động học thể thao và khoang nội thất tối giản cao cấp. Mẫu xe hướng đến khách hàng cần một chiếc SUV điện thông minh, hiệu năng tốt, vận hành êm ái và an toàn toàn diện.</p>`,
+  highlights: [
+    "Thiết kế Tech Fluid hoàn toàn mới, dải đèn cánh chim kéo dài",
+    "Động cơ 170 kW, mô-men xoắn 330 Nm, dẫn động FWD",
+    "Pin 60,13 kWh, quãng đường 480-500 km (NEDC)",
+    "Sạc nhanh DC tối đa 100 kW, 10%-70% dưới 30 phút",
+    "ADAS nâng cao: camera 360, giữ làn, phanh khẩn cấp, ACC",
+    "OTA, trợ lý ảo thông minh, app điện thoại và đồng hồ thông minh",
+  ],
+  specGroups: [
+    {
+      id: "kich-thuoc",
+      heading: "Kích thước & trọng lượng",
+      headingLevel: 3,
+      specs: [
+        { label: "Dài x Rộng x Cao (mm)", value: "4.701 x 1.872 x 1.670" },
+        { label: "Chiều dài cơ sở (mm)", value: "2.840" },
+        { label: "Khoảng sáng gầm (mm)", value: "170" },
+        { label: "Trọng lượng không tải (kg)", value: "1.870" },
+        { label: "Số ghế", value: "5 chỗ" },
+      ],
+    },
+    {
+      id: "truyen-dong-pin",
+      heading: "Hệ truyền động & pin",
+      headingLevel: 3,
+      specs: [
+        { label: "Công suất tối đa", value: "170 kW" },
+        { label: "Mô-men xoắn cực đại", value: "330 Nm" },
+        { label: "Hệ dẫn động", value: "Cầu trước (FWD)" },
+        { label: "Dung lượng pin khả dụng", value: "60,13 kWh" },
+        { label: "Quãng đường/lần sạc", value: "480-500 km (NEDC)" },
+        { label: "Chế độ lái", value: "Tiết kiệm / Thường / Thể thao" },
+      ],
+    },
+    {
+      id: "sac",
+      heading: "Thông số sạc",
+      headingLevel: 3,
+      specs: [
+        { label: "Sạc chậm AC tối đa", value: "7,2 kW" },
+        { label: "Sạc nhanh DC tối đa", value: "100 kW" },
+        { label: "Sạc nhanh (10%-70%)", value: "Dưới 30 phút (trạm 250 kW)" },
+        { label: "Dây sạc di động", value: "3,5 kW (phụ kiện chính hãng)" },
+        { label: "Bộ sạc tại nhà", value: "7,4 kW (phụ kiện chính hãng)" },
+      ],
+    },
+    {
+      id: "khung-gam-an-toan",
+      heading: "Khung gầm & an toàn",
+      headingLevel: 3,
+      specs: [
+        { label: "Hệ thống treo trước/sau", value: "MacPherson / Đa liên kết" },
+        {
+          label: "Giảm chấn thích ứng",
+          value: "FSD (Frequency Selective Dampers)",
+        },
+        { label: "Mâm xe", value: "19 inch" },
+        {
+          label: "Tính năng an toàn chủ động",
+          value: "ABS, EBD, BA, ESC, TCS, HSA, ROM, HDC, ESS",
+        },
+      ],
+    },
+  ],
+  batteryHighlight:
+    "VF 8 All New dùng pin 60,13 kWh cho phạm vi 480-500 km NEDC, hỗ trợ sạc nhanh DC tối đa 100 kW và nạp 10%-70% dưới 30 phút trong điều kiện phù hợp.",
+  batterySectionTitle: "Pin, Sạc & Hành Trình Dài",
+  chargingInfrastructure: [
+    { label: "Sạc nhanh DC", value: "Tối đa 100 kW" },
+    { label: "Sạc chậm AC", value: "Tối đa 7,2 kW" },
+    { label: "Bộ sạc tại nhà", value: "7,4 kW (phụ kiện chính hãng)" },
+    { label: "Dây sạc di động", value: "3,5 kW (phụ kiện chính hãng)" },
+  ],
+  chargingSolutionItems: [
+    "Sạc tại nhà phù hợp thói quen sử dụng hàng ngày",
+    "Sạc nhanh DC cho các hành trình dài liên tỉnh",
+    "Quản lý pin, tìm trạm và thanh toán ngay trên ứng dụng VinFast",
+  ],
+  exteriorColors: [
+    { id: "solar-ruby", name: "Solar Ruby", nameVi: "Solar Ruby", hex: "#8B1A2B" },
+    { id: "black", name: "Black", nameVi: "Đen", hex: "#1A1A1A" },
+    { id: "white", name: "White", nameVi: "Trắng", hex: "#F5F5F0" },
+    { id: "orange", name: "Orange", nameVi: "Cam", hex: "#D97706" },
+    { id: "purple", name: "Purple", nameVi: "Tím", hex: "#6D28D9" },
+    { id: "red", name: "Red", nameVi: "Đỏ", hex: "#B91C1C" },
+    { id: "blue", name: "Blue", nameVi: "Xanh dương", hex: "#1D4ED8" },
+  ],
+  interiorColors: [
+    { id: "black", name: "Black", nameVi: "Đen", hex: "#2D2D2D" },
+    { id: "brown", name: "Brown", nameVi: "Nâu", hex: "#6B4423" },
+  ],
+  exteriorFeatureList: [
+    "Triết lý thiết kế Tech Fluid với đường nét liền mạch",
+    "Dải đèn cánh chim kéo dài, thân xe bắt sáng sống động",
+    "Tối ưu khí động học thể thao cho SUV điện cỡ D",
+    "Một số màu ngoại thất là tùy chọn nâng cấp tính phí",
+  ],
+  interiorFeatureList: [
+    "Màn hình giải trí trung tâm 12,9 inch",
+    "Điều hòa tự động 2 vùng, ion hóa và kiểm soát chất lượng không khí",
+    "Hệ thống âm thanh 8 loa, sạc không dây",
+    "Ghế lái chỉnh điện 6 hướng, nhớ vị trí",
+    "Hàng ghế 2 ngả/gập 60:40, ISOFIX cho ghế trẻ em",
+  ],
+  featureSections: [
+    {
+      id: "adas",
+      heading: "Hệ Thống ADAS",
+      headingLevel: 2,
+      items: [
+        "Trợ lái trên cao tốc và khi tắc đường",
+        "Ga tự động thích ứng, điều chỉnh tốc độ thông minh",
+        "Phanh tự động khẩn cấp phía trước",
+        "Giữ làn, giữ làn khẩn cấp, cảnh báo điểm mù",
+        "Cảnh báo va chạm trước và cắt ngang phía sau",
+        "Nhận biết biển báo, đèn chiếu xa tự động",
+        "Camera 360° và cảm biến đỗ xe trước/sau",
+      ],
+    },
+    {
+      id: "noi-that",
+      heading: "Nội Thất & Tiện Nghi",
+      headingLevel: 2,
+      items: [
+        "Vô lăng tích hợp điều khiển giải trí và ADAS",
+        "Gương chiếu hậu trong xe chống chói tự động",
+        "USB: 1 Type-A + 1 Type-C trước, 2 Type-C sau",
+        "Cửa sổ lên/xuống một chạm cả 4 cửa",
+      ],
+    },
+    {
+      id: "ket-noi",
+      heading: "Công Nghệ Kết Nối",
+      headingLevel: 2,
+      items: [
+        "Android Auto, Apple CarPlay, dẫn đường EV nâng cao",
+        "Chợ ứng dụng và cập nhật OTA qua không dây",
+        "Trợ lý ảo thông minh: hiểu ngữ cảnh, cá nhân hóa hồ sơ",
+        "Ứng dụng điện thoại: điều khiển/giám sát xe, quản lý pin, ủy quyền lái xe",
+        "Ứng dụng đồng hồ thông minh: điều khiển và theo dõi xe từ xa",
+      ],
+    },
+    {
+      id: "an-ninh",
+      heading: "An Ninh & Bảo Vệ",
+      headingLevel: 2,
+      items: [
+        "Khóa cửa tự động khi di chuyển",
+        "Cảnh báo chống trộm, khóa động cơ khi có trộm",
+        "Giám sát áp suất lốp dTPMS",
+        "Căng đai khẩn cấp trước và sau",
+      ],
+    },
+  ],
+  warrantyItems: [
+    "Chính sách bảo hành áp dụng theo chương trình công bố tại thời điểm bán.",
+    "Liên hệ đại lý VinFast Cần Thơ GF để nhận thông tin chính thức mới nhất.",
+  ],
+  afterSalesItems: [
+    "Hỗ trợ cập nhật phần mềm qua OTA hoặc tại xưởng dịch vụ",
+    "Hệ sinh thái ứng dụng hỗ trợ quản lý xe và sạc pin",
+    "Hệ thống dịch vụ VinFast toàn quốc",
+  ],
+  targetAudience: [
+    "Khách hàng tìm D-SUV điện thế hệ mới thiết kế hiện đại",
+    "Gia đình 5 chỗ cần xe rộng, an toàn, tiện nghi",
+    "Người dùng ưu tiên công nghệ kết nối và ADAS nâng cao",
+  ],
+  disclaimerNotes: [
+    "Một số tính năng sẽ được kích hoạt sau qua OTA hoặc tại xưởng dịch vụ VinFast.",
+    "Tính năng thông minh có gói Cơ bản (miễn phí) và Nâng cao (tính phí).",
+    "Quãng đường thực tế có thể thấp hơn chuẩn NEDC tùy điều kiện vận hành.",
+    "Thông tin sản phẩm có thể thay đổi theo chính sách từng thời điểm.",
+  ],
+  features: [
+    "VF 8 The All New 2026 theo triết lý Tech Fluid",
+    "Động cơ 170 kW, pin 60,13 kWh",
+    "Quãng đường 480-500 km NEDC",
+    "ADAS nâng cao + camera 360",
+    "Kết nối thông minh toàn diện, hỗ trợ OTA",
+  ],
+};

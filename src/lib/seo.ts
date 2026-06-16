@@ -198,6 +198,7 @@ export const SITEMAP_ROUTES = [
   { path: "/", changeFrequency: "weekly" as const, priority: 1 },
   { path: "/gioi-thieu", changeFrequency: "monthly" as const, priority: 0.8 },
   { path: "/san-pham", changeFrequency: "weekly" as const, priority: 0.9 },
+  { path: "/vinfast-can-tho", changeFrequency: "weekly" as const, priority: 0.95 },
   { path: "/dang-ky-xanhsm", changeFrequency: "weekly" as const, priority: 0.9 },
   { path: "/tin-tuc", changeFrequency: "weekly" as const, priority: 0.7 },
   { path: "/lien-he", changeFrequency: "monthly" as const, priority: 0.8 },

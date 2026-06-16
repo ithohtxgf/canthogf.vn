@@ -4,7 +4,6 @@ import {
 } from "@/lib/db/articles";
 import { listAllPromotions } from "@/lib/db/promotions-db";
 import {
-  NEWS_ARTICLES,
   type NewsArticle,
   type NewsCategory,
 } from "@/lib/content/news";
@@ -23,23 +22,16 @@ export async function loadPublishedArticles(
   category?: NewsCategory,
 ): Promise<NewsArticle[]> {
   return safeAsync(async () => {
-    const fromDb = await listPublishedArticles(category);
-    if (fromDb.length > 0) return fromDb;
-    if (category) {
-      return NEWS_ARTICLES.filter((a) => a.category === category);
-    }
-    return [...NEWS_ARTICLES];
-  }, category ? NEWS_ARTICLES.filter((a) => a.category === category) : [...NEWS_ARTICLES]);
+    return await listPublishedArticles(category);
+  }, []);
 }
 
 export async function loadPublishedArticleById(
   id: string,
 ): Promise<NewsArticle | undefined> {
   return safeAsync(async () => {
-    const fromDb = await getPublishedArticleById(id);
-    if (fromDb) return fromDb;
-    return NEWS_ARTICLES.find((a) => a.id === id);
-  }, NEWS_ARTICLES.find((a) => a.id === id));
+    return await getPublishedArticleById(id);
+  }, undefined);
 }
 
 export async function loadAllPromotions(): Promise<Promotion[]> {

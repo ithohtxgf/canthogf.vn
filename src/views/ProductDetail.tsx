@@ -1,11 +1,17 @@
 import { SeoLink } from '@/components/SeoLink';
 import { SeoContentImage } from '@/components/SeoImage';
+import { RichProductDetailView } from '@/components/products/RichProductDetailView';
 import { PromoBanner } from '@/components/ui/PromoBanner';
+import { getRichProductDetail } from '@/lib/content/product-details';
 import { dispatchConsultationPopup } from '@/lib/content/promotions';
 import { motion } from 'motion/react';
 import { CheckCircle2, ArrowLeft, Zap, Shield } from 'lucide-react';
 
 export default function ProductDetail({ id }: { id: string }) {
+  const richProduct = getRichProductDetail(id);
+  if (richProduct) {
+    return <RichProductDetailView product={richProduct} />;
+  }
 
   // Mock data based on ID
   type ProductType = {

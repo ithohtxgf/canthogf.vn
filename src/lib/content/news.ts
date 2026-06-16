@@ -58,11 +58,11 @@ export type NewsArticle = {
 /** @deprecated Dùng NewsArticle — giữ alias cho metadata cũ */
 export type NewsSeo = NewsArticle;
 
-let runtimeArticles: NewsArticle[] | null = null;
+let runtimeArticles: NewsArticle[] | null | undefined;
 
 /** Gọi từ App khi server truyền catalog DB xuống client */
 export function hydrateNewsCatalog(articles: NewsArticle[] | null | undefined) {
-  runtimeArticles = articles?.length ? articles : null;
+  runtimeArticles = articles ?? [];
 }
 
 function getArticleCatalog(): NewsArticle[] {
@@ -308,13 +308,13 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       },
     ],
     author: EDITOR_AUTHOR,
-    conclusionHtml: `<p>Lễ <strong>bàn giao VinFast VF5 Cần Thơ</strong> khẳng định vị thế Cần Thơ GF là đối tác tin cậy trong cung ứng xe điện VinFast. Nếu bạn quan tâm VF5 cho kinh doanh hoặc sử dụng cá nhân, hãy liên hệ ngay để nhận ưu đãi và lịch lái thử.</p>`,
+    conclusionHtml: `<p>Lễ <strong>bàn giao VinFast VF5 Cần Thơ</strong> khẳng định vị thế Cần Thơ GF. Xem <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a> để tính giá lăn bánh VF5 và nhận ưu đãi tháng này.</p>`,
     cta: {
       title: "Đặt xe VinFast VF5 — Ưu đãi tháng 5/2026",
       description:
-        "Nhận báo giá VF5, hỗ trợ trả góp và tư vấn chạy XanhSM miễn phí tại Cần Thơ GF.",
-      label: "Xem chi tiết VF5",
-      href: "/san-pham/vf5",
+        "Bảng tính giá lăn bánh VF5 minh bạch — phí biển số, BHTNDS và voucher CanThoGF.",
+      label: "VinFast Cần Thơ",
+      href: "/vinfast-can-tho",
     },
   },
   {
@@ -619,13 +619,13 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       },
     ],
     author: EDITOR_AUTHOR,
-    conclusionHtml: `<p>Sự kiện <strong>lái thử VinFast Cần Thơ</strong> giúp khách hàng có cái nhìn thực tế trước khi đầu tư xe điện. Dù bỏ lỡ ngày hội, bạn vẫn có thể đăng ký lái thử riêng bất cứ lúc nào tại Cần Thơ GF.</p>`,
+    conclusionHtml: `<p>Sự kiện <strong>lái thử VinFast Cần Thơ</strong> giúp khách hàng có cái nhìn thực tế trước khi đầu tư xe điện. Xem <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">bảng giá lăn bánh VinFast Cần Thơ</a> hoặc đăng ký lái thử riêng bất cứ lúc nào tại Cần Thơ GF.</p>`,
     cta: {
       title: "Đăng ký lái thử xe điện VinFast",
       description:
-        "Trải nghiệm VF5, Herio Green miễn phí tại showroom Cần Thơ GF — không cần chờ ngày hội.",
-      label: "Đăng ký lái thử ngay",
-      href: "/lien-he",
+        "Trải nghiệm VF5, Herio Green miễn phí — xem bảng giá lăn bánh minh bạch tại Cần Thơ.",
+      label: "VinFast Cần Thơ",
+      href: "/vinfast-can-tho",
     },
   },
   {
@@ -740,8 +740,241 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       title: "Tư vấn mua xe điện VinFast — Tiết kiệm chi phí dài hạn",
       description:
         "Cần Thơ GF giúp bạn chọn xe phù hợp, hỗ trợ trả góp và tính toán chi phí vận hành thực tế.",
-      label: "Xem danh mục xe VinFast",
-      href: "/san-pham",
+      label: "Xem bảng giá VinFast Cần Thơ",
+      href: "/vinfast-can-tho",
+    },
+  },
+  // --- Spoke articles: nuôi Hub /vinfast-can-tho ---
+  {
+    id: "chi-phi-sac-xe-dien-vinfast-can-tho-1-thang",
+    title: "Chi phí sạc xe điện VinFast tại Cần Thơ hết bao nhiêu tiền 1 tháng?",
+    metaTitle: "Chi phí sạc xe điện VinFast Cần Thơ 1 tháng — Tính toán 2026",
+    excerpt:
+      "Phân tích chi phí sạc xe điện VinFast tại Cần Thơ theo tháng: sạc nhà, trạm công cộng, tài xế XanhSM chạy 200–300 km/ngày. Bảng tính minh bạch từ CanThoGF.",
+    image: "https://picsum.photos/seed/chi-phi-sac-vinfast-can-tho/1200/630",
+    imageAlt: "Chi phí sạc xe điện VinFast tại Cần Thơ",
+    date: "01/06/2026",
+    category: "knowledge",
+    primaryKeyword: "chi phí sạc xe điện vinfast cần thơ",
+    keywords: ["chi phí sạc vinfast", "sạc xe điện cần thơ", "vinfast cần thơ"],
+    sapoHtml: `<p>Bao nhiêu tiền để sạc <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a> mỗi tháng? Câu trả lời phụ thuộc quãng đường, loại sạc và mẫu xe. Bài viết phân tích chi tiết cho gia đình và tài xế XanhSM tại Ninh Kiều, Cái Răng.</p>`,
+    sections: [
+      {
+        id: "tong-chi-phi-sac-thang",
+        heading: "Tổng chi phí sạc VinFast 1 tháng tại Cần Thơ",
+        level: 2,
+        paragraphs: [
+          `Với <strong>VinFast Cần Thơ</strong>, chi phí sạc tại nhà (3.500đ/kWh) cho VF5 chạy 1.500 km/tháng khoảng 800.000–1,2 triệu đồng — bằng 1/3 chi phí xăng. Xem <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">bảng giá lăn bánh VinFast Cần Thơ</a> để tính tổng chi phí sở hữu.`,
+        ],
+      },
+      {
+        id: "sac-tai-nha-vs-tram",
+        heading: "Sạc tại nhà vs trạm công cộng",
+        level: 2,
+        paragraphs: [
+          `Sạc đêm tại nhà ở Cái Răng, Bình Thủy là cách tiết kiệm nhất. Trạm VinFast tại Ninh Kiều tiện cho khách du lịch nhưng đơn giá cao hơn 20–40%.`,
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "VF3 sạc 1 tháng tốn bao nhiêu tiền?",
+        answerHtml:
+          'Khoảng 400.000–600.000đ nếu chạy 800 km/tháng nội thành Cần Thơ. Liên hệ <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a> để tư vấn gói sạc tại nhà.',
+      },
+    ],
+    author: TECH_AUTHOR,
+    conclusionHtml: `<p>Tính <strong>chi phí sạc xe điện</strong> giúp bạn quyết định mua xe sáng suốt. Truy cập trang <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a> để dùng bảng tính giá lăn bánh và nhận tư vấn miễn phí.</p>`,
+    cta: {
+      title: "Tính giá lăn bánh VinFast Cần Thơ",
+      description: "Bảng tính minh bạch phí biển số, đường bộ, BHTNDS và voucher.",
+      label: "VinFast Cần Thơ",
+      href: "/vinfast-can-tho",
+    },
+  },
+  {
+    id: "ban-do-tram-sac-vinfast-ninh-kieu-cai-rang",
+    title: "Bản đồ các trạm sạc VinFast tại quận Ninh Kiều và Cái Răng",
+    metaTitle: "Trạm sạc VinFast Ninh Kiều, Cái Răng — Bản đồ Cần Thơ 2026",
+    excerpt:
+      "Cập nhật vị trí trạm sạc VinFast tại Ninh Kiều và Cái Răng, Cần Thơ. Hướng dẫn sạc nhanh, chi phí và mẹo tối ưu cho chủ xe điện Miền Tây.",
+    image: "https://picsum.photos/seed/tram-sac-vinfast-can-tho/1200/630",
+    imageAlt: "Trạm sạc VinFast tại Ninh Kiều và Cái Răng Cần Thơ",
+    date: "03/06/2026",
+    category: "knowledge",
+    primaryKeyword: "trạm sạc vinfast cần thơ",
+    keywords: ["trạm sạc vinfast ninh kiều", "sạc vinfast cái răng", "vinfast cần thơ"],
+    sapoHtml: `<p>Hệ thống trạm sạc VinFast đang mở rộng mạnh tại <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a>. Bài viết tổng hợp điểm sạc tại Ninh Kiều và Cái Răng — hai quận có mật độ xe điện cao nhất TP. Cần Thơ.</p>`,
+    sections: [
+      {
+        id: "tram-sac-ninh-kieu",
+        heading: "Trạm sạc VinFast tại Ninh Kiều",
+        level: 2,
+        paragraphs: [
+          `Khu trung tâm Ninh Kiều có nhiều trạm sạc DC nhanh phục vụ khách du lịch và tài xế dịch vụ. Khi mua xe qua <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a>, CanThoGF hướng dẫn cài app VinFast và tìm trạm gần nhất.`,
+        ],
+      },
+      {
+        id: "tram-sac-cai-rang",
+        heading: "Trạm sạc VinFast tại Cái Răng",
+        level: 2,
+        paragraphs: [
+          `Cái Răng — nơi đông đúc tài xế XanhSM — có mật độ trạm sạc cao dọc QL91 và khu dân cư. Đây là lý do VF5 bán chạy tại khu vực này.`,
+        ],
+      },
+    ],
+    faqs: [],
+    author: TECH_AUTHOR,
+    conclusionHtml: `<p>Nắm rõ <strong>trạm sạc VinFast</strong> giúp chủ xe Cần Thơ yên tâm di chuyển. Xem <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a> để chọn mẫu xe phù hợp và nhận bảng giá lăn bánh.</p>`,
+    cta: {
+      title: "Chọn xe VinFast phù hợp tại Cần Thơ",
+      description: "Đánh giá VF3, VF5, VF6 theo nhu cầu di chuyển từng quận.",
+      label: "VinFast Cần Thơ",
+      href: "/vinfast-can-tho",
+    },
+  },
+  {
+    id: "thu-tuc-vay-ngan-hang-mua-vf3-tra-gop-can-tho",
+    title: "Thủ tục vay ngân hàng mua xe VF3 trả góp tại Cần Thơ",
+    metaTitle: "Vay mua VF3 trả góp Cần Thơ — Thủ tục ngân hàng 2026",
+    excerpt:
+      "Hướng dẫn thủ tục vay ngân hàng mua VinFast VF3 trả góp tại Cần Thơ: hồ sơ, Vietcombank, BIDV, Agribank, lãi suất và thời gian duyệt qua CanThoGF.",
+    image: "https://picsum.photos/seed/vay-vf3-tra-gop-can-tho/1200/630",
+    imageAlt: "Thủ tục vay mua VF3 trả góp tại Cần Thơ",
+    date: "05/06/2026",
+    category: "knowledge",
+    primaryKeyword: "vay mua vf3 trả góp cần thơ",
+    keywords: ["vf3 trả góp", "vay mua xe vinfast cần thơ", "vinfast cần thơ"],
+    sapoHtml: `<p><strong>VF3</strong> là mẫu xe rẻ nhất tại <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a> — phù hợp vay trả góp với trả trước thấp. Bài viết hướng dẫn thủ tục vay qua ngân hàng đối tác tại Cần Thơ GF.</p>`,
+    sections: [
+      {
+        id: "ho-so-vay-vf3",
+        heading: "Hồ sơ vay mua VF3 tại Cần Thơ",
+        level: 2,
+        paragraphs: [
+          `Cần CMND/CCCD, sổ hộ khẩu hoặc KT3, chứng minh thu nhập (bảng lương, sao kê). CanThoGF hỗ trợ chuẩn bị hồ sơ và liên kết Vietcombank, BIDV, Agribank tại Cần Thơ.`,
+        ],
+        list: {
+          ordered: true,
+          items: [
+            "Chọn VF3 trên <a href=\"/vinfast-can-tho\" class=\"text-primary font-semibold hover:underline\">VinFast Cần Thơ</a> và dùng bảng tính giá lăn bánh",
+            "Nộp hồ sơ vay — hỗ trợ 80–85% giá trị xe",
+            "Duyệt hồ sơ 1–3 ngày làm việc",
+            "Ký hợp đồng và nhận xe — thủ tục biển số trọn gói",
+          ],
+        },
+      },
+      {
+        id: "lai-suat-tra-gop",
+        heading: "Lãi suất và thời hạn vay VF3",
+        level: 2,
+        paragraphs: [
+          `Vay đến 8 năm, lãi suất ưu đãi theo từng ngân hàng. VF3 giá 299 triệu (kèm pin) — trả trước 20% chỉ ~60 triệu.`,
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Vay mua VF3 cần trả trước bao nhiêu?",
+        answerHtml:
+          'Thường 15–20% giá xe. Dùng bảng tính tại <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a> để ước tính chính xác.',
+      },
+    ],
+    author: EDITOR_AUTHOR,
+    conclusionHtml: `<p>Vay <strong>VF3 trả góp</strong> tại Cần Thơ đơn giản hơn khi có CanThoGF đồng hành. Truy cập <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a> để nhận tư vấn hồ sơ miễn phí.</p>`,
+    cta: {
+      title: "Tư vấn trả góp VF3 Cần Thơ",
+      description: "Hỗ trợ hồ sơ vay qua ngân hàng đối tác.",
+      label: "VinFast Cần Thơ",
+      href: "/vinfast-can-tho",
+    },
+  },
+  {
+    id: "bang-gia-lan-banh-vinfast-vf5-can-tho-2026",
+    title: "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ — Cập nhật 2026",
+    metaTitle: "Giá lăn bánh VF5 Cần Thơ 2026 — Phí biển số, BHTNDS",
+    excerpt:
+      "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ chi tiết: giá niêm yết 529 triệu (kèm pin), phí biển số, phí đường bộ, BHTNDS và voucher ưu đãi CanThoGF.",
+    image: "https://picsum.photos/seed/gia-lan-banh-vf5-can-tho/1200/630",
+    imageAlt: "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ",
+    date: "08/06/2026",
+    category: "vinfast",
+    primaryKeyword: "giá lăn bánh vf5 cần thơ",
+    keywords: ["vf5 cần thơ", "giá vf5 lăn bánh", "vinfast cần thơ"],
+    sapoHtml: `<p><strong>VF5</strong> bán chạy nhất tại <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a>. Bài viết phân tích từng khoản chi phí lăn bánh — khác với giá niêm yết trên website chính hãng.</p>`,
+    sections: [
+      {
+        id: "bang-gia-vf5-chi-tiet",
+        heading: "Bảng giá lăn bánh VF5 chi tiết",
+        level: 2,
+        paragraphs: [
+          `Giá niêm yết VF5 Plus: 529.000.000đ (đã kèm pin). Cộng phí biển số Cần Thơ 1 triệu, phí đường bộ 1,56 triệu, BHTNDS 480.000đ. Trừ voucher CanThoGF và miễn trước bạ — dùng <a href="/vinfast-can-tho#tinh-gia-lan-banh" class="text-primary font-semibold hover:underline">bảng tính VinFast Cần Thơ</a> để cập nhật số liệu mới nhất.`,
+        ],
+      },
+    ],
+    faqs: [],
+    author: EDITOR_AUTHOR,
+    conclusionHtml: `<p>Cập nhật <strong>giá lăn bánh VF5</strong> thường xuyên tại <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a> — trang tổng hợp duy nhất có bảng tính minh bạch tại Cần Thơ.</p>`,
+    cta: {
+      title: "Tính giá lăn bánh VF5 ngay",
+      description: "Bảng tính tương tác — chọn VF5 và xem từng khoản chi phí.",
+      label: "VinFast Cần Thơ",
+      href: "/vinfast-can-tho",
+    },
+  },
+  {
+    id: "so-sanh-vf3-vf5-chay-pho-can-tho",
+    title: "So sánh VF3 và VF5: Xe nào phù hợp chạy phố Cần Thơ?",
+    metaTitle: "So sánh VF3 vs VF5 chạy phố Cần Thơ — Đánh giá 2026",
+    excerpt:
+      "So sánh VinFast VF3 và VF5 cho đường phố Cần Thơ: kích thước, chi phí sạc, đỗ xe Ninh Kiều, chạy XanhSM Cái Răng. Đánh giá từ CanThoGF.",
+    image: "https://picsum.photos/seed/so-sanh-vf3-vf5-can-tho/1200/630",
+    imageAlt: "So sánh VF3 và VF5 tại Cần Thơ",
+    date: "10/06/2026",
+    category: "knowledge",
+    primaryKeyword: "so sánh vf3 vf5 cần thơ",
+    keywords: ["vf3 vs vf5", "xe điện chạy phố cần thơ", "vinfast cần thơ"],
+    sapoHtml: `<p>Phân vân giữa <strong>VF3</strong> và <strong>VF5</strong> khi mua tại <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a>? Bài so sánh dựa trên kinh nghiệm thực tế phục vụ khách hàng Ninh Kiều và Cái Răng.</p>`,
+    sections: [
+      {
+        id: "vf3-pho-ninh-kieu",
+        heading: "VF3 — Nhỏ gọn cho phố Ninh Kiều",
+        level: 2,
+        paragraphs: [
+          `VF3 dễ luồn phố hẹp, đỗ xe tiện, chi phí sạc thấp. Phù hợp sinh viên, nhân viên văn phòng khu trung tâm. Giá 299 triệu — xem bảng tính tại <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a>.`,
+        ],
+      },
+      {
+        id: "vf5-xanhsm-cai-rang",
+        heading: "VF5 — Lựa chọn tài xế XanhSM Cái Răng",
+        level: 2,
+        paragraphs: [
+          `VF5 Plus quãng đường 326 km, không gian rộng hơn, phù hợp chạy dịch vụ cả ngày. Tài xế XanhSM tại Cái Răng ưu tiên VF5 nhờ chi phí vận hành và độ bền.`,
+        ],
+      },
+      {
+        id: "ket-luan-so-sanh",
+        heading: "Kết luận: Chọn VF3 hay VF5?",
+        level: 2,
+        paragraphs: [
+          `Cá nhân đi phố ngắn → VF3. Kinh doanh vận tải hoặc gia đình 4–5 người → VF5. Cả hai đều có trên trang <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a> với bảng tính giá lăn bánh riêng.`,
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "VF3 có chạy được XanhSM không?",
+        answerHtml:
+          'Có thể nhưng VF5 phổ biến hơn nhờ quãng đường và không gian. Tư vấn tại <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a>.',
+      },
+    ],
+    author: EDITOR_AUTHOR,
+    conclusionHtml: `<p>So sánh <strong>VF3 và VF5</strong> giúp chọn xe đúng nhu cầu. Truy cập <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a> để xem đánh giá đầy đủ và tính giá lăn bánh.</p>`,
+    cta: {
+      title: "Đánh giá & bảng giá VinFast Cần Thơ",
+      description: "So sánh tất cả dòng xe với bảng tính minh bạch.",
+      label: "VinFast Cần Thơ",
+      href: "/vinfast-can-tho",
     },
   },
 ];

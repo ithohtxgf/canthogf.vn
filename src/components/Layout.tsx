@@ -43,6 +43,7 @@ export default function Layout({
     { name: 'Tin tức', path: '/tin-tuc' },
     { name: 'Liên hệ', path: '/lien-he' },
   ];
+  const headerNavLinks = navLinks.filter((link) => link.path !== "/");
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
@@ -62,36 +63,40 @@ export default function Layout({
       {/* Main Navigation */}
       <nav className="bg-white shadow-md sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 sm:h-20 gap-3">
-            <div className="flex min-w-0 flex-1 items-center">
+          <div className="flex items-center h-16 sm:h-20 gap-3">
+            <div className="flex min-w-0 flex-1 lg:flex-none items-center">
               <SeoLink href="/" className="flex min-w-0 max-w-full items-center" aria-label="Trang chủ Cần Thơ GF">
                 <Logo className="h-8 w-auto max-w-[min(100%,9.5rem)] sm:h-10 sm:max-w-[10rem] md:h-14 md:max-w-[13.125rem] lg:max-w-none" />
               </SeoLink>
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
-              {navLinks.map((link) => (
-                <SeoLink
-                  key={link.path}
-                  href={link.path}
-                  className={`font-semibold text-sm xl:text-base whitespace-nowrap transition-colors ${
-                    isNavLinkActive(pathname, link.path) ? "text-primary" : "text-gray-700 hover:text-primary"
-                  }`}
-                >
-                  {link.name}
-                </SeoLink>
-              ))}
+            <div className="hidden lg:flex flex-1 items-center justify-center">
+              <div className="flex items-center gap-6 xl:gap-10">
+                {headerNavLinks.map((link) => (
+                  <SeoLink
+                    key={link.path}
+                    href={link.path}
+                    className={`font-semibold text-sm xl:text-base whitespace-nowrap transition-colors ${
+                      isNavLinkActive(pathname, link.path) ? "text-primary" : "text-gray-700 hover:text-primary"
+                    }`}
+                  >
+                    {link.name}
+                  </SeoLink>
+                ))}
+              </div>
+            </div>
+            <div className="hidden lg:flex items-center">
               <button
                 onClick={() => setIsPopupOpen(true)}
-                className="bg-primary hover:bg-primary-dark text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-full text-sm xl:text-base font-bold whitespace-nowrap transition-colors shadow-md"
+                className="bg-primary hover:bg-primary-dark text-white px-5 xl:px-7 py-2.5 rounded-full text-sm xl:text-base font-bold whitespace-nowrap transition-colors shadow-md"
               >
                 Đăng ký tư vấn
               </button>
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="flex shrink-0 items-center lg:hidden">
+            <div className="ml-auto flex shrink-0 items-center lg:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-gray-700 hover:text-primary focus:outline-none"
@@ -112,7 +117,7 @@ export default function Layout({
               className="lg:hidden bg-white border-t"
             >
               <div className="px-4 pt-2 pb-6 space-y-1">
-                {navLinks.map((link) => (
+                {headerNavLinks.map((link) => (
                   <SeoLink
                     key={link.path}
                     href={link.path}

@@ -5,6 +5,7 @@ import {
 } from "@/lib/server/content-store";
 import { getNewsArticleKeywords } from "@/lib/content/news";
 import { getProductById, PRODUCTS_SEO } from "@/lib/content/products";
+import { getRichProductDetail } from "@/lib/content/product-details";
 import {
   createAlternates,
   DEFAULT_DESCRIPTION,
@@ -40,8 +41,22 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
   "/san-pham": {
     title: "Ô tô VinFast Cần Thơ",
     description:
-      "Danh mục xe điện VinFast tại Cần Thơ GF: Herio Green, VF5, Limo Green, EC Van. Tư vấn giá, khuyến mãi và trả góp — hotline 0916 513 720.",
+      "Danh mục xe điện VinFast tại Cần Thơ GF: VF 3, Herio Green, VF5, Limo Green, EC Van. Tư vấn giá, khuyến mãi và trả góp.",
     keywords: ["ô tô vinfast cần thơ", "xe điện vinfast", "mua xe vinfast cần thơ"],
+  },
+  "/vinfast-can-tho": {
+    title: "Xe Điện VinFast Cần Thơ: Giá Lăn Bánh & Khuyến Mãi Mới Nhất",
+    description:
+      "Bảng tính giá lăn bánh VinFast tại Cần Thơ minh bạch: giá xe kèm pin, phí biển số, phí đường bộ, BHTNDS, voucher ưu đãi. Đánh giá VF3, VF5, VF6 phù hợp đường phố Cần Thơ — CanThoGF.",
+    keywords: [
+      "vinfast cần thơ",
+      "bảng giá vinfast cần thơ",
+      "xe điện vinfast cần thơ",
+      "mua xe vinfast cần thơ",
+      "đại lý vinfast cần thơ",
+      "giá lăn bánh vinfast",
+      "vinfast trả góp cần thơ",
+    ],
   },
   "/dang-ky-xanhsm": {
     title: "Đăng ký XanhSM Cần Thơ",
@@ -166,20 +181,26 @@ export async function resolveMetadataFromSlug(
   }
 
   if (segments.length === 2 && segments[0] === "san-pham") {
-    const product = getProductById(segments[1]);
+    const productId = segments[1];
+    const rich = getRichProductDetail(productId);
+    const product = getProductById(productId);
     if (product) {
-      const title = `${product.name} — ${product.price}`;
+      const title =
+        rich?.metaTitle ?? product.metaTitle ?? `${product.name} — ${product.price}`;
+      const description =
+        rich?.metaDescription ?? product.metaDescription ?? product.description;
+      const keywords = rich?.keywords ?? product.keywords ?? [
+        product.name.toLowerCase(),
+        "vinfast cần thơ",
+        "mua xe vinfast",
+      ];
       return buildPageMetadata({
         title,
-        description: product.description,
+        description,
         path,
-        keywords: [
-          product.name.toLowerCase(),
-          "vinfast cần thơ",
-          "mua xe vinfast",
-        ],
+        keywords,
         image: product.image,
-        imageAlt: `${product.name} — ${SITE_NAME}`,
+        imageAlt: rich?.imageAlt ?? `${product.name} — ${SITE_NAME}`,
       });
     }
   }

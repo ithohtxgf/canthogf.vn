@@ -1,6 +1,17 @@
 import { stripHtml, type NewsArticle } from "@/lib/content/news";
 import { loadPublishedArticleById } from "@/lib/server/content-store";
+import { getRichProductDetail } from "@/lib/content/product-details";
 import { getProductById, PRODUCTS_SEO } from "@/lib/content/products";
+import {
+  VINFAST_CAN_THO_FAQ,
+  VINFAST_CAN_THO_PAGE_DESCRIPTION,
+  VINFAST_CAN_THO_PAGE_TITLE,
+} from "@/lib/content/vinfast-can-tho";
+import {
+  CONTACT_ADDRESS,
+  CONTACT_EMAIL,
+  CONTACT_PHONE_TEL,
+} from "@/lib/contact";
 import { STATIC_PAGE_METADATA } from "@/lib/metadata";
 import { matchRouteFromSlug, type MatchedRoute } from "@/lib/routes";
 import {
@@ -168,6 +179,91 @@ function getItemListJsonLd(
   };
 }
 
+function getVinfastCanThoLocalBusinessJsonLd(path: string) {
+  const url = getSitemapUrl(path);
+  return {
+    "@type": ["AutoDealer", "LocalBusiness"],
+    "@id": `${url}#localbusiness`,
+    name: "CanThoGF - VinFast Cần Thơ",
+    alternateName: ["Cần Thơ GF", "Can Tho GF", "VinFast Cần Thơ"],
+    description: VINFAST_CAN_THO_PAGE_DESCRIPTION,
+    url,
+    telephone: CONTACT_PHONE_TEL,
+    email: CONTACT_EMAIL,
+    image: `${getSiteUrl()}/logo_cantho_gf.png`,
+    logo: `${getSiteUrl()}/logo_cantho_gf.png`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: CONTACT_ADDRESS,
+      addressLocality: "Cần Thơ",
+      addressRegion: "Cần Thơ",
+      addressCountry: "VN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 10.0452,
+      longitude: 105.7469,
+    },
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("10.0452,105.7469")}`,
+    areaServed: [
+      { "@type": "City", name: "Cần Thơ" },
+      { "@type": "AdministrativeArea", name: "Ninh Kiều" },
+      { "@type": "AdministrativeArea", name: "Cái Răng" },
+      { "@type": "AdministrativeArea", name: "Bình Thủy" },
+    ],
+    priceRange: "$$",
+    currenciesAccepted: "VND",
+    paymentAccepted: "Cash, Credit Card, Bank Transfer",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "08:00",
+        closes: "17:30",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Sunday",
+        opens: "08:00",
+        closes: "12:00",
+      },
+    ],
+    knowsAbout: [
+      "Giá lăn bánh VinFast Cần Thơ",
+      "Xe điện VinFast",
+      "Trả góp mua xe điện",
+    ],
+  };
+}
+
+function getVinfastCanThoFaqJsonLd(path: string) {
+  const url = getSitemapUrl(path);
+  return {
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    mainEntity: VINFAST_CAN_THO_FAQ.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+/** @deprecated Dùng getVinfastCanThoLocalBusinessJsonLd */
+function getVinfastCanThoAutoDealerJsonLd(path: string) {
+  return getVinfastCanThoLocalBusinessJsonLd(path);
+}
+
 async function buildGraphForRoute(
   route: MatchedRoute,
 ): Promise<Record<string, unknown>[]> {
@@ -203,6 +299,23 @@ async function buildGraphForRoute(
       );
       break;
     }
+    case "vinfastCanTho": {
+      const path = "/vinfast-can-tho";
+      graph.push(
+        getWebPageJsonLdForPath(
+          path,
+          VINFAST_CAN_THO_PAGE_TITLE,
+          VINFAST_CAN_THO_PAGE_DESCRIPTION,
+        ),
+        getVinfastCanThoLocalBusinessJsonLd(path),
+        getVinfastCanThoFaqJsonLd(path),
+        getBreadcrumbJsonLd([
+          { name: "Trang chủ", path: "/" },
+          { name: "VinFast Cần Thơ", path },
+        ]),
+      );
+      break;
+    }
     case "products": {
       const path = "/san-pham";
       const meta = STATIC_PAGE_METADATA[path];
@@ -226,18 +339,28 @@ async function buildGraphForRoute(
     case "product": {
       const product = getProductById(route.id);
       if (!product) break;
+      const rich = getRichProductDetail(route.id);
       const path = `/san-pham/${route.id}`;
+      const pageTitle =
+        rich?.metaTitle ?? product.metaTitle ?? `${product.name} — ${product.price}`;
+      const pageDescription =
+        rich?.metaDescription ?? product.metaDescription ?? product.description;
       graph.push(
-        getWebPageJsonLdForPath(
+        getWebPageJsonLdForPath(path, pageTitle, pageDescription),
+        getProductJsonLd(
+          {
+            id: route.id,
+            name: rich?.officialName ?? product.name,
+            description: pageDescription,
+            image: product.image,
+            price: product.price,
+          },
           path,
-          `${product.name} — ${product.price}`,
-          product.description,
         ),
-        getProductJsonLd(product, path),
         getBreadcrumbJsonLd([
           { name: "Trang chủ", path: "/" },
           { name: "Ô tô VinFast", path: "/san-pham" },
-          { name: product.name, path },
+          { name: rich?.shortName ?? product.name, path },
         ]),
       );
       break;

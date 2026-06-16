@@ -4,6 +4,7 @@ export type MatchedRoute =
   | { page: "products" }
   | { page: "product"; id: string }
   | { page: "xanhsm" }
+  | { page: "vinfastCanTho" }
   | { page: "news" }
   | { page: "newsArticle"; id: string }
   | { page: "contact" }
@@ -34,6 +35,10 @@ export function matchRoute(pathname: string): MatchedRoute {
       return { page: "notFound" };
     case "dang-ky-xanhsm":
       return segments.length === 1 ? { page: "xanhsm" } : { page: "notFound" };
+    case "vinfast-can-tho":
+      return segments.length === 1
+        ? { page: "vinfastCanTho" }
+        : { page: "notFound" };
     case "tin-tuc":
       if (segments.length === 1) return { page: "news" };
       if (segments.length === 2) return { page: "newsArticle", id: second };

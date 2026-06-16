@@ -2,8 +2,11 @@ import { useRef, useState, type MouseEvent } from 'react';
 import { SeoLink } from '@/components/SeoLink';
 import { getNewsArticles, getNewsCategoryLabel, type NewsArticle } from '@/lib/content/news';
 import { SeoBannerImage, SeoContentImage } from '@/components/SeoImage';
+import { PRODUCTS_SEO } from '@/lib/content/products';
+import { getRichProductDetail } from '@/lib/content/product-details';
+import { VINFAST_VEHICLES } from '@/lib/content/vinfast-can-tho';
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2, Zap, Shield, BatteryCharging } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Zap, Shield, BatteryCharging, Star } from 'lucide-react';
 import { dispatchConsultationPopup } from '@/lib/contact';
 
 export default function Home({
@@ -51,40 +54,33 @@ export default function Home({
     }
   };
 
-  const featuredCars = [
-    {
-      id: 'herio-green',
-      name: 'Herio Green',
-      image: 'https://picsum.photos/seed/heriogreen/800/500',
-      price: 'Từ 479.000.000 VNĐ',
-      desc: 'Dòng xe xanh thân thiện môi trường, tối ưu hóa cho di chuyển đường dài và tiết kiệm năng lượng cực tốt.',
-      features: ['Động cơ tối ưu', 'Vận hành mạnh mẽ', 'Thiết kế khí động học'],
-    },
-    {
-      id: 'vf5',
-      name: 'VF5',
-      image: 'https://picsum.photos/seed/vf5/800/500',
-      price: '529.000.000 VNĐ',
-      desc: 'Ngoại thất ấn tượng, trẻ trung. Không gian rộng rãi, vận hành êm ái mạnh mẽ',
-      features: ['Quãng đường 326,4 km/lần sạc', 'Sạc nhanh 10-70% trong 33p', 'Bảo hành xe mới 7 năm/160.000 km'],
-    },
-    {
-      id: 'limo-green',
-      name: 'Limo Green',
-      image: 'https://picsum.photos/seed/limogreen/800/500',
-      price: '749.000.000 VNĐ',
-      desc: 'Xe điện 7 chỗ - "rộng mở không gian, kéo dài hành trình". Tăng kích cỡ, tăng kinh tế với tầm di chuyển rộng phù hợp cho chạy đường dài.',
-      features: ['Quãng đường 450 km/lần sạc', 'Sạc nhanh 10-70% trong 30p', 'Sức chứa 7 chỗ rộng rãi'],
-    },
-    {
-      id: 'ec-van',
-      name: 'EC Van',
-      image: 'https://picsum.photos/seed/ecvan/800/500',
-      price: '285.000.000 VNĐ',
-      desc: 'Vận tải đa năng, tiện dụng, sinh lời. Linh hoạt lưu thông nội đô, vận hành êm ái, giảm chi phí vận hành, tối đa lợi nhuận',
-      features: ['Quãng đường 175 km/sạc', 'Sạc nhanh 10-70% trong 42p', 'Dung tích 2,6 m3'],
-    },
-  ];
+  const reviewBySlug = Object.fromEntries(
+    VINFAST_VEHICLES.map((vehicle) => [
+      vehicle.seoSlug ?? vehicle.id,
+      vehicle.localReview,
+    ]),
+  );
+  const fallbackFeaturesById: Record<string, string[]> = {
+    'herio-green': ['Động cơ tối ưu', 'Vận hành mạnh mẽ', 'Thiết kế khí động học'],
+    'ec-van': ['Quãng đường 175 km/sạc', 'Sạc nhanh 10-70% trong 42p', 'Dung tích 2,6 m3'],
+  };
+
+  const featuredCars = PRODUCTS_SEO
+    .map((product) => {
+      const id = product.id;
+      const rich = getRichProductDetail(id);
+      return {
+        id: product.id,
+        name: product.name,
+        image: product.image,
+        price: product.price,
+        desc: product.description,
+        features: rich?.features?.slice(0, 3) ?? fallbackFeaturesById[id] ?? [],
+        useCase: reviewBySlug[id]?.useCase,
+        rating: reviewBySlug[id]?.rating,
+      };
+    })
+    .filter((car): car is NonNullable<typeof car> => Boolean(car));
 
   const news = (newsArticlesProp ?? getNewsArticles().slice(0, 3)).map((item) => ({
     id: item.id,
@@ -129,7 +125,7 @@ export default function Home({
                 href="/san-pham"
                 className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-lg flex items-center justify-center"
               >
-                Khám phá ô tô VinFast Cần Thơ <ArrowRight className="ml-2 w-5 h-5" />
+                Khám phá danh mục xe <ArrowRight className="ml-2 w-5 h-5" />
               </SeoLink>
               <button
                 type="button"
@@ -143,6 +139,32 @@ export default function Home({
         </div>
       </section>
 
+      {/* Banner nội bộ — Hub VinFast Cần Thơ */}
+      <section className="py-10 bg-gradient-to-r from-primary-dark via-primary to-primary-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+            <div className="text-center md:text-left">
+              <p className="text-secondary font-semibold uppercase tracking-wider text-sm mb-2">
+                Trang tổng hợp giá lăn bánh
+              </p>
+              <p className="text-2xl md:text-3xl font-black">
+                VinFast Cần Thơ — Bảng tính giá minh bạch
+              </p>
+              <p className="text-gray-300 mt-2 max-w-xl">
+                Ước tính chi phí lăn bánh tại Cần Thơ: phí biển số, đường bộ,
+                BHTNDS và voucher — không cần liên hệ mới biết giá.
+              </p>
+            </div>
+            <SeoLink
+              href="/vinfast-can-tho"
+              className="shrink-0 bg-secondary hover:bg-secondary-dark text-dark font-bold px-10 py-4 rounded-full transition-colors shadow-xl text-lg flex items-center"
+            >
+              VinFast Cần Thơ <ArrowRight className="ml-2 w-5 h-5" />
+            </SeoLink>
+          </div>
+        </div>
+      </section>
+
       {/* Giới thiệu SEO — nội dung chính cho từ khóa trang chủ */}
       <section className="py-16 bg-light border-y border-gray-100" aria-labelledby="about-cantho-gf">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,8 +175,8 @@ export default function Home({
             <p className="text-gray-600 text-lg leading-relaxed">
               <strong>Cần Thơ GF</strong> (Can Tho GF) là{' '}
               <strong>hợp tác xã vận tải Cần Thơ</strong> chuyên phân phối{' '}
-              <SeoLink href="/san-pham" className="text-primary font-semibold hover:text-primary-dark">
-                ô tô VinFast Cần Thơ
+              <SeoLink href="/vinfast-can-tho" className="text-primary font-semibold hover:text-primary-dark">
+                VinFast Cần Thơ
               </SeoLink>
               , bảo dưỡng và tư vấn trọn gói. Chúng tôi hỗ trợ đăng ký{' '}
               <SeoLink href="/dang-ky-xanhsm" className="text-primary font-semibold hover:text-primary-dark">
@@ -220,8 +242,8 @@ export default function Home({
                 trường, phù hợp kinh doanh vận tải và gia đình.
               </p>
             </div>
-            <SeoLink href="/san-pham" className="text-primary font-bold hover:text-primary-dark flex items-center mt-4 md:mt-0">
-              Xem tất cả ô tô VinFast Cần Thơ <ArrowRight className="ml-1 w-4 h-4" />
+            <SeoLink href="/vinfast-can-tho" className="text-primary font-bold hover:text-primary-dark flex items-center mt-4 md:mt-0">
+              Bảng giá xe VinFast Cần Thơ <ArrowRight className="ml-1 w-4 h-4" />
             </SeoLink>
           </div>
 
@@ -252,9 +274,11 @@ export default function Home({
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 85vw, 350px"
                   />
-                  <div className="absolute top-4 right-4 bg-secondary text-dark font-bold px-3 py-1 rounded-full text-sm shadow-md z-10">
-                    Mới
-                  </div>
+                  {(car.id === 'mpv7' || car.id === 'vf8-all-new') && (
+                    <div className="absolute top-4 right-4 bg-secondary text-dark font-bold px-3 py-1 rounded-full text-sm shadow-md z-10">
+                      Mới
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <SeoLink href={`/san-pham/${car.id}`} className="text-white font-bold flex items-center hover:text-secondary">
                       Xem chi tiết xe {car.name} <ArrowRight className="ml-2 w-5 h-5" />
@@ -263,23 +287,37 @@ export default function Home({
                 </div>
                 
                 <div className="p-8 flex-grow flex flex-col">
-                  <h3 className="text-2xl font-bold text-dark mb-2">{car.name}</h3>
-                  <p className="text-primary-dark font-bold text-xl mb-4">{car.price}</p>
-                  <p className="text-gray-600 mb-6 flex-grow">{car.desc}</p>
-                  
-                  <div className="mb-8">
-                    <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3">
-                      Tính năng nổi bật {car.name}
-                    </h4>
-                    <ul className="space-y-2">
-                      {car.features.map((feature, i) => (
-                        <li key={i} className="flex items-start text-gray-600 text-sm">
-                          <CheckCircle2 className="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <h3 className="text-2xl font-bold text-dark">{car.name}</h3>
+                    {car.rating && (
+                      <div className="flex items-center gap-1 text-sm font-bold text-dark">
+                        <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                        {car.rating}/5
+                      </div>
+                    )}
                   </div>
+                  <p className="text-primary-dark font-bold text-xl mb-4">{car.price}</p>
+                  {car.useCase && (
+                    <p className="text-xs font-semibold text-secondary-dark uppercase tracking-wider mb-2">
+                      {car.useCase}
+                    </p>
+                  )}
+                  <p className="text-gray-600 mb-6 flex-grow">{car.desc}</p>
+                  {car.features.length > 0 && (
+                    <div className="mb-8">
+                      <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3">
+                        Tính năng nổi bật
+                      </h4>
+                      <ul className="space-y-2">
+                        {car.features.map((feature, i) => (
+                          <li key={i} className="flex items-start text-gray-600 text-sm">
+                            <CheckCircle2 className="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                   
                   <SeoLink
                     href={`/san-pham/${car.id}`}
