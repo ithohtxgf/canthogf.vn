@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Car, Sparkles } from "lucide-react";
 import { SeoBannerImage } from "@/components/SeoImage";
 import { VinfastPriceCalculator } from "@/components/vinfast-can-tho/VinfastPriceCalculator";
+import { VinfastSeoContent } from "@/components/vinfast-can-tho/VinfastSeoContent";
 import { VinfastProductShowcase } from "@/components/vinfast-can-tho/VinfastProductShowcase";
 import { VinfastExclusiveOffers } from "@/components/vinfast-can-tho/VinfastExclusiveOffers";
 import { VinfastFinancing } from "@/components/vinfast-can-tho/VinfastFinancing";
@@ -11,7 +12,10 @@ import { VinfastLeadForm } from "@/components/vinfast-can-tho/VinfastLeadForm";
 import { VinfastSpokeArticles } from "@/components/vinfast-can-tho/VinfastSpokeArticles";
 import { VinfastFaq } from "@/components/vinfast-can-tho/VinfastFaq";
 import { dispatchConsultationPopup } from "@/lib/contact";
-import { VINFAST_CAN_THO_PAGE_TITLE } from "@/lib/content/vinfast-can-tho";
+import {
+  VINFAST_CAN_THO_CALCULATOR_H2,
+  VINFAST_CAN_THO_PAGE_H1,
+} from "@/lib/content/vinfast-can-tho";
 
 export default function VinfastCanTho() {
   return (
@@ -20,7 +24,7 @@ export default function VinfastCanTho() {
       <section className="relative bg-primary-dark text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
-            src="https://images.unsplash.com/photo-1593941707889-a5bba14938c7?auto=format&fit=crop&q=80&w=1920&h=800"
+            src="/banner-homepage.webp"
             alt="Showroom VinFast Cần Thơ — xe ô tô điện Cần Thơ GF"
             className="object-cover opacity-25"
             priority
@@ -48,7 +52,7 @@ export default function VinfastCanTho() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-6"
             >
-              {VINFAST_CAN_THO_PAGE_TITLE}
+              {VINFAST_CAN_THO_PAGE_H1}
             </motion.h1>
 
             <motion.p
@@ -57,7 +61,7 @@ export default function VinfastCanTho() {
               transition={{ delay: 0.2 }}
               className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-3xl"
             >
-              Khác với trang chính hãng chỉ hiển thị giá niêm yết, CanThoGF tổng
+              CanThoGF tổng
               hợp bảng tính giá lăn bánh chi tiết tại Cần Thơ — bao gồm phí biển
               số, phí đường bộ, bảo hiểm TNDS và voucher ưu đãi. Hỗ trợ trả góp
               85%, lái thử tận nhà.
@@ -101,7 +105,7 @@ export default function VinfastCanTho() {
               id="calculator-heading"
               className="text-2xl sm:text-3xl font-black text-dark mb-3"
             >
-              Bảng Ước Tính Giá Lăn Bánh Chi Tiết Tại Cần Thơ
+              {VINFAST_CAN_THO_CALCULATOR_H2}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
               Giá xe (kèm pin) + phí biển số + phí đường bộ + BHTNDS − voucher
@@ -111,6 +115,8 @@ export default function VinfastCanTho() {
           <VinfastPriceCalculator />
         </div>
       </section>
+
+      <VinfastSeoContent />
 
       {/* H2: Đánh giá & so sánh */}
       <section
@@ -166,9 +172,9 @@ export default function VinfastCanTho() {
         </div>
       </section>
 
-      {/* FAQ — khớp FAQPage Schema */}
+      {/* FAQ — accordion tương tác, nội dung đồng bộ với #faq-noi-dung */}
       <section
-        className="py-12 sm:py-16 bg-white"
+        className="py-12 sm:py-16 bg-gray-50"
         aria-labelledby="faq-heading"
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -176,7 +182,7 @@ export default function VinfastCanTho() {
             id="faq-heading"
             className="text-2xl sm:text-3xl font-black text-dark text-center mb-8"
           >
-            Câu Hỏi Thường Gặp Về Giá Lăn Bánh VinFast Cần Thơ
+            Hỏi &amp; Đáp Nhanh — Tư Vấn Mua Xe VinFast Cần Thơ
           </h2>
           <VinfastFaq />
         </div>

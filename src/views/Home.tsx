@@ -336,7 +336,7 @@ export default function Home({
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
-            src="https://picsum.photos/seed/xanhsm/1920/1080?blur=1"
+            src="/banner-homepage.webp"
             alt="Đăng ký lái XanhSM Cần Thơ — Hợp tác xã vận tải Cần Thơ GF"
             className="object-cover"
           />

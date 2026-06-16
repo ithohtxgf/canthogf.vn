@@ -23,7 +23,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
     id: "vf3",
     name: "VF 3",
     listPrice: 302_000_000,
-    image: "https://picsum.photos/seed/vf3-can-tho/800/500",
+    image: "/vf3.jpg",
     description:
       "VinFast VF 3 — mini car điện \"Xe nhỏ, giá trị lớn\". VF 3 Eco từ 268,78 triệu, quãng đường 215 km — lý tưởng phố Ninh Kiều, Cần Thơ.",
     category: "passenger",
@@ -40,7 +40,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
     id: "vf5-plus",
     name: "VF 5 Plus",
     listPrice: 529_000_000,
-    image: "https://picsum.photos/seed/vf5plus-can-tho/800/500",
+    image: "/vf5.webp",
     description:
       "SUV điện cỡ B bán chạy nhất Cần Thơ — phù hợp gia đình trẻ, chạy dịch vụ XanhSM và kinh doanh vận tải nội thành.",
     category: "passenger",
@@ -57,7 +57,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
     id: "vf6",
     name: "VF 6",
     listPrice: 689_000_000,
-    image: "https://picsum.photos/seed/vf6-can-tho/800/500",
+    image: "/vf6.webp",
     description:
       "VinFast VF 6 — SUV điện hạng C thiết kế Torino Design. Eco 485 km, Plus 201 hp + ADAS. Lý tưởng gia đình trẻ tại Bình Thủy, Cần Thơ.",
     category: "passenger",
@@ -74,7 +74,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
     id: "vf7",
     name: "VF 7",
     listPrice: 799_000_000,
-    image: "https://picsum.photos/seed/vf7-can-tho/800/500",
+    image: "/vf7.webp",
     description:
       "SUV điện cỡ C sang trọng, quãng đường dài — phù hợp doanh nhân và gia đình tại Bình Thủy, Ô Môn, Phong Điền.",
     category: "passenger",
@@ -91,7 +91,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
     id: "vf8",
     name: "VF 8",
     listPrice: 1_079_000_000,
-    image: "https://picsum.photos/seed/vf8-can-tho/800/500",
+    image: "/vf8.webp",
     description:
       "SUV điện cao cấp, công nghệ ADAS tiên tiến — đẳng cấp cho khách hàng VinFast tại Cần Thơ và khu vực lân cận.",
     category: "passenger",
@@ -108,7 +108,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
     id: "vf9",
     name: "VF 9",
     listPrice: 1_499_000_000,
-    image: "https://picsum.photos/seed/vf9-can-tho/800/500",
+    image: "/vf9.webp",
     description:
       "SUV điện 7 chỗ flagship VinFast — không gian sang trọng cho gia đình đông người và doanh nghiệp tại Miền Tây.",
     category: "passenger",
@@ -125,7 +125,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
     id: "limo-green",
     name: "VinFast Limo Green",
     listPrice: 749_000_000,
-    image: "https://picsum.photos/seed/limogreen-can-tho/800/500",
+    image: "/Limo-Green.png",
     description:
       "VinFast Limo Green — xe thương mại dịch vụ xanh, ô tô điện 7 chỗ. Quãng đường 450 km NEDC, tối ưu chạy liên tỉnh Miền Tây và dịch vụ cao cấp tại Cần Thơ.",
     category: "commercial",
@@ -142,7 +142,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
     id: "herio-green",
     name: "Herio Green",
     listPrice: 479_000_000,
-    image: "https://picsum.photos/seed/heriogreen-can-tho/800/500",
+    image: "/herio-green.png",
     description:
       "Xe dịch vụ xanh quãng đường 326 km — giải pháp kinh doanh vận tải hiệu quả cho HTX và đối tác XanhSM Cần Thơ.",
     category: "commercial",
@@ -159,7 +159,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
     id: "ec-van",
     name: "EC Van",
     listPrice: 285_000_000,
-    image: "https://picsum.photos/seed/ecvan-can-tho/800/500",
+    image: "/ecvan.webp",
     description:
       "Xe điện vận tải 2,6 m³ — tiết kiệm chi phí logistics cho doanh nghiệp giao hàng nội đô Cần Thơ và Miền Tây.",
     category: "commercial",
@@ -231,8 +231,17 @@ export const VINFAST_VOUCHERS: VinfastVoucher[] = [
 
 export const VINFAST_CAN_THO_HUB_PATH = "/vinfast-can-tho";
 
-export const VINFAST_CAN_THO_PAGE_TITLE =
-  "Xe Điện VinFast Cần Thơ: Giá Lăn Bánh & Khuyến Mãi Mới Nhất";
+export const VINFAST_CAN_THO_META_TITLE =
+  "VinFast Cần Thơ | Cần Thơ GF — Đại Lý Chính Hãng & XanhSM";
+
+export const VINFAST_CAN_THO_PAGE_H1 =
+  "VinFast Cần Thơ — Đại Lý Chính Hãng tại Cần Thơ GF";
+
+export const VINFAST_CAN_THO_CALCULATOR_H2 =
+  "Bảng Giá Lăn Bánh Chi Tiết Tháng 6/2026";
+
+/** @deprecated Dùng VINFAST_CAN_THO_META_TITLE hoặc VINFAST_CAN_THO_PAGE_H1 */
+export const VINFAST_CAN_THO_PAGE_TITLE = VINFAST_CAN_THO_META_TITLE;
 
 export const VINFAST_CAN_THO_PAGE_DESCRIPTION =
   "Bảng tính giá lăn bánh VinFast tại Cần Thơ minh bạch: giá xe kèm pin, phí biển số, phí đường bộ, BHTNDS, voucher ưu đãi. Đánh giá VF3, VF5, VF6 phù hợp đường phố Cần Thơ — CanThoGF.";
@@ -265,17 +274,27 @@ export const VINFAST_CAN_THO_FAQ = [
   {
     question: "Giá lăn bánh VinFast tại Cần Thơ gồm những khoản nào?",
     answer:
-      "Giá lăn bánh = Giá niêm yết (đã kèm pin) + phí biển số Cần Thơ + phí đường bộ + bảo hiểm TNDS + lệ phí trước bạ (nếu có) − voucher ưu đãi. Dùng bảng tính trên trang để ước tính minh bạch.",
+      "Giá lăn bánh bao gồm giá niêm yết (đã kèm pin), phí đăng ký biển số Cần Thơ, phí đường bộ, bảo hiểm TNDS bắt buộc và lệ phí trước bạ (nếu áp dụng theo chính sách), sau đó trừ các voucher ưu đãi đang có hiệu lực. CanThoGF minh bạch từng khoản trên bảng tính giá xe VinFast tại Cần Thơ ngay trên trang — bạn không cần gọi điện mới biết tổng chi phí sở hữu xe.",
   },
   {
-    question: "Xe VinFast nào phù hợp chạy phố Ninh Kiều?",
+    question: "Xe VinFast nào phù hợp chạy phố Ninh Kiều, Cần Thơ?",
     answer:
-      "VF 3 là lựa chọn tối ưu nhờ kích thước nhỏ gọn, dễ đỗ xe và chi phí sạc thấp cho quãng đường ngắn trong trung tâm Ninh Kiều.",
+      "VinFast VF 3 là lựa chọn tối ưu nhờ kích thước nhỏ gọn, bán kính quay vòng nhỏ và dễ tìm chỗ đỗ trên các tuyến phố hẹp Ninh Kiều. VF 5 Plus cũng phù hợp nếu bạn cần không gian rộng hơn cho gia đình hoặc chạy dịch vụ XanhSM, trong khi VF 6 hướng đến khách cần SUV hạng C với ADAS khi thường xuyên di chuyển liên quận.",
   },
   {
-    question: "Mua xe VinFast qua CanThoGF có ưu đãi gì?",
+    question: "Mua xe VinFast Cần Thơ 2026 qua CanThoGF có ưu đãi gì?",
     answer:
-      "CanThoGF hỗ trợ voucher giảm giá, miễn lệ phí trước bạ (theo chính sách), trả góp 80–85%, lái thử tận nhà và thủ tục đăng ký biển số trọn gói tại Cần Thơ.",
+      "Khi mua xe VinFast Cần Thơ 2026 qua đại lý CanThoGF, khách hàng được hỗ trợ voucher giảm giá (theo chính sách từng thời điểm), tư vấn miễn giảm lệ phí trước bạ nếu đủ điều kiện, trả góp 80–85% qua ngân hàng đối tác, lái thử tận nhà và thủ tục đăng ký biển số trọn gói tại Cần Thơ — tiết kiệm thời gian so với tự làm thủ tục.",
+  },
+  {
+    question: "Có được trả góp khi mua xe VinFast tại Cần Thơ không?",
+    answer:
+      "Có. CanThoGF hỗ trợ tư vấn gói vay qua các ngân hàng liên kết với tỷ lệ trả trước từ 15–20%, thời hạn vay linh hoạt. Nhân viên tư vấn sẽ giải thích rõ lãi suất, khoản trả hàng tháng và tổng giá lăn bánh trước khi bạn ký hợp đồng — đảm bảo minh bạch khi mua xe VinFast Cần Thơ 2026 theo hình thức trả góp.",
+  },
+  {
+    question: "Làm sao để nhận báo giá chính xác từ đại lý VinFast Cần Thơ?",
+    answer:
+      "Bạn có thể dùng bảng tính giá lăn bánh trên trang này để ước tính nhanh, sau đó liên hệ hotline 0916 513 720 hoặc Zalo CanThoGF để nhận báo giá chi tiết theo mẫu xe, màu sơn và chính sách ưu đãi mới nhất. Đội ngũ đại lý VinFast Cần Thơ sẽ phản hồi trong vòng 15 phút và hỗ trợ đặt lịch lái thử nếu bạn cần trải nghiệm thực tế trước khi quyết định.",
   },
 ] as const;
 

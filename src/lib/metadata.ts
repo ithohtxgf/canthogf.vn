@@ -7,6 +7,10 @@ import { getNewsArticleKeywords } from "@/lib/content/news";
 import { getProductById, PRODUCTS_SEO } from "@/lib/content/products";
 import { getRichProductDetail } from "@/lib/content/product-details";
 import {
+  VINFAST_CAN_THO_META_TITLE,
+  VINFAST_CAN_THO_PAGE_DESCRIPTION,
+} from "@/lib/content/vinfast-can-tho";
+import {
   createAlternates,
   DEFAULT_DESCRIPTION,
   DEFAULT_OG_IMAGE,
@@ -27,6 +31,8 @@ type StaticPageConfig = {
   title: string;
   description: string;
   keywords?: string[];
+  /** Không áp dụng template `%s | Cần Thơ GF` — tránh lặp title */
+  absoluteTitle?: boolean;
 };
 
 /** Metadata tĩnh cho các trang cố định (1.1) */
@@ -50,9 +56,9 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
     keywords: ["ô tô vinfast cần thơ", "xe điện vinfast", "mua xe vinfast cần thơ"],
   },
   "/vinfast-can-tho": {
-    title: "Xe Điện VinFast Cần Thơ: Giá Lăn Bánh & Khuyến Mãi Mới Nhất",
-    description:
-      "Bảng tính giá lăn bánh VinFast tại Cần Thơ minh bạch: giá xe kèm pin, phí biển số, phí đường bộ, BHTNDS, voucher ưu đãi. Đánh giá VF3, VF5, VF6 phù hợp đường phố Cần Thơ — CanThoGF.",
+    title: VINFAST_CAN_THO_META_TITLE,
+    absoluteTitle: true,
+    description: VINFAST_CAN_THO_PAGE_DESCRIPTION,
     keywords: [
       "vinfast cần thơ",
       "bảng giá vinfast cần thơ",
@@ -129,6 +135,7 @@ function buildPageMetadata(options: {
   type?: "website" | "article";
   publishedTime?: string;
   authors?: string[];
+  absoluteTitle?: boolean;
 }): Metadata {
   const ogImages = options.image
     ? buildOpenGraphImage(
@@ -138,7 +145,7 @@ function buildPageMetadata(options: {
     : buildDefaultOpenGraphImages();
 
   return {
-    title: options.title,
+    title: options.absoluteTitle ? { absolute: options.title } : options.title,
     description: options.description,
     keywords: options.keywords ?? [...SEO_KEYWORDS],
     alternates: createAlternates(options.path),
@@ -192,6 +199,7 @@ export async function resolveMetadataFromSlug(
         description: staticMeta.description,
         path,
         keywords: staticMeta.keywords,
+        absoluteTitle: staticMeta.absoluteTitle,
       });
     }
   }

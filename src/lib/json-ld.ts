@@ -5,12 +5,18 @@ import { getProductById, PRODUCTS_SEO } from "@/lib/content/products";
 import {
   VINFAST_CAN_THO_FAQ,
   VINFAST_CAN_THO_PAGE_DESCRIPTION,
-  VINFAST_CAN_THO_PAGE_TITLE,
+  VINFAST_CAN_THO_PAGE_H1,
 } from "@/lib/content/vinfast-can-tho";
 import {
-  CONTACT_ADDRESS,
+  CONTACT_ADDRESS_LOCALITY,
+  CONTACT_ADDRESS_REGION,
   CONTACT_EMAIL,
+  CONTACT_FACEBOOK_URL,
   CONTACT_PHONE_TEL,
+  CONTACT_STREET_ADDRESS,
+  CONTACT_TIKTOK_URL,
+  CONTACT_ZALO_URL,
+  SCHEMA_OPENING_HOURS,
 } from "@/lib/contact";
 import { STATIC_PAGE_METADATA } from "@/lib/metadata";
 import { matchRouteFromSlug, type MatchedRoute } from "@/lib/routes";
@@ -63,7 +69,7 @@ function getBreadcrumbJsonLd(
 }
 
 function getAboutPageJsonLd(path: string) {
-  const url = `${getSitemapUrl(path)}/`;
+  const url = getSitemapUrl(path);
 
   return {
     "@type": "AboutPage",
@@ -81,7 +87,7 @@ function getAboutPageJsonLd(path: string) {
 }
 
 function getContactPageJsonLd(path: string) {
-  const url = `${getSitemapUrl(path)}/`;
+  const url = getSitemapUrl(path);
   const telephone = CONTACT_PHONE_TEL.replace(
     /^\+84(\d{3})(\d{3})(\d{3,4})$/,
     "+84-$1-$2-$3",
@@ -130,7 +136,7 @@ function getArticleJsonLd(article: NewsArticle, path: string) {
   const published = parseNewsDateIso(article.date);
 
   return {
-    "@type": "Article",
+    "@type": "NewsArticle",
     "@id": `${url}#article`,
     headline: article.metaTitle,
     description: article.excerpt,
@@ -225,67 +231,34 @@ function getItemListJsonLd(
   };
 }
 
-function getVinfastCanThoLocalBusinessJsonLd(path: string) {
+function getVinfastCanThoAutoDealerJsonLd(path: string) {
   const url = getSitemapUrl(path);
+  const telephone = CONTACT_PHONE_TEL.replace(/^\+84/, "0");
+
   return {
-    "@type": ["AutoDealer", "LocalBusiness"],
-    "@id": `${url}#localbusiness`,
-    name: "CanThoGF - VinFast Cần Thơ",
-    alternateName: ["Cần Thơ GF", "Can Tho GF", "VinFast Cần Thơ"],
-    description: VINFAST_CAN_THO_PAGE_DESCRIPTION,
+    "@type": "AutoDealer",
+    "@id": `${url}#autodealer`,
+    name: "Cần Thơ GF — VinFast Cần Thơ",
     url,
-    telephone: CONTACT_PHONE_TEL,
+    telephone,
     email: CONTACT_EMAIL,
-    image: `${getSiteUrl()}/logo_cantho_gf.png`,
-    logo: `${getSiteUrl()}/logo_cantho_gf.png`,
     address: {
       "@type": "PostalAddress",
-      streetAddress: CONTACT_ADDRESS,
-      addressLocality: "Cần Thơ",
-      addressRegion: "Cần Thơ",
+      streetAddress: CONTACT_STREET_ADDRESS,
+      addressLocality: CONTACT_ADDRESS_LOCALITY,
+      addressRegion: CONTACT_ADDRESS_REGION,
       addressCountry: "VN",
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 10.0452,
-      longitude: 105.7469,
-    },
-    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("10.0452,105.7469")}`,
-    areaServed: [
-      { "@type": "City", name: "Cần Thơ" },
-      { "@type": "AdministrativeArea", name: "Ninh Kiều" },
-      { "@type": "AdministrativeArea", name: "Cái Răng" },
-      { "@type": "AdministrativeArea", name: "Bình Thủy" },
+    openingHours: SCHEMA_OPENING_HOURS,
+    priceRange: "302.000.000đ - 1.499.000.000đ",
+    sameAs: [
+      CONTACT_FACEBOOK_URL,
+      CONTACT_TIKTOK_URL,
+      CONTACT_ZALO_URL,
     ],
-    priceRange: "$$",
-    currenciesAccepted: "VND",
-    paymentAccepted: "Cash, Credit Card, Bank Transfer",
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ],
-        opens: "08:00",
-        closes: "17:30",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Sunday",
-        opens: "08:00",
-        closes: "12:00",
-      },
-    ],
-    knowsAbout: [
-      "Giá lăn bánh VinFast Cần Thơ",
-      "Xe điện VinFast",
-      "Trả góp mua xe điện",
-    ],
+    description: VINFAST_CAN_THO_PAGE_DESCRIPTION,
+    image: `${getSiteUrl()}/banner-homepage.webp`,
+    logo: `${getSiteUrl()}/logo_cantho_gf.png`,
   };
 }
 
@@ -294,6 +267,7 @@ function getVinfastCanThoFaqJsonLd(path: string) {
   return {
     "@type": "FAQPage",
     "@id": `${url}#faq`,
+    url,
     mainEntity: VINFAST_CAN_THO_FAQ.map((faq) => ({
       "@type": "Question",
       name: faq.question,
@@ -305,9 +279,9 @@ function getVinfastCanThoFaqJsonLd(path: string) {
   };
 }
 
-/** @deprecated Dùng getVinfastCanThoLocalBusinessJsonLd */
-function getVinfastCanThoAutoDealerJsonLd(path: string) {
-  return getVinfastCanThoLocalBusinessJsonLd(path);
+/** @deprecated Dùng getVinfastCanThoAutoDealerJsonLd */
+function getVinfastCanThoLocalBusinessJsonLd(path: string) {
+  return getVinfastCanThoAutoDealerJsonLd(path);
 }
 
 async function buildGraphForRoute(
@@ -372,10 +346,10 @@ async function buildGraphForRoute(
       graph.push(
         getWebPageJsonLdForPath(
           path,
-          VINFAST_CAN_THO_PAGE_TITLE,
+          VINFAST_CAN_THO_PAGE_H1,
           VINFAST_CAN_THO_PAGE_DESCRIPTION,
         ),
-        getVinfastCanThoLocalBusinessJsonLd(path),
+        getVinfastCanThoAutoDealerJsonLd(path),
         getVinfastCanThoFaqJsonLd(path),
         getBreadcrumbJsonLd([
           { name: "Trang chủ", path: "/" },
@@ -458,6 +432,7 @@ async function buildGraphForRoute(
       if (!article) break;
       const path = `/tin-tuc/${route.id}`;
       graph.push(
+        getLocalBusinessJsonLd(),
         getWebPageJsonLdForPath(path, article.metaTitle, article.excerpt),
         getArticleJsonLd(article, path),
         getBreadcrumbJsonLd([

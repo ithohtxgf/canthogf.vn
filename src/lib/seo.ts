@@ -10,6 +10,7 @@ import {
   CONTACT_STREET_ADDRESS,
   CONTACT_TIKTOK_URL,
   CONTACT_ZALO_URL,
+  SCHEMA_OPENING_HOURS,
 } from "@/lib/contact";
 
 export const SITE_NAME = "Cần Thơ GF";
@@ -101,10 +102,10 @@ export const DEFAULT_DESCRIPTION =
 export const HOME_TITLE =
   "Cần Thơ GF | Đại Lý Xe Điện VinFast & HTX Vận Tải";
 
-/** Ảnh OG/Twitter mặc định — hero banner trang chủ */
-export const DEFAULT_OG_IMAGE = "/banner-homepage.webp";
-export const DEFAULT_OG_IMAGE_WIDTH = 4608;
-export const DEFAULT_OG_IMAGE_HEIGHT = 3072;
+/** Ảnh OG/Twitter mặc định — banner trang chủ được resize về 1200×630 qua /api/og */
+export const DEFAULT_OG_IMAGE = "/api/og";
+export const DEFAULT_OG_IMAGE_WIDTH = 1200;
+export const DEFAULT_OG_IMAGE_HEIGHT = 630;
 export const DEFAULT_OG_IMAGE_ALT = `${ORGANIZATION_NAME} — ${SITE_NAME}`;
 
 export const baseMetadata: Metadata = {
@@ -187,7 +188,7 @@ export function getLocalBusinessJsonLd() {
     logo: `${siteUrl}${SCHEMA_LOGO_PATH}`,
     image: `${siteUrl}${SCHEMA_IMAGE_PATH}`,
     telephone,
-    priceRange: "$$$",
+    priceRange: "302.000.000đ - 1.499.000.000đ",
     hasMap: CONTACT_MAPS_SHARE_URL,
     address: {
       "@type": "PostalAddress",
@@ -215,13 +216,8 @@ export function getLocalBusinessJsonLd() {
         opens: "08:00",
         closes: "17:30",
       },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Sunday",
-        opens: "08:00",
-        closes: "12:00",
-      },
     ],
+    openingHours: SCHEMA_OPENING_HOURS,
     sameAs: [
       CONTACT_FACEBOOK_URL,
       CONTACT_TIKTOK_URL,
@@ -250,6 +246,14 @@ export function getWebSiteJsonLd() {
     alternateName: ["Cần Thơ GF", "Can Thơ GF Transport"],
     url: `${siteUrl}/`,
     publisher: getLocalBusinessEntityRef(),
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteUrl}/tin-tuc?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 

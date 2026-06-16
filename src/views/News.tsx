@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
-import { Calendar, User, ArrowRight } from "lucide-react";
+import { Calendar, User, ArrowRight, Search, X } from "lucide-react";
 import { SeoLink } from "@/components/SeoLink";
 import { SeoBannerImage, SeoContentImage } from "@/components/SeoImage";
 import {
@@ -13,8 +14,29 @@ import {
 } from "@/lib/content/news";
 
 export default function News({ articles: articlesProp }: { articles?: NewsArticle[] }) {
-  const [activeCategory, setActiveCategory] = useState<"all" | NewsCategory>(
-    "all",
+  const router = useRouter();
+  const [activeCategory, setActiveCategory] = useState<"all" | NewsCategory>("all");
+  const [searchInput, setSearchInput] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("q") ?? "";
+    if (q) {
+      setSearchInput(q);
+      setSearchQuery(q);
+    }
+  }, []);
+
+  const handleSearch = useCallback(
+    (value: string) => {
+      setSearchInput(value);
+      setSearchQuery(value);
+      const url = value.trim()
+        ? `/tin-tuc?q=${encodeURIComponent(value.trim())}`
+        : "/tin-tuc";
+      router.replace(url, { scroll: false });
+    },
+    [router],
   );
 
   const categories = [
@@ -26,17 +48,22 @@ export default function News({ articles: articlesProp }: { articles?: NewsArticl
 
   const allArticles = articlesProp ?? getNewsArticles();
 
-  const filteredNews =
-    activeCategory === "all"
-      ? allArticles
-      : allArticles.filter((a) => a.category === activeCategory);
+  const filteredNews = allArticles.filter((a) => {
+    const matchesCategory = activeCategory === "all" || a.category === activeCategory;
+    if (!searchQuery.trim()) return matchesCategory;
+    const q = searchQuery.toLowerCase();
+    return matchesCategory && (
+      a.title.toLowerCase().includes(q) ||
+      a.excerpt.toLowerCase().includes(q)
+    );
+  });
 
   return (
     <div className="bg-light min-h-screen pb-20">
       <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
-            src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&q=80&w=1920&h=600"
+            src="/banner-homepage.webp"
             alt="Tin tức VinFast và hoạt động Cần Thơ GF"
             className="object-cover opacity-30"
           />
@@ -65,6 +92,30 @@ export default function News({ articles: articlesProp }: { articles?: NewsArticl
 
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-xl mx-auto mb-8">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+              <input
+                type="search"
+                value={searchInput}
+                onChange={(e) => handleSearch(e.target.value)}
+                placeholder="Tìm kiếm bài viết VinFast, Cần Thơ GF..."
+                aria-label="Tìm kiếm bài viết"
+                className="w-full pl-12 pr-12 py-3 rounded-full border border-gray-200 bg-white shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+              />
+              {searchInput && (
+                <button
+                  type="button"
+                  onClick={() => handleSearch("")}
+                  aria-label="Xóa tìm kiếm"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+          </div>
+
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {categories.map((cat) => (
               <button
@@ -139,7 +190,9 @@ export default function News({ articles: articlesProp }: { articles?: NewsArticl
 
           {filteredNews.length === 0 && (
             <div className="text-center py-20 text-gray-500 text-lg">
-              Không tìm thấy bài viết nào trong danh mục này.
+              {searchQuery
+                ? `Không tìm thấy bài viết nào cho "${searchQuery}".`
+                : "Không tìm thấy bài viết nào trong danh mục này."}
             </div>
           )}
         </div>

@@ -20,7 +20,7 @@ export default function XanhSM() {
       <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
-            src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=1920&h=600"
+            src="/banner-homepage.webp"
             alt="Đăng ký lái XanhSM Cần Thơ — Cần Thơ GF"
             className="object-cover opacity-30"
           />
@@ -224,8 +224,8 @@ export default function XanhSM() {
                   <div className="order-1 md:order-2 flex justify-center">
                     <div className="relative w-64 h-[500px] bg-gray-900 rounded-[3rem] border-[8px] border-gray-900 shadow-2xl overflow-hidden">
                       <SeoContentImage
-                        src="https://picsum.photos/seed/appmockup/400/800"
-                        alt="Giao diện ứng dụng XanhSM trên điện thoại"
+                        src="/mockup-xanh-sm.jpg"
+                        alt="App Green SM — Ứng dụng XanhSM đặt xe điện tại Cần Thơ"
                         width={400}
                         height={800}
                         className="w-full h-full object-cover"

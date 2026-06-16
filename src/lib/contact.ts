@@ -25,7 +25,10 @@ export const CONTACT_FACEBOOK_URL = "https://www.facebook.com/canthogf";
 export const CONTACT_TIKTOK_URL = "https://www.tiktok.com/@sulinh.ctgf";
 
 export const CONTACT_HOURS_WEEKDAY = "Thứ 2 – Thứ 7: 08:00 – 17:30";
-export const CONTACT_HOURS_SUNDAY = "Chủ nhật: 08:00 – 12:00";
+export const CONTACT_HOURS_SUNDAY = "Chủ nhật: Nghỉ";
+
+/** Giờ mở cửa chuẩn cho JSON-LD schema (Mo–Sa, Chủ nhật nghỉ) */
+export const SCHEMA_OPENING_HOURS = "Mo-Sa 08:00-17:30";
 export const CONTACT_RESPONSE_PROMISE =
   "Chúng tôi thường phản hồi trong vòng 15 phút — Hotline & Zalo hỗ trợ 24/7";
 
@@ -54,7 +57,7 @@ export const CONTACT_FAQ_ITEMS = [
   {
     question: "Showroom mở cửa những ngày nào?",
     answer:
-      "Thứ 2 – Thứ 7: 08:00 – 17:30; Chủ nhật: 08:00 – 12:00. Ngoài giờ vẫn có thể nhắn Zalo, chúng tôi phản hồi sớm nhất có thể.",
+      "Thứ 2 – Thứ 7: 08:00 – 17:30; Chủ nhật nghỉ. Ngoài giờ vẫn có thể nhắn Zalo, chúng tôi phản hồi sớm nhất có thể.",
   },
   {
     question: "Bảo hành xe VinFast thực hiện ở đâu?",

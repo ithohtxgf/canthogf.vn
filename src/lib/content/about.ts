@@ -14,7 +14,7 @@ export const ABOUT_VISION = {
     `Thế giới đang chuyển mình, và ngành vận tải cũng không đứng ngoài làn sóng đó. Tại thủ phủ miền Tây – Cần Thơ, ${ORGANIZATION_NAME} ra đời không chỉ với tư cách là một đơn vị quản lý vận tải đơn thuần, mà chúng tôi định vị mình là cầu nối xanh, tiên phong đưa các dòng xe điện thông minh VinFast đến với cộng đồng tài xế tại địa phương.`,
     "Chúng tôi tin rằng, tương lai của giao thông đô thị thuộc về năng lượng sạch. Bằng việc phân phối các dòng xe xanh VinFast, Cần Thơ GF đang cùng các bác tài đặt những viên gạch đầu tiên cho một hệ sinh thái vận tải bền vững, giảm thiểu khí thải và bảo vệ môi trường sông nước Mekong.",
   ],
-  image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=1200&h=800",
+  image: "/banner-homepage.webp",
   imageAlt: "Xe điện VinFast — hành trình xanh cùng HTX Vận Tải Cần Thơ GF",
 };
 
