@@ -322,6 +322,7 @@ export default function Home({
                   <SeoLink
                     href={`/san-pham/${car.id}`}
                     className="block w-full text-center bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl transition-colors mt-auto"
+                    aria-label={`Xem chi tiết xe ${car.name}`}
                   >
                     Xem chi tiết
                   </SeoLink>

@@ -100,6 +100,9 @@ export default function Layout({
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-gray-700 hover:text-primary focus:outline-none"
+                aria-label={isMenuOpen ? "Đóng menu" : "Mở menu"}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
               >
                 {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
               </button>
@@ -111,6 +114,7 @@ export default function Layout({
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
+              id="mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}

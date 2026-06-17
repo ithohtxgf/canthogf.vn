@@ -100,6 +100,7 @@ export default function Products() {
             <SeoLink
               href={`/san-pham/${product.id}`}
               className="block w-full text-center bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl transition-colors mt-auto"
+              aria-label={`Xem chi tiết xe ${product.name}`}
             >
               Xem chi tiết
             </SeoLink>
