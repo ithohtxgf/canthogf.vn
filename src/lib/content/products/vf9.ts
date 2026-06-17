@@ -24,6 +24,20 @@ export const VF9_DETAIL: RichProductDetail = {
   listPrice: 1_499_000_000,
   listPriceLabel: "VF 9 Eco: 1.499.000.000 đ · VF 9 Plus: 1.699.000.000 đ (đã VAT)",
   depositAmount: 50_000_000,
+  priceVariants: [
+    {
+      id: "vf9-eco",
+      name: "VF 9 Eco",
+      listPrice: 1_499_000_000,
+      promoPrice: 1_499_000_000,
+    },
+    {
+      id: "vf9-plus",
+      name: "VF 9 Plus",
+      listPrice: 1_699_000_000,
+      promoPrice: 1_699_000_000,
+    },
+  ],
   positioningHtml: `<p><strong>VinFast VF 9</strong> là SUV điện 7 chỗ hạng sang, thiết kế bởi studio <strong>Pininfarina</strong> (Ý), lấy cảm hứng từ du thuyền hạng sang. Xe nổi bật với logo chữ V, dải đèn LED nhận diện thương hiệu, phong cách mạnh mẽ và hiện đại.</p>`,
   highlights: [
     "VF 9 Eco: 1.499.000.000 đ · VF 9 Plus: 1.699.000.000 đ (đã VAT)",

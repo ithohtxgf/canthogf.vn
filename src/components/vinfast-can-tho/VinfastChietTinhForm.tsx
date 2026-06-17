@@ -1,12 +1,26 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { ChevronDown, ChevronUp, FileText, MessageCircle, Phone } from "lucide-react";
-import { VINFAST_VEHICLES, formatVnd } from "@/lib/content/vinfast-can-tho";
+import { useEffect, useMemo, useState } from "react";
+import { ChevronDown, ChevronUp, FileText, Info, MessageCircle, Phone } from "lucide-react";
+import {
+  CHIET_TINH_MODEL_LINES,
+  getChietTinhModelLine,
+  getChietTinhVariant,
+  getDefaultChietTinhSelection,
+} from "@/lib/content/vinfast-chiet-tinh-catalog";
+import { formatVnd } from "@/lib/content/vinfast-can-tho";
+import {
+  clampNonNegative,
+  clampPercent,
+  computeVinfastChietTinhQuote,
+} from "@/lib/vinfast-chiet-tinh";
 import { CONTACT_PHONE, CONTACT_PHONE_TEL, CONTACT_ZALO_URL } from "@/lib/contact";
 
+const defaultSelection = getDefaultChietTinhSelection();
+
 export function VinfastChietTinhForm() {
-  const [vehicleId, setVehicleId] = useState("limo-green");
+  const [modelId, setModelId] = useState(defaultSelection.modelId);
+  const [variantId, setVariantId] = useState(defaultSelection.variantId);
   const [discountPct, setDiscountPct] = useState(9);
   const [insExchange, setInsExchange] = useState(15_000_000);
   const [registrationPct, setRegistrationPct] = useState(0);
@@ -16,25 +30,55 @@ export function VinfastChietTinhForm() {
   const [phiDichVu, setPhiDichVu] = useState(3_000_000);
   const [phiBhTnds, setPhiBhTnds] = useState(1_200_000);
   const [phiDuongBo, setPhiDuongBo] = useState(2_160_000);
-  const [phiBhThanXe, setPhiBhThanXe] = useState(11_000_000);
+  const [phiBhThanXe, setPhiBhThanXe] = useState(11_332_030);
   const [showFees, setShowFees] = useState(false);
 
-  const vehicle = useMemo(
-    () => VINFAST_VEHICLES.find((v) => v.id === vehicleId) ?? VINFAST_VEHICLES[0],
-    [vehicleId],
+  const modelLine = useMemo(
+    () => getChietTinhModelLine(modelId) ?? CHIET_TINH_MODEL_LINES[0],
+    [modelId],
   );
 
-  const q = useMemo(() => {
-    const listPrice = vehicle.listPrice;
-    const discountAmt = Math.round((listPrice * discountPct) / 100);
-    const carValue = Math.max(listPrice - discountAmt - insExchange, 0);
-    const regFee = Math.round((carValue * registrationPct) / 100);
-    const bodyIns = Math.max(phiBhThanXe, 0);
-    const phuLuc =
-      regFee + phiDangKi + phiEpBien + phiDangKiem + phiDichVu + phiBhTnds + phiDuongBo + bodyIns;
-    const totalCash = carValue + phuLuc;
-    return { listPrice, discountAmt, carValue, regFee, bodyIns, phuLuc, totalCash };
-  }, [vehicle, discountPct, insExchange, registrationPct, phiDangKi, phiEpBien, phiDangKiem, phiDichVu, phiBhTnds, phiDuongBo, phiBhThanXe]);
+  const selectedVariant = useMemo(
+    () => getChietTinhVariant(modelId, variantId),
+    [modelId, variantId],
+  );
+
+  useEffect(() => {
+    const firstVariant = modelLine?.variants[0];
+    if (!firstVariant) return;
+    const stillValid = modelLine.variants.some((variant) => variant.id === variantId);
+    if (!stillValid) setVariantId(firstVariant.id);
+  }, [modelLine, variantId]);
+
+  const q = useMemo(
+    () =>
+      computeVinfastChietTinhQuote({
+        listPrice: selectedVariant?.listPrice ?? 0,
+        discountPct,
+        insExchange,
+        registrationPct,
+        phiDangKi,
+        phiEpBien,
+        phiDangKiem,
+        phiDichVu,
+        phiBhTnds,
+        phiDuongBo,
+        phiBhThanXe,
+      }),
+    [
+      selectedVariant,
+      discountPct,
+      insExchange,
+      registrationPct,
+      phiDangKi,
+      phiEpBien,
+      phiDangKiem,
+      phiDichVu,
+      phiBhTnds,
+      phiDuongBo,
+      phiBhThanXe,
+    ],
+  );
 
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
@@ -47,22 +91,54 @@ export function VinfastChietTinhForm() {
       {/* Inputs */}
       <div className="px-5 py-4 border-b border-gray-100 space-y-3">
         {/* Vehicle */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="flex flex-col gap-1">
+            <label htmlFor="ct-model" className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+              Dòng xe
+            </label>
+            <select
+              id="ct-model"
+              value={modelId}
+              onChange={(e) => setModelId(e.target.value)}
+              className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+            >
+              {CHIET_TINH_MODEL_LINES.map((line) => (
+                <option key={line.id} value={line.id}>
+                  {line.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="flex flex-col gap-1">
+            <label htmlFor="ct-variant" className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+              Phiên bản
+            </label>
+            <select
+              id="ct-variant"
+              value={selectedVariant?.id ?? variantId}
+              onChange={(e) => setVariantId(e.target.value)}
+              className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+            >
+              {modelLine.variants.map((variant) => (
+                <option key={variant.id} value={variant.id}>
+                  {variant.variantName}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
         <div className="flex flex-col gap-1">
-          <label htmlFor="ct-vehicle" className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-            Loại xe / Phiên bản
+          <label htmlFor="ct-list-price" className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+            Giá niêm yết (đã kèm pin)
           </label>
-          <select
-            id="ct-vehicle"
-            value={vehicleId}
-            onChange={(e) => setVehicleId(e.target.value)}
-            className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
-          >
-            {VINFAST_VEHICLES.map((v) => (
-              <option key={v.id} value={v.id}>
-                {v.name} — {formatVnd(v.listPrice)}
-              </option>
-            ))}
-          </select>
+          <input
+            id="ct-list-price"
+            readOnly
+            value={formatVnd(q.listPrice)}
+            className="w-full rounded-lg border border-gray-200 bg-gray-100 px-3 py-2.5 text-sm font-semibold text-primary-dark focus:outline-none"
+          />
         </div>
 
         {/* Discount + Insurance exchange */}
@@ -78,7 +154,7 @@ export function VinfastChietTinhForm() {
                 min={0}
                 max={50}
                 step={0.5}
-                onChange={(e) => setDiscountPct(Number(e.target.value))}
+                onChange={(e) => setDiscountPct(clampPercent(Number(e.target.value), 50))}
                 className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 pr-8 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
               />
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-gray-400">%</span>
@@ -93,7 +169,7 @@ export function VinfastChietTinhForm() {
               value={insExchange}
               min={0}
               step={500_000}
-              onChange={(e) => setInsExchange(Number(e.target.value))}
+              onChange={(e) => setInsExchange(clampNonNegative(Number(e.target.value)))}
               className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
             />
           </div>
@@ -103,10 +179,29 @@ export function VinfastChietTinhForm() {
         <button
           type="button"
           onClick={() => setShowFees((v) => !v)}
-          className="w-full flex items-center justify-between px-3 py-2 rounded-lg border border-gray-200 bg-gray-50 hover:bg-gray-100 transition-colors text-xs font-semibold text-gray-600"
+          aria-expanded={showFees}
+          className={`w-full flex items-center justify-between gap-3 px-4 py-3 rounded-xl border-2 transition-all text-left shadow-sm ${
+            showFees
+              ? "border-primary/30 bg-primary/5 hover:bg-primary/10"
+              : "border-secondary/50 bg-secondary/10 hover:bg-secondary/15 hover:border-secondary/70"
+          }`}
         >
-          <span>Tùy chỉnh phí thủ tục & bảo hiểm</span>
-          {showFees ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          <span className="text-xs sm:text-sm font-bold leading-snug text-primary-dark">
+            {showFees
+              ? "Thu gọn — ẩn các khoản phí tùy chỉnh"
+              : "Bấm vào đây để tùy chỉnh phí lăn bánh (trước bạ, đăng ký, bảo hiểm…)"}
+          </span>
+          <span
+            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
+              showFees ? "bg-primary/10 text-primary" : "bg-secondary/20 text-primary-dark"
+            }`}
+          >
+            {showFees ? (
+              <ChevronUp className="w-4 h-4" aria-hidden />
+            ) : (
+              <ChevronDown className="w-4 h-4" aria-hidden />
+            )}
+          </span>
         </button>
 
         {showFees && (
@@ -129,7 +224,11 @@ export function VinfastChietTinhForm() {
                     value={value}
                     min={0}
                     step={step}
-                    onChange={(e) => set(Number(e.target.value))}
+                    onChange={(e) => {
+                      const n = Number(e.target.value);
+                      if (suffix === "%") set(clampPercent(n));
+                      else set(clampNonNegative(n));
+                    }}
                     className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
                   />
                   {suffix && (
@@ -157,9 +256,11 @@ export function VinfastChietTinhForm() {
             {/* Vehicle row */}
             <tr className="border-b border-gray-200">
               <td className="px-3 py-2 text-center border border-gray-200"></td>
-              <td className="px-3 py-2 text-center font-medium border border-gray-200">{vehicle.name}</td>
+              <td className="px-3 py-2 text-center font-medium border border-gray-200">
+                {selectedVariant?.modelName ?? modelLine.name}
+              </td>
               <td className="px-3 py-2 text-center border border-gray-200">
-                {vehicleId === "limo-green" ? "Limo Green" : vehicle.name}
+                {selectedVariant?.variantName ?? "—"}
               </td>
               <td className="px-3 py-2 text-right font-medium border border-gray-200 whitespace-nowrap">
                 {formatVnd(q.listPrice)}
@@ -174,7 +275,7 @@ export function VinfastChietTinhForm() {
                   Ưu đãi {discountPct}%
                 </td>
                 <td className="px-3 py-2 text-right font-bold text-red-600 border border-gray-200 whitespace-nowrap">
-                  {q.discountAmt.toLocaleString("vi-VN")}
+                  − {formatVnd(q.discountAmt)}
                 </td>
               </tr>
             )}
@@ -185,14 +286,14 @@ export function VinfastChietTinhForm() {
             </tr>
 
             {/* Insurance exchange row */}
-            {insExchange > 0 && (
+            {q.insExchange > 0 && (
               <tr className="border-b border-gray-200">
                 <td className="px-3 py-2 border border-gray-200"></td>
                 <td colSpan={2} className="px-3 py-2 text-center font-bold text-red-600 border border-gray-200">
                   Quy đổi bảo hiểm
                 </td>
                 <td className="px-3 py-2 text-right font-bold text-red-600 border border-gray-200 whitespace-nowrap">
-                  {insExchange.toLocaleString("vi-VN")}
+                  − {formatVnd(q.insExchange)}
                 </td>
               </tr>
             )}
@@ -218,7 +319,7 @@ export function VinfastChietTinhForm() {
                 </span>
               </td>
               <td className="px-3 py-2.5 text-right font-black text-dark border border-gray-200 whitespace-nowrap underline underline-offset-2">
-                {formatVnd(q.phuLuc)}
+                {formatVnd(q.phuLucFees)}
               </td>
             </tr>
 
@@ -283,7 +384,7 @@ export function VinfastChietTinhForm() {
             {/* Total cash — green */}
             <tr className="bg-[#92D050]/30">
               <td colSpan={3} className="px-4 py-3 text-center font-black uppercase text-sm tracking-wide border border-gray-300">
-                Tổng số tiền thanh toán tiền mặt: Tiền xe + Phụ lục
+                Tổng thanh toán: Giá trị xe + Phụ lục + BH thân xe
               </td>
               <td className="px-4 py-3 text-right font-black text-primary-dark text-base border border-gray-300 whitespace-nowrap underline underline-offset-2">
                 {formatVnd(q.totalCash)}
@@ -294,9 +395,12 @@ export function VinfastChietTinhForm() {
       </div>
 
       {/* Disclaimer */}
-      <p className="px-5 py-3 text-xs text-gray-500 border-t border-gray-100">
-        Giá niêm yết đã kèm pin. Phí thủ tục tạm tính — quyết toán theo chứng từ thực tế tại thời điểm đăng kí.
-      </p>
+      <div className="mx-5 mb-4 flex items-start gap-2 rounded-lg border border-amber-200/80 bg-amber-50 px-3 py-2.5">
+        <Info className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" aria-hidden />
+        <p className="text-xs leading-relaxed text-amber-950">
+          <span className="font-bold">Lưu ý:</span> Giá niêm yết đã kèm pin. Phí thủ tục tạm tính — quyết toán theo chứng từ thực tế tại thời điểm đăng kí.
+        </p>
+      </div>
 
       {/* CTA */}
       <div className="px-5 pb-5 flex flex-col sm:flex-row gap-3">
