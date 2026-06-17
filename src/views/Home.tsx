@@ -127,13 +127,6 @@ export default function Home({
               >
                 Khám phá danh mục xe <ArrowRight className="ml-2 w-5 h-5" />
               </SeoLink>
-              <button
-                type="button"
-                onClick={dispatchConsultationPopup}
-                className="bg-white hover:bg-gray-100 text-primary-dark px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-lg flex items-center justify-center"
-              >
-                Đăng ký lái XanhSM Cần Thơ
-              </button>
             </div>
           </motion.div>
         </div>
@@ -178,7 +171,11 @@ export default function Home({
               <SeoLink href="/vinfast-can-tho" className="text-primary font-semibold hover:text-primary-dark">
                 VinFast Cần Thơ
               </SeoLink>
-              , bảo dưỡng và tư vấn trọn gói. Chúng tôi hỗ trợ đăng ký{' '}
+              , bảo dưỡng và tư vấn trọn gói. Ngoài ra, khách hàng có thể tham khảo chương trình{' '}
+              <SeoLink href="/thue-mua-vinfast" className="text-primary font-semibold hover:text-primary-dark">
+                thuê mua VinFast Cần Thơ
+              </SeoLink>{' '}
+              để giảm vốn đầu vào khi chạy dịch vụ. Chúng tôi hỗ trợ đăng ký{' '}
               <SeoLink href="/dang-ky-xanhsm" className="text-primary font-semibold hover:text-primary-dark">
                 XanhSM Cần Thơ
               </SeoLink>{' '}
