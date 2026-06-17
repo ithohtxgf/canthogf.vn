@@ -12,6 +12,7 @@ import {
   THUE_MUA_FAQ,
   THUE_MUA_VINFAST_META_DESCRIPTION,
   THUE_MUA_VINFAST_PAGE_H1,
+  THUE_MUA_VINFAST_PAGE_PATH,
 } from "@/lib/content/thue-mua-vinfast-page";
 import {
   CONTACT_ADDRESS_LOCALITY,
@@ -378,7 +379,7 @@ async function buildGraphForRoute(
       break;
     }
     case "thueMuaVinfast": {
-      const path = "/thue-mua-vinfast";
+      const path = THUE_MUA_VINFAST_PAGE_PATH;
       graph.push(
         getWebPageJsonLdForPath(path, THUE_MUA_VINFAST_PAGE_H1, THUE_MUA_VINFAST_META_DESCRIPTION),
         getLocalBusinessJsonLd(),

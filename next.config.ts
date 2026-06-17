@@ -31,6 +31,15 @@ const nextConfig: NextConfig = {
         : []),
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/thue-mua-vinfast",
+        destination: "/thue-mua-xe-vinfast",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

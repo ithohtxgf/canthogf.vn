@@ -7,7 +7,7 @@ const STATIC_PROMO_PATHS = [
   "/tin-tuc",
   "/san-pham",
   "/dang-ky-xanhsm",
-  "/thue-mua-vinfast",
+  "/thue-mua-xe-vinfast",
   "/gioi-thieu",
   "/lien-he",
 ] as const;

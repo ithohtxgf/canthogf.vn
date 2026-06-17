@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Menu, X, Phone, Mail, MapPin, ChevronRight, Building2 } from "lucide-react";
 import { CONTACT_TAX_ID, CONTACT_FACEBOOK_URL, CONTACT_TIKTOK_URL, CONTACT_YOUTUBE_URL, CONTACT_ZALO_URL } from "@/lib/contact";
+import { THUE_MUA_VINFAST_PAGE_PATH } from "@/lib/content/thue-mua-vinfast-page";
 import { SeoLink } from "./SeoLink";
 import { Logo } from "./Logo";
 import { ConsultationPopup } from "./ConsultationPopup";
@@ -39,7 +40,7 @@ export default function Layout({
     { name: 'Trang chủ', path: '/' },
     { name: 'Giới thiệu', path: '/gioi-thieu' },
     { name: 'Ô tô VinFast', path: '/san-pham' },
-    { name: 'Thuê mua VinFast', path: '/thue-mua-vinfast' },
+    { name: 'Thuê mua VinFast', path: THUE_MUA_VINFAST_PAGE_PATH },
     { name: 'Đăng ký XanhSM', path: '/dang-ky-xanhsm' },
     { name: 'Tin tức', path: '/tin-tuc' },
     { name: 'Liên hệ', path: '/lien-he' },
@@ -275,7 +276,7 @@ export default function Layout({
                   </SeoLink>
                 </li>
                 <li>
-                  <SeoLink href="/thue-mua-vinfast" className="text-gray-600 hover:text-primary-dark flex items-center transition-colors">
+                  <SeoLink href={THUE_MUA_VINFAST_PAGE_PATH} className="text-gray-600 hover:text-primary-dark flex items-center transition-colors">
                     <ChevronRight className="w-4 h-4 mr-2" /> Thuê mua xe VinFast Cần Thơ
                   </SeoLink>
                 </li>

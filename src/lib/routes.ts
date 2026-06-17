@@ -36,7 +36,7 @@ export function matchRoute(pathname: string): MatchedRoute {
       return { page: "notFound" };
     case "dang-ky-xanhsm":
       return segments.length === 1 ? { page: "xanhsm" } : { page: "notFound" };
-    case "thue-mua-vinfast":
+    case "thue-mua-xe-vinfast":
       return segments.length === 1
         ? { page: "thueMuaVinfast" }
         : { page: "notFound" };

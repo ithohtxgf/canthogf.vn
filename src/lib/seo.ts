@@ -274,7 +274,7 @@ export const SITEMAP_ROUTES = [
   { path: "/san-pham", changeFrequency: "weekly" as const, priority: 0.9 },
   { path: "/vinfast-can-tho", changeFrequency: "weekly" as const, priority: 0.95 },
   { path: "/dang-ky-xanhsm", changeFrequency: "weekly" as const, priority: 0.9 },
-  { path: "/thue-mua-vinfast", changeFrequency: "weekly" as const, priority: 0.9 },
+  { path: "/thue-mua-xe-vinfast", changeFrequency: "weekly" as const, priority: 0.9 },
   { path: "/tin-tuc", changeFrequency: "weekly" as const, priority: 0.7 },
   { path: "/lien-he", changeFrequency: "monthly" as const, priority: 0.8 },
   {

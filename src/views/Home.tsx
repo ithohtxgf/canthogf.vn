@@ -8,6 +8,7 @@ import { VINFAST_VEHICLES } from '@/lib/content/vinfast-can-tho';
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2, Zap, Shield, BatteryCharging, Star } from 'lucide-react';
 import { dispatchConsultationPopup } from '@/lib/contact';
+import { THUE_MUA_VINFAST_PAGE_PATH } from '@/lib/content/thue-mua-vinfast-page';
 
 export default function Home({
   newsArticles: newsArticlesProp,
@@ -172,7 +173,7 @@ export default function Home({
                 VinFast Cần Thơ
               </SeoLink>
               , bảo dưỡng và tư vấn trọn gói. Ngoài ra, khách hàng có thể tham khảo chương trình{' '}
-              <SeoLink href="/thue-mua-vinfast" className="text-primary font-semibold hover:text-primary-dark">
+              <SeoLink href={THUE_MUA_VINFAST_PAGE_PATH} className="text-primary font-semibold hover:text-primary-dark">
                 thuê mua VinFast Cần Thơ
               </SeoLink>{' '}
               để giảm vốn đầu vào khi chạy dịch vụ. Chúng tôi hỗ trợ đăng ký{' '}

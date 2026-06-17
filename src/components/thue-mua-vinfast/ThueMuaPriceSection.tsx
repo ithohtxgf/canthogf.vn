@@ -12,15 +12,15 @@ function YearRows({ years }: { years: ThueMuaYearRate[] }) {
   return (
     <div className="flex flex-col gap-1.5">
       {years.map((year) => (
-        <div key={year.label} className="flex items-center gap-2 text-xs">
-          <span className="w-12 shrink-0 text-gray-500">{year.label}</span>
-          <div className="flex-1 h-1 bg-gray-100 rounded-full overflow-hidden">
+        <div key={year.label} className="flex items-center gap-2 text-sm">
+          <span className="w-14 shrink-0 text-gray-500">{year.label}</span>
+          <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
             <div
               className="h-full bg-primary rounded-full transition-all duration-300"
               style={{ width: `${year.barPercent}%` }}
             />
           </div>
-          <span className="w-10 shrink-0 text-right font-semibold text-dark">
+          <span className="min-w-[3.5rem] shrink-0 text-right font-semibold text-dark">
             {year.monthly}
           </span>
         </div>
@@ -73,21 +73,21 @@ export function ThueMuaPriceSection() {
           {THUE_MUA_MAIN_PLANS.map((plan) => (
             <div
               key={plan.id}
-              className={`relative bg-white rounded-2xl border p-4 shadow-sm ${
+              className={`relative bg-white rounded-2xl border p-5 shadow-sm ${
                 plan.featured ? "border-2 border-primary ring-1 ring-primary/20" : "border-gray-100"
               }`}
             >
               {plan.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[11px] font-semibold px-3 py-0.5 rounded-full whitespace-nowrap">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-semibold px-3 py-0.5 rounded-full whitespace-nowrap">
                   {plan.badge}
                 </span>
               )}
-              <div className="flex items-center gap-2 font-bold text-dark text-sm mb-1">
-                <Car className="w-4 h-4 text-primary shrink-0" />
+              <div className="flex items-center gap-2 font-bold text-dark text-base mb-1.5">
+                <Car className="w-5 h-5 text-primary shrink-0" />
                 {plan.name}
               </div>
-              <p className="text-xs text-gray-500 mb-0.5">{plan.priceLabel}</p>
-              <p className="text-xs text-gray-500 mb-4">{plan.downPaymentLabel}</p>
+              <p className="text-sm text-gray-500 mb-0.5">{plan.priceLabel}</p>
+              <p className="text-sm text-gray-600 font-medium mb-4">{plan.downPaymentLabel}</p>
               <YearRows years={plan.years} />
             </div>
           ))}
@@ -101,19 +101,19 @@ export function ThueMuaPriceSection() {
             {THUE_MUA_LIMO_PROGRAMS.map((prog) => (
               <div
                 key={prog.id}
-                className={`relative bg-white rounded-2xl border p-4 shadow-sm ${
+                className={`relative bg-white rounded-2xl border p-5 shadow-sm ${
                   prog.featured ? "border-2 border-primary ring-1 ring-primary/20" : "border-gray-100"
                 }`}
               >
                 {prog.badge && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-semibold px-3 py-0.5 rounded-full whitespace-nowrap">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-semibold px-3 py-0.5 rounded-full whitespace-nowrap">
                     {prog.badge}
                   </span>
                 )}
-                <span className="inline-block text-xs font-semibold text-primary-dark bg-primary/10 px-2.5 py-1 rounded-full mb-3">
+                <span className="inline-block text-sm font-semibold text-primary-dark bg-primary/10 px-2.5 py-1 rounded-full mb-3">
                   {prog.name}
                 </span>
-                <p className="text-[11px] text-gray-500 leading-relaxed mb-4">{prog.description}</p>
+                <p className="text-sm text-gray-600 leading-relaxed mb-4">{prog.description}</p>
                 <YearRows years={prog.years} />
               </div>
             ))}

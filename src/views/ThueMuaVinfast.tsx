@@ -166,14 +166,14 @@ export default function ThueMuaVinfast() {
               return (
                 <div
                   key={benefit.title}
-                  className="bg-white rounded-2xl border border-gray-100 p-4 flex gap-3 shadow-sm"
+                  className="bg-white rounded-2xl border border-gray-100 p-5 flex gap-4 shadow-sm"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <Icon className="w-5 h-5 text-primary" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <Icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-dark text-sm mb-1">{benefit.title}</h3>
-                    <p className="text-xs text-gray-600 leading-relaxed">{benefit.description}</p>
+                    <h3 className="font-bold text-dark text-base mb-1.5">{benefit.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{benefit.description}</p>
                   </div>
                 </div>
               );
@@ -194,9 +194,9 @@ export default function ThueMuaVinfast() {
               return (
                 <div
                   key={doc}
-                  className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3 text-sm text-dark border border-gray-100"
+                  className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-4 text-base text-dark border border-gray-100"
                 >
-                  <Icon className="w-5 h-5 text-primary shrink-0" />
+                  <Icon className="w-6 h-6 text-primary shrink-0" />
                   {doc}
                 </div>
               );

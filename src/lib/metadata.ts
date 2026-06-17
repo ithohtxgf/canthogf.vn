@@ -99,7 +99,7 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
     description: XANHSM_META_DESCRIPTION,
     keywords: [...XANHSM_KEYWORDS],
   },
-  "/thue-mua-vinfast": {
+  "/thue-mua-xe-vinfast": {
     title: THUE_MUA_VINFAST_META_TITLE,
     absoluteTitle: true,
     description: THUE_MUA_VINFAST_META_DESCRIPTION,

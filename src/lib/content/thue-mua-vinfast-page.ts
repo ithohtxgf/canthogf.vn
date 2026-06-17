@@ -1,4 +1,4 @@
-export const THUE_MUA_VINFAST_PAGE_PATH = "/thue-mua-vinfast";
+export const THUE_MUA_VINFAST_PAGE_PATH = "/thue-mua-xe-vinfast";
 
 export const THUE_MUA_VINFAST_META_TITLE =
   "Thuê Mua Xe VinFast Cần Thơ 2026 – Chạy Dịch Vụ Xanh SM, Grab | Cần Thơ GF";
