@@ -8,9 +8,10 @@ export const THUE_MUA_VINFAST_META_DESCRIPTION =
 
 export const THUE_MUA_VINFAST_KEYWORDS = [
   "thuê mua xe vinfast cần thơ",
+  "thuê xe vinfast chạy xanh sm cần thơ",
   "thuê xe vinfast chạy grab cần thơ",
   "mua xe vinfast chạy dịch vụ",
-  "xe vf5 chạy be xanh sm",
+  "xe vf5 chạy xanh sm grab",
   "thuê thương quyền xe điện",
   "thuê mua vinfast đbscl",
   "xe điện chạy xanhsm cần thơ",
