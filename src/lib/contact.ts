@@ -23,6 +23,7 @@ export const CONTACT_TAX_ID = "1801807608";
 export const CONTACT_ZALO_URL = "https://zalo.me/0916513720";
 export const CONTACT_FACEBOOK_URL = "https://www.facebook.com/canthogf";
 export const CONTACT_TIKTOK_URL = "https://www.tiktok.com/@sulinh.ctgf";
+export const CONTACT_YOUTUBE_URL = "https://www.youtube.com/@sulinhvf";
 
 export const GREEN_SM_APP_STORE_URL =
   "https://apps.apple.com/vn/app/green-sm-di-chuy%E1%BB%83n-thu%E1%BA%A7n-%C4%91i%E1%BB%87n/id6446425595?l=vi";

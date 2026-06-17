@@ -9,6 +9,7 @@ import {
   CONTACT_PHONE_TEL,
   CONTACT_STREET_ADDRESS,
   CONTACT_TIKTOK_URL,
+  CONTACT_YOUTUBE_URL,
   CONTACT_ZALO_URL,
   SCHEMA_OPENING_HOURS,
 } from "@/lib/contact";
@@ -223,6 +224,7 @@ export function getLocalBusinessJsonLd() {
     sameAs: [
       CONTACT_FACEBOOK_URL,
       CONTACT_TIKTOK_URL,
+      CONTACT_YOUTUBE_URL,
       CONTACT_ZALO_URL,
     ],
     knowsAbout: [

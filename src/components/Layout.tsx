@@ -4,7 +4,7 @@ import { useState, useEffect, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Menu, X, Phone, Mail, MapPin, ChevronRight, Building2 } from "lucide-react";
-import { CONTACT_TAX_ID } from "@/lib/contact";
+import { CONTACT_TAX_ID, CONTACT_FACEBOOK_URL, CONTACT_TIKTOK_URL, CONTACT_YOUTUBE_URL, CONTACT_ZALO_URL } from "@/lib/contact";
 import { SeoLink } from "./SeoLink";
 import { Logo } from "./Logo";
 import { ConsultationPopup } from "./ConsultationPopup";
@@ -160,7 +160,7 @@ export default function Layout({
               </p>
               <div className="flex items-center gap-4">
                 <a
-                  href="https://www.facebook.com/canthogf"
+                  href={CONTACT_FACEBOOK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block h-10 w-10 shrink-0 opacity-90 transition-opacity hover:opacity-100"
@@ -176,23 +176,23 @@ export default function Layout({
                   />
                 </a>
                 <a
-                  href="https://zalo.me/0916513720"
+                  href={CONTACT_ZALO_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block h-10 shrink-0 opacity-90 transition-opacity hover:opacity-100"
+                  className="block h-10 w-10 shrink-0 opacity-90 transition-opacity hover:opacity-100"
                   title="Zalo 0916 513 720"
                   aria-label="Zalo 0916 513 720"
                 >
                   <Image
                     src="/logo_zalo.png"
                     alt="Zalo 0916 513 720"
-                    width={88}
+                    width={40}
                     height={40}
-                    className="object-contain"
+                    className="h-10 w-10 object-contain"
                   />
                 </a>
                 <a
-                  href="https://www.tiktok.com/@sulinh.ctgf"
+                  href={CONTACT_TIKTOK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block h-10 w-10 shrink-0 opacity-90 transition-opacity hover:opacity-100"
@@ -204,6 +204,23 @@ export default function Layout({
                     alt="TikTok @sulinh.ctgf"
                     width={40}
                     height={40}
+                    className="h-10 w-10 object-contain"
+                  />
+                </a>
+                <a
+                  href={CONTACT_YOUTUBE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block h-10 w-10 shrink-0 opacity-90 transition-opacity hover:opacity-100"
+                  title="YouTube @sulinhvf"
+                  aria-label="YouTube @sulinhvf"
+                >
+                  <Image
+                    src="/logo_youtube.svg"
+                        alt="YouTube @sulinhvf"
+                    width={40}
+                    height={40}
+                    unoptimized
                     className="h-10 w-10 object-contain"
                   />
                 </a>

@@ -27,6 +27,7 @@ import {
   CONTACT_RESPONSE_PROMISE,
   CONTACT_TAX_ID,
   CONTACT_TIKTOK_URL,
+  CONTACT_YOUTUBE_URL,
   CONTACT_ZALO_URL,
   ORGANIZATION_NAME,
   dispatchConsultationPopup,
@@ -333,14 +334,14 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       title="Zalo"
-                      className="block h-10 shrink-0 opacity-90 hover:opacity-100 transition-opacity"
+                      className="block h-10 w-10 shrink-0 opacity-90 hover:opacity-100 transition-opacity"
                     >
                       <Image
                         src="/logo_zalo.png"
                         alt="Zalo"
-                        width={88}
+                        width={40}
                         height={40}
-                        className="object-contain"
+                        className="h-10 w-10 object-contain"
                       />
                     </a>
                     <a
@@ -348,13 +349,29 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       title="TikTok"
-                      className="block h-10 w-10 opacity-90 hover:opacity-100 transition-opacity"
+                      className="block h-10 w-10 shrink-0 opacity-90 hover:opacity-100 transition-opacity"
                     >
                       <Image
                         src="/logo_tiktok.png"
                         alt="TikTok"
                         width={40}
                         height={40}
+                        className="h-10 w-10 object-contain"
+                      />
+                    </a>
+                    <a
+                      href={CONTACT_YOUTUBE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="YouTube @sulinhvf"
+                      className="block h-10 w-10 shrink-0 opacity-90 hover:opacity-100 transition-opacity"
+                    >
+                      <Image
+                        src="/logo_youtube.svg"
+                        alt="YouTube @sulinhvf"
+                        width={40}
+                        height={40}
+                        unoptimized
                         className="h-10 w-10 object-contain"
                       />
                     </a>
