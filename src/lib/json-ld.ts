@@ -9,6 +9,11 @@ import {
 } from "@/lib/content/vinfast-can-tho";
 import { XANHSM_FAQ, XANHSM_META_DESCRIPTION, XANHSM_PAGE_H1 } from "@/lib/content/xanhsm-page";
 import {
+  THUE_MUA_FAQ,
+  THUE_MUA_VINFAST_META_DESCRIPTION,
+  THUE_MUA_VINFAST_PAGE_H1,
+} from "@/lib/content/thue-mua-vinfast-page";
+import {
   CONTACT_ADDRESS_LOCALITY,
   CONTACT_ADDRESS_REGION,
   CONTACT_EMAIL,
@@ -282,6 +287,23 @@ function getVinfastCanThoFaqJsonLd(path: string) {
   };
 }
 
+function getThueMuaVinfastFaqJsonLd(path: string) {
+  const url = getSitemapUrl(path);
+  return {
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    url,
+    mainEntity: THUE_MUA_FAQ.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
 function getXanhSmFaqJsonLd(path: string) {
   const url = getSitemapUrl(path);
   return {
@@ -351,6 +373,19 @@ async function buildGraphForRoute(
         getBreadcrumbJsonLd([
           { name: "Trang chủ", path: "/" },
           { name: "Đăng ký XanhSM", path },
+        ]),
+      );
+      break;
+    }
+    case "thueMuaVinfast": {
+      const path = "/thue-mua-vinfast";
+      graph.push(
+        getWebPageJsonLdForPath(path, THUE_MUA_VINFAST_PAGE_H1, THUE_MUA_VINFAST_META_DESCRIPTION),
+        getLocalBusinessJsonLd(),
+        getThueMuaVinfastFaqJsonLd(path),
+        getBreadcrumbJsonLd([
+          { name: "Trang chủ", path: "/" },
+          { name: "Thuê mua VinFast", path },
         ]),
       );
       break;

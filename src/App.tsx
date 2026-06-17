@@ -17,6 +17,7 @@ import Products from "./views/Products";
 import Privacy from "./views/Privacy";
 import Terms from "./views/Terms";
 import VinfastCanTho from "./views/VinfastCanTho";
+import ThueMuaVinfast from "./views/ThueMuaVinfast";
 import XanhSM from "./views/XanhSM";
 
 function NotFound() {
@@ -42,6 +43,8 @@ function renderPage(route: MatchedRoute, initialData: PageInitialData) {
       return <ProductDetail id={route.id} />;
     case "xanhsm":
       return <XanhSM />;
+    case "thueMuaVinfast":
+      return <ThueMuaVinfast />;
     case "vinfastCanTho":
       return <VinfastCanTho />;
     case "news":

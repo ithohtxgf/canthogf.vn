@@ -4,6 +4,7 @@ export type MatchedRoute =
   | { page: "products" }
   | { page: "product"; id: string }
   | { page: "xanhsm" }
+  | { page: "thueMuaVinfast" }
   | { page: "vinfastCanTho" }
   | { page: "news" }
   | { page: "newsArticle"; id: string }
@@ -35,6 +36,10 @@ export function matchRoute(pathname: string): MatchedRoute {
       return { page: "notFound" };
     case "dang-ky-xanhsm":
       return segments.length === 1 ? { page: "xanhsm" } : { page: "notFound" };
+    case "thue-mua-vinfast":
+      return segments.length === 1
+        ? { page: "thueMuaVinfast" }
+        : { page: "notFound" };
     case "vinfast-can-tho":
       return segments.length === 1
         ? { page: "vinfastCanTho" }

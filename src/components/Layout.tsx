@@ -39,6 +39,7 @@ export default function Layout({
     { name: 'Trang chủ', path: '/' },
     { name: 'Giới thiệu', path: '/gioi-thieu' },
     { name: 'Ô tô VinFast', path: '/san-pham' },
+    { name: 'Thuê mua VinFast', path: '/thue-mua-vinfast' },
     { name: 'Đăng ký XanhSM', path: '/dang-ky-xanhsm' },
     { name: 'Tin tức', path: '/tin-tuc' },
     { name: 'Liên hệ', path: '/lien-he' },
@@ -271,6 +272,11 @@ export default function Layout({
                 <li>
                   <SeoLink href="/dang-ky-xanhsm" className="text-gray-600 hover:text-primary-dark flex items-center transition-colors">
                     <ChevronRight className="w-4 h-4 mr-2" /> Đăng ký lái XanhSM Cần Thơ
+                  </SeoLink>
+                </li>
+                <li>
+                  <SeoLink href="/thue-mua-vinfast" className="text-gray-600 hover:text-primary-dark flex items-center transition-colors">
+                    <ChevronRight className="w-4 h-4 mr-2" /> Thuê mua xe VinFast Cần Thơ
                   </SeoLink>
                 </li>
               </ul>

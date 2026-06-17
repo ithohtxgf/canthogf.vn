@@ -7,6 +7,13 @@ import { getNewsArticleKeywords } from "@/lib/content/news";
 import { getProductById, PRODUCTS_SEO } from "@/lib/content/products";
 import { getRichProductDetail } from "@/lib/content/product-details";
 import {
+  THUE_MUA_FAQ,
+  THUE_MUA_VINFAST_META_DESCRIPTION,
+  THUE_MUA_VINFAST_META_TITLE,
+  THUE_MUA_VINFAST_PAGE_H1,
+  THUE_MUA_VINFAST_KEYWORDS,
+} from "@/lib/content/thue-mua-vinfast-page";
+import {
   XANHSM_META_DESCRIPTION,
   XANHSM_META_TITLE,
   XANHSM_KEYWORDS,
@@ -91,6 +98,12 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
     absoluteTitle: true,
     description: XANHSM_META_DESCRIPTION,
     keywords: [...XANHSM_KEYWORDS],
+  },
+  "/thue-mua-vinfast": {
+    title: THUE_MUA_VINFAST_META_TITLE,
+    absoluteTitle: true,
+    description: THUE_MUA_VINFAST_META_DESCRIPTION,
+    keywords: [...THUE_MUA_VINFAST_KEYWORDS],
   },
   "/tin-tuc": {
     title: "Tin tức",
