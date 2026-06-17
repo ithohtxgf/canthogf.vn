@@ -52,6 +52,8 @@ export const THUE_MUA_MAIN_PLANS: ThueMuaCarPlan[] = [
     name: "Herio Green",
     priceLabel: "Giá xe: 479tr",
     downPaymentLabel: "Đối ứng: 98tr",
+    featured: true,
+    badge: "Phổ biến nhất",
     years: [
       { label: "Năm 1", monthly: "12tr", barPercent: 100 },
       { label: "Năm 2", monthly: "11.5tr", barPercent: 96 },
@@ -66,8 +68,6 @@ export const THUE_MUA_MAIN_PLANS: ThueMuaCarPlan[] = [
     name: "VF5 Plus",
     priceLabel: "Giá xe: 529tr",
     downPaymentLabel: "Đối ứng: 108tr",
-    featured: true,
-    badge: "Phổ biến nhất",
     years: [
       { label: "Năm 1", monthly: "13tr", barPercent: 100 },
       { label: "Năm 2", monthly: "12.5tr", barPercent: 96 },
@@ -96,6 +96,8 @@ export const THUE_MUA_MAIN_PLANS: ThueMuaCarPlan[] = [
     name: "VF6 Plus / Limo Green",
     priceLabel: "Giá xe: 749tr",
     downPaymentLabel: "Đối ứng: 150tr",
+    featured: true,
+    badge: "Phổ biến nhất",
     years: [
       { label: "Năm 1", monthly: "18tr", barPercent: 100 },
       { label: "Năm 2", monthly: "17tr", barPercent: 94 },
