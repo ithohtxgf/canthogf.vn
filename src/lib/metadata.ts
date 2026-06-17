@@ -7,6 +7,11 @@ import { getNewsArticleKeywords } from "@/lib/content/news";
 import { getProductById, PRODUCTS_SEO } from "@/lib/content/products";
 import { getRichProductDetail } from "@/lib/content/product-details";
 import {
+  XANHSM_META_DESCRIPTION,
+  XANHSM_META_TITLE,
+  XANHSM_KEYWORDS,
+} from "@/lib/content/xanhsm-page";
+import {
   VINFAST_CAN_THO_META_TITLE,
   VINFAST_CAN_THO_PAGE_DESCRIPTION,
 } from "@/lib/content/vinfast-can-tho";
@@ -82,18 +87,10 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
     ],
   },
   "/dang-ky-xanhsm": {
-    title: "Đăng ký XanhSM Cần Thơ",
-    description:
-      "Đăng ký lái XanhSM Cần Thơ qua Hợp tác xã Cần Thơ GF. Hỗ trợ thủ tục, tư vấn xe điện VinFast và chính sách dành cho tài xế.",
-    keywords: [
-      "đăng ký xanhsm cần thơ",
-      "xanhsm cần thơ",
-      "lái xanhsm",
-      "trở thành tài xế xanhsm",
-      "thu nhập tài xế xanhsm",
-      "điều kiện lái xanhsm",
-      "tài xế xe điện cần thơ",
-    ],
+    title: XANHSM_META_TITLE,
+    absoluteTitle: true,
+    description: XANHSM_META_DESCRIPTION,
+    keywords: [...XANHSM_KEYWORDS],
   },
   "/tin-tuc": {
     title: "Tin tức",

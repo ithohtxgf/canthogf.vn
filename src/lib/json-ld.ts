@@ -7,6 +7,7 @@ import {
   VINFAST_CAN_THO_PAGE_DESCRIPTION,
   VINFAST_CAN_THO_PAGE_H1,
 } from "@/lib/content/vinfast-can-tho";
+import { XANHSM_FAQ, XANHSM_META_DESCRIPTION, XANHSM_PAGE_H1 } from "@/lib/content/xanhsm-page";
 import {
   CONTACT_ADDRESS_LOCALITY,
   CONTACT_ADDRESS_REGION,
@@ -281,6 +282,23 @@ function getVinfastCanThoFaqJsonLd(path: string) {
   };
 }
 
+function getXanhSmFaqJsonLd(path: string) {
+  const url = getSitemapUrl(path);
+  return {
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    url,
+    mainEntity: XANHSM_FAQ.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
 /** @deprecated Dùng getVinfastCanThoAutoDealerJsonLd */
 function getVinfastCanThoLocalBusinessJsonLd(path: string) {
   return getVinfastCanThoAutoDealerJsonLd(path);
@@ -324,11 +342,22 @@ async function buildGraphForRoute(
       );
       break;
     }
-    case "xanhsm":
+    case "xanhsm": {
+      const path = "/dang-ky-xanhsm";
+      graph.push(
+        getWebPageJsonLdForPath(path, XANHSM_PAGE_H1, XANHSM_META_DESCRIPTION),
+        getLocalBusinessJsonLd(),
+        getXanhSmFaqJsonLd(path),
+        getBreadcrumbJsonLd([
+          { name: "Trang chủ", path: "/" },
+          { name: "Đăng ký XanhSM", path },
+        ]),
+      );
+      break;
+    }
     case "privacy":
     case "terms": {
       const pathMap = {
-        xanhsm: "/dang-ky-xanhsm",
         privacy: "/chinh-sach-bao-mat",
         terms: "/dieu-khoan-su-dung",
       } as const;
