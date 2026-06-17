@@ -16,7 +16,7 @@ export function VinfastChietTinhForm() {
   const [phiDichVu, setPhiDichVu] = useState(3_000_000);
   const [phiBhTnds, setPhiBhTnds] = useState(1_200_000);
   const [phiDuongBo, setPhiDuongBo] = useState(2_160_000);
-  const [bodyInsPct, setBodyInsPct] = useState(1.7);
+  const [phiBhThanXe, setPhiBhThanXe] = useState(11_000_000);
   const [showFees, setShowFees] = useState(false);
 
   const vehicle = useMemo(
@@ -29,12 +29,12 @@ export function VinfastChietTinhForm() {
     const discountAmt = Math.round((listPrice * discountPct) / 100);
     const carValue = Math.max(listPrice - discountAmt - insExchange, 0);
     const regFee = Math.round((carValue * registrationPct) / 100);
-    const bodyIns = Math.round((carValue * bodyInsPct) / 100);
+    const bodyIns = Math.max(phiBhThanXe, 0);
     const phuLuc =
       regFee + phiDangKi + phiEpBien + phiDangKiem + phiDichVu + phiBhTnds + phiDuongBo + bodyIns;
     const totalCash = carValue + phuLuc;
     return { listPrice, discountAmt, carValue, regFee, bodyIns, phuLuc, totalCash };
-  }, [vehicle, discountPct, insExchange, registrationPct, phiDangKi, phiEpBien, phiDangKiem, phiDichVu, phiBhTnds, phiDuongBo, bodyInsPct]);
+  }, [vehicle, discountPct, insExchange, registrationPct, phiDangKi, phiEpBien, phiDangKiem, phiDichVu, phiBhTnds, phiDuongBo, phiBhThanXe]);
 
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
@@ -119,7 +119,7 @@ export function VinfastChietTinhForm() {
               { label: "Phí dịch vụ (đ)", value: phiDichVu, set: setPhiDichVu, step: 100_000 },
               { label: "BH TNDS 1 năm (đ)", value: phiBhTnds, set: setPhiBhTnds, step: 50_000 },
               { label: "Phí đường bộ (đ)", value: phiDuongBo, set: setPhiDuongBo, step: 100_000 },
-              { label: "BH thân xe (%/năm)", value: bodyInsPct, set: setBodyInsPct, step: 0.1, suffix: "%" },
+              { label: "BH thân xe 1 năm (đ)", value: phiBhThanXe, set: setPhiBhThanXe, step: 100_000 },
             ].map(({ label, value, set, step, suffix }) => (
               <div key={label} className="flex flex-col gap-1">
                 <label className="text-xs text-gray-500">{label}</label>
@@ -273,10 +273,10 @@ export function VinfastChietTinhForm() {
               <td className="px-3 py-2 text-center font-bold border border-gray-200">2</td>
               <td colSpan={2} className="px-3 py-2 border border-gray-200">
                 Bảo hiểm thân xe 1 năm{" "}
-                <span className="text-gray-500 text-xs">(tạm tính — {bodyInsPct}% giá trị xe)</span>
+                <span className="text-gray-500 text-xs">(tạm tính)</span>
               </td>
               <td className="px-3 py-2 text-right font-medium text-gray-700 border border-gray-200 whitespace-nowrap">
-                {q.bodyIns.toLocaleString("vi-VN")}  VNĐ
+                {formatVnd(q.bodyIns)}
               </td>
             </tr>
 
