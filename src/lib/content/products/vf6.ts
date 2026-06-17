@@ -19,6 +19,8 @@ export const VF6_DETAIL: RichProductDetail = {
     "vf6 plus",
     "suv điện vinfast",
     "mua vf6 cần thơ",
+    "vf6 gia đình",
+    "vf6 2026 giá mới",
   ],
   image: "/vf6.webp",
   imageAlt: "VinFast VF 6 — SUV điện hạng C tại Cần Thơ GF",

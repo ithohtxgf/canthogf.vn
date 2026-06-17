@@ -1,20 +1,19 @@
 import Image from "next/image";
 
-const LOGO_WIDTH = 210;
-const LOGO_HEIGHT = 56;
+/** Kích thước gốc public/logo_cantho_gf.png — giữ đúng tỷ lệ cho next/image */
+const LOGO_WIDTH = 694;
+const LOGO_HEIGHT = 302;
 
-export const Logo = ({ className = "w-48" }: { className?: string }) => (
-  <span
-    className={`relative inline-block max-w-full ${className}`}
-    style={{ aspectRatio: `${LOGO_WIDTH} / ${LOGO_HEIGHT}` }}
-  >
+export function Logo({ className = "h-8 w-auto" }: { className?: string }) {
+  return (
     <Image
       src="/logo_cantho_gf.png"
       alt="Logo Cần Thơ GF — Hợp tác xã vận tải Cần Thơ"
-      fill
+      width={LOGO_WIDTH}
+      height={LOGO_HEIGHT}
       sizes="(max-width: 640px) 130px, (max-width: 1024px) 160px, 210px"
-      className="object-contain object-left"
+      className={`block shrink-0 object-contain object-left ${className}`}
       priority
     />
-  </span>
-);
+  );
+}

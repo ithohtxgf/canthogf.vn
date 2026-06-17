@@ -28,6 +28,10 @@ export const PRODUCTS_SEO: ProductSeo[] = [
       "vf3 eco",
       "vf3 plus",
       "mua vf3 cần thơ",
+      "vf3 đánh giá",
+      "vf3 có tốt không",
+      "vf3 eco vs plus",
+      "vf3 pin thuê hay mua",
     ],
   },
   {
@@ -48,6 +52,8 @@ export const PRODUCTS_SEO: ProductSeo[] = [
       "xe điện dịch vụ vinfast",
       "xe thương mại điện cần thơ",
       "herio green xanhsm",
+      "herio green tài xế",
+      "xe dịch vụ điện cần thơ",
     ],
   },
   {
@@ -68,6 +74,9 @@ export const PRODUCTS_SEO: ProductSeo[] = [
       "mua vf5 cần thơ",
       "a-suv điện vinfast",
       "xe điện xanhsm",
+      "vf5 xanhsm",
+      "vf5 tài xế",
+      "so sánh vf5 và vf3",
     ],
   },
   {
@@ -88,6 +97,8 @@ export const PRODUCTS_SEO: ProductSeo[] = [
       "vf6 plus",
       "suv điện vinfast",
       "mua vf6 cần thơ",
+      "vf6 gia đình",
+      "vf6 2026 giá mới",
     ],
   },
   {
@@ -108,6 +119,7 @@ export const PRODUCTS_SEO: ProductSeo[] = [
       "vf7 plus",
       "vf7 awd",
       "mua vf7 cần thơ",
+      "vf7 vs vf6",
     ],
   },
   {
@@ -147,6 +159,8 @@ export const PRODUCTS_SEO: ProductSeo[] = [
       "vf8 plus",
       "xe điện d-suv vinfast",
       "mua vf8 cần thơ",
+      "vf8 all new 2026",
+      "vf8 vs vf9",
     ],
   },
   {
@@ -225,6 +239,9 @@ export const PRODUCTS_SEO: ProductSeo[] = [
       "xe tải điện vinfast",
       "xe điện vận tải cần thơ",
       "xe thương mại điện cần thơ",
+      "ec van giao hàng",
+      "xe tải điện nhỏ cần thơ",
+      "van điện hộ kinh doanh",
     ],
   },
 ];

@@ -64,8 +64,8 @@ export default function Layout({
       <nav className="bg-white shadow-md sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-16 sm:h-20 gap-3">
-            <div className="flex min-w-0 flex-1 lg:flex-none items-center">
-              <SeoLink href="/" className="flex min-w-0 max-w-full items-center" aria-label="Trang chủ Cần Thơ GF">
+            <div className="flex shrink-0 items-center lg:flex-none">
+              <SeoLink href="/" className="inline-flex shrink-0 items-center" aria-label="Trang chủ Cần Thơ GF">
                 <Logo className="h-8 w-auto max-w-[min(100%,9.5rem)] sm:h-10 sm:max-w-[10rem] md:h-14 md:max-w-[13.125rem] lg:max-w-none" />
               </SeoLink>
             </div>

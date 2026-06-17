@@ -18,6 +18,8 @@ export const VF8_DETAIL: RichProductDetail = {
     "vf8 plus",
     "xe điện d-suv vinfast",
     "mua vf8 cần thơ",
+    "vf8 all new 2026",
+    "vf8 vs vf9",
   ],
   image: "/vf8.webp",
   imageAlt: "VinFast VF 8 — D-SUV điện cao cấp tại Cần Thơ GF",

@@ -19,6 +19,7 @@ export const VF7_DETAIL: RichProductDetail = {
     "vf7 awd",
     "xe điện coupe suv vinfast",
     "mua vf7 cần thơ",
+    "vf7 vs vf6",
   ],
   image: "/vf7.webp",
   imageAlt: "VinFast VF 7 — Coupe-SUV điện tại Cần Thơ GF",
