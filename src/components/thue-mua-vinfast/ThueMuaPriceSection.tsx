@@ -64,7 +64,7 @@ export function ThueMuaPriceSection() {
               : "bg-white text-gray-600 border-gray-200 hover:border-primary/40"
           }`}
         >
-          Limo Green — 4 chương trình
+          Limo Green — 2 chương trình mới
         </button>
       </div>
 
@@ -89,18 +89,15 @@ export function ThueMuaPriceSection() {
               <p className="text-xs text-gray-500 mb-0.5">{plan.priceLabel}</p>
               <p className="text-xs text-gray-500 mb-4">{plan.downPaymentLabel}</p>
               <YearRows years={plan.years} />
-              <p className="mt-4 pt-3 border-t border-gray-100 text-xs text-gray-600">
-                {plan.totalLabel}
-              </p>
             </div>
           ))}
         </div>
       ) : (
         <>
           <p className="text-sm text-gray-600 mb-4">
-            Xe Limo Green 749tr — 4 hướng thanh toán đối ứng khác nhau
+            Xe Limo Green 749tr — 2 gói mới, tổng 5 năm bằng nhau
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {THUE_MUA_LIMO_PROGRAMS.map((prog) => (
               <div
                 key={prog.id}
@@ -118,9 +115,6 @@ export function ThueMuaPriceSection() {
                 </span>
                 <p className="text-[11px] text-gray-500 leading-relaxed mb-4">{prog.description}</p>
                 <YearRows years={prog.years} />
-                <p className="mt-4 pt-3 border-t border-gray-100 text-[11px] font-semibold text-dark">
-                  {prog.totalLabel}
-                </p>
               </div>
             ))}
           </div>

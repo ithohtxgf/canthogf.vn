@@ -1,10 +1,10 @@
 export const THUE_MUA_VINFAST_PAGE_PATH = "/thue-mua-vinfast";
 
 export const THUE_MUA_VINFAST_META_TITLE =
-  "Thuê Mua Xe VinFast Cần Thơ 2026 – Chạy Dịch Vụ Grab, Be, Xanh SM | Cần Thơ GF";
+  "Thuê Mua Xe VinFast Cần Thơ 2026 – Chạy Dịch Vụ Xanh SM, Grab | Cần Thơ GF";
 
 export const THUE_MUA_VINFAST_META_DESCRIPTION =
-  "Chương trình thuê mua xe VinFast tại Cần Thơ: chỉ cần đối ứng, nhận xe 7–10 ngày, hỗ trợ mở Grab/Be/Xanh SM. Herio Green, VF5, VF6, Limo Green — sở hữu sau 5 năm. Tư vấn miễn phí!";
+  "Chương trình thuê mua xe VinFast tại Cần Thơ: chỉ cần đối ứng, nhận xe 7–10 ngày, hỗ trợ mở Xanh SM/Grab. Herio Green, VF5, VF6, Limo Green — sở hữu sau 5 năm. Tư vấn miễn phí!";
 
 export const THUE_MUA_VINFAST_KEYWORDS = [
   "thuê mua xe vinfast cần thơ",
@@ -20,12 +20,12 @@ export const THUE_MUA_VINFAST_PAGE_H1 =
   "Thuê Mua Xe VinFast Chạy Dịch Vụ — Không Phát Sinh Chi Phí";
 
 export const THUE_MUA_VINFAST_HERO_INTRO =
-  "Chỉ cần đối ứng, nhận xe trong 7–10 ngày. Hỗ trợ đăng ký Grab, Be, Xanh SM ngay. Sở hữu hoàn toàn sau 5 năm.";
+  "Chỉ cần đối ứng, nhận xe trong 7–10 ngày. Hỗ trợ đăng ký Xanh SM, Grab ngay. Sở hữu hoàn toàn sau 5 năm.";
 
 export const THUE_MUA_VINFAST_STATS = [
   { value: "5 năm", label: "Thuê sở hữu" },
   { value: "4 dòng xe", label: "Herio – VF5 – VF6 – Limo" },
-  { value: "3 app", label: "Grab · Be · Xanh SM" },
+  { value: "2 app", label: "Xanh SM · Grab" },
   { value: "0 VNĐ", label: "Phí phát sinh thêm" },
 ] as const;
 
@@ -119,51 +119,33 @@ export type ThueMuaLimoProgram = {
 
 export const THUE_MUA_LIMO_PROGRAMS: ThueMuaLimoProgram[] = [
   {
-    id: "limo-1",
-    name: "Chương trình 1",
-    description: "Đối ứng 80tr. Phần còn lại chia đều 24 tháng (cộng vào tiền thuê)",
-    years: [
-      { label: "Năm 1–2", monthly: "21tr", barPercent: 100 },
-      { label: "Năm 3", monthly: "16tr", barPercent: 76 },
-      { label: "Năm 4", monthly: "15tr", barPercent: 71 },
-      { label: "Năm 5", monthly: "14tr", barPercent: 67 },
-    ],
-    totalLabel: "Tổng: ~1.05 tỷ",
-  },
-  {
-    id: "limo-2",
-    name: "Chương trình 2",
-    description: "Đối ứng 80tr. Thanh toán phần còn lại một lần khi nhận xe",
-    years: [
-      { label: "Năm 1", monthly: "18tr", barPercent: 100 },
-      { label: "Năm 2", monthly: "17tr", barPercent: 94 },
-      { label: "Năm 3", monthly: "16tr", barPercent: 89 },
-      { label: "Năm 4", monthly: "15tr", barPercent: 83 },
-      { label: "Năm 5", monthly: "14tr", barPercent: 78 },
-    ],
-    totalLabel: "Tổng: ~960tr",
-  },
-  {
-    id: "limo-3",
-    name: "Chương trình 3",
-    description: "Đối ứng 80tr. Tiền thuê cố định mỗi tháng suốt 5 năm",
-    years: [{ label: "Năm 1–5", monthly: "18tr", barPercent: 100 }],
-    totalLabel: "Tổng: ~1.16 tỷ",
-  },
-  {
-    id: "limo-4",
-    name: "Chương trình 4",
-    description: "Đối ứng 150tr. Tiền thuê giảm dần từng năm",
+    id: "limo-goi-150",
+    name: "Gói đối ứng 150tr",
+    description: "Tiền thuê giảm dần theo năm, tổng 5 năm bằng gói 100tr mới",
     featured: true,
-    badge: "Tiết kiệm nhất",
+    badge: "Chuẩn hiện hành",
     years: [
-      { label: "Năm 1", monthly: "18tr", barPercent: 100 },
-      { label: "Năm 2", monthly: "17tr", barPercent: 94 },
-      { label: "Năm 3", monthly: "16tr", barPercent: 89 },
-      { label: "Năm 4", monthly: "15tr", barPercent: 83 },
-      { label: "Năm 5", monthly: "14tr", barPercent: 78 },
+      { label: "Năm 1", monthly: "18tr", barPercent: 90 },
+      { label: "Năm 2", monthly: "17tr", barPercent: 85 },
+      { label: "Năm 3", monthly: "16tr", barPercent: 80 },
+      { label: "Năm 4", monthly: "15tr", barPercent: 75 },
+      { label: "Năm 5", monthly: "14tr", barPercent: 70 },
     ],
-    totalLabel: "Tổng: ~960tr — đối ứng cao hơn, tiền thuê ít hơn",
+    totalLabel: "Đối ứng: 150tr · Tổng 5 năm: 1.110 tỷ",
+  },
+  {
+    id: "limo-goi-100",
+    name: "Gói đối ứng 100tr (mới)",
+    description: "Năm 1 và 2 cao hơn 2.083tr/tháng, từ năm 3 bằng gói 150tr",
+    badge: "Giảm vốn đầu vào 50tr",
+    years: [
+      { label: "Năm 1", monthly: "20.083tr", barPercent: 100 },
+      { label: "Năm 2", monthly: "19.083tr", barPercent: 95 },
+      { label: "Năm 3", monthly: "16tr", barPercent: 80 },
+      { label: "Năm 4", monthly: "15tr", barPercent: 75 },
+      { label: "Năm 5", monthly: "14tr", barPercent: 70 },
+    ],
+    totalLabel: "Đối ứng: 100tr · Tổng 5 năm: 1.110 tỷ",
   },
 ];
 
@@ -177,8 +159,8 @@ export const THUE_MUA_BENEFITS = [
     description: "Dán full xe toàn bộ, trị giá 5–8 triệu — HTX tặng",
   },
   {
-    title: "Mở 3 app trong 24h",
-    description: "Grab, Be, Xanh SM — HTX ký hợp đồng liên kết, cam kết chạy ngay",
+    title: "Mở 2 app trong 24h",
+    description: "Xanh SM, Grab — HTX ký hợp đồng liên kết, cam kết chạy ngay",
   },
   {
     title: "Camera hành trình",
@@ -241,12 +223,12 @@ export const THUE_MUA_FAQ: ThueMuaFaqItem[] = [
   {
     question: "Chi phí đối ứng ban đầu là bao nhiêu?",
     answer:
-      "Tùy dòng xe: Herio Green cần 98 triệu, VF5 Plus cần 108 triệu, VF6 Eco cần 138 triệu, Limo Green cần từ 80–150 triệu tùy chương trình. Sau khi đối ứng, nhận xe trong 7–10 ngày làm việc.",
+      "Tùy dòng xe: Herio Green cần 98 triệu, VF5 Plus cần 108 triệu, VF6 Eco cần 138 triệu. Limo Green hiện có 2 gói đối ứng 100 triệu hoặc 150 triệu. Sau khi đối ứng, nhận xe trong 7–10 ngày làm việc.",
   },
   {
-    question: "Có thể chạy Grab, Be, Xanh SM không?",
+    question: "Có thể chạy Xanh SM, Grab không?",
     answer:
-      "Có. HTX Cần Thơ GF đã ký liên kết trực tiếp với Grab, Be và Xanh SM Platform. Khách hàng được hỗ trợ mở tài khoản 3 app trong vòng 24 giờ sau khi nhận xe và hoàn tất thủ tục biển vàng.",
+      "Có. HTX Cần Thơ GF đã ký liên kết trực tiếp với Xanh SM Platform và Grab. Khách hàng được hỗ trợ mở tài khoản 2 app trong vòng 24 giờ sau khi nhận xe và hoàn tất thủ tục biển vàng.",
   },
   {
     question: "Có thể trả xe sớm trước 5 năm không?",
