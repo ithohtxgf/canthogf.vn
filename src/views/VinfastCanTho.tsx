@@ -3,19 +3,16 @@
 import { motion } from "motion/react";
 import { ArrowRight, Car, Sparkles } from "lucide-react";
 import { SeoBannerImage } from "@/components/SeoImage";
-import { VinfastPriceCalculator } from "@/components/vinfast-can-tho/VinfastPriceCalculator";
 import { VinfastSeoContent } from "@/components/vinfast-can-tho/VinfastSeoContent";
 import { VinfastProductShowcase } from "@/components/vinfast-can-tho/VinfastProductShowcase";
 import { VinfastExclusiveOffers } from "@/components/vinfast-can-tho/VinfastExclusiveOffers";
 import { VinfastFinancing } from "@/components/vinfast-can-tho/VinfastFinancing";
 import { VinfastLeadForm } from "@/components/vinfast-can-tho/VinfastLeadForm";
 import { VinfastSpokeArticles } from "@/components/vinfast-can-tho/VinfastSpokeArticles";
+import { VinfastChietTinhForm } from "@/components/vinfast-can-tho/VinfastChietTinhForm";
 import { VinfastFaq } from "@/components/vinfast-can-tho/VinfastFaq";
 import { dispatchConsultationPopup } from "@/lib/contact";
-import {
-  VINFAST_CAN_THO_CALCULATOR_H2,
-  VINFAST_CAN_THO_PAGE_H1,
-} from "@/lib/content/vinfast-can-tho";
+import { VINFAST_CAN_THO_PAGE_H1 } from "@/lib/content/vinfast-can-tho";
 
 export default function VinfastCanTho() {
   return (
@@ -93,26 +90,26 @@ export default function VinfastCanTho() {
         </div>
       </section>
 
-      {/* H2: Bảng tính giá lăn bánh */}
+      {/* H2: Chiết tính báo giá chi tiết — thay thế bảng tính cũ */}
       <section
         id="tinh-gia-lan-banh"
         className="py-12 sm:py-16 lg:py-20 -mt-8 sm:-mt-12 relative z-20"
-        aria-labelledby="calculator-heading"
+        aria-labelledby="chiet-tinh-heading"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2
-              id="calculator-heading"
+              id="chiet-tinh-heading"
               className="text-2xl sm:text-3xl font-black text-dark mb-3"
             >
-              {VINFAST_CAN_THO_CALCULATOR_H2}
+              Chiết Tính Mua Xe VinFast — Báo Giá Trả Góp Chi Tiết
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-              Giá xe (kèm pin) + phí biển số + phí đường bộ + BHTNDS − voucher
-              ưu đãi — minh bạch từng khoản, không cần liên hệ mới biết giá.
+              Nhập thông số xe, ưu đãi và tỷ lệ vay — xem ngay toàn bộ chi phí
+              tiền mặt, khoản trả trước và góp hàng tháng minh bạch từng dòng.
             </p>
           </div>
-          <VinfastPriceCalculator />
+          <VinfastChietTinhForm />
         </div>
       </section>
 
