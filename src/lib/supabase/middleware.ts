@@ -1,7 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { isAdminEmailInEnvAllowlist } from "@/lib/admin/auth-policy";
+import { isAdminEmailInEnvAllowlist } from "@/lib/admin/auth-allowlist";
 import {
   getAdminSessionCookieName,
   verifyDbSessionToken,

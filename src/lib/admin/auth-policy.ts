@@ -1,28 +1,11 @@
 import { getDatabaseSetupStatus, isSupabaseEnabled } from "@/lib/db/config";
 import { countActiveAdminUsers, isActiveAdminInDatabase } from "@/lib/db/admin-users";
+import {
+  getAdminAllowedEmails,
+  isAdminEmailInEnvAllowlist,
+} from "@/lib/admin/auth-allowlist";
 
-/** Email được phép qua biến môi trường (Supabase Auth) */
-export function getAdminAllowedEmails(): string[] {
-  const raw = process.env.ADMIN_ALLOWED_EMAILS?.trim();
-  if (!raw) return [];
-
-  return raw
-    .split(",")
-    .map((email) => email.trim().toLowerCase())
-    .filter(Boolean);
-}
-
-/** Kiểm tra nhanh danh sách email trong .env (đồng bộ) */
-export function isAdminEmailInEnvAllowlist(
-  email: string | undefined | null,
-): boolean {
-  if (!email?.trim()) return false;
-
-  const allowed = getAdminAllowedEmails();
-  if (allowed.length === 0) return false;
-
-  return allowed.includes(email.trim().toLowerCase());
-}
+export { getAdminAllowedEmails, isAdminEmailInEnvAllowlist } from "@/lib/admin/auth-allowlist";
 
 /**
  * Email được phép vào admin:
