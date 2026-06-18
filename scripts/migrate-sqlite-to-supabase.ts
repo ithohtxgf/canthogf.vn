@@ -1,13 +1,13 @@
 /**
  * Migrate dữ liệu từ SQLite (data/canthogf.db) lên Supabase.
  *
- * Yêu cầu .env:
+ * Yêu cầu `.env.local`:
  *   NEXT_PUBLIC_SUPABASE_URL
  *   SUPABASE_SERVICE_ROLE_KEY
  *
  * Chạy: npm run db:migrate
  */
-import "dotenv/config";
+import "./load-env";
 import fs from "fs";
 import path from "path";
 import Database from "better-sqlite3";

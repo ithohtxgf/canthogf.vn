@@ -3,7 +3,7 @@
  *
  * Chạy: npm run db:seed
  */
-import "dotenv/config";
+import "./load-env";
 import { NEWS_ARTICLES } from "../src/lib/content/news";
 import { PROMOTIONS } from "../src/lib/content/promotions";
 import { isSupabaseEnabled } from "../src/lib/db/config";
