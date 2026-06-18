@@ -4,6 +4,9 @@ import { getMetadataStaticParams, resolveMetadataFromSlug } from "@/lib/metadata
 import { loadPageDataFromSlug } from "@/lib/page-data";
 import AppClient from "./AppClient";
 
+/** KM & bài viết đổi qua admin — luôn đọc DB mới, không bake HTML lúc build */
+export const dynamic = "force-dynamic";
+
 type PageProps = {
   params: Promise<{ slug?: string[] }>;
 };

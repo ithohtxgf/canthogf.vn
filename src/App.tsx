@@ -80,17 +80,13 @@ export default function App({ initialData = DEFAULT_INITIAL_DATA }: AppProps) {
   const pathname = usePathname();
   const route = matchRoute(pathname || initialData.pathname);
 
-  // Hydrate đồng bộ trước render — tránh flash KM fallback từ promotions.ts
+  // Hydrate đồng bộ trước render — catalog KM luôn khớp DB
   hydrateNewsCatalog(initialData.newsCatalog ?? initialData.newsArticles);
-  if (initialData.promotions !== undefined) {
-    hydratePromotionsCatalog(initialData.promotions);
-  }
+  hydratePromotionsCatalog(initialData.promotions);
 
   useEffect(() => {
     hydrateNewsCatalog(initialData.newsCatalog ?? initialData.newsArticles);
-    if (initialData.promotions !== undefined) {
-      hydratePromotionsCatalog(initialData.promotions);
-    }
+    hydratePromotionsCatalog(initialData.promotions);
   }, [
     initialData.newsCatalog,
     initialData.newsArticles,

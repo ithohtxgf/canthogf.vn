@@ -68,7 +68,8 @@ export function hydratePromotionsCatalog(promos: Promotion[] | null | undefined)
 }
 
 function getPromotionsCatalog(): Promotion[] {
-  return runtimePromotions ?? PROMOTIONS;
+  // Chỉ dùng catalog từ DB (hydrate). Không fallback PROMOTIONS — file mẫu chỉ để seed.
+  return runtimePromotions ?? [];
 }
 
 export const PROMOTIONS: Promotion[] = [
