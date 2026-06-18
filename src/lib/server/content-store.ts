@@ -7,7 +7,7 @@ import {
   type NewsArticle,
   type NewsCategory,
 } from "@/lib/content/news";
-import { PROMOTIONS, type Promotion } from "@/lib/content/promotions";
+import type { Promotion } from "@/lib/content/promotions";
 
 async function safeAsync<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
   try {
@@ -36,10 +36,8 @@ export async function loadPublishedArticleById(
 
 export async function loadAllPromotions(): Promise<Promotion[]> {
   return safeAsync(async () => {
-    const fromDb = await listAllPromotions();
-    if (fromDb.length > 0) return fromDb;
-    return [...PROMOTIONS];
-  }, [...PROMOTIONS]);
+    return await listAllPromotions();
+  }, []);
 }
 
 export async function loadPublishedArticleIds(): Promise<string[]> {

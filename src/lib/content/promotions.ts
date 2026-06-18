@@ -60,11 +60,11 @@ export type Promotion = {
   benefits?: string[];
 };
 
-let runtimePromotions: Promotion[] | null = null;
+let runtimePromotions: Promotion[] | null | undefined;
 
 /** Gọi từ App khi server truyền catalog KM từ DB */
 export function hydratePromotionsCatalog(promos: Promotion[] | null | undefined) {
-  runtimePromotions = promos?.length ? promos : null;
+  runtimePromotions = promos ?? [];
 }
 
 function getPromotionsCatalog(): Promotion[] {
