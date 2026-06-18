@@ -7,7 +7,7 @@ import { Menu, X, Phone, Mail, MapPin, ChevronRight, Building2 } from "lucide-re
 import { CONTACT_TAX_ID, CONTACT_FACEBOOK_URL, CONTACT_TIKTOK_URL, CONTACT_YOUTUBE_URL, CONTACT_ZALO_URL } from "@/lib/contact";
 import { THUE_MUA_VINFAST_PAGE_PATH } from "@/lib/content/thue-mua-vinfast-page";
 import { SeoLink } from "./SeoLink";
-import { Logo } from "./Logo";
+import { Logo, LOGO_NAV_CLASS } from "./Logo";
 import { ConsultationPopup } from "./ConsultationPopup";
 import { motion, AnimatePresence } from "motion/react";
 import { isNavLinkActive } from "@/lib/routes";
@@ -65,10 +65,10 @@ export default function Layout({
       {/* Main Navigation */}
       <nav className="bg-white shadow-md sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center h-16 sm:h-20 gap-3">
+          <div className="flex items-center h-[4.25rem] sm:h-20 gap-3">
             <div className="flex shrink-0 items-center lg:flex-none">
               <SeoLink href="/" className="inline-flex shrink-0 items-center" aria-label="Trang chủ Cần Thơ GF">
-                <Logo className="h-8 w-auto max-w-[min(100%,9.5rem)] sm:h-10 sm:max-w-[10rem] md:h-14 md:max-w-[13.125rem] lg:max-w-none" />
+                <Logo className={LOGO_NAV_CLASS} />
               </SeoLink>
             </div>
 
@@ -159,7 +159,7 @@ export default function Layout({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="mb-6">
-                <Logo className="h-8 w-auto max-w-[min(100%,9.5rem)] sm:h-10 sm:max-w-[10rem] md:h-14 md:max-w-[13.125rem] lg:max-w-none" />
+                <Logo className={LOGO_NAV_CLASS} />
               </div>
               <p className="text-gray-600 mb-6">
                 Hợp tác xã vận tải Cần Thơ GF - Đối tác tin cậy cung cấp các dòng xe VinFast và dịch vụ XanhSM tại khu vực ĐBSCL.
