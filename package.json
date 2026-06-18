@@ -11,7 +11,8 @@
     "dev:clean": "npm run clean && npm run dev",
     "lint": "tsc --noEmit",
     "db:migrate": "tsx scripts/migrate-sqlite-to-supabase.ts",
-    "db:seed": "tsx scripts/seed-supabase.ts"
+    "db:seed": "tsx scripts/seed-supabase.ts",
+    "db:seed-admin": "tsx scripts/seed-admin-user.ts"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",
@@ -26,6 +27,7 @@
     "next": "^16.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "server-only": "^0.0.1",
     "sharp": "^0.35.1"
   },
   "devDependencies": {

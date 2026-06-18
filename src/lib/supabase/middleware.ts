@@ -1,15 +1,20 @@
 import { createServerClient } from "@supabase/ssr";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { isAdminEmailAllowed } from "@/lib/admin/auth-policy";
+import { isAdminEmailInEnvAllowlist } from "@/lib/admin/auth-policy";
+import {
+  getAdminSessionCookieName,
+  verifyDbSessionToken,
+} from "@/lib/admin/db-session";
 import { getSupabaseAnonKey, getSupabaseUrl } from "@/lib/supabase/env";
 
 export async function updateAdminSession(request: NextRequest) {
   let response = NextResponse.next({ request });
 
-  let supabase;
+  let supabaseUserEmail: string | null = null;
+
   try {
-    supabase = createServerClient(getSupabaseUrl(), getSupabaseAnonKey(), {
+    const supabase = createServerClient(getSupabaseUrl(), getSupabaseAnonKey(), {
       cookies: {
         getAll() {
           return request.cookies.getAll();
@@ -25,15 +30,35 @@ export async function updateAdminSession(request: NextRequest) {
         },
       },
     });
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (user?.email) {
+      supabaseUserEmail = user.email;
+    }
   } catch {
-    return { response, user: null, isAdmin: false };
+    // Supabase chưa cấu hình
   }
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const sessionToken = request.cookies.get(getAdminSessionCookieName())?.value;
+  const dbSessionEmail = await verifyDbSessionToken(sessionToken);
 
-  const isAdmin = Boolean(user && isAdminEmailAllowed(user.email));
+  let isAdmin = Boolean(dbSessionEmail);
 
-  return { response, user, isAdmin };
+  if (!isAdmin && supabaseUserEmail) {
+    if (isAdminEmailInEnvAllowlist(supabaseUserEmail)) {
+      isAdmin = true;
+    } else if (
+      process.env.NODE_ENV !== "production" &&
+      !process.env.VERCEL &&
+      !process.env.ADMIN_ALLOWED_EMAILS?.trim()
+    ) {
+      // Dev: chưa khai báo env — tin Supabase Auth session
+      isAdmin = true;
+    }
+  }
+
+  return { response, user: supabaseUserEmail ?? dbSessionEmail, isAdmin };
 }

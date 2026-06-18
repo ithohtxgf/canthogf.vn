@@ -37,5 +37,17 @@ export function runMigrations(db: Database.Database): void {
     );
 
     CREATE INDEX IF NOT EXISTS idx_promotions_active ON promotions(is_active);
+
+    CREATE TABLE IF NOT EXISTS admin_users (
+      id TEXT PRIMARY KEY,
+      email TEXT NOT NULL UNIQUE COLLATE NOCASE,
+      password_hash TEXT NOT NULL,
+      display_name TEXT,
+      is_active INTEGER NOT NULL DEFAULT 1,
+      created_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_admin_users_active ON admin_users(is_active);
   `);
 }

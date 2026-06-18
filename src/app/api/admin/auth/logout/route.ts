@@ -1,4 +1,8 @@
 import { NextResponse } from "next/server";
+import {
+  getAdminSessionCookieName,
+  getAdminSessionCookieOptions,
+} from "@/lib/admin/db-session";
 import { createSupabaseAuthServerClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
@@ -8,15 +12,12 @@ export async function POST() {
     const supabase = await createSupabaseAuthServerClient();
     await supabase.auth.signOut();
   } catch {
-    // Supabase chưa cấu hình — vẫn xóa cookie cũ nếu có
+    // Supabase chưa cấu hình
   }
 
   const response = NextResponse.json({ ok: true });
-  response.cookies.set("admin_session", "", {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-    path: "/",
+  response.cookies.set(getAdminSessionCookieName(), "", {
+    ...getAdminSessionCookieOptions(),
     maxAge: 0,
   });
 

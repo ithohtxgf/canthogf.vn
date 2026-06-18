@@ -24,6 +24,7 @@ export default function AdminLoginClient() {
       .then(
         (data: {
           configured?: boolean;
+          authModes?: string[];
           setupMessage?: string | null;
           database?: { ready?: boolean; message?: string | null };
         }) => {

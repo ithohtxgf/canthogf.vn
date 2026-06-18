@@ -1,6 +1,7 @@
-import { isSupabaseEnabled } from "@/lib/db/config";
+import { getDatabaseSetupStatus, isSupabaseEnabled } from "@/lib/db/config";
+import { countActiveAdminUsers, isActiveAdminInDatabase } from "@/lib/db/admin-users";
 
-/** Email được phép vào /admin — tạo user tương ứng trong Supabase Auth */
+/** Email được phép qua biến môi trường (Supabase Auth) */
 export function getAdminAllowedEmails(): string[] {
   const raw = process.env.ADMIN_ALLOWED_EMAILS?.trim();
   if (!raw) return [];
@@ -11,16 +12,49 @@ export function getAdminAllowedEmails(): string[] {
     .filter(Boolean);
 }
 
-export function isAdminEmailAllowed(email: string | undefined | null): boolean {
+/** Kiểm tra nhanh danh sách email trong .env (đồng bộ) */
+export function isAdminEmailInEnvAllowlist(
+  email: string | undefined | null,
+): boolean {
   if (!email?.trim()) return false;
 
   const allowed = getAdminAllowedEmails();
-  if (allowed.length === 0) {
-    // Dev: chưa khai báo danh sách → cho phép mọi user Supabase Auth hợp lệ
-    return process.env.NODE_ENV !== "production" && !process.env.VERCEL;
-  }
+  if (allowed.length === 0) return false;
 
   return allowed.includes(email.trim().toLowerCase());
+}
+
+/**
+ * Email được phép vào admin:
+ * 1) ADMIN_ALLOWED_EMAILS trong .env, hoặc
+ * 2) Bản ghi active trong bảng admin_users
+ */
+export async function isAdminEmailAllowed(
+  email: string | undefined | null,
+): Promise<boolean> {
+  if (!email?.trim()) return false;
+
+  const normalized = email.trim().toLowerCase();
+
+  if (isAdminEmailInEnvAllowlist(normalized)) return true;
+
+  try {
+    if (await isActiveAdminInDatabase(normalized)) return true;
+  } catch {
+    // DB chưa migrate — bỏ qua
+  }
+
+  const allowed = getAdminAllowedEmails();
+  if (
+    allowed.length === 0 &&
+    process.env.NODE_ENV !== "production" &&
+    !process.env.VERCEL
+  ) {
+    // Dev: chưa khai báo env và chưa có admin DB → cho mọi user Supabase Auth hợp lệ
+    return true;
+  }
+
+  return false;
 }
 
 export function isSupabaseAuthConfigured(): boolean {
@@ -30,7 +64,21 @@ export function isSupabaseAuthConfigured(): boolean {
   );
 }
 
-export function isAdminAuthConfigured(): boolean {
+export async function isDatabaseAuthAvailable(): Promise<boolean> {
+  const dbStatus = getDatabaseSetupStatus();
+  if (!dbStatus.ready) return false;
+
+  try {
+    const count = await countActiveAdminUsers();
+    return count > 0;
+  } catch {
+    return false;
+  }
+}
+
+export async function isAdminAuthConfigured(): Promise<boolean> {
+  if (await isDatabaseAuthAvailable()) return true;
+
   if (!isSupabaseAuthConfigured() || !isSupabaseEnabled()) return false;
 
   if (process.env.NODE_ENV === "production" || process.env.VERCEL) {
@@ -40,7 +88,9 @@ export function isAdminAuthConfigured(): boolean {
   return true;
 }
 
-export function getAdminAuthSetupMessage(): string | null {
+export async function getAdminAuthSetupMessage(): Promise<string | null> {
+  if (await isDatabaseAuthAvailable()) return null;
+
   if (!isSupabaseAuthConfigured()) {
     return "Thiếu NEXT_PUBLIC_SUPABASE_URL hoặc NEXT_PUBLIC_SUPABASE_ANON_KEY.";
   }
@@ -51,7 +101,16 @@ export function getAdminAuthSetupMessage(): string | null {
     (process.env.NODE_ENV === "production" || process.env.VERCEL) &&
     getAdminAllowedEmails().length === 0
   ) {
-    return "Thêm ADMIN_ALLOWED_EMAILS trên Vercel (email admin đã tạo trong Supabase Auth).";
+    return "Thêm admin vào bảng admin_users (npm run db:seed-admin) hoặc ADMIN_ALLOWED_EMAILS trên Vercel.";
   }
   return null;
+}
+
+export async function getAdminAuthModes(): Promise<Array<"database" | "supabase">> {
+  const modes: Array<"database" | "supabase"> = [];
+
+  if (await isDatabaseAuthAvailable()) modes.push("database");
+  if (isSupabaseAuthConfigured() && isSupabaseEnabled()) modes.push("supabase");
+
+  return modes;
 }
