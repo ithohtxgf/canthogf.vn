@@ -10,7 +10,7 @@ export const VF8_DETAIL: RichProductDetail = {
   metaTitle:
     "VinFast VF 8 Cần Thơ: Giá Eco & Plus, 402 hp, 11 Túi Khí, ViVi 2.0",
   metaDescription:
-    "VinFast VF 8 tại Cần Thơ: Eco từ 866,15 triệu, Plus từ 1.019,15 tỷ. Bản Plus 402 hp, 620 Nm, 0-100 km/h 5,58 giây, 11 túi khí, ADAS nâng cao, quãng đường 562 km (Eco).",
+    "VinFast VF 8 tại Cần Thơ: Eco 1.019 tỷ, Plus 1.199 tỷ (đã kèm pin, Pin CATL). Bản Plus 402 hp, 620 Nm, 0-100 km/h 5,58 giây, 11 túi khí, ADAS nâng cao, quãng đường 562 km (Eco).",
   keywords: [
     "vinfast vf8",
     "vf8 cần thơ",
@@ -24,13 +24,10 @@ export const VF8_DETAIL: RichProductDetail = {
   image: "/vf8.webp",
   imageAlt: "VinFast VF 8 — D-SUV điện cao cấp tại Cần Thơ GF",
   listPrice: 1_019_000_000,
-  listPriceLabel: "1.019.000.000 VNĐ (VF 8 Eco — giá gốc)",
-  promoPrice: 866_150_000,
-  promoPriceLabel: "866.150.000 VNĐ",
-  promoVoucherLabel: "Ưu đãi VF 8 Eco",
+  listPriceLabel: "VF 8 Eco: 1.019.000.000 VNĐ · VF 8 Plus: 1.199.000.000 VNĐ (đã kèm pin, Pin CATL)",
   positioningHtml: `<p><strong>VinFast VF 8</strong> là D-SUV điện 5 chỗ theo triết lý <em>"Cân bằng động"</em>, hướng đến khách hàng cần một chiếc SUV điện cao cấp, mạnh mẽ và an toàn. Mẫu xe sở hữu công nghệ <strong>ViVi 2.0 AI</strong>, nội thất sang trọng và phiên bản Plus mạnh tới <strong>300 kW / 402 hp</strong>, mô-men xoắn <strong>620 Nm</strong>.</p>`,
   highlights: [
-    "VF 8 Eco từ 866,15 triệu · VF 8 Plus từ 1.019,15 tỷ",
+    "VF 8 Eco 1.019 tỷ · VF 8 Plus 1.199 tỷ (đã kèm pin, Pin CATL)",
     "VF 8 Plus: 300 kW / 402 hp, mô-men xoắn 620 Nm, 0-100 km/h 5,58 giây",
     "11 túi khí trên VF 8 Plus — nổi bật trong phân khúc",
     "Pin 87,7 kWh — Eco đạt 562 km (NEDC), Plus 457 km (WLTP)",
@@ -42,13 +39,13 @@ export const VF8_DETAIL: RichProductDetail = {
       id: "vf8-eco",
       name: "VF 8 Eco",
       listPrice: 1_019_000_000,
-      promoPrice: 866_150_000,
+      promoPrice: 1_019_000_000,
     },
     {
       id: "vf8-plus",
       name: "VF 8 Plus",
       listPrice: 1_199_000_000,
-      promoPrice: 1_019_150_000,
+      promoPrice: 1_199_000_000,
     },
   ],
   compareSpecTables: [

@@ -9,7 +9,7 @@ import { THUE_MUA_VINFAST_PAGE_PATH } from "@/lib/content/thue-mua-vinfast-page"
 import { SeoLink } from "./SeoLink";
 import { Logo, LOGO_NAV_CLASS } from "./Logo";
 import { ConsultationPopup } from "./ConsultationPopup";
-import { motion, AnimatePresence } from "motion/react";
+import { MobileNavMenu } from "./MobileNavMenu";
 import { isNavLinkActive } from "@/lib/routes";
 
 export default function Layout({
@@ -101,51 +101,27 @@ export default function Layout({
             <div className="ml-auto flex shrink-0 items-center lg:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-primary focus:outline-none"
+                className={`relative flex h-11 w-11 items-center justify-center rounded-xl transition-colors ${
+                  isMenuOpen
+                    ? "bg-primary/10 text-primary"
+                    : "text-gray-700 hover:bg-gray-100 hover:text-primary"
+                }`}
                 aria-label={isMenuOpen ? "Đóng menu" : "Mở menu"}
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-menu"
               >
-                {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              id="mobile-menu"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white border-t"
-            >
-              <div className="px-4 pt-2 pb-6 space-y-1">
-                {headerNavLinks.map((link) => (
-                  <SeoLink
-                    key={link.path}
-                    href={link.path}
-                    className={`block px-3 py-3 rounded-md text-base font-medium ${
-                      isNavLinkActive(pathname, link.path)
-                        ? "bg-primary/10 text-primary"
-                        : "text-gray-700 hover:bg-gray-50 hover:text-primary"
-                    }`}
-                  >
-                    {link.name}
-                  </SeoLink>
-                ))}
-                <button
-                  onClick={() => setIsPopupOpen(true)}
-                  className="w-full mt-4 bg-primary text-white px-3 py-3 rounded-md font-bold"
-                >
-                  Đăng ký tư vấn
-                </button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <MobileNavMenu
+          isOpen={isMenuOpen}
+          pathname={pathname}
+          onClose={() => setIsMenuOpen(false)}
+          onConsultation={() => setIsPopupOpen(true)}
+        />
       </nav>
 
       {/* Main Content */}

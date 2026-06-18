@@ -6,11 +6,11 @@ export const VF3_DETAIL: RichProductDetail = {
   segment: "Mini car điện hàng đầu thị trường Việt Nam",
   shortName: "VF 3",
   slogan: "Xe nhỏ, giá trị lớn",
-  h1: "VinFast VF 3 Cần Thơ: Mini Car Điện — Giá Ưu Đãi & Thông Số 2026",
+  h1: "VinFast VF 3 Cần Thơ: Mini Car Điện — Giá Niêm Yết & Thông Số 2026",
   metaTitle:
-    "VinFast VF 3 Cần Thơ: Giá Eco & Plus, 7 Màu, Thông Số Kỹ Thuật",
+    "VinFast VF 3 Cần Thơ: Giá Tiêu Chuẩn & Plus, 7 Màu, Thông Số Kỹ Thuật",
   metaDescription:
-    "VinFast VF 3 — mini car điện giá từ 268,78 triệu (Eco), 280,35 triệu (Plus). Quãng đường 215 km, sạc nhanh 36 phút, 7 màu ngoại thất. Đặt cọc 15 triệu tại Cần Thơ GF.",
+    "VinFast VF 3 — mini car điện giá niêm yết từ 299 triệu (Tiêu chuẩn), 315 triệu (Plus), đã kèm pin. Quãng đường 215 km, sạc nhanh 36 phút. Tư vấn tại Cần Thơ GF.",
   keywords: [
     "vinfast vf3",
     "vf3 cần thơ",
@@ -26,11 +26,8 @@ export const VF3_DETAIL: RichProductDetail = {
   ],
   image: "/vf3.jpg",
   imageAlt: "VinFast VF 3 — mini car điện tại Cần Thơ GF",
-  listPrice: 302_000_000,
-  listPriceLabel: "302.000.000 VNĐ (VF 3 Eco — giá gốc)",
-  promoPrice: 268_780_000,
-  promoPriceLabel: "268.780.000 VNĐ",
-  promoVoucherLabel: "Ưu đãi VF 3 Eco",
+  listPrice: 299_000_000,
+  listPriceLabel: "VF 3 Tiêu chuẩn: 299.000.000 VNĐ · VF 3 Plus: 315.000.000 VNĐ (đã kèm pin)",
   depositAmount: 15_000_000,
   positioningHtml: `<p><strong>VinFast VF 3</strong> là <em>mini car điện</em> tiên tiến kết hợp công nghệ và thiết kế sáng tạo — phù hợp di chuyển đô thị <strong>Cần Thơ</strong>, phố hẹp <strong>Ninh Kiều</strong>, <strong>Cái Răng</strong> với chi phí vận hành siêu rẻ.</p>`,
   highlights: [
@@ -42,16 +39,16 @@ export const VF3_DETAIL: RichProductDetail = {
   ],
   priceVariants: [
     {
-      id: "vf3-eco",
-      name: "VF 3 Eco",
-      listPrice: 302_000_000,
-      promoPrice: 268_780_000,
+      id: "vf3-standard",
+      name: "VF 3 Tiêu chuẩn",
+      listPrice: 299_000_000,
+      promoPrice: 299_000_000,
     },
     {
       id: "vf3-plus",
       name: "VF 3 Plus",
       listPrice: 315_000_000,
-      promoPrice: 280_350_000,
+      promoPrice: 315_000_000,
     },
   ],
   specGroups: [

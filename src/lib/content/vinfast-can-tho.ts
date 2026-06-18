@@ -22,10 +22,10 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
   {
     id: "vf3",
     name: "VF 3",
-    listPrice: 302_000_000,
+    listPrice: 299_000_000,
     image: "/vf3.jpg",
     description:
-      "VinFast VF 3 — mini car điện \"Xe nhỏ, giá trị lớn\". VF 3 Eco từ 268,78 triệu, quãng đường 215 km — lý tưởng phố Ninh Kiều, Cần Thơ.",
+      "VinFast VF 3 — mini car điện \"Xe nhỏ, giá trị lớn\". Tiêu chuẩn 299 triệu, Plus 315 triệu (đã kèm pin), quãng đường 215 km — lý tưởng phố Ninh Kiều, Cần Thơ.",
     category: "passenger",
     seoSlug: "vf3",
     localReview: {
@@ -90,7 +90,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
   {
     id: "vf8",
     name: "VF 8",
-    listPrice: 1_079_000_000,
+    listPrice: 1_019_000_000,
     image: "/vf8.webp",
     description:
       "SUV điện cao cấp, công nghệ ADAS tiên tiến — đẳng cấp cho khách hàng VinFast tại Cần Thơ và khu vực lân cận.",
@@ -135,13 +135,13 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
       useCase: "Vận tải liên tỉnh, dịch vụ cao cấp, gia đình 7 chỗ",
       rating: 4.9,
       verdict:
-        "Quãng đường 450 km — lý tưởng tuyến Cần Thơ ↔ TP.HCM, An Giang. Giá kèm pin 749 triệu, ưu đãi từ 666,61 triệu qua CanThoGF.",
+        "Quãng đường 450 km — lý tưởng tuyến Cần Thơ ↔ TP.HCM, An Giang. Giá niêm yết kèm pin 749 triệu tại CanThoGF.",
     },
   },
   {
     id: "herio-green",
     name: "Herio Green",
-    listPrice: 479_000_000,
+    listPrice: 499_000_000,
     image: "/herio-green.png",
     description:
       "Xe dịch vụ xanh quãng đường 326 km — giải pháp kinh doanh vận tải hiệu quả cho HTX và đối tác XanhSM Cần Thơ.",

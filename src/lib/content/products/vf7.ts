@@ -10,7 +10,7 @@ export const VF7_DETAIL: RichProductDetail = {
   metaTitle:
     "VinFast VF 7 Cần Thơ: Giá Eco & Plus, AWD 349 hp, ADAS 20 Tính Năng",
   metaDescription:
-    "VinFast VF 7 tại Cần Thơ: Eco từ 678,54 triệu, Plus từ 764,54 triệu. Bản AWD 349 hp, mô-men xoắn 500 Nm, ADAS 20 tính năng, bảo hành 10 năm và miễn phí sạc đến 10/02/2029.",
+    "VinFast VF 7 tại Cần Thơ: Eco 799 triệu, Plus trần thép 949 triệu, Plus trần kính 969 triệu (đã kèm pin). Bản AWD 349 hp, ADAS 20 tính năng, bảo hành 10 năm và miễn phí sạc đến 10/02/2029.",
   keywords: [
     "vinfast vf7",
     "vf7 cần thơ",
@@ -23,14 +23,11 @@ export const VF7_DETAIL: RichProductDetail = {
   ],
   image: "/vf7.webp",
   imageAlt: "VinFast VF 7 — Coupe-SUV điện tại Cần Thơ GF",
-  listPrice: 789_000_000,
-  listPriceLabel: "789.000.000 VNĐ (VF 7 Eco — giá gốc)",
-  promoPrice: 678_540_000,
-  promoPriceLabel: "678.540.000 VNĐ",
-  promoVoucherLabel: "Ưu đãi VF 7 Eco",
+  listPrice: 799_000_000,
+  listPriceLabel: "VF 7 Eco: 799.000.000 VNĐ · Plus trần thép: 949.000.000 VNĐ · Plus trần kính: 969.000.000 VNĐ (đã kèm pin)",
   positioningHtml: `<p><strong>VinFast VF 7</strong> là C-SUV điện phong cách coupe với triết lý thiết kế <em>"Vũ Trụ Phi Đối Xứng"</em>, lấy cảm hứng từ vũ trụ và vật thể bay. Xe đạt <strong>Better Choice Awards 2024</strong>, nổi bật nhờ thiết kế cá tính, hiệu suất cao (bản AWD đạt <strong>260 kW / 349 hp</strong>, mô-men xoắn <strong>500 Nm</strong>) cùng gói an toàn <strong>ADAS 20 tính năng</strong>.</p>`,
   highlights: [
-    "Giá ưu đãi: Eco từ 678,54 triệu · Plus từ 764,54 triệu",
+    "Giá niêm yết: Eco 799 triệu · Plus trần thép 949 triệu · Plus trần kính 969 triệu (đã kèm pin)",
     "VF 7 Plus AWD: 260 kW / 349 hp, mô-men xoắn 500 Nm",
     "ADAS 20 tính năng + 7 túi khí (Plus/AWD)",
     "Thiết kế coupe SUV theo triết lý Vũ Trụ Phi Đối Xứng",
@@ -41,20 +38,20 @@ export const VF7_DETAIL: RichProductDetail = {
     {
       id: "vf7-eco",
       name: "VF 7 Eco",
-      listPrice: 789_000_000,
-      promoPrice: 678_540_000,
+      listPrice: 799_000_000,
+      promoPrice: 799_000_000,
     },
     {
-      id: "vf7-plus",
-      name: "VF 7 Plus",
-      listPrice: 889_000_000,
-      promoPrice: 764_540_000,
+      id: "vf7-plus-steel",
+      name: "VF 7 Plus (Trần thép)",
+      listPrice: 949_000_000,
+      promoPrice: 949_000_000,
     },
     {
-      id: "vf7-plus-glass-roof",
-      name: "VF 7 Plus Trần Kính Toàn Cảnh",
-      listPrice: 909_000_000,
-      promoPrice: 781_740_000,
+      id: "vf7-plus-glass",
+      name: "VF 7 Plus (Trần kính toàn cảnh)",
+      listPrice: 969_000_000,
+      promoPrice: 969_000_000,
     },
   ],
   compareSpecTables: [

@@ -27,12 +27,11 @@ export default function ProductDetail({ id }: { id: string }) {
   const productData: Record<string, ProductType> = {
     'herio-green': {
       name: 'Herio Green',
-      price: 'Từ 479.000.000 VNĐ',
+      price: '499.000.000 VNĐ (đã kèm pin)',
       image: '/herio-green.png',
       desc: 'Định nghĩa lại trải nghiệm xe dịch vụ thời đại xanh. Herio Green sở hữu thiết kế hiện đại, trẻ trung, cá tính và nổi bật với các lựa chọn phối màu nội ngoại thất, đảm bảo cá nhân hóa theo phong cách sống, cá tính và sở thích của mỗi khách hàng.',
       priceTiers: [
-        { label: 'Tiêu chuẩn 2', value: '479.000.000 VNĐ' },
-        { label: 'Tiêu chuẩn 1', value: '499.000.000 VNĐ' }
+        { label: 'Dòng Green', value: '499.000.000 VNĐ (đã kèm pin)' }
       ],
       specs: [
         { label: 'Dài x Rộng x Cao', value: '3967 x 1723 x 1579 mm' },

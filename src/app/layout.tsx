@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { iconsMetadata } from "@/lib/icons-metadata";
 import { baseMetadata } from "@/lib/seo";
 import "../index.css";
@@ -20,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning>
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body suppressHydrationWarning>
         {children}
       </body>

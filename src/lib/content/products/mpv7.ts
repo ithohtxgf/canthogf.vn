@@ -9,7 +9,7 @@ export const MPV7_DETAIL: RichProductDetail = {
   metaTitle:
     "VinFast VF MPV 7 Cần Thơ: MPV Điện 7 Chỗ, 450 km, Thông Số Kỹ Thuật",
   metaDescription:
-    "VinFast VF MPV 7 tại Cần Thơ — MPV điện 7 chỗ duy nhất của VinFast. Quãng đường 450 km NEDC, công suất 150 kW, miễn phí sạc đến 06/2027. Tư vấn tại Cần Thơ GF.",
+    "VinFast VF MPV 7 tại Cần Thơ — MPV điện 7 chỗ giá niêm yết 819 triệu (đã kèm pin). Quãng đường 450 km NEDC, công suất 150 kW, miễn phí sạc đến 06/2027. Tư vấn tại Cần Thơ GF.",
   keywords: [
     "vinfast vf mpv 7",
     "mpv7 cần thơ",
@@ -21,10 +21,19 @@ export const MPV7_DETAIL: RichProductDetail = {
   ],
   image: "/mpv7.webp",
   imageAlt: "VinFast VF MPV 7 — MPV điện 7 chỗ tại Cần Thơ GF",
-  listPrice: 0,
-  listPriceLabel: "Liên hệ đại lý để nhận báo giá chính thức (kèm pin)",
+  listPrice: 819_000_000,
+  listPriceLabel: "819.000.000 VNĐ (Tiêu chuẩn — đã kèm pin)",
+  priceVariants: [
+    {
+      id: "mpv7-standard",
+      name: "VF MPV 7 Tiêu chuẩn",
+      listPrice: 819_000_000,
+      promoPrice: 819_000_000,
+    },
+  ],
   positioningHtml: `<p><strong>VinFast VF MPV 7</strong> là MPV điện <strong>7 chỗ</strong> thế hệ mới — lựa chọn lý tưởng cho <strong>đại gia đình tại Cần Thơ</strong> cần không gian rộng, hành trình êm ái và quãng đường <strong>450 km</strong> mỗi lần sạc. Xe dài nhất trong dòng VinFast (4.740 mm), công suất 150 kW, treo sau đa liên kết cao cấp và <strong>miễn phí sạc pin đến hết 06/2027</strong> (theo điều kiện chương trình).</p>`,
   highlights: [
+    "Giá niêm yết 819 triệu (đã kèm pin) — phiên bản Tiêu chuẩn",
     "MPV 7 chỗ duy nhất trong dòng xe điện VinFast",
     "Quãng đường 450 km NEDC — pin 60,13 kWh, sạc nhanh 30 phút (10%–70%)",
     "Công suất 150 kW, mô-men xoắn 280 Nm — tương đương xe xăng 2.0L",
@@ -230,7 +239,7 @@ export const MPV7_DETAIL: RichProductDetail = {
     "Khách hàng cần không gian rộng (4.740 mm) và công nghệ hiện đại",
   ],
   disclaimerNotes: [
-    "Giá bán chưa được cập nhật đầy đủ trong brochure — liên hệ đại lý để nhận báo giá chính thức.",
+    "Giá niêm yết đã bao gồm pin — áp dụng theo chính sách VinFast mới nhất.",
     "Quãng đường thực tế có thể thấp hơn 450 km NEDC tùy tốc độ, nhiệt độ, địa hình, số hành khách & hành lý.",
     "Một số tính năng chưa kích hoạt tại thời điểm giao xe — cập nhật qua OTA hoặc tại xưởng dịch vụ.",
     "Hình ảnh minh họa; sản phẩm thực tế có thể khác. Chỉ dùng pin & giải pháp sạc chính hãng VinFast.",

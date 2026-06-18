@@ -10,7 +10,7 @@ export const VF6_DETAIL: RichProductDetail = {
   metaTitle:
     "VinFast VF 6 Cần Thơ: Giá Eco & Plus, ADAS, Thông Số Kỹ Thuật",
   metaDescription:
-    "VinFast VF 6 tại Cần Thơ — VF 6 Eco từ 613,21 triệu, VF 6 Plus từ 663,05 triệu. Quãng đường 485 km, ADAS thông minh, 7 túi khí. Đặt cọc 30 triệu tại Cần Thơ GF.",
+    "VinFast VF 6 tại Cần Thơ — VF 6 Eco 689 triệu, VF 6 Plus 749 triệu (đã kèm pin). Quãng đường 485 km, ADAS thông minh, 7 túi khí. Tư vấn tại Cần Thơ GF.",
   keywords: [
     "vinfast vf6",
     "vf6 cần thơ",
@@ -25,10 +25,7 @@ export const VF6_DETAIL: RichProductDetail = {
   image: "/vf6.webp",
   imageAlt: "VinFast VF 6 — SUV điện hạng C tại Cần Thơ GF",
   listPrice: 689_000_000,
-  listPriceLabel: "689.000.000 VNĐ (VF 6 Eco — giá gốc)",
-  promoPrice: 613_210_000,
-  promoPriceLabel: "613.210.000 VNĐ",
-  promoVoucherLabel: "Ưu đãi VF 6 Eco",
+  listPriceLabel: "VF 6 Eco: 689.000.000 VNĐ · VF 6 Plus: 749.000.000 VNĐ (đã kèm pin)",
   depositAmount: 30_000_000,
   positioningHtml: `<p><strong>VinFast VF 6</strong> được thiết kế bởi <em>Studio Torino Design</em>, đạt giải <strong>Better Choice Awards 2024</strong>. Khẩu hiệu <em>"Xe quốc dân cho người mới"</em> &amp; <em>"Xe năng lượng xanh tiên phong"</em> — triết lý <strong>"Cặp đối lập tự nhiên"</strong> cân bằng thú vị &amp; tinh tế, công nghệ &amp; con người. Lựa chọn lý tưởng cho <strong>gia đình trẻ tại Cần Thơ</strong>.</p>`,
   highlights: [
@@ -43,13 +40,13 @@ export const VF6_DETAIL: RichProductDetail = {
       id: "vf6-eco",
       name: "VF 6 Eco",
       listPrice: 689_000_000,
-      promoPrice: 613_210_000,
+      promoPrice: 689_000_000,
     },
     {
       id: "vf6-plus",
       name: "VF 6 Plus",
-      listPrice: 745_000_000,
-      promoPrice: 663_050_000,
+      listPrice: 749_000_000,
+      promoPrice: 749_000_000,
     },
   ],
   compareSpecTables: [

@@ -30,38 +30,51 @@ type RichProductDetailViewProps = {
 
 function PriceTable({ product }: { product: RichProductDetail }) {
   const voucherAmount = getPromoVoucherAmount(product);
+  const variants = product.priceVariants ?? [];
+  const showPromoColumn = variants.some((v) => v.promoPrice < v.listPrice);
 
-  if (product.priceVariants?.length) {
+  if (variants.length) {
     return (
       <table className="w-full text-sm">
         <caption className="sr-only">
-          Bảng giá VinFast {product.shortName} tại Cần Thơ GF
+          Bảng giá niêm yết VinFast {product.shortName} tại Cần Thơ GF (đã kèm pin)
         </caption>
         <thead>
           <tr className="border-b border-gray-200 text-left text-gray-500 text-xs uppercase tracking-wider">
             <th scope="col" className="py-3 pr-4 font-semibold">
               Phiên bản
             </th>
-            <th scope="col" className="py-3 pr-4 font-semibold text-right">
-              Giá gốc
+            <th
+              scope="col"
+              className={`py-3 font-semibold text-right ${showPromoColumn ? "pr-4" : ""}`}
+            >
+              Giá niêm yết (đã kèm pin)
             </th>
-            <th scope="col" className="py-3 font-semibold text-right">
-              Giá ưu đãi
-            </th>
+            {showPromoColumn && (
+              <th scope="col" className="py-3 font-semibold text-right">
+                Giá ưu đãi
+              </th>
+            )}
           </tr>
         </thead>
         <tbody>
-          {product.priceVariants.map((variant) => (
+          {variants.map((variant) => (
             <tr key={variant.id} className="border-b border-gray-100">
               <th scope="row" className="py-4 text-left font-bold text-dark pr-4">
                 {variant.name}
               </th>
-              <td className="py-4 text-right text-gray-500 line-through pr-4">
+              <td
+                className={`py-4 text-right font-black text-primary-dark text-lg ${
+                  showPromoColumn ? "text-gray-500 line-through pr-4 font-normal text-base" : ""
+                }`}
+              >
                 {formatProductVnd(variant.listPrice)}
               </td>
-              <td className="py-4 text-right font-black text-secondary-dark text-lg">
-                {formatProductVnd(variant.promoPrice)}
-              </td>
+              {showPromoColumn && (
+                <td className="py-4 text-right font-black text-secondary-dark text-lg">
+                  {formatProductVnd(variant.promoPrice)}
+                </td>
+              )}
             </tr>
           ))}
           {product.depositAmount && (
@@ -69,7 +82,7 @@ function PriceTable({ product }: { product: RichProductDetail }) {
               <th scope="row" className="py-4 text-left text-gray-700 font-medium pr-4">
                 Đặt cọc
               </th>
-              <td colSpan={2} className="py-4 text-right font-bold text-primary-dark">
+              <td colSpan={showPromoColumn ? 2 : 1} className="py-4 text-right font-bold text-primary-dark">
                 {formatProductVnd(product.depositAmount)}
               </td>
             </tr>
@@ -140,8 +153,14 @@ function PriceTable({ product }: { product: RichProductDetail }) {
 export function RichProductDetailView({ product }: RichProductDetailViewProps) {
   const heroPromoLabel =
     product.priceVariants?.[0]
-      ? formatProductVnd(product.priceVariants[0].promoPrice)
-      : product.promoPriceLabel;
+      ? formatProductVnd(
+          product.priceVariants[0].promoPrice < product.priceVariants[0].listPrice
+            ? product.priceVariants[0].promoPrice
+            : product.priceVariants[0].listPrice,
+        )
+      : product.promoPrice && product.promoPrice < product.listPrice
+        ? product.promoPriceLabel
+        : product.listPriceLabel;
   const compareLeftLabel =
     product.priceVariants?.[0]?.name ?? `${product.shortName} Eco`;
   const compareRightLabel =

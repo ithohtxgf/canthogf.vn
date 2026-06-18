@@ -26,7 +26,15 @@ export const VF5_DETAIL: RichProductDetail = {
   image: "/vf5.webp",
   imageAlt: "VinFast VF 5 — A-SUV điện tại Cần Thơ GF",
   listPrice: 529_000_000,
-  listPriceLabel: "529.000.000 VNĐ",
+  listPriceLabel: "529.000.000 VNĐ (VF 5 Plus — đã kèm pin)",
+  priceVariants: [
+    {
+      id: "vf5-plus",
+      name: "VF 5 Plus",
+      listPrice: 529_000_000,
+      promoPrice: 529_000_000,
+    },
+  ],
   positioningHtml: `<p><strong>VinFast VF 5</strong> — <em>"Phong cách hợp ý, giá hợp ví"</em> — là xe điện đô thị lý tưởng cho người trẻ năng động tại <strong>Cần Thơ</strong>. Hội tụ thiết kế hiện đại, công nghệ thông minh (trợ lý ảo <strong>ViVi</strong>), vận hành mạnh mẽ 134 hp và an toàn 6 túi khí + ADAS.</p>`,
   highlights: [
     "Thiết kế hiện đại, độc đáo — cá nhân hóa 8 màu ngoại thất",
