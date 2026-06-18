@@ -24,6 +24,7 @@ export const SCHEMA_LOGO_PATH = "/logo_cantho_gf.png";
 export const SCHEMA_IMAGE_PATH = "/banner-homepage.webp";
 
 export const SEO_KEYWORDS = [
+  "canthogf",
   "can tho gf",
   "htx cần thơ gf",
   "hợp tác xã vận tải cần thơ",
@@ -105,6 +106,18 @@ export const DEFAULT_DESCRIPTION =
 export const HOME_TITLE =
   "Cần Thơ GF | Đại Lý Xe Điện VinFast & HTX Vận Tải";
 
+export const HOME_KEYWORDS = [
+  "canthogf",
+  "trang chủ",
+  "can tho gf",
+  "htx cần thơ gf",
+  "hợp tác xã vận tải cần thơ",
+  "ô tô vinfast cần thơ",
+  "xanhsm cần thơ",
+  "vinfast cần thơ",
+  "đại lý vinfast cần thơ",
+] as const;
+
 /** Ảnh OG/Twitter mặc định — banner trang chủ được resize về 1200×630 qua /api/og */
 export const DEFAULT_OG_IMAGE = "/api/og";
 export const DEFAULT_OG_IMAGE_WIDTH = 1200;
@@ -163,6 +176,7 @@ export const baseMetadata: Metadata = {
 export const homePageMetadata: Metadata = {
   ...baseMetadata,
   title: { absolute: HOME_TITLE },
+  keywords: [...HOME_KEYWORDS],
   alternates: createAlternates("/"),
 };
 
@@ -247,7 +261,7 @@ export function getWebSiteJsonLd() {
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
     name: OG_SITE_NAME,
-    alternateName: ["Cần Thơ GF", "Can Thơ GF Transport"],
+    alternateName: ["Cần Thơ GF", "CanThoGF", "canthogf", "Can Thơ GF Transport"],
     url: `${siteUrl}/`,
     publisher: getLocalBusinessEntityRef(),
     potentialAction: {
