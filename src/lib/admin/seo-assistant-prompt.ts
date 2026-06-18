@@ -13,6 +13,7 @@ QUY TẮC BẮT BUỘC:
 - Meta description: 150–160 ký tự.
 - Sapo: 50–100 từ, in đậm từ khóa chính bằng strong.
 - Outline: 4–6 mục, cấu trúc H2 bối cảnh → H2 chi tiết (có H3 con) → H2 chính sách/ưu đãi Cần Thơ GF.
+- Ảnh minh họa: gắn needsImage: true cho đúng 2–3 section H2 (bài ngắn 2 ảnh, bài dài ≥1000 từ thì 3 ảnh). Mỗi ảnh cần imageAltHint (mô tả + từ khóa) và imageCaptionHint (1 câu chú thích đoạn nội dung). Không gắn ảnh cho H3.
 - FAQ: 2 câu dạng People Also Ask, trả lời 2–3 câu HTML.
 - Trả về ĐÚNG JSON theo schema, không markdown, không giải thích thêm.`;
 }
@@ -39,7 +40,15 @@ Trả về JSON object với các field:
   "lsiKeywords": ["...", "..."],
   "internalLinks": [{ "href": "/san-pham/vf5", "anchorText": "..." }],
   "outline": [
-    { "id": "anchor-slug", "heading": "...", "level": 2, "brief": "Gợi ý 2-3 câu HTML cho section" }
+    {
+      "id": "anchor-slug",
+      "heading": "...",
+      "level": 2,
+      "brief": "Gợi ý 2-3 câu HTML cho section",
+      "needsImage": true,
+      "imageAltHint": "Mô tả ảnh + từ khóa",
+      "imageCaptionHint": "Chú thích 1 câu minh họa đoạn"
+    }
   ],
   "faqs": [{ "question": "...", "answerHtml": "<p>...</p>" }],
   "sapoHtml": "<p>...</p>",
@@ -75,6 +84,9 @@ export const SEO_ASSISTANT_JSON_SCHEMA = {
           heading: { type: "string" },
           level: { type: "integer" },
           brief: { type: "string" },
+          needsImage: { type: "boolean" },
+          imageAltHint: { type: "string" },
+          imageCaptionHint: { type: "string" },
         },
         required: ["id", "heading", "level", "brief"],
       },

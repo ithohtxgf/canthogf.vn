@@ -1,4 +1,8 @@
 import { slugify } from "@/lib/admin/defaults";
+import {
+  countSectionImagesUploaded,
+  getSectionImageGuidance,
+} from "@/lib/admin/article-images";
 import type { ArticleInput } from "@/lib/db/article-mapper";
 import type { NewsContentSection, NewsFaq } from "@/lib/content/news";
 
@@ -130,7 +134,9 @@ function hasExternalLink(article: ArticleInput): boolean {
 
 function allImagesHaveAlt(article: ArticleInput): boolean {
   if (!article.imageAlt.trim()) return false;
-  return article.sections.every((s) => !s.image || s.image.alt.trim());
+  return article.sections.every(
+    (s) => !s.image || Boolean(s.image.alt.trim()),
+  );
 }
 
 function countKeywordOccurrences(text: string, keyword: string): number {
@@ -227,6 +233,8 @@ export function buildSeoChecklist(article: ArticleInput): SeoCheckItem[] {
   const secondaryKeywords = article.keywords.filter(
     (k) => k.trim() && k.toLowerCase() !== keyword.trim().toLowerCase(),
   );
+  const imageGuidance = getSectionImageGuidance(article);
+  const sectionImagesUploaded = countSectionImagesUploaded(article.sections);
 
   return [
     {
@@ -279,6 +287,14 @@ export function buildSeoChecklist(article: ArticleInput): SeoCheckItem[] {
       id: "external-link",
       label: "Có ít nhất 1 external link uy tín",
       ok: hasExternalLink(article),
+    },
+    {
+      id: "section-images",
+      label: `Ảnh minh họa section: ${sectionImagesUploaded}/${imageGuidance.recommended} (bài ~${imageGuidance.totalWords} từ cần ≥ ${imageGuidance.recommended})`,
+      ok: sectionImagesUploaded >= imageGuidance.recommended,
+      warn:
+        sectionImagesUploaded > 0 &&
+        sectionImagesUploaded < imageGuidance.recommended,
     },
     {
       id: "image-alt",
@@ -380,6 +396,12 @@ export function validateForPublish(article: ArticleInput): PublishValidation {
     errors.push("Sapo chưa chứa từ khóa chính.");
   }
   if (article.sections.length === 0) errors.push("Chưa có nội dung section.");
+  const imageGuidance = getSectionImageGuidance(article);
+  if (imageGuidance.uploaded < imageGuidance.recommended) {
+    errors.push(
+      `Thiếu ảnh minh họa section — cần ít nhất ${imageGuidance.recommended} ảnh (đã upload ${imageGuidance.uploaded}). Bật "Ảnh minh họa" ở các H2 được gợi ý.`,
+    );
+  }
   if (!hasClearCta(article)) {
     errors.push("CTA chưa đầy đủ — cần tiêu đề, mô tả, nhãn nút và liên kết.");
   }

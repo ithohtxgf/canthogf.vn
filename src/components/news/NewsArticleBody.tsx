@@ -22,6 +22,30 @@ function RichHtml({ html, className }: { html: string; className?: string }) {
   );
 }
 
+function SectionImage({
+  image,
+}: {
+  image: NonNullable<NewsArticle["sections"][number]["image"]>;
+}) {
+  return (
+    <figure className="my-8">
+      <SeoContentImage
+        src={image.src}
+        alt={image.alt}
+        width={1200}
+        height={675}
+        className="w-full h-auto rounded-xl shadow-md object-cover aspect-[16/9]"
+        sizes="(max-width: 896px) 100vw, 896px"
+      />
+      {image.caption && (
+        <figcaption className="text-sm text-gray-500 text-center italic mt-3 px-2">
+          {image.caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
 export function NewsArticleBody({ article }: NewsArticleBodyProps) {
   const targets = getArticlePromotionTargets(article);
   const tocItems = article.sections.filter((s) => s.level === 2);
@@ -109,11 +133,19 @@ export function NewsArticleBody({ article }: NewsArticleBodyProps) {
                 </HeadingTag>
 
                 {section.paragraphs.map((para, idx) => (
-                  <RichHtml
-                    key={idx}
-                    html={`<p class="mb-4 leading-relaxed">${para}</p>`}
-                  />
+                  <div key={idx}>
+                    <RichHtml
+                      html={`<p class="mb-4 leading-relaxed">${para}</p>`}
+                    />
+                    {idx === 0 && section.image?.src && (
+                      <SectionImage image={section.image} />
+                    )}
+                  </div>
                 ))}
+
+                {section.paragraphs.length === 0 && section.image?.src && (
+                  <SectionImage image={section.image} />
+                )}
 
                 {section.list &&
                   (section.list.ordered ? (
@@ -136,22 +168,6 @@ export function NewsArticleBody({ article }: NewsArticleBodyProps) {
 
                 {showPolicyPromo && (
                   <PromoBanner targets={targets} position="policy" />
-                )}
-
-                {section.image && (
-                  <figure className="my-8">
-                    <SeoContentImage
-                      src={section.image.src}
-                      alt={section.image.alt}
-                      width={1200}
-                      height={630}
-                      className="w-full h-auto rounded-xl shadow-md object-cover"
-                      sizes="(max-width: 896px) 100vw, 896px"
-                    />
-                    <figcaption className="text-sm text-gray-500 text-center italic mt-3">
-                      {section.image.caption}
-                    </figcaption>
-                  </figure>
                 )}
               </section>
 

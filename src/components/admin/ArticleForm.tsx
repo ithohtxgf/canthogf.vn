@@ -28,6 +28,7 @@ import {
   buildSeoChecklist,
   validateForPublish,
 } from "@/lib/admin/article-seo-checklist";
+import { countArticleWords } from "@/lib/admin/article-images";
 
 type ArticleFormProps = {
   initial: ArticleInput;
@@ -72,6 +73,11 @@ export function ArticleForm({ initial, mode }: ArticleFormProps) {
 
   const seoChecklist = useMemo(
     () => buildSeoChecklist(draftPayload),
+    [draftPayload],
+  );
+
+  const estimatedWordCount = useMemo(
+    () => countArticleWords(draftPayload),
     [draftPayload],
   );
 
@@ -420,6 +426,7 @@ export function ArticleForm({ initial, mode }: ArticleFormProps) {
               sections={form.sections}
               articleSlug={slugPreview}
               primaryKeyword={form.primaryKeyword}
+              estimatedWordCount={estimatedWordCount}
               onChange={(sections) => updateField("sections", sections)}
             />
           </div>

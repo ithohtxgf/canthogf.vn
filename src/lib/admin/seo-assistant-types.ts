@@ -12,6 +12,12 @@ export type SeoAssistantOutlineItem = {
   level: 2 | 3;
   /** Gợi ý nội dung ngắn cho section */
   brief: string;
+  /** Section H2 nên có ảnh minh họa (2–3 ảnh/bài) */
+  needsImage?: boolean;
+  /** Gợi ý alt SEO cho ảnh section */
+  imageAltHint?: string;
+  /** Gợi ý chú thích ảnh mô tả đoạn nội dung */
+  imageCaptionHint?: string;
 };
 
 export type SeoAssistantInternalLink = {
@@ -51,5 +57,14 @@ export function outlineToSections(
     heading: item.heading,
     level: item.level,
     paragraphs: item.brief ? [item.brief] : [""],
+    ...(item.needsImage
+      ? {
+          image: {
+            src: "",
+            alt: item.imageAltHint?.trim() || item.heading,
+            caption: item.imageCaptionHint?.trim() || "",
+          },
+        }
+      : {}),
   }));
 }

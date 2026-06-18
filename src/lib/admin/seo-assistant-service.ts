@@ -51,6 +51,11 @@ function normalizeSuggestion(data: unknown): SeoAssistantSuggestion {
       ? (obj.outline as SeoAssistantSuggestion["outline"]).map((item) => ({
           ...item,
           level: item.level === 3 ? 3 : 2,
+          needsImage: Boolean(item.needsImage),
+          imageAltHint: item.imageAltHint ? String(item.imageAltHint) : undefined,
+          imageCaptionHint: item.imageCaptionHint
+            ? String(item.imageCaptionHint)
+            : undefined,
         }))
       : [],
     faqs: Array.isArray(obj.faqs)
