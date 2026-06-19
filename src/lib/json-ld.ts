@@ -48,9 +48,17 @@ function parseNewsDateIso(date: string): string {
 }
 
 function parseVndPrice(price: string): number | undefined {
-  const digits = price.replace(/\D/g, "");
-  const value = Number.parseInt(digits, 10);
+  // Chỉ khớp số có dấu chấm phân nhóm hàng nghìn (ví dụ "299.000.000"),
+  // tránh lấy nhầm số rời rạc như năm "2026" trong các chuỗi "liên hệ đại lý".
+  const match = price.match(/\d{1,3}(?:\.\d{3}){2,}/);
+  if (!match) return undefined;
+  const value = Number.parseInt(match[0].replace(/\./g, ""), 10);
   return Number.isFinite(value) && value > 0 ? value : undefined;
+}
+
+function getPriceValidUntil(): string {
+  const now = new Date();
+  return `${now.getFullYear()}-12-31`;
 }
 
 function organizationRef() {
@@ -203,6 +211,7 @@ function getProductJsonLd(
     description: product.description,
     image: [product.image],
     url,
+    sku: product.id,
     brand: {
       "@type": "Brand",
       name: "VinFast",
@@ -214,6 +223,8 @@ function getProductJsonLd(
           url,
           priceCurrency: "VND",
           price,
+          priceValidUntil: getPriceValidUntil(),
+          itemCondition: "https://schema.org/NewCondition",
           availability: "https://schema.org/InStock",
           seller: organizationRef(),
         }

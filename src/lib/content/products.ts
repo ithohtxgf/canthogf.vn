@@ -173,7 +173,7 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     metaDescription:
       "VF 8 Thế Hệ Mới 2026 tại Cần Thơ: SUV điện cỡ D thiết kế Tech Fluid, pin 60,13 kWh, quãng đường 480-500 km NEDC, ADAS nâng cao, kết nối thông minh và cập nhật OTA.",
     image: "/vf8-all-new.png",
-    price: "Liên hệ đại lý — giá cập nhật 2026",
+    price: "999.000.000 VNĐ",
     keywords: [
       "vinfast vf8 all new",
       "vf8 thế hệ mới",
