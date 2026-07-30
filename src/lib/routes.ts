@@ -1,9 +1,13 @@
+import { getPartnerCityBySlug } from "@/lib/content/xanhsm-partner-cities";
+
 export type MatchedRoute =
   | { page: "home" }
   | { page: "about" }
   | { page: "products" }
   | { page: "product"; id: string }
   | { page: "xanhsm" }
+  | { page: "xanhsmPartnerHub" }
+  | { page: "xanhsmPartnerCity"; citySlug: string }
   | { page: "thueMuaVinfast" }
   | { page: "vinfastCanTho" }
   | { page: "news" }
@@ -36,6 +40,12 @@ export function matchRoute(pathname: string): MatchedRoute {
       return { page: "notFound" };
     case "dang-ky-xanhsm":
       return segments.length === 1 ? { page: "xanhsm" } : { page: "notFound" };
+    case "dang-ky-xanhsm-partner":
+      if (segments.length === 1) return { page: "xanhsmPartnerHub" };
+      if (segments.length === 2 && getPartnerCityBySlug(second)) {
+        return { page: "xanhsmPartnerCity", citySlug: second };
+      }
+      return { page: "notFound" };
     case "thue-mua-xe-vinfast":
       return segments.length === 1
         ? { page: "thueMuaVinfast" }

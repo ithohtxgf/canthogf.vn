@@ -252,6 +252,11 @@ export default function Layout({
                   </SeoLink>
                 </li>
                 <li>
+                  <SeoLink href="/dang-ky-xanhsm-partner" className="text-gray-600 hover:text-primary-dark flex items-center transition-colors">
+                    <ChevronRight className="w-4 h-4 mr-2" /> Đăng ký Xanh SM Partner theo khu vực
+                  </SeoLink>
+                </li>
+                <li>
                   <SeoLink href={THUE_MUA_VINFAST_PAGE_PATH} className="text-gray-600 hover:text-primary-dark flex items-center transition-colors">
                     <ChevronRight className="w-4 h-4 mr-2" /> Thuê mua xe VinFast Cần Thơ
                   </SeoLink>

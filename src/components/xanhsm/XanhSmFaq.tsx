@@ -3,14 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
-import { XANHSM_FAQ } from "@/lib/content/xanhsm-page";
+import { XANHSM_FAQ, type XanhSmFaqItem } from "@/lib/content/xanhsm-page";
 
-export function XanhSmFaq() {
+export function XanhSmFaq({ items = XANHSM_FAQ }: { items?: XanhSmFaqItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <div className="space-y-3">
-      {XANHSM_FAQ.map((item, index) => {
+      {items.map((item, index) => {
         const isOpen = openIndex === index;
         return (
           <div

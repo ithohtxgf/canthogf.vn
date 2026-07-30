@@ -19,6 +19,11 @@ import {
   XANHSM_KEYWORDS,
 } from "@/lib/content/xanhsm-page";
 import {
+  getPartnerCityBySlug,
+  XANHSM_PARTNER_CITIES,
+  XANHSM_PARTNER_HUB_PATH,
+} from "@/lib/content/xanhsm-partner-cities";
+import {
   VINFAST_CAN_THO_META_TITLE,
   VINFAST_CAN_THO_PAGE_DESCRIPTION,
 } from "@/lib/content/vinfast-can-tho";
@@ -98,6 +103,17 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
     absoluteTitle: true,
     description: XANHSM_META_DESCRIPTION,
     keywords: [...XANHSM_KEYWORDS],
+  },
+  [XANHSM_PARTNER_HUB_PATH]: {
+    title: "Đăng Ký Xanh SM Partner Theo Khu Vực – Cần Thơ GF",
+    absoluteTitle: true,
+    description:
+      "Chủ xe VinFast muốn đăng ký Xanh SM Partner tại TPHCM, Vũng Tàu, Phú Quốc và nhiều tỉnh thành? Cần Thơ GF hướng dẫn thủ tục, hồ sơ, tư vấn online miễn phí.",
+    keywords: [
+      "đăng ký xanh sm partner",
+      "xanh sm partner theo khu vực",
+      "đăng ký đối tác xanh sm",
+    ],
   },
   "/thue-mua-xe-vinfast": {
     title: THUE_MUA_VINFAST_META_TITLE,
@@ -259,6 +275,19 @@ export async function resolveMetadataFromSlug(
     }
   }
 
+  if (segments.length === 2 && segments[0] === "dang-ky-xanhsm-partner") {
+    const city = getPartnerCityBySlug(segments[1]);
+    if (city) {
+      return buildPageMetadata({
+        title: city.metaTitle,
+        description: city.metaDescription,
+        path,
+        keywords: city.keywords,
+        absoluteTitle: true,
+      });
+    }
+  }
+
   if (segments.length === 2 && segments[0] === "tin-tuc") {
     const article = await loadPublishedArticleById(segments[1]);
     if (article) {
@@ -299,5 +328,9 @@ export async function getMetadataStaticParams(): Promise<
     slug: ["tin-tuc", id],
   }));
 
-  return [{}, ...staticSlugs, ...productSlugs, ...newsSlugs];
+  const partnerCitySlugs = XANHSM_PARTNER_CITIES.map((city) => ({
+    slug: ["dang-ky-xanhsm-partner", city.slug],
+  }));
+
+  return [{}, ...staticSlugs, ...productSlugs, ...newsSlugs, ...partnerCitySlugs];
 }

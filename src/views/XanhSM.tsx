@@ -1,18 +1,11 @@
 "use client";
 
 import { motion } from "motion/react";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Download,
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-} from "lucide-react";
+import { CheckCircle2, Download, MapPin, Phone, Mail, Clock } from "lucide-react";
 import { SeoBannerImage, SeoContentImage } from "@/components/SeoImage";
 import { SeoLink } from "@/components/SeoLink";
 import { XanhSmFaq } from "@/components/xanhsm/XanhSmFaq";
+import { XanhSmCtaButton as CtaButton } from "@/components/xanhsm/XanhSmCtaButton";
 import {
   XANHSM_BASIC_REQUIREMENTS,
   XANHSM_DOCUMENTS,
@@ -20,8 +13,11 @@ import {
   XANHSM_INCOME_ROWS,
   XANHSM_ONLINE_STEPS,
   XANHSM_PAGE_H1,
+  XANHSM_PARTNER_DOCUMENTS,
+  XANHSM_PARTNER_INTRO,
   XANHSM_WHY_GF_BENEFITS,
 } from "@/lib/content/xanhsm-page";
+import { XANHSM_PARTNER_HUB_PATH } from "@/lib/content/xanhsm-partner-cities";
 import {
   CONTACT_ADDRESS,
   CONTACT_EMAIL,
@@ -29,23 +25,9 @@ import {
   CONTACT_HOURS_WEEKDAY,
   CONTACT_PHONE,
   CONTACT_ZALO_URL,
-  dispatchConsultationPopup,
   GREEN_SM_APP_STORE_URL,
   GREEN_SM_GOOGLE_PLAY_URL,
 } from "@/lib/contact";
-
-function CtaButton({ className = "" }: { className?: string }) {
-  return (
-    <button
-      type="button"
-      onClick={dispatchConsultationPopup}
-      className={`inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg text-base sm:text-lg uppercase tracking-wide ${className}`}
-    >
-      Đăng ký tư vấn ngay
-      <ArrowRight className="w-5 h-5" />
-    </button>
-  );
-}
 
 export default function XanhSM() {
   return (
@@ -218,6 +200,44 @@ export default function XanhSM() {
               </SeoLink>{" "}
               tại Cần Thơ GF.
             </p>
+          </article>
+
+          <article className="mt-10" id="dang-ky-partner">
+            <h2 className="text-2xl sm:text-3xl">
+              Đăng Ký Xanh SM Partner — Dành Cho Chủ Xe VinFast
+            </h2>
+            <p>{XANHSM_PARTNER_INTRO}</p>
+            <h3 className="text-xl font-bold text-primary-dark">
+              Hồ Sơ Cần Chuẩn Bị Để Đăng Ký App Partner
+            </h3>
+            <ol>
+              {XANHSM_PARTNER_DOCUMENTS.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ol>
+            <p>
+              <strong>Lưu ý:</strong> Số điện thoại và email dùng để đăng ký app Partner phải là
+              số/email <strong>chưa từng đăng ký</strong> tài khoản Xanh SM hoặc Grab trước đó.
+              Cần Thơ GF sẽ hỗ trợ bạn kiểm tra và xử lý các trường hợp trùng thông tin.
+            </p>
+            <p>
+              Đây là hình thức phù hợp cho chủ xe muốn tự vận hành xe của mình để chạy dịch vụ mà
+              không cần thuê xe từ hợp tác xã. Liên hệ Cần Thơ GF để được hướng dẫn từng bước đăng
+              ký Partner cho cả hai nền tảng Xanh SM và Grab tại Cần Thơ.
+            </p>
+            <p>
+              Không ở Cần Thơ? Xem{" "}
+              <SeoLink
+                href={XANHSM_PARTNER_HUB_PATH}
+                className="text-primary font-semibold hover:underline"
+              >
+                danh sách khu vực Cần Thơ GF hỗ trợ đăng ký Xanh SM Partner
+              </SeoLink>{" "}
+              (TPHCM, Vũng Tàu, Phú Quốc và các tỉnh lân cận).
+            </p>
+            <div className="not-prose mt-4">
+              <CtaButton />
+            </div>
           </article>
         </div>
       </section>

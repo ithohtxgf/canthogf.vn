@@ -9,6 +9,11 @@ import {
 } from "@/lib/content/vinfast-can-tho";
 import { XANHSM_FAQ, XANHSM_META_DESCRIPTION, XANHSM_PAGE_H1 } from "@/lib/content/xanhsm-page";
 import {
+  getPartnerCityBySlug,
+  XANHSM_PARTNER_CITIES,
+  XANHSM_PARTNER_HUB_PATH,
+} from "@/lib/content/xanhsm-partner-cities";
+import {
   THUE_MUA_FAQ,
   THUE_MUA_VINFAST_META_DESCRIPTION,
   THUE_MUA_VINFAST_PAGE_H1,
@@ -317,17 +322,21 @@ function getThueMuaVinfastFaqJsonLd(path: string) {
 }
 
 function getXanhSmFaqJsonLd(path: string) {
+  return getFaqPageJsonLd(path, XANHSM_FAQ);
+}
+
+function getFaqPageJsonLd(path: string, faq: { question: string; answer: string }[]) {
   const url = getSitemapUrl(path);
   return {
     "@type": "FAQPage",
     "@id": `${url}#faq`,
     url,
-    mainEntity: XANHSM_FAQ.map((faq) => ({
+    mainEntity: faq.map((item) => ({
       "@type": "Question",
-      name: faq.question,
+      name: item.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer,
+        text: item.answer,
       },
     })),
   };
@@ -385,6 +394,43 @@ async function buildGraphForRoute(
         getBreadcrumbJsonLd([
           { name: "Trang chủ", path: "/" },
           { name: "Đăng ký XanhSM", path },
+        ]),
+      );
+      break;
+    }
+    case "xanhsmPartnerHub": {
+      const path = XANHSM_PARTNER_HUB_PATH;
+      const meta = STATIC_PAGE_METADATA[path];
+      graph.push(
+        getWebPageJsonLdForPath(path, meta.title, meta.description),
+        getLocalBusinessJsonLd(),
+        getBreadcrumbJsonLd([
+          { name: "Trang chủ", path: "/" },
+          { name: "Đăng ký Xanh SM Partner", path },
+        ]),
+        getItemListJsonLd(
+          path,
+          "Khu vực hỗ trợ đăng ký Xanh SM Partner",
+          XANHSM_PARTNER_CITIES.map((city) => ({
+            name: city.displayName,
+            url: getSitemapUrl(`${path}/${city.slug}`),
+          })),
+        ),
+      );
+      break;
+    }
+    case "xanhsmPartnerCity": {
+      const city = getPartnerCityBySlug(route.citySlug);
+      if (!city) break;
+      const path = `${XANHSM_PARTNER_HUB_PATH}/${city.slug}`;
+      graph.push(
+        getWebPageJsonLdForPath(path, city.h1, city.metaDescription),
+        getLocalBusinessJsonLd(),
+        getFaqPageJsonLd(path, city.faq),
+        getBreadcrumbJsonLd([
+          { name: "Trang chủ", path: "/" },
+          { name: "Đăng ký Xanh SM Partner", path: XANHSM_PARTNER_HUB_PATH },
+          { name: city.displayName, path },
         ]),
       );
       break;

@@ -71,6 +71,20 @@ export const XANHSM_DRIVER_BENEFITS = [
   "Hỗ trợ kỹ thuật và bảo dưỡng xe ưu đãi từ Cần Thơ GF",
 ];
 
+export const XANHSM_PARTNER_INTRO =
+  "Nếu bạn đã sở hữu sẵn xe điện VinFast, bạn không cần chạy theo diện tài xế công ty mà có thể đăng ký làm Đối tác (Partner) cho Xanh SM và Grab tại Cần Thơ. Cần Thơ GF sẽ trực tiếp hướng dẫn bạn hoàn tất thủ tục đăng ký app Xanh SM Partner và Grab, giúp xe của bạn sớm được kích hoạt và bắt đầu nhận chuyến.";
+
+export const XANHSM_PARTNER_DOCUMENTS = [
+  "CCCD 2 mặt",
+  "Cavet xe 2 mặt",
+  "Giấy phép lái xe 2 mặt",
+  "Số điện thoại chưa đăng ký app",
+  "Tài khoản ngân hàng chính chủ",
+  "Tên và số điện thoại người thân",
+  "Email đang sử dụng, chưa đăng ký app",
+  "Khu vực chạy",
+];
+
 export type XanhSmFaqItem = {
   question: string;
   answer: string;

@@ -13,6 +13,10 @@ import {
   CONTACT_ZALO_URL,
   SCHEMA_OPENING_HOURS,
 } from "@/lib/contact";
+import {
+  XANHSM_PARTNER_CITIES,
+  XANHSM_PARTNER_HUB_PATH,
+} from "@/lib/content/xanhsm-partner-cities";
 
 export const SITE_NAME = "Cần Thơ GF";
 export const SITE_NAME_ALT = "Can Tho GF";
@@ -288,6 +292,12 @@ export const SITEMAP_ROUTES = [
   { path: "/san-pham", changeFrequency: "weekly" as const, priority: 0.9 },
   { path: "/vinfast-can-tho", changeFrequency: "weekly" as const, priority: 0.95 },
   { path: "/dang-ky-xanhsm", changeFrequency: "weekly" as const, priority: 0.9 },
+  { path: XANHSM_PARTNER_HUB_PATH, changeFrequency: "weekly" as const, priority: 0.85 },
+  ...XANHSM_PARTNER_CITIES.map((city) => ({
+    path: `${XANHSM_PARTNER_HUB_PATH}/${city.slug}`,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  })),
   { path: "/thue-mua-xe-vinfast", changeFrequency: "weekly" as const, priority: 0.9 },
   { path: "/tin-tuc", changeFrequency: "weekly" as const, priority: 0.7 },
   { path: "/lien-he", changeFrequency: "monthly" as const, priority: 0.8 },
