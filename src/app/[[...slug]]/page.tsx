@@ -4,8 +4,11 @@ import { getMetadataStaticParams, resolveMetadataFromSlug } from "@/lib/metadata
 import { loadPageDataFromSlug } from "@/lib/page-data";
 import AppClient from "./AppClient";
 
-/** KM & bài viết đổi qua admin — luôn đọc DB mới, không bake HTML lúc build */
-export const dynamic = "force-dynamic";
+/**
+ * Static + on-demand revalidation: trang pre-render lúc build, admin sửa
+ * bài viết/KM sẽ gọi revalidatePath() (xem src/lib/admin/revalidate-content.ts)
+ * để làm mới đúng trang thay đổi — không cần force-dynamic toàn site.
+ */
 
 type PageProps = {
   params: Promise<{ slug?: string[] }>;

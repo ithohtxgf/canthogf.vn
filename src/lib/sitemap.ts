@@ -25,18 +25,17 @@ function parseNewsDate(date: string): Date {
  * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap
  */
 export async function buildSitemap(): Promise<MetadataRoute.Sitemap> {
-  const lastModified = new Date();
-
+  // Không gán lastModified cho trang tĩnh/sản phẩm — chưa có dữ liệu ngày sửa
+  // thật theo từng trang; gán new Date() ở mọi lần build sẽ báo sai với Google
+  // rằng nội dung "vừa thay đổi", làm giảm độ tin cậy tín hiệu lastmod.
   const staticEntries: MetadataRoute.Sitemap = SITEMAP_ROUTES.map((route) => ({
     url: toAbsoluteSitemapUrl(route.path),
-    lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));
 
   const productEntries: MetadataRoute.Sitemap = PRODUCTS_SEO.map((product) => ({
     url: toAbsoluteSitemapUrl(`/san-pham/${product.id}`),
-    lastModified,
     changeFrequency: "weekly",
     priority: 0.85,
   }));
