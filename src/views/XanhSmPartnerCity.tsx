@@ -25,10 +25,9 @@ export default function XanhSmPartnerCity({ citySlug }: { citySlug: string }) {
     return null;
   }
 
-  const otherCities = XANHSM_PARTNER_CITIES.filter((item) => item.slug !== city.slug).slice(
-    0,
-    4,
-  );
+  // Liệt kê toàn bộ khu vực còn lại — đảm bảo mesh internal link phủ đều 6/6,
+  // tránh các trang cuối mảng (vd. Đồng Nai) bị thiệt link chéo so với đầu mảng.
+  const otherCities = XANHSM_PARTNER_CITIES.filter((item) => item.slug !== city.slug);
 
   return (
     <div className="bg-light min-h-screen pb-20">
