@@ -85,6 +85,34 @@ export const XANHSM_PARTNER_DOCUMENTS = [
   "Khu vực chạy",
 ];
 
+export const XANHSM_PARTNER_STEPS = [
+  {
+    title: "Liên hệ tư vấn miễn phí",
+    description:
+      "Nhắn Zalo hoặc gọi hotline Cần Thơ GF, cung cấp thông tin cơ bản về xe VinFast (đời xe, khu vực dự định chạy). Tư vấn viên phản hồi trong 15–30 phút.",
+  },
+  {
+    title: "Chuẩn bị hồ sơ theo checklist",
+    description:
+      "Chụp/scan đầy đủ các giấy tờ theo danh sách bên dưới (CCCD, cavet xe, GPLX, tài khoản ngân hàng...). Cần Thơ GF kiểm tra hồ sơ trước khi nộp để tránh bị từ chối do thiếu sót.",
+  },
+  {
+    title: "Đăng ký tài khoản Partner trên app",
+    description:
+      "Dùng số điện thoại và email chưa từng đăng ký Xanh SM/Grab để tạo tài khoản Đối tác. Cần Thơ GF hướng dẫn từng bước điền thông tin xe và khu vực hoạt động.",
+  },
+  {
+    title: "Nộp hồ sơ và chờ xét duyệt",
+    description:
+      "Hệ thống Xanh SM xét duyệt hồ sơ, đối chiếu cà vẹt xe và giấy tờ cá nhân. Thời gian xử lý thường 3–7 ngày làm việc; Cần Thơ GF theo dõi và cập nhật tiến độ cho bạn.",
+  },
+  {
+    title: "Kích hoạt app và nhận chuyến",
+    description:
+      "Sau khi được duyệt, tài khoản Partner được kích hoạt trên app. Xe có thể bắt đầu nhận chuyến ngay theo khu vực hoạt động đã đăng ký.",
+  },
+] as const;
+
 export type XanhSmFaqItem = {
   question: string;
   answer: string;

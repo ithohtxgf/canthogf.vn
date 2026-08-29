@@ -7,7 +7,12 @@ import {
   VINFAST_CAN_THO_PAGE_DESCRIPTION,
   VINFAST_CAN_THO_PAGE_H1,
 } from "@/lib/content/vinfast-can-tho";
-import { XANHSM_FAQ, XANHSM_META_DESCRIPTION, XANHSM_PAGE_H1 } from "@/lib/content/xanhsm-page";
+import {
+  XANHSM_FAQ,
+  XANHSM_META_DESCRIPTION,
+  XANHSM_PAGE_H1,
+  XANHSM_PARTNER_STEPS,
+} from "@/lib/content/xanhsm-page";
 import {
   getPartnerCityBySlug,
   XANHSM_PARTNER_CITIES,
@@ -325,6 +330,25 @@ function getXanhSmFaqJsonLd(path: string) {
   return getFaqPageJsonLd(path, XANHSM_FAQ);
 }
 
+function getHowToJsonLd(
+  path: string,
+  name: string,
+  steps: readonly { title: string; description: string }[],
+) {
+  const url = getSitemapUrl(path);
+  return {
+    "@type": "HowTo",
+    "@id": `${url}#howto`,
+    name,
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.title,
+      text: step.description,
+    })),
+  };
+}
+
 function getFaqPageJsonLd(path: string, faq: { question: string; answer: string }[]) {
   const url = getSitemapUrl(path);
   return {
@@ -426,6 +450,11 @@ async function buildGraphForRoute(
       graph.push(
         getWebPageJsonLdForPath(path, city.h1, city.metaDescription),
         getLocalBusinessJsonLd(),
+        getHowToJsonLd(
+          path,
+          `Quy trình đăng ký Xanh SM Partner tại ${city.displayName}`,
+          XANHSM_PARTNER_STEPS,
+        ),
         getFaqPageJsonLd(path, city.faq),
         getBreadcrumbJsonLd([
           { name: "Trang chủ", path: "/" },

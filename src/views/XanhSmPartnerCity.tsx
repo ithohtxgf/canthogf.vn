@@ -6,7 +6,11 @@ import { SeoBannerImage } from "@/components/SeoImage";
 import { SeoLink } from "@/components/SeoLink";
 import { XanhSmFaq } from "@/components/xanhsm/XanhSmFaq";
 import { XanhSmCtaButton } from "@/components/xanhsm/XanhSmCtaButton";
-import { XANHSM_PAGE_PATH, XANHSM_PARTNER_DOCUMENTS } from "@/lib/content/xanhsm-page";
+import {
+  XANHSM_PAGE_PATH,
+  XANHSM_PARTNER_DOCUMENTS,
+  XANHSM_PARTNER_STEPS,
+} from "@/lib/content/xanhsm-page";
 import {
   getPartnerCityBySlug,
   XANHSM_PARTNER_CITIES,
@@ -91,6 +95,19 @@ export default function XanhSmPartnerCity({ citySlug }: { citySlug: string }) {
             <blockquote className="border-l-4 border-secondary bg-secondary/5 px-4 py-3 not-italic text-gray-700">
               {city.localNote}
             </blockquote>
+          </article>
+
+          <article className="mt-10">
+            <h2 className="text-2xl sm:text-3xl">
+              Quy Trình Đăng Ký Xanh SM Partner Tại {city.displayName} — Từng Bước
+            </h2>
+            <ol>
+              {XANHSM_PARTNER_STEPS.map((step) => (
+                <li key={step.title}>
+                  <strong>{step.title}.</strong> {step.description}
+                </li>
+              ))}
+            </ol>
           </article>
 
           <article className="mt-10">

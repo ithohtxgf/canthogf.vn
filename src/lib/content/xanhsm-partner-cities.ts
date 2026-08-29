@@ -51,6 +51,21 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
         answer:
           "Được, miễn cà vẹt xe (giấy đăng ký xe) còn hiệu lực và chính chủ hoặc có ủy quyền hợp lệ. Khu vực hoạt động sẽ khai theo nơi bạn dự định chạy.",
       },
+      {
+        question: "Chạy Xanh SM Partner tại TPHCM thu nhập trung bình bao nhiêu mỗi tháng?",
+        answer:
+          "Tùy khung giờ và khu vực hoạt động, tài xế Partner tại TPHCM có thể đạt 15–30 triệu đồng/tháng nhờ mật độ chuyến cao, đặc biệt khung giờ cao điểm và khu vực trung tâm, sân bay. Thu nhập thực tế phụ thuộc thời gian chạy và chính sách chiết khấu hiện hành.",
+      },
+      {
+        question: "Xe VinFast đã qua sử dụng có đăng ký Xanh SM Partner tại TPHCM được không?",
+        answer:
+          "Được, miễn xe còn trong hạn đăng kiểm và cà vẹt chính chủ hoặc có ủy quyền hợp lệ. Xanh SM không giới hạn năm sản xuất khi đăng ký Partner cho xe điện VinFast.",
+      },
+      {
+        question: "Có thể vừa chạy Xanh SM Partner vừa chạy Grab tại TPHCM không?",
+        answer:
+          "Có. Nhiều chủ xe tại TPHCM đăng ký song song cả hai nền tảng để tối ưu số chuyến, miễn tuân thủ quy định riêng của từng app về thời gian và khu vực hoạt động.",
+      },
     ],
   },
   {
@@ -83,6 +98,21 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
         question: "Chạy Xanh SM Partner ở Vũng Tàu có phù hợp chạy khách du lịch không?",
         answer:
           "Có. Nhiều đối tác chọn Vũng Tàu vì lượng khách du lịch ổn định, đặc biệt các dịp lễ Tết và cuối tuần, giúp tăng thu nhập theo mùa.",
+      },
+      {
+        question: "Thu nhập chạy Xanh SM Partner tại Vũng Tàu vào mùa du lịch cao điểm ra sao?",
+        answer:
+          "Vào mùa hè và các dịp lễ Tết, nhu cầu đặt xe tại Vũng Tàu tăng mạnh, tài xế Partner có thể đạt 18–25 triệu đồng/tháng nhờ mật độ khách du lịch cao, đặc biệt khu vực Bãi Sau, Bãi Trước.",
+      },
+      {
+        question: "Xe VinFast mua tại TPHCM có đăng ký Partner chạy ở Vũng Tàu được không?",
+        answer:
+          "Được, không yêu cầu xe phải mua tại Vũng Tàu. Bạn chỉ cần khai đúng khu vực hoạt động dự kiến khi đăng ký app.",
+      },
+      {
+        question: "Chạy Xanh SM Partner ở Vũng Tàu có bị giới hạn khu vực hoạt động không?",
+        answer:
+          "Bạn khai báo khu vực hoạt động khi đăng ký, hệ thống sẽ ưu tiên phân bổ chuyến trong khu vực đó nhưng vẫn có thể nhận chuyến liên khu vực khi có nhu cầu.",
       },
     ],
   },
@@ -117,6 +147,21 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
         answer:
           "Rất phù hợp. Nhiều đối tác tại Phú Quốc chọn chạy khung giờ cao điểm đón/trả sân bay và khu du lịch để tối ưu thu nhập.",
       },
+      {
+        question: "Chi phí vận chuyển xe ra đảo Phú Quốc để đăng ký Partner có tốn kém không?",
+        answer:
+          "Nếu xe đã có sẵn tại Phú Quốc thì không phát sinh chi phí này. Trường hợp mua xe từ đất liền, bạn cần tính thêm phí vận chuyển qua phà hoặc cảng — Cần Thơ GF có thể tư vấn phương án tối ưu chi phí.",
+      },
+      {
+        question: "Thu nhập chạy Xanh SM Partner tại Phú Quốc có ổn định quanh năm không?",
+        answer:
+          "Phú Quốc có lượng khách du lịch quanh năm nên nhu cầu tương đối ổn định, cao điểm nhất vào mùa khô (tháng 11–4) và các kỳ nghỉ lễ. Tài xế có thể đạt 15–22 triệu đồng/tháng tùy khung giờ chạy.",
+      },
+      {
+        question: "Xe điện VinFast có gặp khó khăn gì khi chạy trên đảo Phú Quốc không?",
+        answer:
+          "Không. Hạ tầng trạm sạc VinFast tại Phú Quốc đã phủ các khu vực trung tâm và điểm du lịch chính, đủ đáp ứng nhu cầu sạc hàng ngày của tài xế Partner.",
+      },
     ],
   },
   {
@@ -149,6 +194,21 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
         question: "Đăng ký Partner tại Tây Ninh cần chuẩn bị gì khác so với các tỉnh khác?",
         answer:
           "Hồ sơ cơ bản giống nhau trên toàn quốc (CCCD, cavet xe, GPLX...). Cần Thơ GF sẽ hỗ trợ kiểm tra hồ sơ trước khi nộp để tránh sai sót.",
+      },
+      {
+        question: "Xanh SM Partner tại Tây Ninh có phù hợp chạy khách hành hương núi Bà Đen không?",
+        answer:
+          "Rất phù hợp. Lượng khách hành hương và du lịch tâm linh quanh núi Bà Đen tạo nhu cầu di chuyển ổn định quanh năm, đặc biệt cao điểm vào các dịp lễ, rằm lớn và Tết Nguyên Đán.",
+      },
+      {
+        question: "Thu nhập chạy Xanh SM Partner tại Tây Ninh khoảng bao nhiêu?",
+        answer:
+          "Tùy khung giờ và khu vực hoạt động, tài xế Partner tại Tây Ninh có thể đạt 10–18 triệu đồng/tháng, tăng cao vào mùa lễ hội quanh khu vực núi Bà Đen và trung tâm thành phố.",
+      },
+      {
+        question: "Xe VinFast tại Tây Ninh có cần đăng kiểm riêng để chạy Xanh SM Partner không?",
+        answer:
+          "Không cần đăng kiểm riêng cho việc chạy Partner — chỉ cần xe còn hạn đăng kiểm thông thường và giấy tờ đầy đủ theo quy định hiện hành.",
       },
     ],
   },
@@ -183,6 +243,21 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
         answer:
           "Thông thường 3–7 ngày làm việc sau khi nộp đủ hồ sơ hợp lệ. Cần Thơ GF hỗ trợ theo dõi tiến độ giúp bạn.",
       },
+      {
+        question: "Đăng ký Xanh SM Partner tại Long An có thể chạy chuyến sang TPHCM không?",
+        answer:
+          "Có, đặc biệt các khu vực giáp ranh như Bến Lức, Đức Hòa. Bạn cần khai báo khu vực hoạt động phù hợp khi đăng ký để hệ thống phân bổ chuyến liên tỉnh hợp lý.",
+      },
+      {
+        question: "Thu nhập chạy Xanh SM Partner tại Long An so với TPHCM có chênh lệch nhiều không?",
+        answer:
+          "Khu vực giáp TPHCM như Bến Lức, Đức Hòa có mật độ chuyến gần tương đương vùng ven TPHCM, thu nhập trung bình 12–20 triệu đồng/tháng. Các huyện xa trung tâm thường thấp hơn do mật độ đặt xe ít hơn.",
+      },
+      {
+        question: "Xe VinFast mua trả góp có đăng ký Xanh SM Partner tại Long An được không?",
+        answer:
+          "Được, miễn cà vẹt xe đứng tên bạn hoặc có giấy ủy quyền hợp lệ từ ngân hàng/công ty tài chính đang cho vay, không yêu cầu tất toán nợ trước khi đăng ký.",
+      },
     ],
   },
   {
@@ -216,6 +291,21 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
         answer:
           "Chuẩn bị CCCD, cavet xe, giấy phép lái xe (2 mặt) và số điện thoại/email chưa từng đăng ký app để quá trình xử lý nhanh hơn.",
       },
+      {
+        question: "Xanh SM đã phủ sóng đầy đủ khu vực Tiền Giang chưa?",
+        answer:
+          "Xanh SM đang tiếp tục mở rộng vùng phủ sóng. Liên hệ Cần Thơ GF để được cập nhật tình trạng phủ sóng mới nhất tại khu vực bạn dự định chạy trước khi nộp hồ sơ.",
+      },
+      {
+        question: "Thu nhập chạy Xanh SM Partner tại Tiền Giang khoảng bao nhiêu mỗi tháng?",
+        answer:
+          "Khu vực TP Mỹ Tho và trục Quốc lộ 1A có nhu cầu đặt xe ổn định, tài xế Partner có thể đạt 10–16 triệu đồng/tháng tùy khung giờ hoạt động.",
+      },
+      {
+        question: "Xe VinFast tại Tiền Giang có cần chạy thử trước khi được duyệt Partner không?",
+        answer:
+          "Không bắt buộc chạy thử. Sau khi hồ sơ được duyệt và tài khoản kích hoạt, xe có thể nhận chuyến ngay theo khu vực đã đăng ký.",
+      },
     ],
   },
   {
@@ -248,6 +338,22 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
         question: "Hồ sơ đăng ký Xanh SM Partner tại Đồng Nai gồm những gì?",
         answer:
           "Gồm CCCD 2 mặt, cavet xe 2 mặt, GPLX 2 mặt, số điện thoại và email chưa đăng ký app, tài khoản ngân hàng chính chủ, thông tin người thân và khu vực chạy.",
+      },
+      {
+        question:
+          "Xanh SM Partner tại Đồng Nai có phù hợp chạy khung giờ công nhân khu công nghiệp không?",
+        answer:
+          "Rất phù hợp. Các khu công nghiệp lớn tại Biên Hòa, Nhơn Trạch, Long Thành có nhu cầu đặt xe ổn định vào giờ cao điểm đi làm và tan ca, giúp tài xế tối ưu số chuyến trong ngày.",
+      },
+      {
+        question: "Thu nhập chạy Xanh SM Partner tại Đồng Nai khoảng bao nhiêu?",
+        answer:
+          "Tài xế Partner tại khu vực Biên Hòa và các khu công nghiệp lân cận có thể đạt 15–22 triệu đồng/tháng nhờ mật độ chuyến cao vào khung giờ hành chính.",
+      },
+      {
+        question: "Xe VinFast chạy Xanh SM Partner tại Đồng Nai có thể nhận chuyến sang TPHCM không?",
+        answer:
+          "Có, đặc biệt khu vực giáp ranh TPHCM. Bạn khai báo khu vực hoạt động phù hợp khi đăng ký để hệ thống phân bổ chuyến liên tỉnh hợp lý.",
       },
     ],
   },
