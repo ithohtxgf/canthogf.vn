@@ -9,6 +9,7 @@ import { THUE_MUA_VINFAST_PAGE_PATH } from "@/lib/content/thue-mua-vinfast-page"
 import { SeoLink } from "./SeoLink";
 import { Logo, LOGO_NAV_CLASS } from "./Logo";
 import { ConsultationPopup } from "./ConsultationPopup";
+import { FloatingContactButtons } from "./FloatingContactButtons";
 import { MobileNavMenu } from "./MobileNavMenu";
 import { isNavLinkActive } from "@/lib/routes";
 
@@ -304,6 +305,7 @@ export default function Layout({
       </footer>
 
       <ConsultationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      <FloatingContactButtons />
     </div>
   );
 }
