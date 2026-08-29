@@ -10,7 +10,7 @@ export const VF7_DETAIL: RichProductDetail = {
   metaTitle:
     "VinFast VF 7 Cần Thơ: Giá Eco & Plus, AWD 349 hp, ADAS 20 Tính Năng",
   metaDescription:
-    "VinFast VF 7 tại Cần Thơ: Eco từ 740 triệu, Plus trần thép từ 830 triệu, Plus trần kính từ 850 triệu (đã kèm pin). Bản AWD 349 hp, ADAS 20 tính năng, bảo hành 10 năm và miễn phí sạc đến 10/02/2029.",
+    "VinFast VF 7 tại Cần Thơ: Eco từ 740 triệu, Plus trần thép từ 830 triệu, Plus trần kính từ 850 triệu. Bản AWD 349 hp, ADAS 20 tính năng, bảo hành 10 năm và miễn phí sạc đến 10/02/2029.",
   keywords: [
     "vinfast vf7",
     "vf7 cần thơ",
@@ -24,10 +24,10 @@ export const VF7_DETAIL: RichProductDetail = {
   image: "/vf7.webp",
   imageAlt: "VinFast VF 7 — Coupe-SUV điện tại Cần Thơ GF",
   listPrice: 740_000_000,
-  listPriceLabel: "VF 7 Eco: 740.000.000 – 750.000.000 VNĐ · Plus trần thép: 830.000.000 – 920.000.000 VNĐ · Plus trần kính: 850.000.000 – 909.000.000 VNĐ (đã kèm pin)",
+  listPriceLabel: "VF 7 Eco: 740.000.000 – 750.000.000 VNĐ · Plus trần thép: 830.000.000 – 920.000.000 VNĐ · Plus trần kính: 850.000.000 – 909.000.000 VNĐ",
   positioningHtml: `<p><strong>VinFast VF 7</strong> là C-SUV điện phong cách coupe với triết lý thiết kế <em>"Vũ Trụ Phi Đối Xứng"</em>, lấy cảm hứng từ vũ trụ và vật thể bay. Xe đạt <strong>Better Choice Awards 2024</strong>, nổi bật nhờ thiết kế cá tính, hiệu suất cao (bản AWD đạt <strong>260 kW / 349 hp</strong>, mô-men xoắn <strong>500 Nm</strong>) cùng gói an toàn <strong>ADAS 20 tính năng</strong>.</p>`,
   highlights: [
-    "Giá niêm yết: Eco từ 740 triệu · Plus trần thép từ 830 triệu · Plus trần kính từ 850 triệu (đã kèm pin)",
+    "Giá niêm yết: Eco từ 740 triệu · Plus trần thép từ 830 triệu · Plus trần kính từ 850 triệu",
     "VF 7 Plus AWD: 260 kW / 349 hp, mô-men xoắn 500 Nm",
     "ADAS 20 tính năng + 7 túi khí (Plus/AWD)",
     "Thiết kế coupe SUV theo triết lý Vũ Trụ Phi Đối Xứng",

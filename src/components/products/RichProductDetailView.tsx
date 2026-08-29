@@ -37,7 +37,7 @@ function PriceTable({ product }: { product: RichProductDetail }) {
     return (
       <table className="w-full text-sm">
         <caption className="sr-only">
-          Bảng giá niêm yết VinFast {product.shortName} tại Cần Thơ GF (đã kèm pin)
+          Bảng giá niêm yết VinFast {product.shortName} tại Cần Thơ GF
         </caption>
         <thead>
           <tr className="border-b border-gray-200 text-left text-gray-500 text-xs uppercase tracking-wider">
@@ -48,7 +48,7 @@ function PriceTable({ product }: { product: RichProductDetail }) {
               scope="col"
               className={`py-3 font-semibold text-right ${showPromoColumn ? "pr-4" : ""}`}
             >
-              Giá niêm yết (đã kèm pin)
+              Giá niêm yết
             </th>
             {showPromoColumn && (
               <th scope="col" className="py-3 font-semibold text-right">
@@ -103,7 +103,7 @@ function PriceTable({ product }: { product: RichProductDetail }) {
             scope="row"
             className="py-4 text-left text-gray-600 font-medium pr-4"
           >
-            Giá niêm yết (đã kèm pin)
+            Giá niêm yết
           </th>
           <td className="py-4 text-right font-bold text-primary-dark text-lg">
             {product.listPriceLabel}
@@ -274,7 +274,7 @@ export function RichProductDetailView({ product }: RichProductDetailViewProps) {
                 <PriceTable product={product} />
                 <p className="text-xs text-gray-500 mt-4">
                   * Giá ưu đãi phụ thuộc chương trình khuyến mãi hiện hành tại
-                  Cần Thơ GF. Tất cả phiên bản đều bán kèm pin.
+                  Cần Thơ GF.
                 </p>
                 <SeoLink
                   href="/vinfast-can-tho#tinh-gia-lan-banh"

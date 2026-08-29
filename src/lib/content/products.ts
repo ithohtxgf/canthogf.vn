@@ -14,11 +14,11 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     id: "vf3",
     name: "VinFast VF 3",
     description:
-      "VinFast VF 3 — mini car điện tại Cần Thơ: Eco từ 278 triệu, Plus 296 triệu (đã kèm pin). Quãng đường 215 km, 7 màu, đặt cọc 15 triệu. Tư vấn tại Cần Thơ GF.",
+      "VinFast VF 3 — mini car điện tại Cần Thơ: Eco từ 278 triệu, Plus 296 triệu. Quãng đường 215 km, 7 màu, đặt cọc 15 triệu. Tư vấn tại Cần Thơ GF.",
     metaTitle:
       "VinFast VF 3 Cần Thơ: Giá Eco & Plus, 7 Màu, Thông Số Kỹ Thuật",
     metaDescription:
-      "VinFast VF 3 — mini car điện giá niêm yết từ 278 triệu (Eco), 296 triệu (Plus), đã kèm pin. Quãng đường 215 km, sạc nhanh 36 phút, 7 màu ngoại thất. Đặt cọc 15 triệu tại Cần Thơ GF.",
+      "VinFast VF 3 — mini car điện giá niêm yết từ 278 triệu (Eco), 296 triệu (Plus). Quãng đường 215 km, sạc nhanh 36 phút, 7 màu ngoại thất. Đặt cọc 15 triệu tại Cần Thơ GF.",
     image: "/vf3.jpg",
     price: "Từ 278.000.000 VNĐ",
     keywords: [
@@ -38,13 +38,13 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     id: "herio-green",
     name: "Herio Green",
     description:
-      "Định nghĩa lại trải nghiệm xe dịch vụ thời đại xanh. Herio Green — thiết kế hiện đại, quãng đường 326 km, giá niêm yết từ 450 triệu (đã kèm pin) tại Cần Thơ GF.",
+      "Định nghĩa lại trải nghiệm xe dịch vụ thời đại xanh. Herio Green — thiết kế hiện đại, quãng đường 326 km, giá niêm yết từ 450 triệu tại Cần Thơ GF.",
     metaTitle:
       "VinFast Herio Green Cần Thơ: Giá Từ 450 Triệu, Xe Dịch Vụ Điện 326 km",
     metaDescription:
-      "VinFast Herio Green tại Cần Thơ — xe điện dịch vụ thương mại, giá niêm yết từ 450 triệu đến 469 triệu (đã kèm pin), quãng đường 326 km NEDC, thiết kế hiện đại. Phù hợp tài xế XanhSM, taxi điện. Tư vấn tại Cần Thơ GF.",
+      "VinFast Herio Green tại Cần Thơ — xe điện dịch vụ thương mại, giá niêm yết từ 450 triệu đến 469 triệu, quãng đường 326 km NEDC, thiết kế hiện đại. Phù hợp tài xế XanhSM, taxi điện. Tư vấn tại Cần Thơ GF.",
     image: "/herio-green.png",
-    price: "Từ 450.000.000 VNĐ (đã kèm pin)",
+    price: "Từ 450.000.000 VNĐ",
     keywords: [
       "herio green cần thơ",
       "vinfast herio green",
@@ -60,13 +60,13 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     id: "vf5",
     name: "VinFast VF 5",
     description:
-      "VinFast VF 5 tại Cần Thơ — A-SUV điện giá 496 triệu (kèm pin). Quãng đường 326 km, 6 túi khí, ADAS, trợ lý ảo ViVi. Bán chạy nhất phân khúc. Tư vấn tại Cần Thơ GF.",
+      "VinFast VF 5 tại Cần Thơ — A-SUV điện giá 496 triệu. Quãng đường 326 km, 6 túi khí, ADAS, trợ lý ảo ViVi. Bán chạy nhất phân khúc. Tư vấn tại Cần Thơ GF.",
     metaTitle:
       "VinFast VF 5 Cần Thơ: Giá 496 Triệu, Thông Số, 8 Màu & ViVi AI",
     metaDescription:
-      "VinFast VF 5 tại Cần Thơ — giá 496 triệu (kèm pin). Quãng đường 326 km, 6 túi khí, ADAS, trợ lý ảo ViVi. A-SUV điện lý tưởng cho đô thị. Tư vấn tại Cần Thơ GF.",
+      "VinFast VF 5 tại Cần Thơ — giá 496 triệu. Quãng đường 326 km, 6 túi khí, ADAS, trợ lý ảo ViVi. A-SUV điện lý tưởng cho đô thị. Tư vấn tại Cần Thơ GF.",
     image: "/vf5.webp",
-    price: "496.000.000 VNĐ (kèm pin)",
+    price: "496.000.000 VNĐ",
     keywords: [
       "vinfast vf5",
       "vf5 cần thơ",
@@ -83,11 +83,11 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     id: "vf6",
     name: "VinFast VF 6",
     description:
-      "VinFast VF 6 — SUV điện hạng C tại Cần Thơ: Eco từ 646 triệu, Plus từ 699 triệu (đã kèm pin). Quãng đường 485 km, ADAS, 7 túi khí. Tư vấn tại Cần Thơ GF.",
+      "VinFast VF 6 — SUV điện hạng C tại Cần Thơ: Eco từ 646 triệu, Plus từ 699 triệu. Quãng đường 485 km, ADAS, 7 túi khí. Tư vấn tại Cần Thơ GF.",
     metaTitle:
       "VinFast VF 6 Cần Thơ: Giá Eco & Plus, ADAS, Thông Số Kỹ Thuật",
     metaDescription:
-      "VinFast VF 6 tại Cần Thơ — VF 6 Eco từ 646 triệu, VF 6 Plus từ 699 triệu (đã kèm pin). Quãng đường 485 km, ADAS thông minh, 7 túi khí. Đặt cọc 30 triệu tại Cần Thơ GF.",
+      "VinFast VF 6 tại Cần Thơ — VF 6 Eco từ 646 triệu, VF 6 Plus từ 699 triệu. Quãng đường 485 km, ADAS thông minh, 7 túi khí. Đặt cọc 30 triệu tại Cần Thơ GF.",
     image: "/vf6.webp",
     price: "Từ 646.000.000 VNĐ",
     keywords: [
@@ -105,11 +105,11 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     id: "vf7",
     name: "VinFast VF 7",
     description:
-      "VinFast VF 7 tại Cần Thơ: Eco từ 740 triệu, Plus trần thép từ 830 triệu, Plus trần kính từ 850 triệu (đã kèm pin). C-SUV coupe, ADAS 20 tính năng, bảo hành 10 năm, miễn phí sạc đến 10/02/2029.",
+      "VinFast VF 7 tại Cần Thơ: Eco từ 740 triệu, Plus trần thép từ 830 triệu, Plus trần kính từ 850 triệu. C-SUV coupe, ADAS 20 tính năng, bảo hành 10 năm, miễn phí sạc đến 10/02/2029.",
     metaTitle:
       "VinFast VF 7 Cần Thơ: Giá Eco & Plus, AWD 349 hp, ADAS 20 Tính Năng",
     metaDescription:
-      "VinFast VF 7 Cần Thơ — giá niêm yết Eco từ 740 triệu, Plus trần thép từ 830 triệu, Plus trần kính từ 850 triệu (đã kèm pin). Bản AWD 349 hp, bảo hành 10 năm/200.000 km, miễn phí sạc đến 10/02/2029.",
+      "VinFast VF 7 Cần Thơ — giá niêm yết Eco từ 740 triệu, Plus trần thép từ 830 triệu, Plus trần kính từ 850 triệu. Bản AWD 349 hp, bảo hành 10 năm/200.000 km, miễn phí sạc đến 10/02/2029.",
     image: "/vf7.webp",
     price: "Từ 740.000.000 VNĐ",
     keywords: [
@@ -126,13 +126,13 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     id: "mpv7",
     name: "VinFast VF MPV 7",
     description:
-      "VinFast VF MPV 7 tại Cần Thơ — MPV điện 7 chỗ giá niêm yết 750 triệu (đã kèm pin). Quãng đường 450 km NEDC, công suất 150 kW, miễn phí sạc đến 06/2027. Tư vấn tại Cần Thơ GF.",
+      "VinFast VF MPV 7 tại Cần Thơ — MPV điện 7 chỗ giá niêm yết 750 triệu. Quãng đường 450 km NEDC, công suất 150 kW, miễn phí sạc đến 06/2027. Tư vấn tại Cần Thơ GF.",
     metaTitle:
       "VinFast VF MPV 7 Cần Thơ: MPV Điện 7 Chỗ, 450 km, Thông Số Kỹ Thuật",
     metaDescription:
-      "VinFast VF MPV 7 tại Cần Thơ — MPV điện 7 chỗ giá niêm yết 750 triệu (đã kèm pin). Quãng đường 450 km NEDC, công suất 150 kW, miễn phí sạc đến 06/2027. Tư vấn tại Cần Thơ GF.",
+      "VinFast VF MPV 7 tại Cần Thơ — MPV điện 7 chỗ giá niêm yết 750 triệu. Quãng đường 450 km NEDC, công suất 150 kW, miễn phí sạc đến 06/2027. Tư vấn tại Cần Thơ GF.",
     image: "/mpv7.webp",
-    price: "750.000.000 VNĐ (đã kèm pin)",
+    price: "750.000.000 VNĐ",
     keywords: [
       "vinfast vf mpv 7",
       "mpv7 cần thơ",
@@ -145,11 +145,11 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     id: "vf8",
     name: "VinFast VF 8",
     description:
-      "VinFast VF 8 tại Cần Thơ: Eco từ 898 triệu, Plus 1,079 tỷ (đã kèm pin, Pin CATL). D-SUV điện cao cấp, Plus 402 hp và 620 Nm, 11 túi khí, ADAS nâng cao, ViVi 2.0 AI.",
+      "VinFast VF 8 tại Cần Thơ: Eco từ 898 triệu, Plus 1,079 tỷ (Pin CATL). D-SUV điện cao cấp, Plus 402 hp và 620 Nm, 11 túi khí, ADAS nâng cao, ViVi 2.0 AI.",
     metaTitle:
       "VinFast VF 8 Cần Thơ: Giá Từ 898 Triệu, 402 hp, 11 Túi Khí, ViVi 2.0",
     metaDescription:
-      "VinFast VF 8 Cần Thơ — Eco từ 898 triệu, Plus 1,079 tỷ (đã kèm pin, Pin CATL). Quãng đường 562 km (Eco), sạc nhanh 31 phút, bản Plus AWD 402 hp, 11 túi khí và công nghệ ViVi 2.0.",
+      "VinFast VF 8 Cần Thơ — Eco từ 898 triệu, Plus 1,079 tỷ (Pin CATL). Quãng đường 562 km (Eco), sạc nhanh 31 phút, bản Plus AWD 402 hp, 11 túi khí và công nghệ ViVi 2.0.",
     image: "/vf8.webp",
     price: "Từ 898.000.000 VNĐ",
     keywords: [
@@ -186,11 +186,11 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     id: "vf9",
     name: "VinFast VF 9",
     description:
-      "VinFast VF 9 tại Cần Thơ — SUV điện 7 chỗ hạng sang. Eco 1,348 tỷ, Plus trần thép 1,529 tỷ (đã kèm pin), pin 123 kWh, quãng đường WLTP đến 626 km, ADAS cấp độ 2, bảo hành 10 năm.",
+      "VinFast VF 9 tại Cần Thơ — SUV điện 7 chỗ hạng sang. Eco 1,348 tỷ, Plus trần thép 1,529 tỷ, pin 123 kWh, quãng đường WLTP đến 626 km, ADAS cấp độ 2, bảo hành 10 năm.",
     metaTitle:
       "VinFast VF 9 Cần Thơ: Giá Eco/Plus, SUV Điện 7 Chỗ Hạng Sang",
     metaDescription:
-      "VinFast VF 9 Cần Thơ — Eco 1.348 tỷ, Plus trần thép 1.529 tỷ (đã kèm pin). SUV điện 7 chỗ hạng sang với pin 123 kWh, ADAS cấp độ 2 và bảo hành 10 năm/200.000 km.",
+      "VinFast VF 9 Cần Thơ — Eco 1.348 tỷ, Plus trần thép 1.529 tỷ. SUV điện 7 chỗ hạng sang với pin 123 kWh, ADAS cấp độ 2 và bảo hành 10 năm/200.000 km.",
     image: "/vf9.webp",
     price: "Từ 1.348.000.000 VNĐ",
     keywords: [
@@ -206,13 +206,13 @@ export const PRODUCTS_SEO: ProductSeo[] = [
     id: "limo-green",
     name: "VinFast Limo Green",
     description:
-      "VinFast Limo Green — xe thương mại dịch vụ xanh, ô tô điện 7 chỗ, giá niêm yết 699 triệu (đã kèm pin). Quãng đường 450 km NEDC. Tư vấn tại Cần Thơ GF.",
+      "VinFast Limo Green — xe thương mại dịch vụ xanh, ô tô điện 7 chỗ, giá niêm yết 699 triệu. Quãng đường 450 km NEDC. Tư vấn tại Cần Thơ GF.",
     metaTitle:
-      "VinFast Limo Green Cần Thơ: Giá Kèm Pin, Thông Số & Màu Sắc 2026",
+      "VinFast Limo Green Cần Thơ: Giá Niêm Yết, Thông Số & Màu Sắc 2026",
     metaDescription:
-      "VinFast Limo Green — xe điện 7 chỗ dịch vụ xanh, giá niêm yết 699 triệu (đã kèm pin). Quãng đường 450 km NEDC, sạc nhanh 30 phút. Tư vấn tại Cần Thơ GF.",
+      "VinFast Limo Green — xe điện 7 chỗ dịch vụ xanh, giá niêm yết 699 triệu. Quãng đường 450 km NEDC, sạc nhanh 30 phút. Tư vấn tại Cần Thơ GF.",
     image: "/Limo-Green.png",
-    price: "699.000.000 VNĐ (kèm pin)",
+    price: "699.000.000 VNĐ",
     keywords: [
       "vinfast limo green",
       "limo green cần thơ",

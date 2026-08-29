@@ -9,7 +9,7 @@ export const MPV7_DETAIL: RichProductDetail = {
   metaTitle:
     "VinFast VF MPV 7 Cần Thơ: MPV Điện 7 Chỗ, 450 km, Thông Số Kỹ Thuật",
   metaDescription:
-    "VinFast VF MPV 7 tại Cần Thơ — MPV điện 7 chỗ giá niêm yết 750 triệu (đã kèm pin). Quãng đường 450 km NEDC, công suất 150 kW, miễn phí sạc đến 06/2027. Tư vấn tại Cần Thơ GF.",
+    "VinFast VF MPV 7 tại Cần Thơ — MPV điện 7 chỗ giá niêm yết 750 triệu. Quãng đường 450 km NEDC, công suất 150 kW, miễn phí sạc đến 06/2027. Tư vấn tại Cần Thơ GF.",
   keywords: [
     "vinfast vf mpv 7",
     "mpv7 cần thơ",
@@ -22,7 +22,7 @@ export const MPV7_DETAIL: RichProductDetail = {
   image: "/mpv7.webp",
   imageAlt: "VinFast VF MPV 7 — MPV điện 7 chỗ tại Cần Thơ GF",
   listPrice: 750_000_000,
-  listPriceLabel: "750.000.000 VNĐ (Tiêu chuẩn — đã kèm pin)",
+  listPriceLabel: "750.000.000 VNĐ (Tiêu chuẩn)",
   priceVariants: [
     {
       id: "mpv7-standard",
@@ -33,7 +33,7 @@ export const MPV7_DETAIL: RichProductDetail = {
   ],
   positioningHtml: `<p><strong>VinFast VF MPV 7</strong> là MPV điện <strong>7 chỗ</strong> thế hệ mới — lựa chọn lý tưởng cho <strong>đại gia đình tại Cần Thơ</strong> cần không gian rộng, hành trình êm ái và quãng đường <strong>450 km</strong> mỗi lần sạc. Xe dài nhất trong dòng VinFast (4.740 mm), công suất 150 kW, treo sau đa liên kết cao cấp và <strong>miễn phí sạc pin đến hết 06/2027</strong> (theo điều kiện chương trình).</p>`,
   highlights: [
-    "Giá niêm yết 750 triệu (đã kèm pin) — phiên bản Tiêu chuẩn",
+    "Giá niêm yết 750 triệu — phiên bản Tiêu chuẩn",
     "MPV 7 chỗ duy nhất trong dòng xe điện VinFast",
     "Quãng đường 450 km NEDC — pin 60,13 kWh, sạc nhanh 30 phút (10%–70%)",
     "Công suất 150 kW, mô-men xoắn 280 Nm — tương đương xe xăng 2.0L",

@@ -96,7 +96,7 @@ export function VinfastPriceCalculator() {
           >
             {VINFAST_VEHICLES.map((vehicle) => (
               <option key={vehicle.id} value={vehicle.id}>
-                {vehicle.name} — {formatVnd(vehicle.listPrice)} (đã kèm pin)
+                {vehicle.name} — {formatVnd(vehicle.listPrice)}
               </option>
             ))}
           </select>

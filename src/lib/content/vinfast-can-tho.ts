@@ -25,7 +25,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
     listPrice: 278_000_000,
     image: "/vf3.jpg",
     description:
-      "VinFast VF 3 — mini car điện \"Xe nhỏ, giá trị lớn\". Eco từ 278 triệu, Plus 296 triệu (đã kèm pin), quãng đường 215 km — lý tưởng phố Ninh Kiều, Cần Thơ.",
+      "VinFast VF 3 — mini car điện \"Xe nhỏ, giá trị lớn\". Eco từ 278 triệu, Plus 296 triệu, quãng đường 215 km — lý tưởng phố Ninh Kiều, Cần Thơ.",
     category: "passenger",
     seoSlug: "vf3",
     localReview: {
@@ -127,7 +127,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
     listPrice: 699_000_000,
     image: "/Limo-Green.png",
     description:
-      "VinFast Limo Green — xe thương mại dịch vụ xanh, ô tô điện 7 chỗ, giá niêm yết 699 triệu (đã kèm pin). Quãng đường 450 km NEDC, tối ưu chạy liên tỉnh Miền Tây và dịch vụ cao cấp tại Cần Thơ.",
+      "VinFast Limo Green — xe thương mại dịch vụ xanh, ô tô điện 7 chỗ, giá niêm yết 699 triệu. Quãng đường 450 km NEDC, tối ưu chạy liên tỉnh Miền Tây và dịch vụ cao cấp tại Cần Thơ.",
     category: "commercial",
     seoSlug: "limo-green",
     localReview: {
@@ -135,7 +135,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
       useCase: "Vận tải liên tỉnh, dịch vụ cao cấp, gia đình 7 chỗ",
       rating: 4.9,
       verdict:
-        "Quãng đường 450 km — lý tưởng tuyến Cần Thơ ↔ TP.HCM, An Giang. Giá niêm yết kèm pin 699 triệu tại CanThoGF.",
+        "Quãng đường 450 km — lý tưởng tuyến Cần Thơ ↔ TP.HCM, An Giang. Giá niêm yết 699 triệu tại CanThoGF.",
     },
   },
   {
@@ -244,7 +244,7 @@ export const VINFAST_CAN_THO_CALCULATOR_H2 =
 export const VINFAST_CAN_THO_PAGE_TITLE = VINFAST_CAN_THO_META_TITLE;
 
 export const VINFAST_CAN_THO_PAGE_DESCRIPTION =
-  "Bảng tính giá lăn bánh VinFast tại Cần Thơ minh bạch: giá xe kèm pin, phí biển số, phí đường bộ, BHTNDS, voucher ưu đãi. Đánh giá VF3, VF5, VF6 phù hợp đường phố Cần Thơ — CanThoGF.";
+  "Bảng tính giá lăn bánh VinFast tại Cần Thơ minh bạch: giá xe, phí biển số, phí đường bộ, BHTNDS, voucher ưu đãi. Đánh giá VF3, VF5, VF6 phù hợp đường phố Cần Thơ — CanThoGF.";
 
 /** Bài viết vệ tinh (Spoke) liên kết về Hub */
 export const VINFAST_SPOKE_ARTICLES = [
@@ -274,7 +274,7 @@ export const VINFAST_CAN_THO_FAQ = [
   {
     question: "Giá lăn bánh VinFast tại Cần Thơ gồm những khoản nào?",
     answer:
-      "Giá lăn bánh bao gồm giá niêm yết (đã kèm pin), phí đăng ký biển số Cần Thơ, phí đường bộ, bảo hiểm TNDS bắt buộc và lệ phí trước bạ (nếu áp dụng theo chính sách), sau đó trừ các voucher ưu đãi đang có hiệu lực. CanThoGF minh bạch từng khoản trên bảng tính giá xe VinFast tại Cần Thơ ngay trên trang — bạn không cần gọi điện mới biết tổng chi phí sở hữu xe.",
+      "Giá lăn bánh bao gồm giá niêm yết, phí đăng ký biển số Cần Thơ, phí đường bộ, bảo hiểm TNDS bắt buộc và lệ phí trước bạ (nếu áp dụng theo chính sách), sau đó trừ các voucher ưu đãi đang có hiệu lực. CanThoGF minh bạch từng khoản trên bảng tính giá xe VinFast tại Cần Thơ ngay trên trang — bạn không cần gọi điện mới biết tổng chi phí sở hữu xe.",
   },
   {
     question: "Xe VinFast nào phù hợp chạy phố Ninh Kiều, Cần Thơ?",
@@ -335,7 +335,7 @@ export function calculateDetailedRollingPrice(
   const lineItems: PriceLineItem[] = [
     {
       id: "list-price",
-      label: "Giá niêm yết (đã kèm pin)",
+      label: "Giá niêm yết",
       amount: listPrice,
       type: "base",
     },

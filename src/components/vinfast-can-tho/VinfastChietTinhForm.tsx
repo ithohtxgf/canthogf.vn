@@ -131,7 +131,7 @@ export function VinfastChietTinhForm() {
 
         <div className="flex flex-col gap-1">
           <label htmlFor="ct-list-price" className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-            Giá niêm yết (đã kèm pin)
+            Giá niêm yết
           </label>
           <input
             id="ct-list-price"
@@ -398,7 +398,7 @@ export function VinfastChietTinhForm() {
       <div className="mx-5 mb-4 flex items-start gap-2 rounded-lg border border-amber-200/80 bg-amber-50 px-3 py-2.5">
         <Info className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" aria-hidden />
         <p className="text-xs leading-relaxed text-amber-950">
-          <span className="font-bold">Lưu ý:</span> Giá niêm yết đã kèm pin. Phí thủ tục tạm tính — quyết toán theo chứng từ thực tế tại thời điểm đăng kí.
+          <span className="font-bold">Lưu ý:</span> Phí thủ tục tạm tính — quyết toán theo chứng từ thực tế tại thời điểm đăng kí.
         </p>
       </div>
 

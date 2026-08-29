@@ -4,7 +4,7 @@ export const VINFAST_SEO_INTRO = {
   heading: "Cần Thơ GF — Đại lý VinFast Cần Thơ uy tín tại miền Tây",
   paragraphs: [
     `Hợp tác xã vận tải Cần Thơ GF (CanThoGF) là đại lý VinFast Cần Thơ được nhiều khách hàng và tài xế XanhSM tin chọn khi cần tư vấn mua xe, báo giá lăn bánh và hỗ trợ thủ tục đăng ký xe tại khu vực Đồng bằng sông Cửu Long. Với showroom tại Phường Cái Răng, đội ngũ tư vấn am hiểu thị trường địa phương và quy trình làm việc minh bạch, chúng tôi giúp khách hàng nắm rõ từng khoản phí trước khi quyết định — không cần chờ báo giá qua điện thoại mới biết con số cuối cùng.`,
-    `Khác với việc chỉ xem giá niêm yết trên website chính hãng, khi làm việc với đại lý VinFast Cần Thơ tại CanThoGF, bạn được tổng hợp đầy đủ: giá xe kèm pin, phí biển số, phí đường bộ, bảo hiểm TNDS, lệ phí trước bạ (nếu áp dụng) và các voucher ưu đãi đang có hiệu lực. Đây là lợi thế thực tế cho ai đang cân nhắc mua xe VinFast Cần Thơ 2026 mà muốn so sánh chi phí sở hữu trọn gói ngay từ đầu.`,
+    `Khác với việc chỉ xem giá niêm yết trên website chính hãng, khi làm việc với đại lý VinFast Cần Thơ tại CanThoGF, bạn được tổng hợp đầy đủ: giá xe, phí biển số, phí đường bộ, bảo hiểm TNDS, lệ phí trước bạ (nếu áp dụng) và các voucher ưu đãi đang có hiệu lực. Đây là lợi thế thực tế cho ai đang cân nhắc mua xe VinFast Cần Thơ 2026 mà muốn so sánh chi phí sở hữu trọn gói ngay từ đầu.`,
     `Ngoài bán xe du lịch, HTX Cần Thơ GF còn đồng hành cùng tài xế vận tải qua dịch vụ đăng ký XanhSM, tư vấn trả góp qua ngân hàng đối tác và hỗ trợ lái thử tại nhà hoặc tại showroom. Mục tiêu của chúng tôi là trở thành địa chỉ đáng tin cậy nhất khi nhắc đến VinFast Cần Thơ — từ khách mua xe gia đình đến hộ kinh doanh vận tải cần xe điện thương mại.`,
   ],
 } as const;

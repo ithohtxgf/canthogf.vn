@@ -10,7 +10,7 @@ export const VF9_DETAIL: RichProductDetail = {
   metaTitle:
     "VinFast VF 9 Cần Thơ: Giá Eco/Plus, 7 Chỗ Hạng Sang, Quãng Đường 626 km",
   metaDescription:
-    "VinFast VF 9 tại Cần Thơ: Eco 1,348 tỷ, Plus trần thép 1,529 tỷ (đã kèm pin). SUV điện 7 chỗ hạng sang, pin 123 kWh, quãng đường WLTP đến 626 km, ADAS cấp độ 2, bảo hành 10 năm.",
+    "VinFast VF 9 tại Cần Thơ: Eco 1,348 tỷ, Plus trần thép 1,529 tỷ. SUV điện 7 chỗ hạng sang, pin 123 kWh, quãng đường WLTP đến 626 km, ADAS cấp độ 2, bảo hành 10 năm.",
   keywords: [
     "vinfast vf9",
     "vf9 cần thơ",
@@ -22,7 +22,7 @@ export const VF9_DETAIL: RichProductDetail = {
   image: "/vf9.webp",
   imageAlt: "VinFast VF 9 SUV điện 7 chỗ hạng sang tại Cần Thơ GF",
   listPrice: 1_348_000_000,
-  listPriceLabel: "VF 9 Eco: 1.348.000.000 VNĐ · Plus (trần thép): 1.529.000.000 VNĐ (đã kèm pin)",
+  listPriceLabel: "VF 9 Eco: 1.348.000.000 VNĐ · Plus (trần thép): 1.529.000.000 VNĐ",
   depositAmount: 50_000_000,
   priceVariants: [
     {
@@ -40,7 +40,7 @@ export const VF9_DETAIL: RichProductDetail = {
   ],
   positioningHtml: `<p><strong>VinFast VF 9</strong> là SUV điện 7 chỗ hạng sang, thiết kế bởi studio <strong>Pininfarina</strong> (Ý), lấy cảm hứng từ du thuyền hạng sang. Xe nổi bật với logo chữ V, dải đèn LED nhận diện thương hiệu, phong cách mạnh mẽ và hiện đại.</p>`,
   highlights: [
-    "VF 9 Eco: 1,348 tỷ · Plus (trần thép): 1,529 tỷ (đã kèm pin)",
+    "VF 9 Eco: 1,348 tỷ · Plus (trần thép): 1,529 tỷ",
     "Đặt cọc 50.000.000 đ",
     "2 motor 150 kW, công suất 402 hp / 300 kW, mô-men xoắn 620 Nm",
     "Pin 123 kWh, quãng đường WLTP: Eco 626 km · Plus 602 km",
@@ -52,7 +52,7 @@ export const VF9_DETAIL: RichProductDetail = {
       id: "gia-ban",
       heading: "Giá bán & cấu hình",
       rows: [
-        { label: "Giá niêm yết (đã kèm pin)", eco: "1.348.000.000 VNĐ", plus: "1.529.000.000 VNĐ (trần thép)" },
+        { label: "Giá niêm yết", eco: "1.348.000.000 VNĐ", plus: "1.529.000.000 VNĐ (trần thép)" },
         { label: "Đặt cọc", eco: "50.000.000 đ", plus: "50.000.000 đ" },
         { label: "Tùy chọn số chỗ", eco: "7 chỗ", plus: "7 chỗ hoặc 6 chỗ" },
         { label: "Lưu ý", eco: "Giá chưa gồm ghế cơ trưởng", plus: "Giá chưa gồm ghế cơ trưởng" },

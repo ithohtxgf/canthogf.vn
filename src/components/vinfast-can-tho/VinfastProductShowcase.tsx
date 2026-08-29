@@ -37,7 +37,7 @@ function VehicleReviewCard({ vehicle }: { vehicle: VinfastVehicle }) {
   const displayImage = seoProduct?.image ?? vehicle.image;
   const displayPrice =
     seoProduct?.price ??
-    `${formatVnd(vehicle.listPrice)} (đã kèm pin)`;
+    `${formatVnd(vehicle.listPrice)}`;
 
   const inner = (
     <>

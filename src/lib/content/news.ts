@@ -869,7 +869,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         heading: "Lãi suất và thời hạn vay VF3",
         level: 2,
         paragraphs: [
-          `Vay đến 8 năm, lãi suất ưu đãi theo từng ngân hàng. VF3 giá từ 278 triệu (kèm pin) — trả trước 20% chỉ ~56 triệu.`,
+          `Vay đến 8 năm, lãi suất ưu đãi theo từng ngân hàng. VF3 giá từ 278 triệu — trả trước 20% chỉ ~56 triệu.`,
         ],
       },
     ],
@@ -894,7 +894,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     title: "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ — Cập nhật 2026",
     metaTitle: "Giá lăn bánh VF5 Cần Thơ 2026 — Phí biển số, BHTNDS",
     excerpt:
-      "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ chi tiết: giá niêm yết 496 triệu (kèm pin), phí biển số, phí đường bộ, BHTNDS và voucher ưu đãi CanThoGF.",
+      "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ chi tiết: giá niêm yết 496 triệu, phí biển số, phí đường bộ, BHTNDS và voucher ưu đãi CanThoGF.",
     image: "https://picsum.photos/seed/gia-lan-banh-vf5-can-tho/1200/630",
     imageAlt: "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ",
     date: "08/06/2026",
@@ -908,7 +908,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         heading: "Bảng giá lăn bánh VF5 chi tiết",
         level: 2,
         paragraphs: [
-          `Giá niêm yết VF5 Plus: 496.000.000đ (đã kèm pin). Cộng phí biển số Cần Thơ 1 triệu, phí đường bộ 1,56 triệu, BHTNDS 480.000đ. Trừ voucher CanThoGF và miễn trước bạ — dùng <a href="/vinfast-can-tho#tinh-gia-lan-banh" class="text-primary font-semibold hover:underline">bảng tính VinFast Cần Thơ</a> để cập nhật số liệu mới nhất.`,
+          `Giá niêm yết VF5 Plus: 496.000.000đ. Cộng phí biển số Cần Thơ 1 triệu, phí đường bộ 1,56 triệu, BHTNDS 480.000đ. Trừ voucher CanThoGF và miễn trước bạ — dùng <a href="/vinfast-can-tho#tinh-gia-lan-banh" class="text-primary font-semibold hover:underline">bảng tính VinFast Cần Thơ</a> để cập nhật số liệu mới nhất.`,
         ],
       },
     ],
