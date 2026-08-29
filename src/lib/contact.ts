@@ -16,11 +16,11 @@ export const CONTACT_GEO_LONGITUDE = 105.7907429;
 export const CONTACT_MAPS_SHARE_URL =
   "https://www.google.com/maps/search/?api=1&query=10.0045305%2C105.7907429";
 
-export const CONTACT_PHONE = "0916 513 720";
-export const CONTACT_PHONE_TEL = "+84916513720";
+export const CONTACT_PHONE = "0969 99 11 77";
+export const CONTACT_PHONE_TEL = "+84969991177";
 export const CONTACT_EMAIL = "htxcanthogf@gmail.com";
 export const CONTACT_TAX_ID = "1801807608";
-export const CONTACT_ZALO_URL = "https://zalo.me/0916513720";
+export const CONTACT_ZALO_URL = "https://zalo.me/0969991177";
 export const CONTACT_FACEBOOK_URL = "https://www.facebook.com/canthogf";
 export const CONTACT_TIKTOK_URL = "https://www.tiktok.com/@sulinh.ctgf";
 export const CONTACT_YOUTUBE_URL = "https://www.youtube.com/@sulinhvf";
@@ -58,7 +58,7 @@ export const CONTACT_FAQ_ITEMS = [
   {
     question: "Có được lái thử xe trước khi mua không?",
     answer:
-      "Có. Bạn đăng ký lái thử miễn phí qua hotline 0916 513 720 hoặc form liên hệ — chúng tôi sắp lịch và chuẩn bị xe phù hợp.",
+      "Có. Bạn đăng ký lái thử miễn phí qua hotline 0969 99 11 77 hoặc form liên hệ — chúng tôi sắp lịch và chuẩn bị xe phù hợp.",
   },
   {
     question: "Showroom mở cửa những ngày nào?",

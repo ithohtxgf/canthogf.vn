@@ -134,7 +134,7 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
   "/lien-he": {
     title: "Liên hệ",
     description:
-      "Liên hệ Cần Thơ GF — showroom Cần Thơ, hotline 0916 513 720, email htxcanthogf@gmail.com. Tư vấn mua xe VinFast và XanhSM.",
+      "Liên hệ Cần Thơ GF — showroom Cần Thơ, hotline 0969 99 11 77, email htxcanthogf@gmail.com. Tư vấn mua xe VinFast và XanhSM.",
     keywords: ["liên hệ cần thơ gf", "showroom vinfast cần thơ"],
   },
   "/chinh-sach-bao-mat": {

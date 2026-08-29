@@ -282,10 +282,10 @@ function PromotionRenderer({ promo }: { promo: Promotion }) {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <PromoCtaButton promo={promo} size="lg" pulse />
           <a
-            href="tel:0916513720"
+            href="tel:0969991177"
             className="inline-flex items-center justify-center bg-white/15 hover:bg-white/25 border border-white/40 text-white font-bold py-4 px-8 rounded-xl transition-colors"
           >
-            Gọi Hotline 0916 513 720
+            Gọi Hotline 0969 99 11 77
           </a>
         </div>
       </div>

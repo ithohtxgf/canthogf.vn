@@ -255,8 +255,8 @@ export default function About() {
             </motion.button>
             <p className="mt-6 text-sm text-gray-400">
               Hoặc liên hệ hotline{" "}
-              <a href="tel:+84916513720" className="text-secondary font-bold hover:underline">
-                0916 513 720
+              <a href="tel:+84969991177" className="text-secondary font-bold hover:underline">
+                0969 99 11 77
               </a>
             </p>
           </motion.div>

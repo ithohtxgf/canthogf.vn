@@ -53,7 +53,7 @@ export default function Layout({
       <div className="bg-primary-dark text-white py-2 px-4 text-sm hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex space-x-6">
-            <span className="flex items-center"><Phone className="w-4 h-4 mr-2" /> Hotline: 0916 513 720</span>
+            <span className="flex items-center"><Phone className="w-4 h-4 mr-2" /> Hotline: 0969 99 11 77</span>
             <span className="flex items-center"><Mail className="w-4 h-4 mr-2" /> Email: htxcanthogf@gmail.com</span>
           </div>
           <div className="flex space-x-4">
@@ -162,12 +162,12 @@ export default function Layout({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block h-10 w-10 shrink-0 opacity-90 transition-opacity hover:opacity-100"
-                  title="Zalo 0916 513 720"
-                  aria-label="Zalo 0916 513 720"
+                  title="Zalo 0969 99 11 77"
+                  aria-label="Zalo 0969 99 11 77"
                 >
                   <Image
                     src="/logo_zalo.png"
-                    alt="Zalo 0916 513 720"
+                    alt="Zalo 0969 99 11 77"
                     width={40}
                     height={40}
                     className="h-10 w-10 object-contain"
@@ -273,7 +273,7 @@ export default function Layout({
                 </li>
                 <li className="flex items-center">
                   <Phone className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                  <span className="text-gray-600">0916 513 720</span>
+                  <span className="text-gray-600">0969 99 11 77</span>
                 </li>
                 <li className="flex items-center">
                   <Mail className="w-5 h-5 text-primary mr-3 flex-shrink-0" />

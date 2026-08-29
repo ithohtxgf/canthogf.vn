@@ -43,7 +43,7 @@ export function createEmptyArticle(
     conclusionHtml: "<p></p>",
     cta: {
       title: "Liên hệ tư vấn",
-      description: "Hotline 0916 513 720 — Cần Thơ GF hỗ trợ 24/7",
+      description: "Hotline 0969 99 11 77 — Cần Thơ GF hỗ trợ 24/7",
       label: "Đăng ký tư vấn miễn phí",
       href: "/lien-he",
     },

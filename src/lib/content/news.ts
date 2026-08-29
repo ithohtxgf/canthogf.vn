@@ -191,7 +191,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         question: "Mua xe VinFast mới ở Cần Thơ được hỗ trợ những gì?",
         answerHtml:
-          "Khách hàng tại Cần Thơ GF được tư vấn chọn mẫu xe phù hợp, hỗ trợ vay trả góp, làm thủ tục đăng ký xe và bảo hành chính hãng VinFast. Hotline <strong>0916 513 720</strong> hỗ trợ 24/7.",
+          "Khách hàng tại Cần Thơ GF được tư vấn chọn mẫu xe phù hợp, hỗ trợ vay trả góp, làm thủ tục đăng ký xe và bảo hành chính hãng VinFast. Hotline <strong>0969 99 11 77</strong> hỗ trợ 24/7.",
       },
       {
         question: "Có được lái thử xe điện VinFast trước khi mua không?",
@@ -214,7 +214,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     title: "Cần Thơ GF bàn giao 50 xe VinFast VF5 cho đối tác chiến lược",
     metaTitle: "Bàn giao 50 xe VF5 tại Cần Thơ GF: Cột mốc mới",
     excerpt:
-      "Cần Thơ GF bàn giao 50 xe VinFast VF5 cho đối tác vận tải. Xe điện VF5 chất lượng, giá tốt, hỗ trợ trả góp nhanh — liên hệ hotline 0916 513 720 để đặt xe.",
+      "Cần Thơ GF bàn giao 50 xe VinFast VF5 cho đối tác vận tải. Xe điện VF5 chất lượng, giá tốt, hỗ trợ trả góp nhanh — liên hệ hotline 0969 99 11 77 để đặt xe.",
     image: "https://picsum.photos/seed/ban-giao-vinfast-vf5-can-tho/1200/630",
     imageAlt:
       "Lễ bàn giao 50 xe VinFast VF5 tại showroom Hợp tác xã Cần Thơ GF",
@@ -299,7 +299,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         question: "Mua xe VinFast VF5 ở Cần Thơ được hỗ trợ những gì?",
         answerHtml:
-          "Cần Thơ GF hỗ trợ tư vấn chọn màu, báo giá, vay trả góp, đăng ký biển số, bảo hành chính hãng và hướng dẫn vận hành. Liên hệ <strong>0916 513 720</strong> để được tư vấn ngay.",
+          "Cần Thơ GF hỗ trợ tư vấn chọn màu, báo giá, vay trả góp, đăng ký biển số, bảo hành chính hãng và hướng dẫn vận hành. Liên hệ <strong>0969 99 11 77</strong> để được tư vấn ngay.",
       },
       {
         question: "XanhSM Cần Thơ có tuyển tài xế chạy VF5 không?",
@@ -400,7 +400,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         question: "Cần Thơ GF có hỗ trợ kiểm tra pin xe điện không?",
         answerHtml:
-          'Có. Bạn có thể đặt lịch kiểm tra pin và bảo dưỡng tại showroom qua hotline <strong>0916 513 720</strong> hoặc form <a href="/lien-he" class="text-primary font-semibold hover:underline">liên hệ</a>.',
+          'Có. Bạn có thể đặt lịch kiểm tra pin và bảo dưỡng tại showroom qua hotline <strong>0969 99 11 77</strong> hoặc form <a href="/lien-he" class="text-primary font-semibold hover:underline">liên hệ</a>.',
       },
     ],
     author: TECH_AUTHOR,
@@ -526,7 +526,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     title: "Ngày hội lái thử xe điện VinFast tại Cần Thơ — Trải nghiệm thực tế",
     metaTitle: "Lái thử VinFast Cần Thơ: Ngày hội xe điện hấp dẫn",
     excerpt:
-      "Ngày hội lái thử VinFast tại Cần Thơ GF thu hút hàng trăm khách. Trải nghiệm VF5, Herio Green, nhận ưu đãi mua xe và đăng ký XanhSM — hotline 0916 513 720.",
+      "Ngày hội lái thử VinFast tại Cần Thơ GF thu hút hàng trăm khách. Trải nghiệm VF5, Herio Green, nhận ưu đãi mua xe và đăng ký XanhSM — hotline 0969 99 11 77.",
     image: "https://picsum.photos/seed/lai-thu-vinfast-can-tho-gf/1200/630",
     imageAlt:
       "Ngày hội lái thử xe điện VinFast tại showroom Cần Thơ GF",
@@ -610,7 +610,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         question: "Lái thử VinFast ở Cần Thơ cần đăng ký trước không?",
         answerHtml:
-          'Nên đăng ký trước qua hotline <strong>0916 513 720</strong> hoặc form <a href="/lien-he" class="text-primary font-semibold hover:underline">liên hệ</a> để được sắp lịch và chuẩn bị xe phù hợp.',
+          'Nên đăng ký trước qua hotline <strong>0969 99 11 77</strong> hoặc form <a href="/lien-he" class="text-primary font-semibold hover:underline">liên hệ</a> để được sắp lịch và chuẩn bị xe phù hợp.',
       },
       {
         question: "Ngày hội lái thử VinFast có tổ chức lại không?",

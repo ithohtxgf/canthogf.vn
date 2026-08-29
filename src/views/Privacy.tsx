@@ -91,7 +91,7 @@ export default function Privacy() {
             <ul className="list-disc pl-6 mb-6 space-y-2">
               <li><strong>Tên tổ chức:</strong> Hợp tác xã Vận tải Cần Thơ GF</li>
               <li><strong>Địa chỉ trụ sở:</strong> Quận Cái Răng, Thành phố Cần Thơ</li>
-              <li><strong>Số điện thoại liên hệ:</strong> 0916 513 720</li>
+              <li><strong>Số điện thoại liên hệ:</strong> 0969 99 11 77</li>
               <li><strong>Email tiếp nhận yêu cầu bảo mật:</strong> htxcanthogf@gmail.com</li>
             </ul>
 

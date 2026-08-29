@@ -54,7 +54,7 @@ export const XANHSM_DOCUMENTS = [
 ];
 
 export const XANHSM_ONLINE_STEPS = [
-  "Nhấn nút \"Đăng ký tư vấn ngay\" trên trang này hoặc liên hệ trực tiếp qua Zalo 0916 513 720",
+  "Nhấn nút \"Đăng ký tư vấn ngay\" trên trang này hoặc liên hệ trực tiếp qua Zalo 0969 99 11 77",
   "Tư vấn viên Cần Thơ GF sẽ liên hệ trong vòng 15–30 phút để xác nhận thông tin và hướng dẫn bổ sung",
   "Chuẩn bị hồ sơ theo danh sách và gửi ảnh scan qua Zalo",
   "Cần Thơ GF hỗ trợ nộp hồ sơ và theo dõi tiến độ xét duyệt",

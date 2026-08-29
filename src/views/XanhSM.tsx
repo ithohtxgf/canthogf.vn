@@ -167,7 +167,7 @@ export default function XanhSM() {
               </li>
               <li>
                 <strong>Điện thoại:</strong>{" "}
-                <a href="tel:+84916513720" className="text-primary font-semibold hover:underline">
+                <a href="tel:+84969991177" className="text-primary font-semibold hover:underline">
                   {CONTACT_PHONE}
                 </a>
               </li>

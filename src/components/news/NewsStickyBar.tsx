@@ -36,7 +36,7 @@ export function NewsStickyBar({ targets }: NewsStickyBarProps) {
     >
       <div className="flex gap-2 max-w-lg mx-auto">
         <a
-          href="tel:0916513720"
+          href="tel:0969991177"
           className="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold py-3 px-3 rounded-xl text-sm transition-colors"
         >
           <Phone className="w-4 h-4 shrink-0" />

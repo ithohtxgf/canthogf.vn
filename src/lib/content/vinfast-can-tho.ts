@@ -294,7 +294,7 @@ export const VINFAST_CAN_THO_FAQ = [
   {
     question: "Làm sao để nhận báo giá chính xác từ đại lý VinFast Cần Thơ?",
     answer:
-      "Bạn có thể dùng bảng tính giá lăn bánh trên trang này để ước tính nhanh, sau đó liên hệ hotline 0916 513 720 hoặc Zalo CanThoGF để nhận báo giá chi tiết theo mẫu xe, màu sơn và chính sách ưu đãi mới nhất. Đội ngũ đại lý VinFast Cần Thơ sẽ phản hồi trong vòng 15 phút và hỗ trợ đặt lịch lái thử nếu bạn cần trải nghiệm thực tế trước khi quyết định.",
+      "Bạn có thể dùng bảng tính giá lăn bánh trên trang này để ước tính nhanh, sau đó liên hệ hotline 0969 99 11 77 hoặc Zalo CanThoGF để nhận báo giá chi tiết theo mẫu xe, màu sơn và chính sách ưu đãi mới nhất. Đội ngũ đại lý VinFast Cần Thơ sẽ phản hồi trong vòng 15 phút và hỗ trợ đặt lịch lái thử nếu bạn cần trải nghiệm thực tế trước khi quyết định.",
   },
 ] as const;
 
