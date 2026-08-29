@@ -356,13 +356,21 @@ export default function Home({
               Gia nhập cộng đồng tài xế XanhSM Cần Thơ qua Hợp tác xã vận tải Cần Thơ GF để nhận ưu
               đãi và thu nhập ổn định cùng xe điện VinFast.
             </p>
-            <button
-              type="button"
-              onClick={dispatchConsultationPopup}
-              className="inline-block bg-secondary hover:bg-secondary-dark text-dark px-10 py-4 rounded-full font-bold text-xl transition-colors shadow-xl"
-            >
-              Đăng ký lái XanhSM Cần Thơ ngay
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                type="button"
+                onClick={dispatchConsultationPopup}
+                className="inline-block bg-secondary hover:bg-secondary-dark text-dark px-10 py-4 rounded-full font-bold text-xl transition-colors shadow-xl"
+              >
+                Đăng ký lái XanhSM Cần Thơ ngay
+              </button>
+              <SeoLink
+                href="/dang-ky-xanhsm-partner"
+                className="inline-block border-2 border-white/70 hover:border-white text-white px-10 py-4 rounded-full font-bold text-xl transition-colors"
+              >
+                Đăng ký Xanh SM Partner theo khu vực
+              </SeoLink>
+            </div>
           </motion.div>
         </div>
       </section>

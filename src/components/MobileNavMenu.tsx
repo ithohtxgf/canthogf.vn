@@ -48,6 +48,12 @@ const MOBILE_NAV_ITEMS: NavItem[] = [
     icon: Sparkles,
     accent: "from-emerald-500/15 to-emerald-500/5",
   },
+  {
+    name: "Xanh SM Partner theo khu vực",
+    path: "/dang-ky-xanhsm-partner",
+    icon: Sparkles,
+    accent: "from-emerald-500/15 to-emerald-500/5",
+  },
   { name: "Tin tức", path: "/tin-tuc", icon: Newspaper },
   { name: "Liên hệ", path: "/lien-he", icon: PhoneCall },
 ];
