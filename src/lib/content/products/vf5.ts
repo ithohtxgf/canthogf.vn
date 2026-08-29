@@ -8,9 +8,9 @@ export const VF5_DETAIL: RichProductDetail = {
   slogan: "Cá nhân vượt trội, đồng hành hàng ngày",
   h1: "VinFast VF 5 Cần Thơ: A-SUV Điện — Giá, Thông Số & ADAS 2026",
   metaTitle:
-    "VinFast VF 5 Cần Thơ: Giá 529 Triệu, Thông Số, 8 Màu & ViVi AI",
+    "VinFast VF 5 Cần Thơ: Giá 496 Triệu, Thông Số, 8 Màu & ViVi AI",
   metaDescription:
-    "VinFast VF 5 tại Cần Thơ — giá 529 triệu (kèm pin). Quãng đường 326 km, 6 túi khí, ADAS, trợ lý ảo ViVi. A-SUV điện lý tưởng cho đô thị. Tư vấn tại Cần Thơ GF.",
+    "VinFast VF 5 tại Cần Thơ — giá 496 triệu (kèm pin). Quãng đường 326 km, 6 túi khí, ADAS, trợ lý ảo ViVi. A-SUV điện lý tưởng cho đô thị. Tư vấn tại Cần Thơ GF.",
   keywords: [
     "vinfast vf5",
     "vf5 cần thơ",
@@ -25,14 +25,14 @@ export const VF5_DETAIL: RichProductDetail = {
   ],
   image: "/vf5.webp",
   imageAlt: "VinFast VF 5 — A-SUV điện tại Cần Thơ GF",
-  listPrice: 529_000_000,
-  listPriceLabel: "529.000.000 VNĐ (VF 5 Plus — đã kèm pin)",
+  listPrice: 496_000_000,
+  listPriceLabel: "496.000.000 VNĐ (VF 5 Plus — đã kèm pin)",
   priceVariants: [
     {
       id: "vf5-plus",
       name: "VF 5 Plus",
-      listPrice: 529_000_000,
-      promoPrice: 529_000_000,
+      listPrice: 496_000_000,
+      promoPrice: 496_000_000,
     },
   ],
   positioningHtml: `<p><strong>VinFast VF 5</strong> — <em>"Phong cách hợp ý, giá hợp ví"</em> — là xe điện đô thị lý tưởng cho người trẻ năng động tại <strong>Cần Thơ</strong>. Hội tụ thiết kế hiện đại, công nghệ thông minh (trợ lý ảo <strong>ViVi</strong>), vận hành mạnh mẽ 134 hp và an toàn 6 túi khí + ADAS.</p>`,
@@ -237,7 +237,7 @@ export const VF5_DETAIL: RichProductDetail = {
   ],
   features: [
     "A-SUV điện bán chạy nhất Cần Thơ — phù hợp XanhSM & gia đình",
-    "Giá 529 triệu kèm pin — không thuê pin",
+    "Giá 496 triệu kèm pin — không thuê pin",
     "ViVi AI + ADAS 6 tính năng",
     "326 km/lần sạc, la-zăng 17 inch",
     "8 màu ngoại thất cá nhân hóa",

@@ -22,10 +22,10 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
   {
     id: "vf3",
     name: "VF 3",
-    listPrice: 299_000_000,
+    listPrice: 278_000_000,
     image: "/vf3.jpg",
     description:
-      "VinFast VF 3 — mini car điện \"Xe nhỏ, giá trị lớn\". Tiêu chuẩn 299 triệu, Plus 315 triệu (đã kèm pin), quãng đường 215 km — lý tưởng phố Ninh Kiều, Cần Thơ.",
+      "VinFast VF 3 — mini car điện \"Xe nhỏ, giá trị lớn\". Eco từ 278 triệu, Plus 296 triệu (đã kèm pin), quãng đường 215 km — lý tưởng phố Ninh Kiều, Cần Thơ.",
     category: "passenger",
     seoSlug: "vf3",
     localReview: {
@@ -39,7 +39,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
   {
     id: "vf5-plus",
     name: "VF 5 Plus",
-    listPrice: 529_000_000,
+    listPrice: 496_000_000,
     image: "/vf5.webp",
     description:
       "SUV điện cỡ B bán chạy nhất Cần Thơ — phù hợp gia đình trẻ, chạy dịch vụ XanhSM và kinh doanh vận tải nội thành.",
@@ -56,7 +56,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
   {
     id: "vf6",
     name: "VF 6",
-    listPrice: 689_000_000,
+    listPrice: 646_000_000,
     image: "/vf6.webp",
     description:
       "VinFast VF 6 — SUV điện hạng C thiết kế Torino Design. Eco 485 km, Plus 201 hp + ADAS. Lý tưởng gia đình trẻ tại Bình Thủy, Cần Thơ.",
@@ -73,7 +73,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
   {
     id: "vf7",
     name: "VF 7",
-    listPrice: 799_000_000,
+    listPrice: 740_000_000,
     image: "/vf7.webp",
     description:
       "SUV điện cỡ C sang trọng, quãng đường dài — phù hợp doanh nhân và gia đình tại Bình Thủy, Ô Môn, Phong Điền.",
@@ -90,7 +90,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
   {
     id: "vf8",
     name: "VF 8",
-    listPrice: 1_019_000_000,
+    listPrice: 898_000_000,
     image: "/vf8.webp",
     description:
       "SUV điện cao cấp, công nghệ ADAS tiên tiến — đẳng cấp cho khách hàng VinFast tại Cần Thơ và khu vực lân cận.",
@@ -107,7 +107,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
   {
     id: "vf9",
     name: "VF 9",
-    listPrice: 1_499_000_000,
+    listPrice: 1_348_000_000,
     image: "/vf9.webp",
     description:
       "SUV điện 7 chỗ flagship VinFast — không gian sang trọng cho gia đình đông người và doanh nghiệp tại Miền Tây.",
@@ -124,10 +124,10 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
   {
     id: "limo-green",
     name: "VinFast Limo Green",
-    listPrice: 749_000_000,
+    listPrice: 699_000_000,
     image: "/Limo-Green.png",
     description:
-      "VinFast Limo Green — xe thương mại dịch vụ xanh, ô tô điện 7 chỗ. Quãng đường 450 km NEDC, tối ưu chạy liên tỉnh Miền Tây và dịch vụ cao cấp tại Cần Thơ.",
+      "VinFast Limo Green — xe thương mại dịch vụ xanh, ô tô điện 7 chỗ, giá niêm yết 699 triệu (đã kèm pin). Quãng đường 450 km NEDC, tối ưu chạy liên tỉnh Miền Tây và dịch vụ cao cấp tại Cần Thơ.",
     category: "commercial",
     seoSlug: "limo-green",
     localReview: {
@@ -135,13 +135,13 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
       useCase: "Vận tải liên tỉnh, dịch vụ cao cấp, gia đình 7 chỗ",
       rating: 4.9,
       verdict:
-        "Quãng đường 450 km — lý tưởng tuyến Cần Thơ ↔ TP.HCM, An Giang. Giá niêm yết kèm pin 749 triệu tại CanThoGF.",
+        "Quãng đường 450 km — lý tưởng tuyến Cần Thơ ↔ TP.HCM, An Giang. Giá niêm yết kèm pin 699 triệu tại CanThoGF.",
     },
   },
   {
     id: "herio-green",
     name: "Herio Green",
-    listPrice: 499_000_000,
+    listPrice: 450_000_000,
     image: "/herio-green.png",
     description:
       "Xe dịch vụ xanh quãng đường 326 km — giải pháp kinh doanh vận tải hiệu quả cho HTX và đối tác XanhSM Cần Thơ.",
@@ -158,7 +158,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
   {
     id: "ec-van",
     name: "EC Van",
-    listPrice: 285_000_000,
+    listPrice: 268_000_000,
     image: "/ecvan.webp",
     description:
       "Xe điện vận tải 2,6 m³ — tiết kiệm chi phí logistics cho doanh nghiệp giao hàng nội đô Cần Thơ và Miền Tây.",

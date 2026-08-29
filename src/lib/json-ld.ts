@@ -274,7 +274,7 @@ function getVinfastCanThoAutoDealerJsonLd(path: string) {
       addressCountry: "VN",
     },
     openingHours: SCHEMA_OPENING_HOURS,
-    priceRange: "302.000.000đ - 1.499.000.000đ",
+    priceRange: "268.000.000đ - 1.529.000.000đ",
     sameAs: [
       CONTACT_FACEBOOK_URL,
       CONTACT_TIKTOK_URL,

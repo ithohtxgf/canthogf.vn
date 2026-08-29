@@ -21,8 +21,8 @@ export const VF8_ALL_NEW_DETAIL: RichProductDetail = {
   ],
   image: "/vf8-all-new.png",
   imageAlt: "VinFast VF 8 Thế Hệ Mới 2026 tại Cần Thơ GF",
-  listPrice: 999_000_000,
-  listPriceLabel: "999.000.000 VNĐ (giá niêm yết)",
+  listPrice: 899_000_000,
+  listPriceLabel: "899.000.000 VNĐ (giá niêm yết)",
   positioningHtml: `<p><strong>VinFast VF 8 Thế Hệ Hoàn Toàn Mới 2026</strong> được phát triển theo triết lý <em>Tech Fluid — Dòng chảy công nghệ</em>, mang dáng SUV điện cỡ D hiện đại với đường nét liền mạch, khí động học thể thao và khoang nội thất tối giản cao cấp. Mẫu xe hướng đến khách hàng cần một chiếc SUV điện thông minh, hiệu năng tốt, vận hành êm ái và an toàn toàn diện.</p>`,
   highlights: [
     "Thiết kế Tech Fluid hoàn toàn mới, dải đèn cánh chim kéo dài",

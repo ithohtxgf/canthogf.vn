@@ -572,7 +572,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         heading: "VinFast VF5 — mẫu xe được quan tâm nhất",
         level: 3,
         paragraphs: [
-          `VF5 ghi điểm với thiết kế trẻ trung, nội thất rộng và mức giá 529 triệu đồng. Khách lái thử đánh giá cao hệ thống an toàn và màn hình giải trí thông minh so với xe cùng phân khúc.`,
+          `VF5 ghi điểm với thiết kế trẻ trung, nội thất rộng và mức giá 496 triệu đồng. Khách lái thử đánh giá cao hệ thống an toàn và màn hình giải trí thông minh so với xe cùng phân khúc.`,
         ],
       },
       {
@@ -869,7 +869,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         heading: "Lãi suất và thời hạn vay VF3",
         level: 2,
         paragraphs: [
-          `Vay đến 8 năm, lãi suất ưu đãi theo từng ngân hàng. VF3 giá 299 triệu (kèm pin) — trả trước 20% chỉ ~60 triệu.`,
+          `Vay đến 8 năm, lãi suất ưu đãi theo từng ngân hàng. VF3 giá từ 278 triệu (kèm pin) — trả trước 20% chỉ ~56 triệu.`,
         ],
       },
     ],
@@ -894,7 +894,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     title: "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ — Cập nhật 2026",
     metaTitle: "Giá lăn bánh VF5 Cần Thơ 2026 — Phí biển số, BHTNDS",
     excerpt:
-      "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ chi tiết: giá niêm yết 529 triệu (kèm pin), phí biển số, phí đường bộ, BHTNDS và voucher ưu đãi CanThoGF.",
+      "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ chi tiết: giá niêm yết 496 triệu (kèm pin), phí biển số, phí đường bộ, BHTNDS và voucher ưu đãi CanThoGF.",
     image: "https://picsum.photos/seed/gia-lan-banh-vf5-can-tho/1200/630",
     imageAlt: "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ",
     date: "08/06/2026",
@@ -908,7 +908,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         heading: "Bảng giá lăn bánh VF5 chi tiết",
         level: 2,
         paragraphs: [
-          `Giá niêm yết VF5 Plus: 529.000.000đ (đã kèm pin). Cộng phí biển số Cần Thơ 1 triệu, phí đường bộ 1,56 triệu, BHTNDS 480.000đ. Trừ voucher CanThoGF và miễn trước bạ — dùng <a href="/vinfast-can-tho#tinh-gia-lan-banh" class="text-primary font-semibold hover:underline">bảng tính VinFast Cần Thơ</a> để cập nhật số liệu mới nhất.`,
+          `Giá niêm yết VF5 Plus: 496.000.000đ (đã kèm pin). Cộng phí biển số Cần Thơ 1 triệu, phí đường bộ 1,56 triệu, BHTNDS 480.000đ. Trừ voucher CanThoGF và miễn trước bạ — dùng <a href="/vinfast-can-tho#tinh-gia-lan-banh" class="text-primary font-semibold hover:underline">bảng tính VinFast Cần Thơ</a> để cập nhật số liệu mới nhất.`,
         ],
       },
     ],
@@ -941,7 +941,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         heading: "VF3 — Nhỏ gọn cho phố Ninh Kiều",
         level: 2,
         paragraphs: [
-          `VF3 dễ luồn phố hẹp, đỗ xe tiện, chi phí sạc thấp. Phù hợp sinh viên, nhân viên văn phòng khu trung tâm. Giá 299 triệu — xem bảng tính tại <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a>.`,
+          `VF3 dễ luồn phố hẹp, đỗ xe tiện, chi phí sạc thấp. Phù hợp sinh viên, nhân viên văn phòng khu trung tâm. Giá từ 278 triệu — xem bảng tính tại <a href="/vinfast-can-tho" class="text-primary font-semibold hover:underline">VinFast Cần Thơ</a>.`,
         ],
       },
       {

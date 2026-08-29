@@ -9,7 +9,7 @@ export const LIMO_GREEN_DETAIL: RichProductDetail = {
   metaTitle:
     "VinFast Limo Green Cần Thơ: Giá Kèm Pin, Thông Số & Màu Sắc 2026",
   metaDescription:
-    "VinFast Limo Green — xe điện 7 chỗ dịch vụ xanh, giá niêm yết 749 triệu (đã kèm pin). Quãng đường 450 km NEDC, sạc nhanh 30 phút. Tư vấn tại Cần Thơ GF.",
+    "VinFast Limo Green — xe điện 7 chỗ dịch vụ xanh, giá niêm yết 699 triệu (đã kèm pin). Quãng đường 450 km NEDC, sạc nhanh 30 phút. Tư vấn tại Cần Thơ GF.",
   keywords: [
     "vinfast limo green",
     "limo green cần thơ",
@@ -21,8 +21,8 @@ export const LIMO_GREEN_DETAIL: RichProductDetail = {
   image: "/Limo-Green.png",
   imageAlt:
     "VinFast Limo Green — ô tô điện 7 chỗ dịch vụ xanh tại Cần Thơ GF",
-  listPrice: 749_000_000,
-  listPriceLabel: "749.000.000 VNĐ (đã kèm pin)",
+  listPrice: 699_000_000,
+  listPriceLabel: "699.000.000 VNĐ (đã kèm pin)",
   positioningHtml: `<p><strong>VinFast Limo Green</strong> thuộc phân khúc <em>xe thương mại dịch vụ xanh — ô tô điện 7 chỗ</em>, được thiết kế tối ưu tăng kích cỡ để tăng hiệu quả kinh tế cho bác tài chuyên nghiệp chạy đường dài, liên tỉnh, dịch vụ cao cấp và gia đình đông người tại <strong>Cần Thơ</strong> và <strong>Miền Tây</strong>.</p>`,
   highlights: [
     "Ô tô điện 7 chỗ — không gian rộng cho gia đình đông người và dịch vụ cao cấp",

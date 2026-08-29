@@ -27,11 +27,11 @@ export default function ProductDetail({ id }: { id: string }) {
   const productData: Record<string, ProductType> = {
     'herio-green': {
       name: 'Herio Green',
-      price: '499.000.000 VNĐ (đã kèm pin)',
+      price: 'Từ 450.000.000 VNĐ (đã kèm pin)',
       image: '/herio-green.png',
       desc: 'Định nghĩa lại trải nghiệm xe dịch vụ thời đại xanh. Herio Green sở hữu thiết kế hiện đại, trẻ trung, cá tính và nổi bật với các lựa chọn phối màu nội ngoại thất, đảm bảo cá nhân hóa theo phong cách sống, cá tính và sở thích của mỗi khách hàng.',
       priceTiers: [
-        { label: 'Dòng Green', value: '499.000.000 VNĐ (đã kèm pin)' }
+        { label: 'Dòng Green', value: '450.000.000 – 469.000.000 VNĐ (đã kèm pin)' }
       ],
       specs: [
         { label: 'Dài x Rộng x Cao', value: '3967 x 1723 x 1579 mm' },
@@ -60,11 +60,11 @@ export default function ProductDetail({ id }: { id: string }) {
     },
     'vf5': {
       name: 'VF5',
-      price: '529.000.000 VNĐ',
+      price: '496.000.000 VNĐ',
       image: '/vf5.webp',
       desc: 'Ngoại thất ấn tượng: Phong cách trẻ trung, năng động, cá tính. Nội thất tinh tế: Không gian rộng rãi, phối màu sành điệu, cuốn hút với các đường viền bắt mắt.',
       priceTiers: [
-        { label: 'Giá niêm yết', value: '529.000.000 VNĐ' }
+        { label: 'Giá niêm yết', value: '496.000.000 VNĐ' }
       ],
       specs: [
         { label: 'Dòng xe', value: 'A-SUV' },
@@ -88,11 +88,11 @@ export default function ProductDetail({ id }: { id: string }) {
     },
     'limo-green': {
       name: 'Limo Green',
-      price: '749.000.000 VNĐ',
+      price: '699.000.000 VNĐ',
       image: '/Limo-Green.png',
       desc: 'Xe điện 7 chỗ - "rộng mở không gian, kéo dài hành trình" - xe gia đình, xe của nhà mình. Tăng kích cỡ, tăng kinh tế: Limo Green với tầm di chuyển rộng phù hợp cho những bác tài chuyên nghiệp, chạy đường dài, liên tỉnh. Với mức cước cao hơn, Limo Green cho dòng tiền tốt hơn, thu nhập cao hơn.',
       priceTiers: [
-        { label: 'Giá niêm yết', value: '749.000.000 VNĐ' }
+        { label: 'Giá niêm yết', value: '699.000.000 VNĐ' }
       ],
       specs: [
         { label: 'Dài x rộng x Cao (mm)', value: '4740 x 1872 x 1729' },
@@ -123,11 +123,11 @@ export default function ProductDetail({ id }: { id: string }) {
     },
     'ec-van': {
       name: 'EC Van',
-      price: '285.000.000 VNĐ',
+      price: 'Từ 268.000.000 VNĐ',
       image: '/ecvan.webp',
       desc: 'Vận tải đa năng, tiện dụng, sinh lời. Linh hoạt lưu thông nội đô, vận hành êm ái, giảm chi phí vận hành, tối đa lợi nhuận.',
       priceTiers: [
-        { label: 'Giá niêm yết', value: '285.000.000 VNĐ (Đã kèm Pin)' }
+        { label: 'Giá niêm yết', value: '268.000.000 – 306.000.000 VNĐ (Đã kèm Pin)' }
       ],
       specs: [
         { label: 'Dài x rộng x Cao (mm)', value: '3.767 x 1.680 x 1.790' },

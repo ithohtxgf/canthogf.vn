@@ -187,9 +187,9 @@ export const PROMOTIONS: Promotion[] = [
     headline: "Bảng giá lăn bánh VinFast VF5 — Cần Thơ GF",
     subline: "Giá tham khảo · Liên hệ hotline để nhận ưu đãi mới nhất",
     priceRows: [
-      { label: "Giá niêm yết VF5", value: "529.000.000đ" },
+      { label: "Giá niêm yết VF5", value: "496.000.000đ" },
       { label: "Lệ phí trước bạ", value: "Miễn 100%", highlight: true },
-      { label: "Trả trước (20%)", value: "~105 triệu" },
+      { label: "Trả trước (20%)", value: "~99 triệu" },
       { label: "Trả góp ưu đãi", value: "Từ 50 triệu trả trước", highlight: true },
     ],
     benefits: [

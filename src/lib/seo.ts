@@ -209,7 +209,7 @@ export function getLocalBusinessJsonLd() {
     logo: `${siteUrl}${SCHEMA_LOGO_PATH}`,
     image: `${siteUrl}${SCHEMA_IMAGE_PATH}`,
     telephone,
-    priceRange: "285.000.000đ - 1.728.000.000đ",
+    priceRange: "268.000.000đ - 1.529.000.000đ",
     hasMap: CONTACT_MAPS_SHARE_URL,
     address: {
       "@type": "PostalAddress",
