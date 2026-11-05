@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { denyIfNotAdmin } from "@/lib/admin/api-guard";
 import {
   createArticle,
   getArticleById,
@@ -14,6 +15,9 @@ import {
 export const runtime = "nodejs";
 
 export async function GET(request: Request) {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   const { searchParams } = new URL(request.url);
   const status = searchParams.get("status") as ArticleInput["status"] | null;
   const category = searchParams.get("category") as ArticleInput["category"] | null;
@@ -29,6 +33,9 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   const body = (await request.json()) as ArticleInput;
 
   if (!body.id?.trim() || !body.title?.trim()) {

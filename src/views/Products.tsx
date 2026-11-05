@@ -117,7 +117,7 @@ export default function Products() {
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
             src="/banner-homepage.webp"
-            alt="Danh mục ô tô VinFast Cần Thơ tại Cần Thơ GF"
+            alt="Danh mục ô tô VinFast Cần Thơ tại Cần Thơ EV"
             className="object-cover opacity-30"
           />
         </div>
@@ -137,7 +137,7 @@ export default function Products() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto"
           >
-            Khám phá danh sách các dòng xe ô tô điện thông minh VinFast đang được phân phối chính hãng tại Cần Thơ GF.
+            Khám phá danh sách các dòng xe ô tô điện thông minh VinFast đang được phân phối chính hãng tại Cần Thơ EV.
           </motion.p>
         </div>
       </section>
@@ -146,7 +146,7 @@ export default function Products() {
       <section className="py-20" aria-labelledby="product-list-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="product-list-heading" className="sr-only">
-            Danh sách xe điện VinFast tại Cần Thơ GF
+            Danh sách xe điện VinFast tại Cần Thơ EV
           </h2>
           <div className="space-y-14">
             <div>

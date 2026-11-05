@@ -26,7 +26,7 @@ export default function NewsDetail({
             href="/tin-tuc"
             className="text-primary hover:text-primary-dark font-bold underline"
           >
-            Quay lại trang tin tức VinFast & Cần Thơ GF
+            Quay lại trang tin tức VinFast & Cần Thơ EV
           </SeoLink>
         </div>
       </div>
@@ -80,7 +80,7 @@ export default function NewsDetail({
                 className="inline-flex items-center bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-xl transition-colors"
               >
                 <ArrowLeft className="w-5 h-5 mr-2" /> Xem thêm tin tức VinFast
-                & Cần Thơ GF
+                & Cần Thơ EV
               </SeoLink>
             </div>
           </div>

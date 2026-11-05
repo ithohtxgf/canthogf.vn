@@ -18,19 +18,20 @@ import {
   XANHSM_PARTNER_HUB_PATH,
 } from "@/lib/content/xanhsm-partner-cities";
 
-export const SITE_NAME = "Cần Thơ GF";
-export const SITE_NAME_ALT = "Can Tho GF";
-export const OG_SITE_NAME = "HTX Cần Thơ GF";
-export const ORGANIZATION_NAME = "Hợp tác xã vận tải Cần Thơ GF";
+export const SITE_NAME = "Cần Thơ EV";
+export const SITE_NAME_ALT = "Can Tho EV";
+export const OG_SITE_NAME = "HTX Cần Thơ EV";
+export const ORGANIZATION_NAME = "Hợp tác xã vận tải Cần Thơ EV";
 export const LOCAL_BUSINESS_ENTITY_ID = "industrial-entity";
 
-export const SCHEMA_LOGO_PATH = "/logo_cantho_gf.png";
+export const SCHEMA_LOGO_PATH = "/logo-cantho-ev-icon.png";
 export const SCHEMA_IMAGE_PATH = "/banner-homepage.webp";
 
 export const SEO_KEYWORDS = [
+  "cần thơ ev",
+  "can tho ev",
+  "htx cần thơ ev",
   "canthogf",
-  "can tho gf",
-  "htx cần thơ gf",
   "hợp tác xã vận tải cần thơ",
   "ô tô vinfast cần thơ",
   "xanhsm cần thơ",
@@ -105,16 +106,17 @@ export function createAlternates(canonicalPath: string): NonNullable<Metadata["a
 }
 
 export const DEFAULT_DESCRIPTION =
-  "HTX Cần Thơ GF - Đại lý ủy quyền ô tô điện VinFast tại Cần Thơ. Hỗ trợ trọn gói thủ tục gia nhập HTX, đăng ký chạy Xanh SM. Liên hệ ngay!";
+  "HTX Cần Thơ EV - Đại lý ủy quyền ô tô điện VinFast tại Cần Thơ. Hỗ trợ trọn gói thủ tục gia nhập HTX, đăng ký chạy Xanh SM. Liên hệ ngay!";
 
 export const HOME_TITLE =
-  "Cần Thơ GF | Đại Lý Xe Điện VinFast & HTX Vận Tải";
+  "Cần Thơ EV | Đại Lý Xe Điện VinFast & HTX Vận Tải";
 
 export const HOME_KEYWORDS = [
-  "canthogf",
+  "cần thơ ev",
   "trang chủ",
-  "can tho gf",
-  "htx cần thơ gf",
+  "can tho ev",
+  "htx cần thơ ev",
+  "canthogf",
   "hợp tác xã vận tải cần thơ",
   "ô tô vinfast cần thơ",
   "xanhsm cần thơ",
@@ -265,7 +267,8 @@ export function getWebSiteJsonLd() {
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
     name: OG_SITE_NAME,
-    alternateName: ["Cần Thơ GF", "CanThoGF", "canthogf", "Can Thơ GF Transport"],
+    // Giữ tên cũ "Cần Thơ GF" để Google hiểu đây là cùng một đơn vị sau khi đổi tên
+    alternateName: ["Cần Thơ EV", "CanThoEV", "Cần Thơ GF", "CanThoGF", "canthogf"],
     url: `${siteUrl}/`,
     publisher: getLocalBusinessEntityRef(),
     potentialAction: {

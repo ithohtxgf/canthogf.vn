@@ -84,7 +84,7 @@ export default function AdminLoginClient() {
           <Lock className="w-7 h-7" />
         </div>
         <h1 className="text-2xl font-bold text-center text-slate-900 mb-8">
-          Cần Thơ GF Admin
+          Cần Thơ EV Admin
         </h1>
 
         {databaseReady === false && (

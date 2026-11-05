@@ -19,7 +19,7 @@ export default function XanhSmPartnerHub() {
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
             src="/banner-homepage.webp"
-            alt="Đăng ký Xanh SM Partner theo khu vực — Cần Thơ GF"
+            alt="Đăng ký Xanh SM Partner theo khu vực — Cần Thơ EV"
             className="object-cover opacity-30"
             priority
           />
@@ -38,7 +38,7 @@ export default function XanhSmPartnerHub() {
             transition={{ delay: 0.15 }}
             className="text-lg text-gray-300 leading-relaxed mb-8 max-w-3xl mx-auto"
           >
-            {XANHSM_PARTNER_INTRO} Cần Thơ GF hỗ trợ tư vấn từ xa qua Zalo/hotline cho chủ xe
+            {XANHSM_PARTNER_INTRO} Cần Thơ EV hỗ trợ tư vấn từ xa qua Zalo/hotline cho chủ xe
             VinFast trên toàn quốc.
           </motion.p>
           <motion.div
@@ -54,7 +54,7 @@ export default function XanhSmPartnerHub() {
       <section className="py-12 sm:py-16 lg:py-20 bg-white border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-black text-dark mb-3 text-center">
-            Khu Vực Cần Thơ GF Hỗ Trợ Đăng Ký Xanh SM Partner
+            Khu Vực Cần Thơ EV Hỗ Trợ Đăng Ký Xanh SM Partner
           </h2>
           <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
             Chọn tỉnh/thành của bạn để xem hướng dẫn thủ tục và hồ sơ chi tiết.
@@ -102,7 +102,7 @@ export default function XanhSmPartnerHub() {
             Chưa Tìm Thấy Khu Vực Của Bạn?
           </h2>
           <p className="text-gray-300 mb-8">
-            Cần Thơ GF vẫn có thể hỗ trợ tư vấn đăng ký Xanh SM Partner từ xa. Liên hệ ngay để
+            Cần Thơ EV vẫn có thể hỗ trợ tư vấn đăng ký Xanh SM Partner từ xa. Liên hệ ngay để
             được hướng dẫn.
           </p>
           <XanhSmCtaButton />

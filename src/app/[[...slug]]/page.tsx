@@ -1,7 +1,8 @@
 import type { Metadata, ResolvingMetadata } from "next";
+import { notFound } from "next/navigation";
 import { RouteJsonLd } from "@/components/seo/RouteJsonLd";
 import { getMetadataStaticParams, resolveMetadataFromSlug } from "@/lib/metadata";
-import { loadPageDataFromSlug } from "@/lib/page-data";
+import { isPageDataValid, loadPageDataFromSlug } from "@/lib/page-data";
 import AppClient from "./AppClient";
 
 /**
@@ -30,6 +31,11 @@ export async function generateStaticParams() {
 export default async function CatchAllPage({ params }: PageProps) {
   const { slug } = await params;
   const pageData = await loadPageDataFromSlug(slug);
+
+  // URL sai / sản phẩm, bài viết không tồn tại → mã 404 thật (tránh "soft 404" với Google)
+  if (!isPageDataValid(pageData)) {
+    notFound();
+  }
 
   return (
     <>

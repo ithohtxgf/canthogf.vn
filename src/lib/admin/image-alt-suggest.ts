@@ -5,7 +5,7 @@ export function suggestImageAlt(
 ): string {
   const desc = description.trim();
   const keyword = primaryKeyword.trim();
-  const brand = "Cần Thơ GF";
+  const brand = "Cần Thơ EV";
 
   if (desc && keyword) {
     return `${desc} — ${keyword} — ${brand}`.slice(0, 125);

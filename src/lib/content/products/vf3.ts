@@ -8,9 +8,9 @@ export const VF3_DETAIL: RichProductDetail = {
   slogan: "Xe nhỏ, giá trị lớn",
   h1: "VinFast VF 3 Cần Thơ: Mini Car Điện — Giá Niêm Yết & Thông Số 2026",
   metaTitle:
-    "VinFast VF 3 Cần Thơ: Giá Tiêu Chuẩn & Plus, 7 Màu, Thông Số Kỹ Thuật",
+    "VinFast VF 3 Cần Thơ: Giá Tiêu Chuẩn & Plus, 7 Màu",
   metaDescription:
-    "VinFast VF 3 — mini car điện giá niêm yết từ 278 triệu (Eco), 296 triệu (Plus). Quãng đường 215 km, sạc nhanh 36 phút. Tư vấn tại Cần Thơ GF.",
+    "VinFast VF 3 — mini car điện giá niêm yết từ 278 triệu (Eco), 296 triệu (Plus). Quãng đường 215 km, sạc nhanh 36 phút. Tư vấn tại Cần Thơ EV.",
   keywords: [
     "vinfast vf3",
     "vf3 cần thơ",
@@ -25,7 +25,7 @@ export const VF3_DETAIL: RichProductDetail = {
     "vf3 pin thuê hay mua",
   ],
   image: "/vf3.jpg",
-  imageAlt: "VinFast VF 3 — mini car điện tại Cần Thơ GF",
+  imageAlt: "VinFast VF 3 — mini car điện tại Cần Thơ EV",
   listPrice: 278_000_000,
   listPriceLabel: "VF 3 Eco: 278.000.000 – 285.000.000 VNĐ · VF 3 Plus: 296.000.000 VNĐ",
   depositAmount: 15_000_000,

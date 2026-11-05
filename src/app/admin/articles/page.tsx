@@ -1,3 +1,4 @@
+import { requireAdminPage } from "@/lib/admin/session";
 import Link from "next/link";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { ArticlesTable } from "@/components/admin/ArticlesTable";
@@ -6,6 +7,8 @@ import { listArticles } from "@/lib/db/articles";
 export const dynamic = "force-dynamic";
 
 export default async function AdminArticlesPage() {
+  await requireAdminPage();
+
   const articles = await listArticles();
 
   return (

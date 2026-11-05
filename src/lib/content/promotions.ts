@@ -86,7 +86,7 @@ export const PROMOTIONS: Promotion[] = [
     displayStyle: "strip",
     badge: "🔥 ƯU ĐÃI THÁNG 6",
     headline:
-      "VinFast VF5 tặng 100% trước bạ — Chỉ áp dụng trong tháng này tại Cần Thơ GF!",
+      "VinFast VF5 tặng 100% trước bạ — Chỉ áp dụng trong tháng này tại Cần Thơ EV!",
     showCountdown: true,
     ctaLabel: "Nhận ưu đãi ngay",
   },
@@ -103,7 +103,7 @@ export const PROMOTIONS: Promotion[] = [
     displayStyle: "strip",
     badge: "🔋 MIỄN PHÍ",
     headline:
-      "Kiểm tra pin VinFast miễn phí — Dành cho khách hàng Cần Thơ GF tháng 6!",
+      "Kiểm tra pin VinFast miễn phí — Dành cho khách hàng Cần Thơ EV tháng 6!",
     showCountdown: true,
     ctaLabel: "Đặt lịch kiểm tra",
   },
@@ -136,7 +136,7 @@ export const PROMOTIONS: Promotion[] = [
     displayStyle: "card",
     badge: "⚡ TRẢ GÓP 0%",
     headline: "Mua VF5 ngay hôm nay chỉ với 50 triệu trả trước",
-    subline: "Trả góp 0% · Thủ tục nhanh 24h tại Cần Thơ GF",
+    subline: "Trả góp 0% · Thủ tục nhanh 24h tại Cần Thơ EV",
     highlight: "50 triệu trả trước · Trả góp 0%",
     showCountdown: true,
     ctaLabel: "Nhận báo giá VF5",
@@ -153,7 +153,7 @@ export const PROMOTIONS: Promotion[] = [
     displayStyle: "card",
     badge: "💵 THU NHẬP ỔN ĐỊNH",
     headline: "Chạy XanhSM với VF5 — Trả trước chỉ 50 triệu",
-    subline: "Hỗ trợ trả góp · HTX Cần Thơ GF đồng hành",
+    subline: "Hỗ trợ trả góp · HTX Cần Thơ EV đồng hành",
     highlight: "50 triệu trả trước · Hỗ trợ trọn gói",
     showCountdown: true,
     ctaLabel: "Đăng ký XanhSM",
@@ -169,7 +169,7 @@ export const PROMOTIONS: Promotion[] = [
     displayStyle: "card",
     badge: "💰 ĐẦU TƯ THÔNG MINH",
     headline: "VF5 — Hoàn vốn sau 2–3 năm nhờ tiết kiệm nhiên liệu",
-    subline: "Mua ngay chỉ 50 triệu trả trước · Trả góp 0% tại Cần Thơ GF",
+    subline: "Mua ngay chỉ 50 triệu trả trước · Trả góp 0% tại Cần Thơ EV",
     highlight: "Tiết kiệm 30–50% chi phí/100km",
     ctaLabel: "Xem danh mục xe",
   },
@@ -184,7 +184,7 @@ export const PROMOTIONS: Promotion[] = [
     validUntil: "2026-06-30T23:59:59",
     priority: 10,
     displayStyle: "table",
-    headline: "Bảng giá lăn bánh VinFast VF5 — Cần Thơ GF",
+    headline: "Bảng giá lăn bánh VinFast VF5 — Cần Thơ EV",
     subline: "Giá tham khảo · Liên hệ hotline để nhận ưu đãi mới nhất",
     priceRows: [
       { label: "Giá niêm yết VF5", value: "496.000.000đ" },
@@ -208,7 +208,7 @@ export const PROMOTIONS: Promotion[] = [
     isActive: true,
     priority: 10,
     displayStyle: "table",
-    headline: "Quyền lợi tài xế XanhSM — Hợp tác xã Cần Thơ GF",
+    headline: "Quyền lợi tài xế XanhSM — Hợp tác xã Cần Thơ EV",
     subline: "Chính sách dành riêng cho tài xế đăng ký qua HTX",
     priceRows: [
       { label: "Hỗ trợ thủ tục đăng ký", value: "100% miễn phí", highlight: true },
@@ -225,7 +225,7 @@ export const PROMOTIONS: Promotion[] = [
   },
   {
     id: "promo-chinh-sach-chung-policy",
-    title: "Chính sách ưu đãi Cần Thơ GF",
+    title: "Chính sách ưu đãi Cần Thơ EV",
     link: "/lien-he",
     openPopup: true,
     position: "policy",
@@ -233,7 +233,7 @@ export const PROMOTIONS: Promotion[] = [
     isActive: true,
     priority: 5,
     displayStyle: "table",
-    headline: "Chính sách ưu đãi — Cần Thơ GF",
+    headline: "Chính sách ưu đãi — Cần Thơ EV",
     subline: "Áp dụng tháng 6/2026",
     priceRows: [
       { label: "Lệ phí trước bạ", value: "Miễn 100%", highlight: true },
@@ -275,7 +275,7 @@ export const PROMOTIONS: Promotion[] = [
     priority: 10,
     displayStyle: "closing",
     headline: "Khoan đã! Bạn đã nhận báo giá ưu đãi VF5 hôm nay chưa?",
-    subline: "Để lại SĐT — Cần Thơ GF gọi tư vấn miễn phí trong 15 phút",
+    subline: "Để lại SĐT — Cần Thơ EV gọi tư vấn miễn phí trong 15 phút",
     ctaLabel: "Nhận báo giá ngay",
   },
   {
@@ -288,7 +288,7 @@ export const PROMOTIONS: Promotion[] = [
     priority: 10,
     displayStyle: "closing",
     headline: "Khoan đã! Bạn muốn tìm hiểu thu nhập tài xế XanhSM?",
-    subline: "Đăng ký qua Cần Thơ GF — Hỗ trợ thủ tục 100% miễn phí",
+    subline: "Đăng ký qua Cần Thơ EV — Hỗ trợ thủ tục 100% miễn phí",
     ctaLabel: "Đăng ký XanhSM",
   },
   {
@@ -302,7 +302,7 @@ export const PROMOTIONS: Promotion[] = [
     priority: 1,
     displayStyle: "closing",
     headline: "Khoan đã! Bạn đã nhận báo giá ưu đãi hôm nay chưa?",
-    subline: "Để lại SĐT — Cần Thơ GF gọi tư vấn miễn phí trong 15 phút",
+    subline: "Để lại SĐT — Cần Thơ EV gọi tư vấn miễn phí trong 15 phút",
     ctaLabel: "Nhận báo giá ngay",
   },
   {

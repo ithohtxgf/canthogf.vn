@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { denyIfNotAdmin } from "@/lib/admin/api-guard";
 import {
   ALLOWED_IMAGE_MIME_TYPES,
   processAndSaveImage,
@@ -8,6 +9,9 @@ import {
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   try {
     const formData = await request.formData();
     const file = formData.get("file");

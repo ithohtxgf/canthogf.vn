@@ -8,9 +8,9 @@ export const VF6_DETAIL: RichProductDetail = {
   slogan: "Mạnh mẽ, năng động, sự lựa chọn lý tưởng của gia đình trẻ!",
   h1: "VinFast VF 6 Cần Thơ: SUV Điện Hạng C — Giá Eco & Plus 2026",
   metaTitle:
-    "VinFast VF 6 Cần Thơ: Giá Eco & Plus, ADAS, Thông Số Kỹ Thuật",
+    "VinFast VF 6 Cần Thơ: Giá Eco & Plus, ADAS, Thông Số",
   metaDescription:
-    "VinFast VF 6 tại Cần Thơ — VF 6 Eco từ 646 triệu, VF 6 Plus từ 699 triệu. Quãng đường 485 km, ADAS thông minh, 7 túi khí. Tư vấn tại Cần Thơ GF.",
+    "VinFast VF 6 tại Cần Thơ — VF 6 Eco từ 646 triệu, VF 6 Plus từ 699 triệu. Quãng đường 485 km, ADAS thông minh, 7 túi khí. Tư vấn tại Cần Thơ EV.",
   keywords: [
     "vinfast vf6",
     "vf6 cần thơ",
@@ -23,7 +23,7 @@ export const VF6_DETAIL: RichProductDetail = {
     "vf6 2026 giá mới",
   ],
   image: "/vf6.webp",
-  imageAlt: "VinFast VF 6 — SUV điện hạng C tại Cần Thơ GF",
+  imageAlt: "VinFast VF 6 — SUV điện hạng C tại Cần Thơ EV",
   listPrice: 646_000_000,
   listPriceLabel: "VF 6 Eco: 646.000.000 – 650.000.000 VNĐ · VF 6 Plus: 699.000.000 – 710.000.000 VNĐ",
   depositAmount: 30_000_000,

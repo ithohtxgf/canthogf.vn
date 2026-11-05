@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import {
-  getAdminAuthModes,
   getAdminAuthSetupMessage,
   isAdminAuthConfigured,
   isAdminEmailAllowed,
@@ -10,25 +9,39 @@ import {
   createDbSessionToken,
   getAdminSessionCookieName,
   getAdminSessionCookieOptions,
+  passwordFingerprint,
 } from "@/lib/admin/db-session";
-import { verifyPassword } from "@/lib/admin/password";
+import {
+  clearLoginFailures,
+  getClientIp,
+  loginRetryAfterSeconds,
+  recordLoginFailure,
+} from "@/lib/admin/login-rate-limit";
+import { getDummyPasswordHash, verifyPassword } from "@/lib/admin/password";
 import { getAdminUserByEmail } from "@/lib/db/admin-users";
 import { getDatabaseSetupStatus } from "@/lib/db/config";
 import { createSupabaseAuthServerClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
 
+const INVALID_CREDENTIALS = "Email hoặc mật khẩu không đúng";
+
+/**
+ * Trạng thái cho trang đăng nhập. Endpoint này công khai nên chỉ trả chi tiết
+ * cấu hình khi CHƯA cấu hình xong (lúc cài đặt) — không lộ hạ tầng khi site đã chạy thật.
+ */
 export async function GET() {
   const database = getDatabaseSetupStatus();
-  const setupMessage = await getAdminAuthSetupMessage();
-  const authModes = await getAdminAuthModes();
+  const configured = database.ready && (await isAdminAuthConfigured());
+
+  if (configured) {
+    return NextResponse.json({ configured: true, database: { ready: true } });
+  }
 
   return NextResponse.json({
-    configured: await isAdminAuthConfigured(),
-    authModes,
-    setupMessage,
-    database,
-    supabaseAuth: isSupabaseAuthConfigured(),
+    configured: false,
+    setupMessage: database.ready ? await getAdminAuthSetupMessage() : null,
+    database: { ready: database.ready, message: database.message },
   });
 }
 
@@ -64,8 +77,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Dữ liệu không hợp lệ" }, { status: 400 });
   }
 
-  const email = body.email?.trim() ?? "";
+  const email = body.email?.trim().toLowerCase() ?? "";
   const password = body.password ?? "";
+  const ip = getClientIp(request);
 
   if (!email || !password) {
     return NextResponse.json(
@@ -74,11 +88,29 @@ export async function POST(request: Request) {
     );
   }
 
-  if (!(await isAdminEmailAllowed(email))) {
+  if (email.length > 254 || password.length > 512) {
+    return NextResponse.json({ error: INVALID_CREDENTIALS }, { status: 401 });
+  }
+
+  const retryAfter = loginRetryAfterSeconds(ip, email);
+  if (retryAfter > 0) {
     return NextResponse.json(
-      { error: "Email này không có quyền truy cập admin" },
-      { status: 403 },
+      {
+        error: `Đăng nhập sai quá nhiều lần. Thử lại sau ${Math.ceil(retryAfter / 60)} phút.`,
+      },
+      { status: 429, headers: { "Retry-After": String(retryAfter) } },
     );
+  }
+
+  // Cùng một thông báo cho "email không có quyền" và "sai mật khẩu" — không cho dò email admin
+  const fail = () => {
+    recordLoginFailure(ip, email);
+    return NextResponse.json({ error: INVALID_CREDENTIALS }, { status: 401 });
+  };
+
+  if (!(await isAdminEmailAllowed(email))) {
+    await verifyPassword(password, getDummyPasswordHash());
+    return fail();
   }
 
   // 1) Supabase Auth (nếu đã cấu hình)
@@ -93,7 +125,12 @@ export async function POST(request: Request) {
         } = await supabase.auth.getUser();
 
         if (user?.email && (await isAdminEmailAllowed(user.email))) {
-          const token = await createDbSessionToken(user.email);
+          clearLoginFailures(email);
+          const dbUser = await getAdminUserByEmail(user.email).catch(() => undefined);
+          const token = await createDbSessionToken(
+            user.email,
+            dbUser ? await passwordFingerprint(dbUser.passwordHash) : undefined,
+          );
           const response = NextResponse.json({
             ok: true,
             email: user.email,
@@ -116,11 +153,17 @@ export async function POST(request: Request) {
 
   // 2) Database auth — email + password_hash trong admin_users
   const adminUser = await getAdminUserByEmail(email);
-  if (
-    adminUser?.isActive &&
-    verifyPassword(password, adminUser.passwordHash)
-  ) {
-    const token = await createDbSessionToken(adminUser.email);
+  const passwordOk = await verifyPassword(
+    password,
+    adminUser?.passwordHash ?? getDummyPasswordHash(),
+  );
+
+  if (adminUser?.isActive && passwordOk) {
+    clearLoginFailures(email);
+    const token = await createDbSessionToken(
+      adminUser.email,
+      await passwordFingerprint(adminUser.passwordHash),
+    );
     const response = NextResponse.json({
       ok: true,
       email: adminUser.email,
@@ -130,8 +173,5 @@ export async function POST(request: Request) {
     return response;
   }
 
-  return NextResponse.json(
-    { error: "Email hoặc mật khẩu không đúng" },
-    { status: 401 },
-  );
+  return fail();
 }

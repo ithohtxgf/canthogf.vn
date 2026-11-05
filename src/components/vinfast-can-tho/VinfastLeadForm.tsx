@@ -47,7 +47,7 @@ export function VinfastLeadForm() {
 
         <p className="text-gray-600 text-sm leading-relaxed text-center">
           <Sparkles className="inline-block w-4 h-4 mr-1 text-primary" />
-          <strong className="text-dark">VinFast Cần Thơ GF</strong> — đại lý phân
+          <strong className="text-dark">VinFast Cần Thơ EV</strong> — đại lý phân
           phối xe điện chính hãng, phục vụ tại Cần Thơ và khu vực miền Tây.
         </p>
       </div>

@@ -6,12 +6,13 @@ import type { PageInitialData } from "@/lib/page-data";
 type AppClientProps = {
   /** Bắt buộc từ CatchAllPage (server) */
   initialData: PageInitialData;
+  forceNotFound?: boolean;
 };
 
 /**
  * Client shell — SSR bật (không dùng dynamic ssr: false).
  * Nhận route/pathname từ server để HTML ban đầu có h1, nội dung đầy đủ cho Googlebot.
  */
-export default function AppClient({ initialData }: AppClientProps) {
-  return <App initialData={initialData} />;
+export default function AppClient({ initialData, forceNotFound }: AppClientProps) {
+  return <App initialData={initialData} forceNotFound={forceNotFound} />;
 }

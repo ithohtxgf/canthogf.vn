@@ -37,7 +37,7 @@ export function clampPercent(value: number, max = 100): number {
 }
 
 /**
- * Chiết tính mua xe VinFast — Cần Thơ GF
+ * Chiết tính mua xe VinFast — Cần Thơ EV
  *
  * 1. Giá trị xe = Giá niêm yết − Ưu đãi (%) − Quy đổi bảo hiểm
  * 2. Phí trước bạ = Giá trị xe × % trước bạ (mặc định 0% — xe điện thường miễn)

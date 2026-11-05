@@ -64,7 +64,7 @@ export default function News({ articles: articlesProp }: { articles?: NewsArticl
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
             src="/banner-homepage.webp"
-            alt="Tin tức VinFast và hoạt động Cần Thơ GF"
+            alt="Tin tức VinFast và hoạt động Cần Thơ EV"
             className="object-cover opacity-30"
           />
         </div>
@@ -85,7 +85,7 @@ export default function News({ articles: articlesProp }: { articles?: NewsArticl
             className="text-xl text-gray-300 max-w-3xl mx-auto"
           >
             Cập nhật những thông tin mới nhất về VinFast, hoạt động của Cần
-            Thơ GF và kiến thức hữu ích về xe điện.
+            Thơ EV và kiến thức hữu ích về xe điện.
           </motion.p>
         </div>
       </section>
@@ -99,7 +99,7 @@ export default function News({ articles: articlesProp }: { articles?: NewsArticl
                 type="search"
                 value={searchInput}
                 onChange={(e) => handleSearch(e.target.value)}
-                placeholder="Tìm kiếm bài viết VinFast, Cần Thơ GF..."
+                placeholder="Tìm kiếm bài viết VinFast, Cần Thơ EV..."
                 aria-label="Tìm kiếm bài viết"
                 className="w-full pl-12 pr-12 py-3 rounded-full border border-gray-200 bg-white shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
               />

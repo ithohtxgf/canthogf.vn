@@ -1,8 +1,11 @@
+import { requireAdminPage } from "@/lib/admin/session";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { ArticleForm } from "@/components/admin/ArticleForm";
 import { createEmptyArticle } from "@/lib/admin/defaults";
 
-export default function AdminNewArticlePage() {
+export default async function AdminNewArticlePage() {
+  await requireAdminPage();
+
   return (
     <AdminShell
       title="Tạo bài viết mới"

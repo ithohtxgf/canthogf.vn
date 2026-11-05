@@ -24,7 +24,8 @@ export default function Layout({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const clientPathname = usePathname();
-  const pathname = clientPathname || activePathname || "/";
+  // Ưu tiên đường dẫn từ server: usePathname() bị mã hoá khi prerender trang catch-all
+  const pathname = activePathname || clientPathname || "/";
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -68,7 +69,7 @@ export default function Layout({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-[4.25rem] sm:h-20 gap-3">
             <div className="flex shrink-0 items-center lg:flex-none">
-              <SeoLink href="/" className="inline-flex shrink-0 items-center" aria-label="Trang chủ Cần Thơ GF">
+              <SeoLink href="/" className="inline-flex shrink-0 items-center" aria-label="Trang chủ Cần Thơ EV">
                 <Logo className={LOGO_NAV_CLASS} />
               </SeoLink>
             </div>
@@ -139,7 +140,7 @@ export default function Layout({
                 <Logo className={LOGO_NAV_CLASS} />
               </div>
               <p className="text-gray-600 mb-6">
-                Hợp tác xã vận tải Cần Thơ GF - Đối tác tin cậy cung cấp các dòng xe VinFast và dịch vụ XanhSM tại khu vực ĐBSCL.
+                Hợp tác xã vận tải Cần Thơ EV - Đối tác tin cậy cung cấp các dòng xe VinFast và dịch vụ XanhSM tại khu vực ĐBSCL.
               </p>
               <div className="flex items-center gap-4">
                 <a
@@ -147,12 +148,12 @@ export default function Layout({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block h-10 w-10 shrink-0 opacity-90 transition-opacity hover:opacity-100"
-                  title="Facebook Cần Thơ GF"
-                  aria-label="Facebook Cần Thơ GF"
+                  title="Facebook Cần Thơ EV"
+                  aria-label="Facebook Cần Thơ EV"
                 >
                   <Image
                     src="/logo_facebook.png"
-                    alt="Facebook Cần Thơ GF"
+                    alt="Facebook Cần Thơ EV"
                     width={40}
                     height={40}
                     className="h-10 w-10 object-contain"
@@ -290,11 +291,11 @@ export default function Layout({
 
           <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} Hợp tác xã vận tải Cần Thơ GF. Tất cả quyền được bảo lưu.
+              &copy; {new Date().getFullYear()} Hợp tác xã vận tải Cần Thơ EV. Tất cả quyền được bảo lưu.
             </p>
             <div className="flex space-x-6 text-sm">
               <SeoLink href="/chinh-sach-bao-mat" className="text-gray-500 hover:text-primary-dark transition-colors">
-                Chính sách bảo mật Cần Thơ GF
+                Chính sách bảo mật Cần Thơ EV
               </SeoLink>
               <SeoLink href="/dieu-khoan-su-dung" className="text-gray-500 hover:text-primary-dark transition-colors">
                 Điều khoản sử dụng website

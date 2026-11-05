@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { denyIfNotAdmin } from "@/lib/admin/api-guard";
 import {
   createPromotion,
   getPromotionById,
@@ -10,11 +11,17 @@ import { revalidatePromotionPaths } from "@/lib/admin/revalidate-content";
 export const runtime = "nodejs";
 
 export async function GET() {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   const promotions = await listAllPromotions();
   return NextResponse.json({ promotions });
 }
 
 export async function POST(request: Request) {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   const body = (await request.json()) as Promotion;
 
   if (!body.id?.trim() || !body.title?.trim()) {

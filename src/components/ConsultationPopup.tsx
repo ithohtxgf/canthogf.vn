@@ -48,7 +48,7 @@ export function ConsultationPopup({ isOpen, onClose }: ConsultationPopupProps) {
                 Liên hệ tư vấn
               </h2>
               <p className="text-white/80 text-sm">
-                Kết nối trực tiếp với Hợp tác xã vận tải Cần Thơ GF
+                Kết nối trực tiếp với Hợp tác xã vận tải Cần Thơ EV
               </p>
             </div>
 

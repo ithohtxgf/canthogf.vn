@@ -3,7 +3,7 @@ import { isSupabaseEnabled } from "@/lib/db/config";
 
 declare global {
   // eslint-disable-next-line no-var
-  var __canthogfSupabaseAdmin: SupabaseClient | undefined;
+  var __canthoevSupabaseAdmin: SupabaseClient | undefined;
 }
 
 export function getSupabaseAdmin(): SupabaseClient {
@@ -13,8 +13,8 @@ export function getSupabaseAdmin(): SupabaseClient {
     );
   }
 
-  if (globalThis.__canthogfSupabaseAdmin) {
-    return globalThis.__canthogfSupabaseAdmin;
+  if (globalThis.__canthoevSupabaseAdmin) {
+    return globalThis.__canthoevSupabaseAdmin;
   }
 
   const client = createClient(
@@ -29,7 +29,7 @@ export function getSupabaseAdmin(): SupabaseClient {
   );
 
   if (process.env.NODE_ENV !== "production") {
-    globalThis.__canthogfSupabaseAdmin = client;
+    globalThis.__canthoevSupabaseAdmin = client;
   }
 
   return client;

@@ -38,7 +38,7 @@ export const PWA_MANIFEST = {
   name: ORGANIZATION_NAME,
   short_name: SITE_NAME,
   description:
-    "Đại lý ô tô VinFast Cần Thơ, đăng ký XanhSM — Hợp tác xã vận tải Cần Thơ GF",
+    "Đại lý ô tô VinFast Cần Thơ, đăng ký XanhSM — Hợp tác xã vận tải Cần Thơ EV",
   start_url: "/",
   scope: "/",
   display: "standalone" as const,

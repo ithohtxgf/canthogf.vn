@@ -42,6 +42,7 @@ import {
   DEFAULT_DESCRIPTION,
   HOME_TITLE,
   OG_SITE_NAME,
+  SCHEMA_LOGO_PATH,
   getLocalBusinessEntityRef,
   getLocalBusinessJsonLd,
   getSiteUrl,
@@ -101,9 +102,9 @@ function getAboutPageJsonLd(path: string) {
     "@type": "AboutPage",
     "@id": `${url}#about-page`,
     url,
-    name: "Giới thiệu về HTX Cần Thơ GF",
+    name: "Giới thiệu về HTX Cần Thơ EV",
     description:
-      "Tìm hiểu về lịch sử hình thành, sứ mệnh và các dịch vụ vận tải, phân phối ô tô điện VinFast của HTX Cần Thơ GF.",
+      "Tìm hiểu về lịch sử hình thành, sứ mệnh và các dịch vụ vận tải, phân phối ô tô điện VinFast của HTX Cần Thơ EV.",
     mainEntity: {
       "@type": ["LocalBusiness", "AutomotiveBusiness"],
       ...getLocalBusinessEntityRef(),
@@ -123,9 +124,9 @@ function getContactPageJsonLd(path: string) {
     "@type": "ContactPage",
     "@id": `${url}#contact-page`,
     url,
-    name: "Liên hệ HTX Cần Thơ GF",
+    name: "Liên hệ HTX Cần Thơ EV",
     description:
-      "Trang thông tin liên hệ chính thức của HTX Cần Thơ GF. Hỗ trợ thủ tục gia nhập HTX, mua xe VinFast và thuê xe ô tô.",
+      "Trang thông tin liên hệ chính thức của HTX Cần Thơ EV. Hỗ trợ thủ tục gia nhập HTX, mua xe VinFast và thuê xe ô tô.",
     mainEntity: {
       ...getLocalBusinessEntityRef(),
     },
@@ -267,7 +268,7 @@ function getVinfastCanThoAutoDealerJsonLd(path: string) {
   return {
     "@type": "AutoDealer",
     "@id": `${url}#autodealer`,
-    name: "Cần Thơ GF — VinFast Cần Thơ",
+    name: "Cần Thơ EV — VinFast Cần Thơ",
     url,
     telephone,
     email: CONTACT_EMAIL,
@@ -288,7 +289,7 @@ function getVinfastCanThoAutoDealerJsonLd(path: string) {
     ],
     description: VINFAST_CAN_THO_PAGE_DESCRIPTION,
     image: `${getSiteUrl()}/banner-homepage.webp`,
-    logo: `${getSiteUrl()}/logo_cantho_gf.png`,
+    logo: `${getSiteUrl()}${SCHEMA_LOGO_PATH}`,
   };
 }
 
@@ -522,7 +523,7 @@ async function buildGraphForRoute(
         ]),
         getItemListJsonLd(
           path,
-          "Danh mục xe điện VinFast Cần Thơ GF",
+          "Danh mục xe điện VinFast Cần Thơ EV",
           PRODUCTS_SEO.map((p) => ({
             name: p.name,
             url: getSitemapUrl(`/san-pham/${p.id}`),

@@ -13,9 +13,9 @@ export function slugify(text: string): string {
 }
 
 export const DEFAULT_AUTHOR = {
-  name: "Ban biên tập Cần Thơ GF",
+  name: "Ban biên tập Cần Thơ EV",
   role: "Chuyên gia tư vấn xe điện VinFast",
-  bio: "Đội ngũ biên tập và tư vấn viên của Hợp tác xã vận tải Cần Thơ GF, với hơn 5 năm kinh nghiệm trong lĩnh vực xe điện VinFast, dịch vụ XanhSM và vận tải xanh tại Đồng bằng sông Cửu Long.",
+  bio: "Đội ngũ biên tập và tư vấn viên của Hợp tác xã vận tải Cần Thơ EV, với hơn 5 năm kinh nghiệm trong lĩnh vực xe điện VinFast, dịch vụ XanhSM và vận tải xanh tại Đồng bằng sông Cửu Long.",
 };
 
 export function createEmptyArticle(
@@ -43,7 +43,7 @@ export function createEmptyArticle(
     conclusionHtml: "<p></p>",
     cta: {
       title: "Liên hệ tư vấn",
-      description: "Hotline 0969 99 11 77 — Cần Thơ GF hỗ trợ 24/7",
+      description: "Hotline 0969 99 11 77 — Cần Thơ EV hỗ trợ 24/7",
       label: "Đăng ký tư vấn miễn phí",
       href: "/lien-he",
     },

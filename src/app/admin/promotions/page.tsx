@@ -1,3 +1,4 @@
+import { requireAdminPage } from "@/lib/admin/session";
 import Link from "next/link";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { PromotionsTable } from "@/components/admin/PromotionsTable";
@@ -6,6 +7,8 @@ import { listAllPromotions } from "@/lib/db/promotions-db";
 export const dynamic = "force-dynamic";
 
 export default async function AdminPromotionsPage() {
+  await requireAdminPage();
+
   const promotions = await listAllPromotions();
 
   return (

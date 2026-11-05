@@ -11,14 +11,14 @@ export const CTA_HREF_OPTIONS = [
 
 export const AUTHOR_PRESETS: Record<string, NewsAuthorInfo> = {
   editor: {
-    name: "Ban biên tập Cần Thơ GF",
+    name: "Ban biên tập Cần Thơ EV",
     role: "Chuyên gia tư vấn xe điện VinFast",
-    bio: "Đội ngũ biên tập và tư vấn viên của Hợp tác xã vận tải Cần Thơ GF, với hơn 5 năm kinh nghiệm trong lĩnh vực xe điện VinFast, dịch vụ XanhSM và vận tải xanh tại Đồng bằng sông Cửu Long.",
+    bio: "Đội ngũ biên tập và tư vấn viên của Hợp tác xã vận tải Cần Thơ EV, với hơn 5 năm kinh nghiệm trong lĩnh vực xe điện VinFast, dịch vụ XanhSM và vận tải xanh tại Đồng bằng sông Cửu Long.",
   },
   tech: {
-    name: "Đội kỹ thuật Cần Thơ GF",
+    name: "Đội kỹ thuật Cần Thơ EV",
     role: "Kỹ thuật viên bảo dưỡng xe điện VinFast",
-    bio: "Chuyên gia kỹ thuật pin và hệ thống điện xe VinFast tại showroom Cần Thơ GF, am hiểu quy trình sạc, bảo dưỡng và vận hành xe điện trong điều kiện khí hậu miền Tây.",
+    bio: "Chuyên gia kỹ thuật pin và hệ thống điện xe VinFast tại showroom Cần Thơ EV, am hiểu quy trình sạc, bảo dưỡng và vận hành xe điện trong điều kiện khí hậu miền Tây.",
   },
 };
 

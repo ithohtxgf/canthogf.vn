@@ -8,7 +8,7 @@ export const VF9_DETAIL: RichProductDetail = {
   slogan: "Sự lựa chọn của người thành đạt, tiên phong",
   h1: "VinFast VF 9 Cần Thơ: SUV Điện 7 Chỗ Hạng Sang",
   metaTitle:
-    "VinFast VF 9 Cần Thơ: Giá Eco/Plus, 7 Chỗ Hạng Sang, Quãng Đường 626 km",
+    "VinFast VF 9 Cần Thơ: Giá Eco/Plus, 7 Chỗ Hạng Sang, 626 km",
   metaDescription:
     "VinFast VF 9 tại Cần Thơ: Eco 1,348 tỷ, Plus trần thép 1,529 tỷ. SUV điện 7 chỗ hạng sang, pin 123 kWh, quãng đường WLTP đến 626 km, ADAS cấp độ 2, bảo hành 10 năm.",
   keywords: [
@@ -20,7 +20,7 @@ export const VF9_DETAIL: RichProductDetail = {
     "mua vf9 cần thơ",
   ],
   image: "/vf9.webp",
-  imageAlt: "VinFast VF 9 SUV điện 7 chỗ hạng sang tại Cần Thơ GF",
+  imageAlt: "VinFast VF 9 SUV điện 7 chỗ hạng sang tại Cần Thơ EV",
   listPrice: 1_348_000_000,
   listPriceLabel: "VF 9 Eco: 1.348.000.000 VNĐ · Plus (trần thép): 1.529.000.000 VNĐ",
   depositAmount: 50_000_000,

@@ -157,7 +157,7 @@ export default function ProductDetail({ id }: { id: string }) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
         <h1 className="text-2xl font-bold text-dark mb-4">Sản phẩm không tồn tại</h1>
-        <p className="text-gray-600 mb-6">Xe VinFast bạn tìm không có trong danh mục Cần Thơ GF.</p>
+        <p className="text-gray-600 mb-6">Xe VinFast bạn tìm không có trong danh mục Cần Thơ EV.</p>
         <SeoLink href="/san-pham" className="text-primary font-bold hover:text-primary-dark">
           Xem danh sách ô tô VinFast Cần Thơ
         </SeoLink>
@@ -204,7 +204,7 @@ export default function ProductDetail({ id }: { id: string }) {
               <div className="rounded-3xl overflow-hidden shadow-2xl mb-8">
                 <SeoContentImage
                   src={product.image}
-                  alt={`Hình ảnh xe điện VinFast ${product.name} tại Cần Thơ GF`}
+                  alt={`Hình ảnh xe điện VinFast ${product.name} tại Cần Thơ EV`}
                   width={1200}
                   height={675}
                   className="w-full h-auto object-cover"

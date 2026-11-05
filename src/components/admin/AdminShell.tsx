@@ -38,7 +38,7 @@ export function AdminShell({
       <aside className="w-64 bg-primary-dark text-white flex flex-col shrink-0">
         <div className="p-6 border-b border-white/10">
           <p className="text-xs uppercase tracking-widest text-white/60 mb-1">
-            Cần Thơ GF
+            Cần Thơ EV
           </p>
           <h1 className="text-lg font-bold">Web Admin</h1>
         </div>

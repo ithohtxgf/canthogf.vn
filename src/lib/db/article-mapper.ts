@@ -1,3 +1,4 @@
+import { sanitizeArticleFields } from "@/lib/sanitize-html";
 import type {
   NewsArticle,
   NewsAuthorInfo,
@@ -48,7 +49,7 @@ function parseJson<T>(value: string, fallback: T): T {
 }
 
 export function rowToArticle(row: ArticleRow): AdminArticle {
-  return {
+  return sanitizeArticleFields({
     id: row.id,
     title: row.title,
     metaTitle: row.meta_title,
@@ -78,7 +79,7 @@ export function rowToArticle(row: ArticleRow): AdminArticle {
     status: row.status,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
-  };
+  });
 }
 
 export function articleToRow(
@@ -86,6 +87,7 @@ export function articleToRow(
   createdAt: string,
   updatedAt: string,
 ): ArticleRow {
+  article = sanitizeArticleFields(article);
   return {
     id: article.id,
     title: article.title,
@@ -140,7 +142,7 @@ export type SupabaseArticleRow = {
 };
 
 export function supabaseRowToArticle(row: SupabaseArticleRow): AdminArticle {
-  return {
+  return sanitizeArticleFields({
     id: row.id,
     title: row.title,
     metaTitle: row.meta_title,
@@ -161,7 +163,7 @@ export function supabaseRowToArticle(row: SupabaseArticleRow): AdminArticle {
     status: row.status,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
-  };
+  });
 }
 
 export function articleToSupabaseRow(
@@ -169,6 +171,7 @@ export function articleToSupabaseRow(
   createdAt: string,
   updatedAt: string,
 ): SupabaseArticleRow {
+  article = sanitizeArticleFields(article);
   return {
     id: article.id,
     title: article.title,

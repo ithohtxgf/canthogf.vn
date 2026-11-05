@@ -1,10 +1,10 @@
 export const XANHSM_PAGE_PATH = "/dang-ky-xanhsm";
 
 export const XANHSM_META_TITLE =
-  "Đăng Ký Tài Xế Xanh SM Cần Thơ 2025 – Hỗ Trợ Thủ Tục Trọn Gói | Cần Thơ GF";
+  "Đăng Ký Tài Xế Xanh SM Cần Thơ 2026 – Hỗ Trợ Trọn Gói";
 
 export const XANHSM_META_DESCRIPTION =
-  "Hướng dẫn đăng ký tài xế Xanh SM Cần Thơ 2025 chi tiết nhất. Cần Thơ GF hỗ trợ thủ tục, tư vấn xe điện VinFast, thu nhập thực tế 15–27 triệu/tháng. Liên hệ ngay!";
+  "Hướng dẫn đăng ký tài xế Xanh SM Cần Thơ 2026 chi tiết nhất. Cần Thơ EV hỗ trợ thủ tục, tư vấn xe điện VinFast, thu nhập thực tế 15–27 triệu/tháng. Liên hệ ngay!";
 
 export const XANHSM_KEYWORDS = [
   "đăng ký xanh sm cần thơ",
@@ -20,7 +20,7 @@ export const XANHSM_PAGE_H1 =
   "Đăng Ký Tài Xế Xanh SM Cần Thơ – Hỗ Trợ Thủ Tục Trọn Gói";
 
 export const XANHSM_HERO_INTRO =
-  "Bạn muốn trở thành tài xế Xanh SM tại Cần Thơ nhưng chưa biết bắt đầu từ đâu? Hợp tác xã vận tải Cần Thơ GF – đối tác chính thức của Xanh SM tại khu vực Đồng bằng Sông Cửu Long – sẽ hướng dẫn bạn toàn bộ quy trình đăng ký tài xế Xanh SM Cần Thơ từ A đến Z, hoàn toàn miễn phí.";
+  "Bạn muốn trở thành tài xế Xanh SM tại Cần Thơ nhưng chưa biết bắt đầu từ đâu? Hợp tác xã vận tải Cần Thơ EV – đối tác chính thức của Xanh SM tại khu vực Đồng bằng Sông Cửu Long – sẽ hướng dẫn bạn toàn bộ quy trình đăng ký tài xế Xanh SM Cần Thơ từ A đến Z, hoàn toàn miễn phí.";
 
 export const XANHSM_WHY_GF_BENEFITS = [
   "Tư vấn 1-1 qua Zalo/điện thoại – không lo bị bỏ lỡ thông tin",
@@ -55,10 +55,10 @@ export const XANHSM_DOCUMENTS = [
 
 export const XANHSM_ONLINE_STEPS = [
   "Nhấn nút \"Đăng ký tư vấn ngay\" trên trang này hoặc liên hệ trực tiếp qua Zalo 0969 99 11 77",
-  "Tư vấn viên Cần Thơ GF sẽ liên hệ trong vòng 15–30 phút để xác nhận thông tin và hướng dẫn bổ sung",
+  "Tư vấn viên Cần Thơ EV sẽ liên hệ trong vòng 15–30 phút để xác nhận thông tin và hướng dẫn bổ sung",
   "Chuẩn bị hồ sơ theo danh sách và gửi ảnh scan qua Zalo",
-  "Cần Thơ GF hỗ trợ nộp hồ sơ và theo dõi tiến độ xét duyệt",
-  "Tham gia buổi đào tạo nghiệp vụ (1–2 ngày) tại văn phòng Cần Thơ GF",
+  "Cần Thơ EV hỗ trợ nộp hồ sơ và theo dõi tiến độ xét duyệt",
+  "Tham gia buổi đào tạo nghiệp vụ (1–2 ngày) tại văn phòng Cần Thơ EV",
   "Nhận tài khoản ứng dụng và bắt đầu nhận chuyến",
 ];
 
@@ -68,11 +68,11 @@ export const XANHSM_DRIVER_BENEFITS = [
   "Thưởng lễ Tết và các chương trình ưu đãi theo mùa",
   "Xe điện VinFast sạch sẽ, tiện nghi, tiết kiệm nhiên liệu",
   "Ứng dụng quản lý chuyến đi thông minh, dễ sử dụng",
-  "Hỗ trợ kỹ thuật và bảo dưỡng xe ưu đãi từ Cần Thơ GF",
+  "Hỗ trợ kỹ thuật và bảo dưỡng xe ưu đãi từ Cần Thơ EV",
 ];
 
 export const XANHSM_PARTNER_INTRO =
-  "Nếu bạn đã sở hữu sẵn xe điện VinFast, bạn không cần chạy theo diện tài xế công ty mà có thể đăng ký làm Đối tác (Partner) cho Xanh SM và Grab tại Cần Thơ. Cần Thơ GF sẽ trực tiếp hướng dẫn bạn hoàn tất thủ tục đăng ký app Xanh SM Partner và Grab, giúp xe của bạn sớm được kích hoạt và bắt đầu nhận chuyến.";
+  "Nếu bạn đã sở hữu sẵn xe điện VinFast, bạn không cần chạy theo diện tài xế công ty mà có thể đăng ký làm Đối tác (Partner) cho Xanh SM và Grab tại Cần Thơ. Cần Thơ EV sẽ trực tiếp hướng dẫn bạn hoàn tất thủ tục đăng ký app Xanh SM Partner và Grab, giúp xe của bạn sớm được kích hoạt và bắt đầu nhận chuyến.";
 
 export const XANHSM_PARTNER_DOCUMENTS = [
   "CCCD 2 mặt",
@@ -89,22 +89,22 @@ export const XANHSM_PARTNER_STEPS = [
   {
     title: "Liên hệ tư vấn miễn phí",
     description:
-      "Nhắn Zalo hoặc gọi hotline Cần Thơ GF, cung cấp thông tin cơ bản về xe VinFast (đời xe, khu vực dự định chạy). Tư vấn viên phản hồi trong 15–30 phút.",
+      "Nhắn Zalo hoặc gọi hotline Cần Thơ EV, cung cấp thông tin cơ bản về xe VinFast (đời xe, khu vực dự định chạy). Tư vấn viên phản hồi trong 15–30 phút.",
   },
   {
     title: "Chuẩn bị hồ sơ theo checklist",
     description:
-      "Chụp/scan đầy đủ các giấy tờ theo danh sách bên dưới (CCCD, cavet xe, GPLX, tài khoản ngân hàng...). Cần Thơ GF kiểm tra hồ sơ trước khi nộp để tránh bị từ chối do thiếu sót.",
+      "Chụp/scan đầy đủ các giấy tờ theo danh sách bên dưới (CCCD, cavet xe, GPLX, tài khoản ngân hàng...). Cần Thơ EV kiểm tra hồ sơ trước khi nộp để tránh bị từ chối do thiếu sót.",
   },
   {
     title: "Đăng ký tài khoản Partner trên app",
     description:
-      "Dùng số điện thoại và email chưa từng đăng ký Xanh SM/Grab để tạo tài khoản Đối tác. Cần Thơ GF hướng dẫn từng bước điền thông tin xe và khu vực hoạt động.",
+      "Dùng số điện thoại và email chưa từng đăng ký Xanh SM/Grab để tạo tài khoản Đối tác. Cần Thơ EV hướng dẫn từng bước điền thông tin xe và khu vực hoạt động.",
   },
   {
     title: "Nộp hồ sơ và chờ xét duyệt",
     description:
-      "Hệ thống Xanh SM xét duyệt hồ sơ, đối chiếu cà vẹt xe và giấy tờ cá nhân. Thời gian xử lý thường 3–7 ngày làm việc; Cần Thơ GF theo dõi và cập nhật tiến độ cho bạn.",
+      "Hệ thống Xanh SM xét duyệt hồ sơ, đối chiếu cà vẹt xe và giấy tờ cá nhân. Thời gian xử lý thường 3–7 ngày làm việc; Cần Thơ EV theo dõi và cập nhật tiến độ cho bạn.",
   },
   {
     title: "Kích hoạt app và nhận chuyến",
@@ -122,27 +122,27 @@ export const XANHSM_FAQ: XanhSmFaqItem[] = [
   {
     question: "Đăng ký tài xế Xanh SM Cần Thơ mất bao lâu?",
     answer:
-      "Thông thường quá trình xét duyệt mất từ 3–7 ngày làm việc kể từ khi nộp đủ hồ sơ hợp lệ. Khi đăng ký qua Cần Thơ GF, chúng tôi sẽ hỗ trợ theo dõi và thúc đẩy tiến độ cho bạn.",
+      "Thông thường quá trình xét duyệt mất từ 3–7 ngày làm việc kể từ khi nộp đủ hồ sơ hợp lệ. Khi đăng ký qua Cần Thơ EV, chúng tôi sẽ hỗ trợ theo dõi và thúc đẩy tiến độ cho bạn.",
   },
   {
     question: "Tôi không có xe có thể đăng ký không?",
     answer:
-      "Có. Cần Thơ GF hỗ trợ tư vấn vay mua xe VinFast với lãi suất ưu đãi dành riêng cho tài xế Xanh SM. Bạn có thể vừa lái xe vừa trả góp từ thu nhập hàng tháng.",
+      "Có. Cần Thơ EV hỗ trợ tư vấn vay mua xe VinFast với lãi suất ưu đãi dành riêng cho tài xế Xanh SM. Bạn có thể vừa lái xe vừa trả góp từ thu nhập hàng tháng.",
   },
   {
     question: "Bằng lái hạng B1 có đăng ký được không?",
     answer:
-      "Xanh SM yêu cầu tối thiểu bằng lái hạng B2. Nếu bạn chỉ có B1, cần nâng hạng trước. Cần Thơ GF có thể tư vấn trường đào tạo lái xe uy tín tại Cần Thơ.",
+      "Xanh SM yêu cầu tối thiểu bằng lái hạng B2. Nếu bạn chỉ có B1, cần nâng hạng trước. Cần Thơ EV có thể tư vấn trường đào tạo lái xe uy tín tại Cần Thơ.",
   },
   {
     question: "Tài xế nữ có được nhận không?",
     answer:
-      "Hoàn toàn có. Xanh SM và Cần Thơ GF hoan nghênh tài xế nữ ứng tuyển. Nhiều tài xế nữ tại Cần Thơ đang có thu nhập ổn định từ 12–18 triệu/tháng.",
+      "Hoàn toàn có. Xanh SM và Cần Thơ EV hoan nghênh tài xế nữ ứng tuyển. Nhiều tài xế nữ tại Cần Thơ đang có thu nhập ổn định từ 12–18 triệu/tháng.",
   },
   {
-    question: "Đăng ký qua Cần Thơ GF có mất phí không?",
+    question: "Đăng ký qua Cần Thơ EV có mất phí không?",
     answer:
-      "Hoàn toàn miễn phí. Cần Thơ GF là đối tác hợp tác xã, không thu bất kỳ khoản phí nào từ tài xế trong quá trình đăng ký và đào tạo.",
+      "Hoàn toàn miễn phí. Cần Thơ EV là đối tác hợp tác xã, không thu bất kỳ khoản phí nào từ tài xế trong quá trình đăng ký và đào tạo.",
   },
   {
     question: "Xanh SM có hoạt động ở các quận huyện ngoài trung tâm Cần Thơ không?",

@@ -86,7 +86,7 @@ export default function ThueMuaVinfast() {
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
             src="/banner-homepage.webp"
-            alt="Thuê mua xe VinFast Cần Thơ — Cần Thơ GF"
+            alt="Thuê mua xe VinFast Cần Thơ — Cần Thơ EV"
             className="object-cover opacity-20"
             priority
           />
@@ -98,7 +98,7 @@ export default function ThueMuaVinfast() {
             className="inline-flex items-center gap-2 bg-white/15 border border-white/30 rounded-full px-4 py-1.5 mb-6 text-sm"
           >
             <Award className="w-4 h-4" />
-            HTX Vận Tải Cần Thơ GF – Chính Hãng
+            HTX Vận Tải Cần Thơ EV – Chính Hãng
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -209,7 +209,7 @@ export default function ThueMuaVinfast() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-black text-dark mb-1">Bài viết liên quan</h2>
           <p className="text-gray-600 text-sm sm:text-base mb-8">
-            Kiến thức xe điện, chạy dịch vụ và chương trình thuê mua từ blog Cần Thơ GF
+            Kiến thức xe điện, chạy dịch vụ và chương trình thuê mua từ blog Cần Thơ EV
           </p>
           {THUE_MUA_RELATED_ARTICLES.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -236,7 +236,7 @@ export default function ThueMuaVinfast() {
             <p className="text-sm text-gray-500 bg-white rounded-2xl border border-dashed border-gray-200 px-6 py-8 text-center">
               Các bài viết liên quan sẽ được cập nhật trên{" "}
               <SeoLink href="/tin-tuc" className="text-primary font-semibold hover:underline">
-                tin tức Cần Thơ GF
+                tin tức Cần Thơ EV
               </SeoLink>
               .
             </p>

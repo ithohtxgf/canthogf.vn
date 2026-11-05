@@ -48,20 +48,20 @@ type StaticPageConfig = {
   title: string;
   description: string;
   keywords?: string[];
-  /** Không áp dụng template `%s | Cần Thơ GF` — tránh lặp title */
+  /** Không áp dụng template `%s | Cần Thơ EV` — tránh lặp title */
   absoluteTitle?: boolean;
 };
 
 /** Metadata tĩnh cho các trang cố định (1.1) */
 export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
   "/gioi-thieu": {
-    title: "Giới thiệu HTX Vận Tải Cần Thơ GF",
+    title: "Giới thiệu HTX Vận Tải Cần Thơ EV",
     description:
-      "Câu chuyện HTX Vận Tải Cần Thơ GF — hành trình xanh cùng bác tài: xe VinFast, phù hiệu HTX, app Xanh SM. Vững tay lái, trọn niềm tin, xanh tương lai.",
+      "Câu chuyện HTX Vận Tải Cần Thơ EV — hành trình xanh cùng bác tài: xe VinFast, phù hiệu HTX, app Xanh SM. Vững tay lái, trọn niềm tin, xanh tương lai.",
     keywords: [
-      "giới thiệu cần thơ gf",
+      "giới thiệu cần thơ ev",
       "hợp tác xã vận tải cần thơ",
-      "htx vận tải cần thơ gf",
+      "htx vận tải cần thơ ev",
       "xe vinfast cần thơ",
       "xanhsm cần thơ",
     ],
@@ -69,7 +69,7 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
   "/san-pham": {
     title: "Ô tô VinFast Cần Thơ",
     description:
-      "Danh mục xe điện VinFast tại Cần Thơ GF: VF 3, Herio Green, VF5, Limo Green, EC Van. Tư vấn giá, khuyến mãi và trả góp.",
+      "Danh mục xe điện VinFast tại Cần Thơ EV: VF 3, Herio Green, VF5, Limo Green, EC Van. Tư vấn giá, khuyến mãi và trả góp.",
     keywords: [
       "ô tô vinfast cần thơ",
       "xe điện vinfast",
@@ -105,10 +105,10 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
     keywords: [...XANHSM_KEYWORDS],
   },
   [XANHSM_PARTNER_HUB_PATH]: {
-    title: "Đăng Ký Xanh SM Partner Theo Khu Vực – Cần Thơ GF",
+    title: "Đăng Ký Xanh SM Partner Theo Khu Vực – Cần Thơ EV",
     absoluteTitle: true,
     description:
-      "Chủ xe VinFast muốn đăng ký Xanh SM Partner tại TPHCM, Vũng Tàu, Phú Quốc và nhiều tỉnh thành? Cần Thơ GF hướng dẫn thủ tục, hồ sơ, tư vấn online miễn phí.",
+      "Chủ xe VinFast muốn đăng ký Xanh SM Partner tại TPHCM, Vũng Tàu, Phú Quốc và nhiều tỉnh thành? Cần Thơ EV hướng dẫn thủ tục, hồ sơ, tư vấn online miễn phí.",
     keywords: [
       "đăng ký xanh sm partner",
       "xanh sm partner theo khu vực",
@@ -124,28 +124,28 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
   "/tin-tuc": {
     title: "Tin tức",
     description:
-      "Cập nhật tin tức VinFast, hoạt động Cần Thơ GF, kiến thức xe điện và XanhSM tại Đồng bằng sông Cửu Long.",
+      "Cập nhật tin tức VinFast, hoạt động Cần Thơ EV, kiến thức xe điện và XanhSM tại Đồng bằng sông Cửu Long.",
     keywords: [
       "tin tức vinfast",
-      "tin tức cần thơ gf",
+      "tin tức cần thơ ev",
       "cập nhật xe điện",
     ],
   },
   "/lien-he": {
     title: "Liên hệ",
     description:
-      "Liên hệ Cần Thơ GF — showroom Cần Thơ, hotline 0969 99 11 77, email htxcanthogf@gmail.com. Tư vấn mua xe VinFast và XanhSM.",
-    keywords: ["liên hệ cần thơ gf", "showroom vinfast cần thơ"],
+      "Liên hệ Cần Thơ EV — showroom Cần Thơ, hotline 0969 99 11 77, email htxcanthogf@gmail.com. Tư vấn mua xe VinFast và XanhSM.",
+    keywords: ["liên hệ cần thơ ev", "showroom vinfast cần thơ"],
   },
   "/chinh-sach-bao-mat": {
     title: "Chính sách bảo mật",
     description:
-      "Chính sách bảo mật thông tin khách hàng của website Hợp tác xã vận tải Cần Thơ GF.",
+      "Chính sách bảo mật thông tin khách hàng của website Hợp tác xã vận tải Cần Thơ EV.",
   },
   "/dieu-khoan-su-dung": {
     title: "Điều khoản sử dụng",
     description:
-      "Điều khoản sử dụng website và dịch vụ của Hợp tác xã vận tải Cần Thơ GF.",
+      "Điều khoản sử dụng website và dịch vụ của Hợp tác xã vận tải Cần Thơ EV.",
   },
 };
 
@@ -171,6 +171,9 @@ function buildDefaultOpenGraphImages() {
   ];
 }
 
+/** Độ dài title tối đa trước khi Google cắt bớt (xấp xỉ 600px) */
+const MAX_TITLE_LENGTH = 60;
+
 function buildPageMetadata(options: {
   title: string;
   description: string;
@@ -190,8 +193,13 @@ function buildPageMetadata(options: {
       )
     : buildDefaultOpenGraphImages();
 
+  // Google cắt title ~60 ký tự: nếu thêm " | Cần Thơ EV" sẽ vượt thì bỏ hậu tố,
+  // ưu tiên giữ phần từ khoá ở đầu title.
+  const suffixedLength = options.title.length + ` | ${SITE_NAME}`.length;
+  const useAbsolute = options.absoluteTitle || suffixedLength > MAX_TITLE_LENGTH;
+
   return {
-    title: options.absoluteTitle ? { absolute: options.title } : options.title,
+    title: useAbsolute ? { absolute: options.title } : options.title,
     description: options.description,
     keywords: options.keywords ?? [...SEO_KEYWORDS],
     alternates: createAlternates(options.path),

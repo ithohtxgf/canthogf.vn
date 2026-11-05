@@ -4,6 +4,13 @@ const MAX_AGE_SECONDS = 60 * 60 * 24 * 7;
 type SessionPayload = {
   email: string;
   exp: number;
+  /** Dấu vân tay password_hash (tài khoản DB) — đổi mật khẩu là mọi phiên cũ mất hiệu lực */
+  v?: string;
+};
+
+export type VerifiedAdminSession = {
+  email: string;
+  fingerprint?: string;
 };
 
 function getSessionSecret(): string {
@@ -13,11 +20,19 @@ function getSessionSecret(): string {
 
   if (secret) return secret;
 
-  if (process.env.NODE_ENV === "production" || process.env.VERCEL) {
-    throw new Error("Thiếu ADMIN_SESSION_SECRET hoặc SUPABASE_SERVICE_ROLE_KEY");
-  }
+  // Không có khoá mặc định: khoá viết cứng trong code cho phép bất kỳ ai tự ký cookie admin.
+  throw new Error(
+    "Thiếu ADMIN_SESSION_SECRET (hoặc SUPABASE_SERVICE_ROLE_KEY). Thêm ADMIN_SESSION_SECRET vào .env.local — xem .env.example.",
+  );
+}
 
-  return "dev-insecure-admin-session";
+/** Dấu vân tay ngắn của password_hash, gắn vào token phiên */
+export async function passwordFingerprint(passwordHash: string): Promise<string> {
+  const digest = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode(passwordHash),
+  );
+  return toBase64Url(new Uint8Array(digest)).slice(0, 22);
 }
 
 function toBase64Url(bytes: Uint8Array): string {
@@ -66,10 +81,14 @@ export function getAdminSessionMaxAge(): number {
   return MAX_AGE_SECONDS;
 }
 
-export async function createDbSessionToken(email: string): Promise<string> {
+export async function createDbSessionToken(
+  email: string,
+  fingerprint?: string,
+): Promise<string> {
   const payload: SessionPayload = {
     email: email.trim().toLowerCase(),
     exp: Math.floor(Date.now() / 1000) + MAX_AGE_SECONDS,
+    ...(fingerprint ? { v: fingerprint } : {}),
   };
   const payloadB64 = toBase64Url(new TextEncoder().encode(JSON.stringify(payload)));
   const signature = await hmacSign(payloadB64);
@@ -79,12 +98,23 @@ export async function createDbSessionToken(email: string): Promise<string> {
 export async function verifyDbSessionToken(
   token: string | undefined | null,
 ): Promise<string | null> {
+  return (await verifyDbSession(token))?.email ?? null;
+}
+
+export async function verifyDbSession(
+  token: string | undefined | null,
+): Promise<VerifiedAdminSession | null> {
   if (!token?.trim()) return null;
 
   const [payloadB64, signature] = token.split(".");
   if (!payloadB64 || !signature) return null;
 
-  const expected = await hmacSign(payloadB64);
+  let expected: string;
+  try {
+    expected = await hmacSign(payloadB64);
+  } catch {
+    return null;
+  }
   if (!timingSafeEqualStrings(signature, expected)) return null;
 
   try {
@@ -92,7 +122,10 @@ export async function verifyDbSessionToken(
     const payload = JSON.parse(json) as SessionPayload;
     if (!payload.email || typeof payload.exp !== "number") return null;
     if (payload.exp < Math.floor(Date.now() / 1000)) return null;
-    return payload.email;
+    return {
+      email: payload.email,
+      fingerprint: typeof payload.v === "string" ? payload.v : undefined,
+    };
   } catch {
     return null;
   }

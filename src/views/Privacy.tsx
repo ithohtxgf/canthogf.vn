@@ -20,11 +20,11 @@ export default function Privacy() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-white p-8 md:p-12 rounded-3xl shadow-sm">
           <div className="prose prose-lg max-w-none text-gray-700">
             <p className="mb-6">
-              <strong>HỢP TÁC XÃ VẬN TẢI CẦN THƠ GF</strong>
+              <strong>HỢP TÁC XÃ VẬN TẢI CẦN THƠ EV</strong>
             </p>
             <p className="mb-6">Ngày cập nhật mới nhất: 16/06/2026</p>
             <p className="mb-6">
-              Chào mừng bạn đến với website chính thức của Hợp tác xã (HTX) Vận tải Cần Thơ GF. Chúng tôi cam kết bảo vệ quyền riêng tư và dữ liệu cá nhân của quý khách hàng cũng như người dùng truy cập website theo đúng quy định của Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân và các văn bản pháp luật liên quan của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam.
+              Chào mừng bạn đến với website chính thức của Hợp tác xã (HTX) Vận tải Cần Thơ EV. Chúng tôi cam kết bảo vệ quyền riêng tư và dữ liệu cá nhân của quý khách hàng cũng như người dùng truy cập website theo đúng quy định của Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân và các văn bản pháp luật liên quan của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam.
             </p>
             <p className="mb-6">
               Chính sách bảo mật này giải thích cách chúng tôi tiếp nhận, xử lý và bảo vệ thông tin của bạn khi bạn tương tác với website của chúng tôi.
@@ -48,7 +48,7 @@ export default function Privacy() {
               Chúng tôi chỉ sử dụng thông tin cá nhân thu thập được cho các mục đích hợp pháp sau:
             </p>
             <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li>Phản hồi, tư vấn và giải đáp các thắc mắc của khách hàng về dịch vụ vận tải và các sản phẩm của HTX Cần Thơ GF.</li>
+              <li>Phản hồi, tư vấn và giải đáp các thắc mắc của khách hàng về dịch vụ vận tải và các sản phẩm của HTX Cần Thơ EV.</li>
               <li>Cung cấp báo giá, thông tin ưu đãi hoặc các tài liệu giới thiệu dịch vụ theo đúng yêu cầu của khách hàng.</li>
               <li>Nâng cao chất lượng nội dung, giao diện và cải thiện trải nghiệm của người dùng trên website.</li>
               <li>Ngăn chặn các hoạt động phá hoại, spam hoặc các hành vi vi phạm pháp luật trên môi trường mạng.</li>
@@ -65,7 +65,7 @@ export default function Privacy() {
 
             <h2 className="text-xl font-bold text-dark mt-8 mb-4">4. Cam kết bảo mật và Chia sẻ dữ liệu cho bên thứ ba</h2>
             <p className="mb-6">
-              <strong>Cam kết bảo mật:</strong> HTX Vận tải Cần Thơ GF áp dụng các biện pháp kỹ thuật và an ninh mạng phù hợp để bảo vệ dữ liệu cá nhân của bạn khỏi bị truy cập trái phép, thay đổi, tiết lộ hoặc tiêu hủy.
+              <strong>Cam kết bảo mật:</strong> HTX Vận tải Cần Thơ EV áp dụng các biện pháp kỹ thuật và an ninh mạng phù hợp để bảo vệ dữ liệu cá nhân của bạn khỏi bị truy cập trái phép, thay đổi, tiết lộ hoặc tiêu hủy.
             </p>
             <p className="mb-4">
               <strong>Không chia sẻ thương mại:</strong> Chúng tôi cam kết tuyệt đối không bán, cho thuê, trao đổi hoặc chia sẻ thông tin cá nhân của bạn cho bất kỳ bên thứ ba nào vì mục đích thương mại khi chưa có sự đồng ý của bạn.
@@ -89,7 +89,7 @@ export default function Privacy() {
 
             <h2 className="text-xl font-bold text-dark mt-8 mb-4">6. Đơn vị thu thập và quản lý thông tin</h2>
             <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li><strong>Tên tổ chức:</strong> Hợp tác xã Vận tải Cần Thơ GF</li>
+              <li><strong>Tên tổ chức:</strong> Hợp tác xã Vận tải Cần Thơ EV</li>
               <li><strong>Địa chỉ trụ sở:</strong> Quận Cái Răng, Thành phố Cần Thơ</li>
               <li><strong>Số điện thoại liên hệ:</strong> 0969 99 11 77</li>
               <li><strong>Email tiếp nhận yêu cầu bảo mật:</strong> htxcanthogf@gmail.com</li>

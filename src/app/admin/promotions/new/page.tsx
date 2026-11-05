@@ -1,8 +1,11 @@
+import { requireAdminPage } from "@/lib/admin/session";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { PromotionForm } from "@/components/admin/PromotionForm";
 import { createEmptyPromotion } from "@/lib/admin/defaults";
 
-export default function AdminNewPromotionPage() {
+export default async function AdminNewPromotionPage() {
+  await requireAdminPage();
+
   return (
     <AdminShell
       title="Thêm khuyến mãi"

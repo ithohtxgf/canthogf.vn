@@ -13,13 +13,13 @@ const EXCLUSIVE_OFFERS = [
     icon: BadgePercent,
     title: "Miễn 100% lệ phí trước bạ",
     description:
-      "Xe điện VinFast được miễn lệ phí trước bạ theo chính sách nhà nước — tiết kiệm đến 10% giá xe khi đặt qua CanThoGF.",
+      "Xe điện VinFast được miễn lệ phí trước bạ theo chính sách nhà nước — tiết kiệm đến 10% giá xe khi đặt qua CanThoEV.",
   },
   {
     icon: Gift,
     title: "Voucher giảm giá độc quyền",
     description:
-      "Giảm trực tiếp 5 triệu đồng + gói phụ kiện cơ bản khi đặt cọc trong tháng — chỉ áp dụng tại Cần Thơ GF, không có trên website chính hãng.",
+      "Giảm trực tiếp 5 triệu đồng + gói phụ kiện cơ bản khi đặt cọc trong tháng — chỉ áp dụng tại Cần Thơ EV, không có trên website chính hãng.",
   },
   {
     icon: ShieldCheck,
@@ -31,7 +31,7 @@ const EXCLUSIVE_OFFERS = [
     icon: Home,
     title: "Lái thử tận nhà miễn phí",
     description:
-      "Không cần đến showroom Hà Nội hay TP.HCM — đội ngũ CanThoGF mang xe đến Ninh Kiều, Cái Răng, Bình Thủy để bạn trải nghiệm.",
+      "Không cần đến showroom Hà Nội hay TP.HCM — đội ngũ CanThoEV mang xe đến Ninh Kiều, Cái Răng, Bình Thủy để bạn trải nghiệm.",
   },
   {
     icon: CarFront,
@@ -69,10 +69,10 @@ export function VinfastExclusiveOffers() {
 
       <div className="bg-gradient-to-r from-primary-dark to-primary rounded-3xl p-8 sm:p-10 text-white text-center">
         <p className="text-secondary font-semibold uppercase tracking-wider text-sm mb-2">
-          Ưu đãi chỉ có tại CanThoGF
+          Ưu đãi chỉ có tại CanThoEV
         </p>
         <p className="text-xl sm:text-2xl font-bold mb-6 max-w-2xl mx-auto">
-          Đặt xe VinFast qua CanThoGF để tiết kiệm thời gian.
+          Đặt xe VinFast qua CanThoEV để tiết kiệm thời gian.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
@@ -80,7 +80,7 @@ export function VinfastExclusiveOffers() {
             onClick={dispatchConsultationPopup}
             className="bg-secondary hover:bg-secondary-dark text-dark font-bold py-4 px-8 rounded-full transition-colors shadow-lg"
           >
-            Nhận ưu đãi CanThoGF ngay
+            Nhận ưu đãi CanThoEV ngay
           </button>
           <SeoLink
             href="/san-pham"

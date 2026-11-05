@@ -1,3 +1,4 @@
+import { requireAdminPage } from "@/lib/admin/session";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { AdminShell } from "@/components/admin/AdminShell";
@@ -13,12 +14,14 @@ import {
 export const dynamic = "force-dynamic";
 
 export default async function AdminDashboardPage() {
+  await requireAdminPage();
+
   const stats = await getAdminDashboardStats();
 
   return (
     <AdminShell
       title="Tổng quan"
-      description="Trung tâm điều khiển CMS Cần Thơ GF"
+      description="Trung tâm điều khiển CMS Cần Thơ EV"
     >
       {stats.usingStaticFallback && (
         <div className="mb-6 flex gap-3 items-start bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-sm text-amber-900">
