@@ -28,7 +28,13 @@ function loadEnv() {
 
 loadEnv();
 
-const SITE_URL = (process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "https://canthogf.vn").replace(/\/$/, "");
+// Không có giá trị mặc định: thiếu biến thì dừng, tránh vô tình đăng lên site thật khi đang thử ở máy.
+const SITE_URL = (process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "").replace(/\/$/, "");
+if (!SITE_URL) {
+  console.error("❌ Thiếu SITE_URL (hoặc NEXT_PUBLIC_SITE_URL). Ví dụ: SITE_URL=https://canthogf.vn node scripts/post-article.cjs article.json");
+  process.exit(1);
+}
+console.log(`→ Đăng bài lên: ${SITE_URL}`);
 const ADMIN_EMAIL    = process.env.ADMIN_EMAIL;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 

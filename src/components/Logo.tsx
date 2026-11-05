@@ -17,8 +17,8 @@ export function Logo({ className = LOGO_NAV_CLASS }: { className?: string }) {
 
   return (
     <Image
-      src="/logo_cantho_gf.png"
-      alt="Logo Cần Thơ GF — Hợp tác xã vận tải Cần Thơ"
+      src="/logo-cantho-ev.png"
+      alt="Logo Cần Thơ EV — Hợp tác xã vận tải Cần Thơ"
       width={LOGO_WIDTH}
       height={LOGO_HEIGHT}
       sizes={

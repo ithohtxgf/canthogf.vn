@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { denyIfNotAdmin } from "@/lib/admin/api-guard";
 import {
   createPromotion,
   getPromotionById,
@@ -12,6 +13,9 @@ type RouteContext = {
 };
 
 export async function POST(_request: Request, context: RouteContext) {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   const { id } = await context.params;
   const source = await getPromotionById(id);
 

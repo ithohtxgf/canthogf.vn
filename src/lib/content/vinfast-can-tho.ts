@@ -135,7 +135,7 @@ export const VINFAST_VEHICLES: VinfastVehicle[] = [
       useCase: "Vận tải liên tỉnh, dịch vụ cao cấp, gia đình 7 chỗ",
       rating: 4.9,
       verdict:
-        "Quãng đường 450 km — lý tưởng tuyến Cần Thơ ↔ TP.HCM, An Giang. Giá niêm yết 699 triệu tại CanThoGF.",
+        "Quãng đường 450 km — lý tưởng tuyến Cần Thơ ↔ TP.HCM, An Giang. Giá niêm yết 699 triệu tại CanThoEV.",
     },
   },
   {
@@ -216,10 +216,10 @@ export const VINFAST_VOUCHERS: VinfastVoucher[] = [
       "Áp dụng chính sách miễn lệ phí trước bạ cho ô tô điện — giá trị tương đương 10% giá xe",
   },
   {
-    id: "voucher-can-tho-gf",
-    label: "Voucher ưu đãi CanThoGF",
+    id: "voucher-can-tho-ev",
+    label: "Voucher ưu đãi CanThoEV",
     amount: 5_000_000,
-    description: "Giảm trực tiếp khi đặt cọc qua Cần Thơ GF trong tháng",
+    description: "Giảm trực tiếp khi đặt cọc qua Cần Thơ EV trong tháng",
   },
   {
     id: "voucher-phu-kien",
@@ -232,10 +232,10 @@ export const VINFAST_VOUCHERS: VinfastVoucher[] = [
 export const VINFAST_CAN_THO_HUB_PATH = "/vinfast-can-tho";
 
 export const VINFAST_CAN_THO_META_TITLE =
-  "VinFast Cần Thơ | Cần Thơ GF — Đại Lý Chính Hãng & XanhSM";
+  "VinFast Cần Thơ | Cần Thơ EV — Đại Lý Chính Hãng & XanhSM";
 
 export const VINFAST_CAN_THO_PAGE_H1 =
-  "VinFast Cần Thơ — Đại Lý Chính Hãng tại Cần Thơ GF";
+  "VinFast Cần Thơ — Đại Lý Chính Hãng tại Cần Thơ EV";
 
 export const VINFAST_CAN_THO_CALCULATOR_H2 =
   "Bảng Giá Lăn Bánh Chi Tiết Tháng 6/2026";
@@ -244,7 +244,7 @@ export const VINFAST_CAN_THO_CALCULATOR_H2 =
 export const VINFAST_CAN_THO_PAGE_TITLE = VINFAST_CAN_THO_META_TITLE;
 
 export const VINFAST_CAN_THO_PAGE_DESCRIPTION =
-  "Bảng tính giá lăn bánh VinFast tại Cần Thơ minh bạch: giá xe, phí biển số, phí đường bộ, BHTNDS, voucher ưu đãi. Đánh giá VF3, VF5, VF6 phù hợp đường phố Cần Thơ — CanThoGF.";
+  "Bảng tính giá lăn bánh VinFast Cần Thơ minh bạch: giá xe, phí biển số, đường bộ, BHTNDS, voucher. Đánh giá VF3, VF5, VF6 cho đường phố Cần Thơ.";
 
 /** Bài viết vệ tinh (Spoke) liên kết về Hub */
 export const VINFAST_SPOKE_ARTICLES = [
@@ -274,7 +274,7 @@ export const VINFAST_CAN_THO_FAQ = [
   {
     question: "Giá lăn bánh VinFast tại Cần Thơ gồm những khoản nào?",
     answer:
-      "Giá lăn bánh bao gồm giá niêm yết, phí đăng ký biển số Cần Thơ, phí đường bộ, bảo hiểm TNDS bắt buộc và lệ phí trước bạ (nếu áp dụng theo chính sách), sau đó trừ các voucher ưu đãi đang có hiệu lực. CanThoGF minh bạch từng khoản trên bảng tính giá xe VinFast tại Cần Thơ ngay trên trang — bạn không cần gọi điện mới biết tổng chi phí sở hữu xe.",
+      "Giá lăn bánh bao gồm giá niêm yết, phí đăng ký biển số Cần Thơ, phí đường bộ, bảo hiểm TNDS bắt buộc và lệ phí trước bạ (nếu áp dụng theo chính sách), sau đó trừ các voucher ưu đãi đang có hiệu lực. CanThoEV minh bạch từng khoản trên bảng tính giá xe VinFast tại Cần Thơ ngay trên trang — bạn không cần gọi điện mới biết tổng chi phí sở hữu xe.",
   },
   {
     question: "Xe VinFast nào phù hợp chạy phố Ninh Kiều, Cần Thơ?",
@@ -282,19 +282,19 @@ export const VINFAST_CAN_THO_FAQ = [
       "VinFast VF 3 là lựa chọn tối ưu nhờ kích thước nhỏ gọn, bán kính quay vòng nhỏ và dễ tìm chỗ đỗ trên các tuyến phố hẹp Ninh Kiều. VF 5 Plus cũng phù hợp nếu bạn cần không gian rộng hơn cho gia đình hoặc chạy dịch vụ XanhSM, trong khi VF 6 hướng đến khách cần SUV hạng C với ADAS khi thường xuyên di chuyển liên quận.",
   },
   {
-    question: "Mua xe VinFast Cần Thơ 2026 qua CanThoGF có ưu đãi gì?",
+    question: "Mua xe VinFast Cần Thơ 2026 qua CanThoEV có ưu đãi gì?",
     answer:
-      "Khi mua xe VinFast Cần Thơ 2026 qua đại lý CanThoGF, khách hàng được hỗ trợ voucher giảm giá (theo chính sách từng thời điểm), tư vấn miễn giảm lệ phí trước bạ nếu đủ điều kiện, trả góp 80–85% qua ngân hàng đối tác, lái thử tận nhà và thủ tục đăng ký biển số trọn gói tại Cần Thơ — tiết kiệm thời gian so với tự làm thủ tục.",
+      "Khi mua xe VinFast Cần Thơ 2026 qua đại lý CanThoEV, khách hàng được hỗ trợ voucher giảm giá (theo chính sách từng thời điểm), tư vấn miễn giảm lệ phí trước bạ nếu đủ điều kiện, trả góp 80–85% qua ngân hàng đối tác, lái thử tận nhà và thủ tục đăng ký biển số trọn gói tại Cần Thơ — tiết kiệm thời gian so với tự làm thủ tục.",
   },
   {
     question: "Có được trả góp khi mua xe VinFast tại Cần Thơ không?",
     answer:
-      "Có. CanThoGF hỗ trợ tư vấn gói vay qua các ngân hàng liên kết với tỷ lệ trả trước từ 15–20%, thời hạn vay linh hoạt. Nhân viên tư vấn sẽ giải thích rõ lãi suất, khoản trả hàng tháng và tổng giá lăn bánh trước khi bạn ký hợp đồng — đảm bảo minh bạch khi mua xe VinFast Cần Thơ 2026 theo hình thức trả góp.",
+      "Có. CanThoEV hỗ trợ tư vấn gói vay qua các ngân hàng liên kết với tỷ lệ trả trước từ 15–20%, thời hạn vay linh hoạt. Nhân viên tư vấn sẽ giải thích rõ lãi suất, khoản trả hàng tháng và tổng giá lăn bánh trước khi bạn ký hợp đồng — đảm bảo minh bạch khi mua xe VinFast Cần Thơ 2026 theo hình thức trả góp.",
   },
   {
     question: "Làm sao để nhận báo giá chính xác từ đại lý VinFast Cần Thơ?",
     answer:
-      "Bạn có thể dùng bảng tính giá lăn bánh trên trang này để ước tính nhanh, sau đó liên hệ hotline 0969 99 11 77 hoặc Zalo CanThoGF để nhận báo giá chi tiết theo mẫu xe, màu sơn và chính sách ưu đãi mới nhất. Đội ngũ đại lý VinFast Cần Thơ sẽ phản hồi trong vòng 15 phút và hỗ trợ đặt lịch lái thử nếu bạn cần trải nghiệm thực tế trước khi quyết định.",
+      "Bạn có thể dùng bảng tính giá lăn bánh trên trang này để ước tính nhanh, sau đó liên hệ hotline 0969 99 11 77 hoặc Zalo CanThoEV để nhận báo giá chi tiết theo mẫu xe, màu sơn và chính sách ưu đãi mới nhất. Đội ngũ đại lý VinFast Cần Thơ sẽ phản hồi trong vòng 15 phút và hỗ trợ đặt lịch lái thử nếu bạn cần trải nghiệm thực tế trước khi quyết định.",
   },
 ] as const;
 

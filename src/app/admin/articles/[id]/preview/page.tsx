@@ -1,3 +1,4 @@
+import { requireAdminPage } from "@/lib/admin/session";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AdminShell } from "@/components/admin/AdminShell";
@@ -13,6 +14,8 @@ type PageProps = {
 };
 
 export default async function AdminArticlePreviewPage({ params }: PageProps) {
+  await requireAdminPage();
+
   const { id } = await params;
   const article = await getArticleById(id);
 

@@ -85,7 +85,7 @@ export function VinfastChietTinhForm() {
       {/* Header */}
       <div className="bg-primary-dark px-5 py-4 flex items-center gap-3">
         <FileText className="w-5 h-5 text-secondary shrink-0" />
-        <p className="text-white font-bold">Chiết Tính Mua Xe VinFast — Cần Thơ GF</p>
+        <p className="text-white font-bold">Chiết Tính Mua Xe VinFast — Cần Thơ EV</p>
       </div>
 
       {/* Inputs */}

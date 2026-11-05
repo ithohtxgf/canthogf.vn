@@ -37,7 +37,7 @@ function PriceTable({ product }: { product: RichProductDetail }) {
     return (
       <table className="w-full text-sm">
         <caption className="sr-only">
-          Bảng giá niêm yết VinFast {product.shortName} tại Cần Thơ GF
+          Bảng giá niêm yết VinFast {product.shortName} tại Cần Thơ EV
         </caption>
         <thead>
           <tr className="border-b border-gray-200 text-left text-gray-500 text-xs uppercase tracking-wider">
@@ -95,7 +95,7 @@ function PriceTable({ product }: { product: RichProductDetail }) {
   return (
     <table className="w-full text-sm">
       <caption className="sr-only">
-        Bảng giá VinFast {product.shortName} tại Cần Thơ GF
+        Bảng giá VinFast {product.shortName} tại Cần Thơ EV
       </caption>
       <tbody>
         <tr className="border-b border-gray-100">
@@ -274,7 +274,7 @@ export function RichProductDetailView({ product }: RichProductDetailViewProps) {
                 <PriceTable product={product} />
                 <p className="text-xs text-gray-500 mt-4">
                   * Giá ưu đãi phụ thuộc chương trình khuyến mãi hiện hành tại
-                  Cần Thơ GF.
+                  Cần Thơ EV.
                 </p>
                 <SeoLink
                   href="/vinfast-can-tho#tinh-gia-lan-banh"
@@ -323,7 +323,7 @@ export function RichProductDetailView({ product }: RichProductDetailViewProps) {
                     )}
                   <div className="flex items-center gap-2 text-secondary text-sm font-semibold mt-4">
                     <MapPin className="w-4 h-4" />
-                    Tư vấn {product.shortName} tại Cần Thơ GF
+                    Tư vấn {product.shortName} tại Cần Thơ EV
                   </div>
                 </article>
               )}
@@ -679,7 +679,7 @@ export function RichProductDetailView({ product }: RichProductDetailViewProps) {
 
           <div className="bg-primary-dark p-8 sm:p-10 rounded-3xl text-white text-center">
             <h2 className="text-2xl font-bold mb-3">
-              Đặt {product.officialName} Tại Cần Thơ GF
+              Đặt {product.officialName} Tại Cần Thơ EV
             </h2>
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
               Nhận báo giá ưu đãi, hỗ trợ trả góp và đặt cọc

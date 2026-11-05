@@ -137,7 +137,7 @@ export default function Contact() {
                 Kết nối với {ORGANIZATION_NAME}
               </h1>
               <p className="text-lg text-gray-300 max-w-xl leading-relaxed">
-                Tư vấn VinFast, đăng ký XanhSM và hỗ trợ sau bán — đội ngũ Cần Thơ GF sẵn sàng
+                Tư vấn VinFast, đăng ký XanhSM và hỗ trợ sau bán — đội ngũ Cần Thơ EV sẵn sàng
                 đồng hành cùng bạn tại ĐBSCL.
               </p>
               <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-2 text-sm">
@@ -323,7 +323,7 @@ export default function Contact() {
                     >
                       <Image
                         src="/logo_facebook.png"
-                        alt="Facebook Cần Thơ GF"
+                        alt="Facebook Cần Thơ EV"
                         width={40}
                         height={40}
                         className="h-10 w-10 object-contain"

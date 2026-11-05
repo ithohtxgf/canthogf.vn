@@ -8,9 +8,9 @@ export const VF8_ALL_NEW_DETAIL: RichProductDetail = {
   slogan: "Tech Fluid — Dòng chảy công nghệ",
   h1: "VinFast VF 8 All New 2026 Cần Thơ: D-SUV Điện Thế Hệ Mới",
   metaTitle:
-    "VinFast VF 8 All New 2026 Cần Thơ: 170 kW, 500 km, ADAS, OTA",
+    "VinFast VF 8 All New 2026 Cần Thơ: 500 km, ADAS, OTA",
   metaDescription:
-    "VinFast VF 8 Thế Hệ Mới 2026 tại Cần Thơ: công suất 170 kW, pin 60,13 kWh, quãng đường 480-500 km NEDC, sạc nhanh dưới 30 phút, ADAS nâng cao, nội thất tiện nghi và kết nối thông minh.",
+    "VinFast VF 8 Thế Hệ Mới 2026 tại Cần Thơ: 170 kW, pin 60,13 kWh, đi 480–500 km NEDC, sạc nhanh dưới 30 phút, ADAS nâng cao, kết nối thông minh.",
   keywords: [
     "vinfast vf8 all new",
     "vf8 thế hệ mới 2026",
@@ -20,7 +20,7 @@ export const VF8_ALL_NEW_DETAIL: RichProductDetail = {
     "mua vf8 all new",
   ],
   image: "/vf8-all-new.png",
-  imageAlt: "VinFast VF 8 Thế Hệ Mới 2026 tại Cần Thơ GF",
+  imageAlt: "VinFast VF 8 Thế Hệ Mới 2026 tại Cần Thơ EV",
   listPrice: 899_000_000,
   listPriceLabel: "899.000.000 VNĐ (giá niêm yết)",
   positioningHtml: `<p><strong>VinFast VF 8 Thế Hệ Hoàn Toàn Mới 2026</strong> được phát triển theo triết lý <em>Tech Fluid — Dòng chảy công nghệ</em>, mang dáng SUV điện cỡ D hiện đại với đường nét liền mạch, khí động học thể thao và khoang nội thất tối giản cao cấp. Mẫu xe hướng đến khách hàng cần một chiếc SUV điện thông minh, hiệu năng tốt, vận hành êm ái và an toàn toàn diện.</p>`,
@@ -180,7 +180,7 @@ export const VF8_ALL_NEW_DETAIL: RichProductDetail = {
   ],
   warrantyItems: [
     "Chính sách bảo hành áp dụng theo chương trình công bố tại thời điểm bán.",
-    "Liên hệ đại lý VinFast Cần Thơ GF để nhận thông tin chính thức mới nhất.",
+    "Liên hệ đại lý VinFast Cần Thơ EV để nhận thông tin chính thức mới nhất.",
   ],
   afterSalesItems: [
     "Hỗ trợ cập nhật phần mềm qua OTA hoặc tại xưởng dịch vụ",

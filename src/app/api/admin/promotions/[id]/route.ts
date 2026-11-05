@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { denyIfNotAdmin } from "@/lib/admin/api-guard";
 import {
   deletePromotion,
   getPromotionById,
@@ -17,6 +18,9 @@ type RouteContext = {
 };
 
 export async function GET(_request: Request, context: RouteContext) {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   const { id } = await context.params;
   const promotion = await getPromotionById(id);
 
@@ -28,6 +32,9 @@ export async function GET(_request: Request, context: RouteContext) {
 }
 
 export async function PUT(request: Request, context: RouteContext) {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   const { id } = await context.params;
   const body = (await request.json()) as Promotion;
   const existing = await getPromotionById(id);
@@ -53,6 +60,9 @@ export async function PUT(request: Request, context: RouteContext) {
 }
 
 export async function DELETE(_request: Request, context: RouteContext) {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   const { id } = await context.params;
   const existing = await getPromotionById(id);
   const deleted = await deletePromotion(id);

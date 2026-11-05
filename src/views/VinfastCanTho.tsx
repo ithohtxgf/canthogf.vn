@@ -22,7 +22,7 @@ export default function VinfastCanTho() {
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
             src="/banner-homepage.webp"
-            alt="Showroom VinFast Cần Thơ — xe ô tô điện Cần Thơ GF"
+            alt="Showroom VinFast Cần Thơ — xe ô tô điện Cần Thơ EV"
             className="object-cover opacity-25"
             priority
           />
@@ -39,7 +39,7 @@ export default function VinfastCanTho() {
             >
               <Sparkles className="w-4 h-4 text-secondary" />
               <span className="text-secondary text-sm font-semibold">
-                Tổng hợp giá lăn bánh minh bạch — CanThoGF
+                Tổng hợp giá lăn bánh minh bạch — CanThoEV
               </span>
             </motion.div>
 
@@ -58,7 +58,7 @@ export default function VinfastCanTho() {
               transition={{ delay: 0.2 }}
               className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8 max-w-3xl"
             >
-              CanThoGF tổng
+              CanThoEV tổng
               hợp bảng tính giá lăn bánh chi tiết tại Cần Thơ — bao gồm phí biển
               số, phí đường bộ, bảo hiểm TNDS và voucher ưu đãi. Hỗ trợ trả góp
               85%, lái thử tận nhà.
@@ -131,7 +131,7 @@ export default function VinfastCanTho() {
             <div className="w-24 h-1 bg-secondary mx-auto mb-4" />
             <p className="text-gray-600 max-w-3xl mx-auto">
               VF3 nhỏ gọn chạy phố, VF5 Plus chạy dịch vụ XanhSM, EC Van giao
-              hàng nội đô — đánh giá thực tế từ đội ngũ CanThoGF phục vụ khách
+              hàng nội đô — đánh giá thực tế từ đội ngũ CanThoEV phục vụ khách
               hàng Miền Tây.
             </p>
           </div>
@@ -150,7 +150,7 @@ export default function VinfastCanTho() {
               id="offers-heading"
               className="text-2xl sm:text-3xl lg:text-4xl font-black text-dark mb-4"
             >
-              Ưu Đãi Độc Quyền Khi Đặt Xe VinFast Qua CanThoGF
+              Ưu Đãi Độc Quyền Khi Đặt Xe VinFast Qua CanThoEV
             </h2>
             <div className="w-24 h-1 bg-secondary mx-auto mb-4" />
             <p className="text-gray-600 max-w-2xl mx-auto">

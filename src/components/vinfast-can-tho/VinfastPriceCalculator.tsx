@@ -21,7 +21,7 @@ const DEFAULT_FEES = new Set(
 
 const DEFAULT_VOUCHERS = new Set([
   "voucher-truoc-ba",
-  "voucher-can-tho-gf",
+  "voucher-can-tho-ev",
 ]);
 
 export function VinfastPriceCalculator() {
@@ -150,7 +150,7 @@ export function VinfastPriceCalculator() {
 
         <fieldset>
           <legend className="block text-sm font-semibold text-dark mb-3">
-            Voucher &amp; ưu đãi CanThoGF (trừ vào giá lăn bánh)
+            Voucher &amp; ưu đãi CanThoEV (trừ vào giá lăn bánh)
           </legend>
           <div className="space-y-3">
             {VINFAST_VOUCHERS.map((voucher) => {

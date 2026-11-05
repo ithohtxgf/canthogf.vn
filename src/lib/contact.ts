@@ -42,13 +42,14 @@ export const CONTACT_MAPS_EMBED_URL =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d982.287304834181!2d105.79074292127355!3d10.004530519224737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a063dc2df92e1f%3A0x76e2d9ad0836811f!2zSFRYIFbhuq1uIFThuqBpIEPhuqduIFRoxqEgR0Y!5e0!3m2!1svi!2s!4v1779978540577!5m2!1svi!2s";
 
 export const CONTACT_MAPS_DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=Hợp+tác+xã+vận+tải+Cần+Thơ+GF";
+  // Chỉ đường theo toạ độ — không phụ thuộc tên địa điểm trên Google Maps (đang đổi tên GF → EV)
+  "https://www.google.com/maps/dir/?api=1&destination=10.0045305%2C105.7907429";
 
 export const CONTACT_FAQ_ITEMS = [
   {
     question: "Tôi có thể mua xe VinFast trả góp không?",
     answer:
-      "Có. Cần Thơ GF hỗ trợ tư vấn gói vay qua ngân hàng đối tác, thủ tục gọn và báo giá minh bạch trước khi ký hợp đồng.",
+      "Có. Cần Thơ EV hỗ trợ tư vấn gói vay qua ngân hàng đối tác, thủ tục gọn và báo giá minh bạch trước khi ký hợp đồng.",
   },
   {
     question: "Đăng ký tài xế XanhSM qua HTX mất bao lâu?",
@@ -68,7 +69,7 @@ export const CONTACT_FAQ_ITEMS = [
   {
     question: "Bảo hành xe VinFast thực hiện ở đâu?",
     answer:
-      "Xe bảo hành chính hãng tại hệ thống VinFast. Cần Thơ GF tư vấn lịch bảo dưỡng và hỗ trợ đặt lịch tại xưởng ủy quyền gần bạn.",
+      "Xe bảo hành chính hãng tại hệ thống VinFast. Cần Thơ EV tư vấn lịch bảo dưỡng và hỗ trợ đặt lịch tại xưởng ủy quyền gần bạn.",
   },
 ] as const;
 

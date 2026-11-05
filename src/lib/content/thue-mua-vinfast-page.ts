@@ -1,10 +1,10 @@
 export const THUE_MUA_VINFAST_PAGE_PATH = "/thue-mua-xe-vinfast";
 
 export const THUE_MUA_VINFAST_META_TITLE =
-  "Thuê Mua Xe VinFast Cần Thơ 2026 – Chạy Dịch Vụ Xanh SM, Grab | Cần Thơ GF";
+  "Thuê Mua Xe VinFast Cần Thơ 2026 – Chạy Xanh SM, Grab";
 
 export const THUE_MUA_VINFAST_META_DESCRIPTION =
-  "Chương trình thuê mua xe VinFast tại Cần Thơ: chỉ cần đối ứng, nhận xe 7–10 ngày, hỗ trợ mở Xanh SM/Grab. Herio Green, VF5, VF6, Limo Green — sở hữu sau 5 năm. Tư vấn miễn phí!";
+  "Thuê mua xe VinFast tại Cần Thơ: chỉ cần đối ứng, nhận xe 7–10 ngày, hỗ trợ chạy Xanh SM/Grab. Herio Green, VF5, VF6, Limo Green — sở hữu sau 5 năm.";
 
 export const THUE_MUA_VINFAST_KEYWORDS = [
   "thuê mua xe vinfast cần thơ",
@@ -231,7 +231,7 @@ export const THUE_MUA_FAQ: ThueMuaFaqItem[] = [
   {
     question: "Có thể chạy Xanh SM, Grab không?",
     answer:
-      "Có. HTX Cần Thơ GF đã ký liên kết trực tiếp với Xanh SM Platform và Grab. Khách hàng được hỗ trợ mở tài khoản 2 app trong vòng 24 giờ sau khi nhận xe và hoàn tất thủ tục biển vàng.",
+      "Có. HTX Cần Thơ EV đã ký liên kết trực tiếp với Xanh SM Platform và Grab. Khách hàng được hỗ trợ mở tài khoản 2 app trong vòng 24 giờ sau khi nhận xe và hoàn tất thủ tục biển vàng.",
   },
   {
     question: "Có thể trả xe sớm trước 5 năm không?",

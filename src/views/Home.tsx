@@ -98,7 +98,7 @@ export default function Home({
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
             src="/banner-homepage.webp"
-            alt="Ô tô VinFast Cần Thơ — Hợp tác xã vận tải Cần Thơ GF"
+            alt="Ô tô VinFast Cần Thơ — Hợp tác xã vận tải Cần Thơ EV"
             className="object-cover"
             priority
           />
@@ -113,11 +113,11 @@ export default function Home({
             className="max-w-3xl"
           >
             <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight uppercase tracking-tight">
-              <span className="text-secondary">Cần Thơ GF</span> — Tiên phong kiến tạo <br />
+              <span className="text-secondary">Cần Thơ EV</span> — Tiên phong kiến tạo <br />
               tương lai xanh
             </h1>
             <p className="text-xl text-gray-200 mb-10 max-w-2xl">
-              <strong>Hợp tác xã vận tải Cần Thơ</strong> (Can Tho GF) — đại lý{' '}
+              <strong>Hợp tác xã vận tải Cần Thơ</strong> (Can Tho EV) — đại lý{' '}
               <strong>ô tô VinFast Cần Thơ</strong>, tư vấn mua xe điện và hỗ trợ đăng ký{' '}
               <strong>XanhSM Cần Thơ</strong> tại Đồng bằng sông Cửu Long.
             </p>
@@ -160,14 +160,14 @@ export default function Home({
       </section>
 
       {/* Giới thiệu SEO — nội dung chính cho từ khóa trang chủ */}
-      <section className="py-16 bg-light border-y border-gray-100" aria-labelledby="about-cantho-gf">
+      <section className="py-16 bg-light border-y border-gray-100" aria-labelledby="about-cantho-ev">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 id="about-cantho-gf" className="text-2xl md:text-3xl font-bold text-dark mb-6">
-              Hợp tác xã vận tải Cần Thơ GF
+            <h2 id="about-cantho-ev" className="text-2xl md:text-3xl font-bold text-dark mb-6">
+              Hợp tác xã vận tải Cần Thơ EV
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">
-              <strong>Cần Thơ GF</strong> (Can Tho GF) là{' '}
+              <strong>Cần Thơ EV</strong> (Can Tho EV) là{' '}
               <strong>hợp tác xã vận tải Cần Thơ</strong> chuyên phân phối{' '}
               <SeoLink href="/vinfast-can-tho" className="text-primary font-semibold hover:text-primary-dark">
                 VinFast Cần Thơ
@@ -191,11 +191,11 @@ export default function Home({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6 uppercase tracking-tight">
-              Tại sao chọn Cần Thơ GF?
+              Tại sao chọn Cần Thơ EV?
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg">
-              <strong>Can tho GF</strong> là địa chỉ tin cậy cho khách hàng tìm{' '}
+              <strong>Can Tho EV</strong> là địa chỉ tin cậy cho khách hàng tìm{' '}
               <strong>ô tô VinFast Cần Thơ</strong>, hỗ trợ thủ tục và đồng hành cùng tài xế{' '}
               <strong>XanhSM Cần Thơ</strong> trên mọi hành trình.
             </p>
@@ -236,7 +236,7 @@ export default function Home({
               </h2>
               <div className="w-24 h-1 bg-primary mb-6"></div>
               <p className="text-gray-600 max-w-2xl">
-                Khám phá các mẫu xe điện VinFast tại showroom Cần Thơ GF: thông minh, thân thiện môi
+                Khám phá các mẫu xe điện VinFast tại showroom Cần Thơ EV: thông minh, thân thiện môi
                 trường, phù hợp kinh doanh vận tải và gia đình.
               </p>
             </div>
@@ -266,7 +266,7 @@ export default function Home({
                 <div className="relative h-64 overflow-hidden group">
                   <SeoContentImage
                     src={car.image}
-                    alt={`Xe điện VinFast ${car.name} tại Cần Thơ GF`}
+                    alt={`Xe điện VinFast ${car.name} tại Cần Thơ EV`}
                     width={800}
                     height={500}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -336,7 +336,7 @@ export default function Home({
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
             src="/banner-homepage.webp"
-            alt="Đăng ký lái XanhSM Cần Thơ — Hợp tác xã vận tải Cần Thơ GF"
+            alt="Đăng ký lái XanhSM Cần Thơ — Hợp tác xã vận tải Cần Thơ EV"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-primary-dark/90 mix-blend-multiply"></div>
@@ -353,7 +353,7 @@ export default function Home({
               XanhSM Cần Thơ — Trở thành đối tác <span className="text-secondary">XanhSM</span>
             </h2>
             <p className="text-xl text-gray-200 mb-10">
-              Gia nhập cộng đồng tài xế XanhSM Cần Thơ qua Hợp tác xã vận tải Cần Thơ GF để nhận ưu
+              Gia nhập cộng đồng tài xế XanhSM Cần Thơ qua Hợp tác xã vận tải Cần Thơ EV để nhận ưu
               đãi và thu nhập ổn định cùng xe điện VinFast.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -384,7 +384,7 @@ export default function Home({
               <div className="w-24 h-1 bg-primary mb-6"></div>
             </div>
             <SeoLink href="/tin-tuc" className="text-primary font-bold hover:text-primary-dark flex items-center mt-4 md:mt-0">
-              Xem tất cả tin tức VinFast & Cần Thơ GF <ArrowRight className="ml-1 w-4 h-4" />
+              Xem tất cả tin tức VinFast & Cần Thơ EV <ArrowRight className="ml-1 w-4 h-4" />
             </SeoLink>
           </div>
 

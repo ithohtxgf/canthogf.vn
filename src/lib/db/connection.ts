@@ -7,7 +7,7 @@ import { seedDatabaseIfEmpty } from "./seed";
 
 declare global {
   // eslint-disable-next-line no-var
-  var __canthogfDb: Database.Database | undefined;
+  var __canthoevDb: Database.Database | undefined;
 }
 
 function getDbPath(): string {
@@ -21,8 +21,8 @@ function getDbPath(): string {
 export function getDb(): Database.Database {
   assertDatabaseReady();
 
-  if (globalThis.__canthogfDb) {
-    return globalThis.__canthogfDb;
+  if (globalThis.__canthoevDb) {
+    return globalThis.__canthoevDb;
   }
 
   const db = new Database(getDbPath());
@@ -33,7 +33,7 @@ export function getDb(): Database.Database {
   seedDatabaseIfEmpty(db);
 
   if (process.env.NODE_ENV !== "production") {
-    globalThis.__canthogfDb = db;
+    globalThis.__canthoevDb = db;
   }
 
   return db;

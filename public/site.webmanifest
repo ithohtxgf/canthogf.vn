@@ -1,7 +1,7 @@
 {
-  "name": "Hợp tác xã vận tải Cần Thơ GF",
-  "short_name": "Cần Thơ GF",
-  "description": "Đại lý ô tô VinFast Cần Thơ, đăng ký XanhSM — Hợp tác xã vận tải Cần Thơ GF",
+  "name": "Hợp tác xã vận tải Cần Thơ EV",
+  "short_name": "Cần Thơ EV",
+  "description": "Đại lý ô tô VinFast Cần Thơ, đăng ký XanhSM — Hợp tác xã vận tải Cần Thơ EV",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

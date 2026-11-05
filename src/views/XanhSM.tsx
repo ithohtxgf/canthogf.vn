@@ -36,7 +36,7 @@ export default function XanhSM() {
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
             src="/banner-homepage.webp"
-            alt="Đăng ký tài xế Xanh SM Cần Thơ — Cần Thơ GF"
+            alt="Đăng ký tài xế Xanh SM Cần Thơ — Cần Thơ EV"
             className="object-cover opacity-30"
             priority
           />
@@ -56,7 +56,7 @@ export default function XanhSM() {
             className="text-lg text-gray-300 leading-relaxed mb-8 max-w-3xl mx-auto"
           >
             Bạn muốn trở thành tài xế Xanh SM tại Cần Thơ nhưng chưa biết bắt đầu từ đâu?{" "}
-            <strong>Hợp tác xã vận tải Cần Thơ GF</strong> – đối tác chính thức của Xanh SM tại khu
+            <strong>Hợp tác xã vận tải Cần Thơ EV</strong> – đối tác chính thức của Xanh SM tại khu
             vực Đồng bằng Sông Cửu Long – sẽ hướng dẫn bạn toàn bộ quy trình{" "}
             <strong>đăng ký tài xế Xanh SM Cần Thơ</strong> từ A đến Z, hoàn toàn miễn phí.
           </motion.p>
@@ -76,9 +76,9 @@ export default function XanhSM() {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-gray prose-headings:text-dark prose-headings:font-black prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700">
           <article>
-            <h2 className="text-2xl sm:text-3xl !mt-0">Tại Sao Nên Đăng Ký Qua Cần Thơ GF?</h2>
+            <h2 className="text-2xl sm:text-3xl !mt-0">Tại Sao Nên Đăng Ký Qua Cần Thơ EV?</h2>
             <p>
-              Khác với việc đăng ký trực tiếp qua website Xanh SM, khi đăng ký qua Cần Thơ GF bạn
+              Khác với việc đăng ký trực tiếp qua website Xanh SM, khi đăng ký qua Cần Thơ EV bạn
               được hưởng thêm nhiều quyền lợi đặc biệt:
             </p>
             <ul>
@@ -115,7 +115,7 @@ export default function XanhSM() {
             </div>
             <blockquote className="border-l-4 border-secondary bg-secondary/5 px-4 py-3 not-italic text-gray-700">
               <strong>Lưu ý:</strong> Thu nhập thực tế phụ thuộc vào giờ cao điểm, khu vực hoạt
-              động và mức độ hoàn thành chuyến đi. Cần Thơ GF sẽ tư vấn lịch chạy tối ưu nhất cho
+              động và mức độ hoàn thành chuyến đi. Cần Thơ EV sẽ tư vấn lịch chạy tối ưu nhất cho
               bạn.
             </blockquote>
           </article>
@@ -136,7 +136,7 @@ export default function XanhSM() {
               ))}
             </ol>
             <p>
-              <strong>Mẹo:</strong> Cần Thơ GF hỗ trợ hướng dẫn xin giấy khám sức khỏe đúng mẫu,
+              <strong>Mẹo:</strong> Cần Thơ EV hỗ trợ hướng dẫn xin giấy khám sức khỏe đúng mẫu,
               tránh phải đi lại nhiều lần.
             </p>
           </article>
@@ -146,7 +146,7 @@ export default function XanhSM() {
               Hướng Dẫn Đăng Ký Tài Xế Xanh SM Cần Thơ Step-by-Step
             </h2>
             <h3 className="text-xl font-bold text-primary-dark">
-              Cách 1 – Đăng Ký Online Qua Cần Thơ GF (Nhanh Nhất)
+              Cách 1 – Đăng Ký Online Qua Cần Thơ EV (Nhanh Nhất)
             </h3>
             <ol>
               {XANHSM_ONLINE_STEPS.map((step, index) => (
@@ -156,7 +156,7 @@ export default function XanhSM() {
               ))}
             </ol>
             <h3 className="text-xl font-bold text-primary-dark">
-              Cách 2 – Đến Trực Tiếp Văn Phòng Cần Thơ GF
+              Cách 2 – Đến Trực Tiếp Văn Phòng Cần Thơ EV
             </h3>
             <ul>
               <li>
@@ -198,7 +198,7 @@ export default function XanhSM() {
               <SeoLink href="/san-pham" className="text-primary font-semibold hover:underline">
                 danh mục xe VinFast
               </SeoLink>{" "}
-              tại Cần Thơ GF.
+              tại Cần Thơ EV.
             </p>
           </article>
 
@@ -218,11 +218,11 @@ export default function XanhSM() {
             <p>
               <strong>Lưu ý:</strong> Số điện thoại và email dùng để đăng ký app Partner phải là
               số/email <strong>chưa từng đăng ký</strong> tài khoản Xanh SM hoặc Grab trước đó.
-              Cần Thơ GF sẽ hỗ trợ bạn kiểm tra và xử lý các trường hợp trùng thông tin.
+              Cần Thơ EV sẽ hỗ trợ bạn kiểm tra và xử lý các trường hợp trùng thông tin.
             </p>
             <p>
               Đây là hình thức phù hợp cho chủ xe muốn tự vận hành xe của mình để chạy dịch vụ mà
-              không cần thuê xe từ hợp tác xã. Liên hệ Cần Thơ GF để được hướng dẫn từng bước đăng
+              không cần thuê xe từ hợp tác xã. Liên hệ Cần Thơ EV để được hướng dẫn từng bước đăng
               ký Partner cho cả hai nền tảng Xanh SM và Grab tại Cần Thơ.
             </p>
             <p>
@@ -231,7 +231,7 @@ export default function XanhSM() {
                 href={XANHSM_PARTNER_HUB_PATH}
                 className="text-primary font-semibold hover:underline"
               >
-                danh sách khu vực Cần Thơ GF hỗ trợ đăng ký Xanh SM Partner
+                danh sách khu vực Cần Thơ EV hỗ trợ đăng ký Xanh SM Partner
               </SeoLink>{" "}
               (TPHCM, Vũng Tàu, Phú Quốc và các tỉnh lân cận).
             </p>
@@ -258,7 +258,7 @@ export default function XanhSM() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-black mb-6">Liên Hệ Đăng Ký Ngay Hôm Nay</h2>
           <p className="text-gray-300 mb-8">
-            Đừng để cơ hội tăng thu nhập bị bỏ lỡ. Hãy liên hệ Cần Thơ GF ngay hôm nay:
+            Đừng để cơ hội tăng thu nhập bị bỏ lỡ. Hãy liên hệ Cần Thơ EV ngay hôm nay:
           </p>
           <ul className="text-left max-w-md mx-auto space-y-3 mb-10 text-gray-200">
             <li className="flex items-start gap-3">

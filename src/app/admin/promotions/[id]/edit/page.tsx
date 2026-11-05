@@ -1,3 +1,4 @@
+import { requireAdminPage } from "@/lib/admin/session";
 import { notFound } from "next/navigation";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { PromotionForm } from "@/components/admin/PromotionForm";
@@ -10,6 +11,8 @@ type PageProps = {
 };
 
 export default async function AdminEditPromotionPage({ params }: PageProps) {
+  await requireAdminPage();
+
   const { id } = await params;
   const promotion = await getPromotionById(id);
 

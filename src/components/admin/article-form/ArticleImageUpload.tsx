@@ -144,7 +144,7 @@ export function AdminImageUpload({
       {onAltChange && (
         <AdminField
           label={mustHaveAlt ? "Alt text *" : "Alt text (khuyến nghị)"}
-          hint='Gợi ý: "Mô tả ảnh + từ khóa + Cần Thơ GF"'
+          hint='Gợi ý: "Mô tả ảnh + từ khóa + Cần Thơ EV"'
         >
           <div className="flex gap-2">
             <input
@@ -153,8 +153,8 @@ export function AdminImageUpload({
               onChange={(e) => onAltChange(e.target.value)}
               placeholder={
                 kind === "promo"
-                  ? "VD: Banner ưu đãi VinFast VF5 Cần Thơ GF"
-                  : "VD: Lễ bàn giao VinFast VF5 tại showroom Cần Thơ GF"
+                  ? "VD: Banner ưu đãi VinFast VF5 Cần Thơ EV"
+                  : "VD: Lễ bàn giao VinFast VF5 tại showroom Cần Thơ EV"
               }
             />
             <AdminButton

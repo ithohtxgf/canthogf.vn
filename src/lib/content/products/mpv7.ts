@@ -7,9 +7,9 @@ export const MPV7_DETAIL: RichProductDetail = {
   shortName: "VF MPV 7",
   h1: "VinFast VF MPV 7 Cần Thơ: MPV Điện 7 Chỗ — Thông Số & Giá 2026",
   metaTitle:
-    "VinFast VF MPV 7 Cần Thơ: MPV Điện 7 Chỗ, 450 km, Thông Số Kỹ Thuật",
+    "VinFast VF MPV 7 Cần Thơ: MPV Điện 7 Chỗ, 450 km",
   metaDescription:
-    "VinFast VF MPV 7 tại Cần Thơ — MPV điện 7 chỗ giá niêm yết 750 triệu. Quãng đường 450 km NEDC, công suất 150 kW, miễn phí sạc đến 06/2027. Tư vấn tại Cần Thơ GF.",
+    "VinFast VF MPV 7 tại Cần Thơ — MPV điện 7 chỗ giá niêm yết 750 triệu. Quãng đường 450 km NEDC, công suất 150 kW, miễn phí sạc đến 06/2027. Tư vấn tại Cần Thơ EV.",
   keywords: [
     "vinfast vf mpv 7",
     "mpv7 cần thơ",
@@ -20,7 +20,7 @@ export const MPV7_DETAIL: RichProductDetail = {
     "mua mpv7 cần thơ",
   ],
   image: "/mpv7.webp",
-  imageAlt: "VinFast VF MPV 7 — MPV điện 7 chỗ tại Cần Thơ GF",
+  imageAlt: "VinFast VF MPV 7 — MPV điện 7 chỗ tại Cần Thơ EV",
   listPrice: 750_000_000,
   listPriceLabel: "750.000.000 VNĐ (Tiêu chuẩn)",
   priceVariants: [

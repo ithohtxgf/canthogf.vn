@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { denyIfNotAdmin } from "@/lib/admin/api-guard";
 import {
   deleteArticle,
   getArticleById,
@@ -18,6 +19,9 @@ type RouteContext = {
 };
 
 export async function GET(_request: Request, context: RouteContext) {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   const { id } = await context.params;
   const article = await getArticleById(id);
 
@@ -29,6 +33,9 @@ export async function GET(_request: Request, context: RouteContext) {
 }
 
 export async function PUT(request: Request, context: RouteContext) {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   const { id } = await context.params;
   const body = (await request.json()) as ArticleInput;
   const existing = await getArticleById(id);
@@ -74,6 +81,9 @@ export async function PUT(request: Request, context: RouteContext) {
 }
 
 export async function DELETE(_request: Request, context: RouteContext) {
+  const denied = await denyIfNotAdmin();
+  if (denied) return denied;
+
   const { id } = await context.params;
   const existing = await getArticleById(id);
   const deleted = await deleteArticle(id);

@@ -561,14 +561,14 @@ export function ArticleForm({ initial, mode }: ArticleFormProps) {
               variant="secondary"
               onClick={() => updateField("author", AUTHOR_PRESETS.editor)}
             >
-              Ban biên tập Cần Thơ GF
+              Ban biên tập Cần Thơ EV
             </AdminButton>
             <AdminButton
               type="button"
               variant="secondary"
               onClick={() => updateField("author", AUTHOR_PRESETS.tech)}
             >
-              Đội kỹ thuật Cần Thơ GF
+              Đội kỹ thuật Cần Thơ EV
             </AdminButton>
           </div>
           <AdminField label="Tên tác giả">

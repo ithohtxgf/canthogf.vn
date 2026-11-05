@@ -20,16 +20,16 @@ export default function Terms() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-white p-8 md:p-12 rounded-3xl shadow-sm">
           <div className="prose prose-lg max-w-none text-gray-700">
             <p className="mb-6">
-              <strong>HỢP TÁC XÃ VẬN TẢI CẦN THƠ GF</strong>
+              <strong>HỢP TÁC XÃ VẬN TẢI CẦN THƠ EV</strong>
             </p>
             <p className="mb-6">Ngày cập nhật mới nhất: 16/06/2026</p>
             <p className="mb-6">
-              Chào mừng quý khách đến với website của HTX Vận tải Cần Thơ GF. Khi bạn truy cập, duyệt qua hoặc sử dụng bất kỳ nội dung nào trên website này, điều đó đồng nghĩa với việc bạn đã đọc, hiểu và đồng ý tuân thủ các điều khoản quy định dưới đây. Nếu bạn không đồng ý với các điều khoản này, vui lòng dừng việc truy cập website.
+              Chào mừng quý khách đến với website của HTX Vận tải Cần Thơ EV. Khi bạn truy cập, duyệt qua hoặc sử dụng bất kỳ nội dung nào trên website này, điều đó đồng nghĩa với việc bạn đã đọc, hiểu và đồng ý tuân thủ các điều khoản quy định dưới đây. Nếu bạn không đồng ý với các điều khoản này, vui lòng dừng việc truy cập website.
             </p>
 
             <h2 className="text-xl font-bold text-dark mt-8 mb-4">1. Chấp thuận và thay đổi điều khoản</h2>
             <p className="mb-4">
-              Quy định này áp dụng cho toàn bộ người dùng truy cập website của HTX Vận tải Cần Thơ GF.
+              Quy định này áp dụng cho toàn bộ người dùng truy cập website của HTX Vận tải Cần Thơ EV.
             </p>
             <p className="mb-4">
               Chúng tôi có quyền thay đổi, sửa đổi, thêm hoặc bớt bất kỳ phần nào trong Điều khoản sử dụng này vào bất kỳ lúc nào để phù hợp với hoạt động của HTX và quy định pháp luật hiện hành. Các thay đổi sẽ có hiệu lực ngay khi được đăng tải trên website mà không cần thông báo trước. Việc bạn tiếp tục sử dụng website sau khi các thay đổi được đăng tải đồng nghĩa với việc bạn chấp nhận các thay đổi đó.
@@ -37,10 +37,10 @@ export default function Terms() {
 
             <h2 className="text-xl font-bold text-dark mt-8 mb-4">2. Quyền sở hữu trí tuệ</h2>
             <p className="mb-4">
-              Toàn bộ nội dung trên website bao gồm nhưng không giới hạn ở: Văn bản, hình ảnh, đồ họa, logo, biểu tượng, video, tài liệu giới thiệu sản phẩm/dịch vụ, và mã nguồn website đều thuộc quyền sở hữu trí tuệ hợp pháp của HTX Vận tải Cần Thơ GF hoặc bên cấp phép cho chúng tôi, được bảo hộ bởi Luật Sở hữu trí tuệ Việt Nam.
+              Toàn bộ nội dung trên website bao gồm nhưng không giới hạn ở: Văn bản, hình ảnh, đồ họa, logo, biểu tượng, video, tài liệu giới thiệu sản phẩm/dịch vụ, và mã nguồn website đều thuộc quyền sở hữu trí tuệ hợp pháp của HTX Vận tải Cần Thơ EV hoặc bên cấp phép cho chúng tôi, được bảo hộ bởi Luật Sở hữu trí tuệ Việt Nam.
             </p>
             <p className="mb-6">
-              Nghiêm cấm mọi hành vi sao chép, tái bản, phân phối, chỉnh sửa hoặc sử dụng nội dung từ website này vì mục đích thương mại mà không có sự đồng ý trước bằng văn bản của HTX Vận tải Cần Thơ GF.
+              Nghiêm cấm mọi hành vi sao chép, tái bản, phân phối, chỉnh sửa hoặc sử dụng nội dung từ website này vì mục đích thương mại mà không có sự đồng ý trước bằng văn bản của HTX Vận tải Cần Thơ EV.
             </p>
 
             <h2 className="text-xl font-bold text-dark mt-8 mb-4">3. Quy định đối với người sử dụng website</h2>
@@ -51,7 +51,7 @@ export default function Terms() {
               <li>Không sử dụng bất kỳ thiết bị, phần mềm, công cụ hoặc phương thức nào nhằm can thiệp, phá hoại hoặc làm gián đoạn hoạt động bình thường của website.</li>
               <li>Không gửi, truyền tải hoặc phát tán các dữ liệu độc hại, virus, phần mềm gián điệp thông qua các form tương tác trên website.</li>
               <li>Không mạo danh cá nhân hoặc tổ chức khác khi điền thông tin vào form liên hệ, yêu cầu tư vấn trên website.</li>
-              <li>Không sử dụng website vào mục đích vi phạm pháp luật, gây tổn hại đến uy tín, thương hiệu của HTX Vận tải Cần Thơ GF hoặc quyền lợi của người khác.</li>
+              <li>Không sử dụng website vào mục đích vi phạm pháp luật, gây tổn hại đến uy tín, thương hiệu của HTX Vận tải Cần Thơ EV hoặc quyền lợi của người khác.</li>
             </ul>
 
             <h2 className="text-xl font-bold text-dark mt-8 mb-4">4. Tuyên bố miễn trừ trách nhiệm</h2>

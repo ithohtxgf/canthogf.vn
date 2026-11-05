@@ -128,7 +128,7 @@ export function MobileNavMenu({
 
               <div className="relative flex items-center justify-between gap-3">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
-                  Cần Thơ GF
+                  Cần Thơ EV
                 </p>
                 <button
                   type="button"

@@ -35,7 +35,7 @@ export default function XanhSmPartnerCity({ citySlug }: { citySlug: string }) {
         <div className="absolute inset-0 z-0">
           <SeoBannerImage
             src="/banner-homepage.webp"
-            alt={`Đăng ký Xanh SM Partner tại ${city.displayName} — Cần Thơ GF`}
+            alt={`Đăng ký Xanh SM Partner tại ${city.displayName} — Cần Thơ EV`}
             className="object-cover opacity-30"
             priority
           />
@@ -111,10 +111,10 @@ export default function XanhSmPartnerCity({ citySlug }: { citySlug: string }) {
 
           <article className="mt-10">
             <h2 className="text-2xl sm:text-3xl">
-              Cần Thơ GF Hỗ Trợ Tài Xế Tại {city.displayName} Như Thế Nào?
+              Cần Thơ EV Hỗ Trợ Tài Xế Tại {city.displayName} Như Thế Nào?
             </h2>
             <p>
-              Cần Thơ GF là hợp tác xã vận tải đặt trụ sở tại Cần Thơ, hỗ trợ tư vấn và hướng dẫn
+              Cần Thơ EV là hợp tác xã vận tải đặt trụ sở tại Cần Thơ, hỗ trợ tư vấn và hướng dẫn
               đăng ký Xanh SM Partner <strong>từ xa qua Zalo/hotline</strong> cho chủ xe VinFast
               tại {city.name} và nhiều tỉnh thành khác — hoàn toàn miễn phí, không cần đến tận
               văn phòng.
@@ -160,7 +160,7 @@ export default function XanhSmPartnerCity({ citySlug }: { citySlug: string }) {
       <section className="py-12 sm:py-16 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-xl sm:text-2xl font-black text-dark mb-6">
-            Khu Vực Khác Cần Thơ GF Cũng Hỗ Trợ
+            Khu Vực Khác Cần Thơ EV Cũng Hỗ Trợ
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
             {otherCities.map((item) => (
@@ -196,7 +196,7 @@ export default function XanhSmPartnerCity({ citySlug }: { citySlug: string }) {
             Đăng Ký Xanh SM Partner Tại {city.displayName} Ngay Hôm Nay
           </h2>
           <p className="text-gray-300 mb-8">
-            Liên hệ Cần Thơ GF để được tư vấn miễn phí, hướng dẫn hồ sơ và theo dõi tiến độ đăng
+            Liên hệ Cần Thơ EV để được tư vấn miễn phí, hướng dẫn hồ sơ và theo dõi tiến độ đăng
             ký.
           </p>
           <XanhSmCtaButton />
