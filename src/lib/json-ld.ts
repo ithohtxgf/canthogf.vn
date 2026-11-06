@@ -48,6 +48,7 @@ import {
   getSiteUrl,
   getSitemapUrl,
   getWebSiteJsonLd,
+  resolveMetadataImageUrl,
 } from "@/lib/seo";
 
 const SCHEMA_CONTEXT = "https://schema.org";
@@ -66,6 +67,12 @@ function parseVndPrice(price: string): number | undefined {
   const value = Number.parseInt(match[0].replace(/\./g, ""), 10);
   return Number.isFinite(value) && value > 0 ? value : undefined;
 }
+
+/**
+ * Ngày bảng giá VinFast hiện hành có hiệu lực (thông báo 20260711, áp dụng 15/07/2026).
+ * Cập nhật cùng lúc khi đổi giá sản phẩm.
+ */
+const PRICE_LIST_VALID_FROM = "2026-07-15";
 
 function getPriceValidUntil(): string {
   const now = new Date();
@@ -167,7 +174,7 @@ function getArticleJsonLd(article: NewsArticle, path: string) {
     "@id": `${url}#article`,
     headline: article.metaTitle,
     description: article.excerpt,
-    image: [article.image],
+    image: [resolveMetadataImageUrl(article.image)],
     url,
     mainEntityOfPage: { "@id": `${url}#webpage` },
     author: {
@@ -220,7 +227,8 @@ function getProductJsonLd(
     "@id": `${url}#product`,
     name: product.name,
     description: product.description,
-    image: [product.image],
+    // Google yêu cầu URL ảnh tuyệt đối
+    image: [resolveMetadataImageUrl(product.image)],
     url,
     sku: product.id,
     brand: {
@@ -234,6 +242,7 @@ function getProductJsonLd(
           url,
           priceCurrency: "VND",
           price,
+          validFrom: PRICE_LIST_VALID_FROM,
           priceValidUntil: getPriceValidUntil(),
           itemCondition: "https://schema.org/NewCondition",
           availability: "https://schema.org/InStock",
