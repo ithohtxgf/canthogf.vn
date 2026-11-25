@@ -1,115 +1,79 @@
 export const XANHSM_PAGE_PATH = "/dang-ky-xanhsm";
 
 export const XANHSM_META_TITLE =
-  "Đăng Ký Tài Xế Xanh SM Cần Thơ 2026 – Hỗ Trợ Trọn Gói";
+  "Đăng ký Xanh SM Partner Cần Thơ cho xe VinFast, mở app miễn phí";
 
 export const XANHSM_META_DESCRIPTION =
-  "Hướng dẫn đăng ký tài xế Xanh SM Cần Thơ 2026 chi tiết nhất. Cần Thơ EV hỗ trợ thủ tục, tư vấn xe điện VinFast, thu nhập thực tế 15–27 triệu/tháng. Liên hệ ngay!";
+  "Đang có xe ô tô VinFast và muốn chạy app? Hợp tác xã Cần Thơ EV mở app Xanh SM Partner và Grab không thu phí, không ký quỹ, hỗ trợ đổi biển trắng sang biển vàng.";
 
 export const XANHSM_KEYWORDS = [
+  "đăng ký xanh sm partner cần thơ",
+  "xanh sm partner",
+  "mở app xanh sm partner",
   "đăng ký xanh sm cần thơ",
-  "tài xế xanh sm cần thơ",
-  "đăng ký lái xanh sm",
-  "xanh sm cần thơ tuyển dụng",
-  "xanhsm cần thơ",
-  "thu nhập tài xế xanhsm",
-  "điều kiện lái xanhsm",
+  "xe vinfast chạy xanh sm",
+  "đăng ký grab xe vinfast cần thơ",
+  "đổi biển vàng chạy xanh sm",
 ];
 
-export const XANHSM_PAGE_H1 =
-  "Đăng Ký Tài Xế Xanh SM Cần Thơ – Hỗ Trợ Thủ Tục Trọn Gói";
+export const XANHSM_PAGE_H1 = "Đăng ký Xanh SM Partner tại Cần Thơ cho xe ô tô VinFast";
 
 export const XANHSM_HERO_INTRO =
-  "Bạn muốn trở thành tài xế Xanh SM tại Cần Thơ nhưng chưa biết bắt đầu từ đâu? Hợp tác xã vận tải Cần Thơ EV – đối tác chính thức của Xanh SM tại khu vực Đồng bằng Sông Cửu Long – sẽ hướng dẫn bạn toàn bộ quy trình đăng ký tài xế Xanh SM Cần Thơ từ A đến Z, hoàn toàn miễn phí.";
-
-export const XANHSM_WHY_GF_BENEFITS = [
-  "Tư vấn 1-1 qua Zalo/điện thoại – không lo bị bỏ lỡ thông tin",
-  "Hỗ trợ chuẩn bị hồ sơ – tránh sai sót làm chậm quá trình xét duyệt",
-  "Hỗ trợ vay mua xe VinFast lãi suất ưu đãi dành riêng cho tài xế",
-  "Đào tạo nghiệp vụ trước khi chạy chuyến đầu tiên",
-  "Hỗ trợ kỹ thuật 24/7 tại Cái Răng, Cần Thơ",
-];
-
-export const XANHSM_INCOME_ROWS = [
-  { type: "Chạy bán thời gian (4–5 giờ/ngày)", income: "8 – 12 triệu đồng" },
-  { type: "Chạy toàn thời gian (8–10 giờ/ngày)", income: "15 – 22 triệu đồng" },
-  { type: "Chạy tích cực + bonus", income: "22 – 27 triệu đồng" },
-] as const;
-
-export const XANHSM_BASIC_REQUIREMENTS = [
-  "Công dân Việt Nam, độ tuổi từ 21 đến 55 tuổi",
-  "Có bằng lái xe hạng B2 trở lên (còn hiệu lực)",
-  "Lý lịch tư pháp rõ ràng, không có tiền án tiền sự",
-  "Sức khỏe tốt, không mắc bệnh truyền nhiễm, không sử dụng chất kích thích",
-  "Thông thạo đường xá khu vực Cần Thơ và các tỉnh lân cận",
-];
-
-export const XANHSM_DOCUMENTS = [
-  "CCCD/CMND còn hiệu lực (bản gốc + photocopy)",
-  "Giấy phép lái xe hạng B2 trở lên",
-  "Giấy khám sức khỏe (bao gồm xét nghiệm 4 chất: Marijuana, Heroin/Morphin, Methamphetamin, Amphetamin)",
-  "Giấy đăng ký xe (nếu sử dụng xe cá nhân)",
-  "Ảnh thẻ 3x4 (2 tấm)",
-  "Lý lịch tư pháp (có thể xin tại UBND phường/xã)",
-];
-
-export const XANHSM_ONLINE_STEPS = [
-  "Nhấn nút \"Đăng ký tư vấn ngay\" trên trang này hoặc liên hệ trực tiếp qua Zalo 0969 99 11 77",
-  "Tư vấn viên Cần Thơ EV sẽ liên hệ trong vòng 15–30 phút để xác nhận thông tin và hướng dẫn bổ sung",
-  "Chuẩn bị hồ sơ theo danh sách và gửi ảnh scan qua Zalo",
-  "Cần Thơ EV hỗ trợ nộp hồ sơ và theo dõi tiến độ xét duyệt",
-  "Tham gia buổi đào tạo nghiệp vụ (1–2 ngày) tại văn phòng Cần Thơ EV",
-  "Nhận tài khoản ứng dụng và bắt đầu nhận chuyến",
-];
-
-export const XANHSM_DRIVER_BENEFITS = [
-  "Lương cứng hàng tháng + chiết khấu theo chuyến đi",
-  "Bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm tai nạn đầy đủ",
-  "Thưởng lễ Tết và các chương trình ưu đãi theo mùa",
-  "Xe điện VinFast sạch sẽ, tiện nghi, tiết kiệm nhiên liệu",
-  "Ứng dụng quản lý chuyến đi thông minh, dễ sử dụng",
-  "Hỗ trợ kỹ thuật và bảo dưỡng xe ưu đãi từ Cần Thơ EV",
-];
+  "Anh chị đang có xe ô tô VinFast và muốn chạy dịch vụ? Hợp tác xã vận tải Cần Thơ EV mở app Xanh SM Partner và Grab cho xe, không thu phí đăng ký, không ký quỹ.";
 
 export const XANHSM_PARTNER_INTRO =
-  "Nếu bạn đã sở hữu sẵn xe điện VinFast, bạn không cần chạy theo diện tài xế công ty mà có thể đăng ký làm Đối tác (Partner) cho Xanh SM và Grab tại Cần Thơ. Cần Thơ EV sẽ trực tiếp hướng dẫn bạn hoàn tất thủ tục đăng ký app Xanh SM Partner và Grab, giúp xe của bạn sớm được kích hoạt và bắt đầu nhận chuyến.";
+  "Xanh SM Partner là hình thức chạy dịch vụ trên nền tảng Xanh SM thông qua một công ty đối tác hoặc hợp tác xã vận tải: tài xế không ký trực tiếp với Xanh SM. Anh chị đang có xe ô tô VinFast thì Cần Thơ EV hướng dẫn mở app Xanh SM Partner và Grab từng bước; phí đăng ký app là 0 đồng, không ký quỹ.";
+
+export const XANHSM_PARTNER_CONDITIONS = [
+  "Xe ô tô VinFast mang biển vàng (biển kinh doanh vận tải). Xe đang biển trắng thì hợp tác xã hỗ trợ làm thủ tục đổi sang biển vàng.",
+  "Giấy phép lái xe ô tô còn hiệu lực; bằng C1 mới cấp vẫn đăng ký được.",
+  "Số điện thoại và email chưa từng đăng ký app Xanh SM hoặc Grab.",
+  "Chưa chạy Xanh SM theo diện Platform, tài khoản không bị khoá.",
+];
 
 export const XANHSM_PARTNER_DOCUMENTS = [
   "CCCD 2 mặt",
-  "Cavet xe 2 mặt",
+  "Cà vẹt xe 2 mặt",
   "Giấy phép lái xe 2 mặt",
   "Số điện thoại chưa đăng ký app",
   "Tài khoản ngân hàng chính chủ",
   "Tên và số điện thoại người thân",
-  "Email đang sử dụng, chưa đăng ký app",
+  "Email đang dùng, chưa đăng ký app",
   "Khu vực chạy",
+];
+
+export const XANHSM_PARTNER_SUPPORT = [
+  "Mở app Xanh SM Partner và Grab: không thu phí đăng ký, không ký quỹ.",
+  "Xem trước hồ sơ, báo ngay giấy nào thiếu hoặc mờ; xử lý trường hợp số điện thoại, email bị trùng.",
+  "Làm thủ tục đổi biển trắng sang biển vàng.",
+  "Hướng dẫn qua Zalo cho anh chị ở xa. Hệ thống hợp tác xã EV Green có chi nhánh ở các tỉnh.",
 ];
 
 export const XANHSM_PARTNER_STEPS = [
   {
-    title: "Liên hệ tư vấn miễn phí",
+    title: "Nhắn Zalo hoặc gọi Cần Thơ EV",
     description:
-      "Nhắn Zalo hoặc gọi hotline Cần Thơ EV, cung cấp thông tin cơ bản về xe VinFast (đời xe, khu vực dự định chạy). Tư vấn viên phản hồi trong 15–30 phút.",
+      "Cho biết dòng xe VinFast, xe đang biển vàng hay biển trắng và khu vực muốn chạy. Tư vấn viên gọi lại hướng dẫn trong giờ làm việc.",
   },
   {
-    title: "Chuẩn bị hồ sơ theo checklist",
+    title: "Gửi hồ sơ qua Zalo",
     description:
-      "Chụp/scan đầy đủ các giấy tờ theo danh sách bên dưới (CCCD, cavet xe, GPLX, tài khoản ngân hàng...). Cần Thơ EV kiểm tra hồ sơ trước khi nộp để tránh bị từ chối do thiếu sót.",
+      "Chụp rõ hai mặt CCCD, cà vẹt xe, giấy phép lái xe, kèm các thông tin trong danh sách hồ sơ. Cần Thơ EV xem trước khi nộp để hồ sơ không bị trả về vì thiếu giấy.",
   },
   {
-    title: "Đăng ký tài khoản Partner trên app",
+    title: "Đổi biển vàng nếu xe đang biển trắng",
     description:
-      "Dùng số điện thoại và email chưa từng đăng ký Xanh SM/Grab để tạo tài khoản Đối tác. Cần Thơ EV hướng dẫn từng bước điền thông tin xe và khu vực hoạt động.",
+      "Xe chạy app phải mang biển vàng. Xe biển trắng được hợp tác xã hướng dẫn giấy tờ và làm thủ tục đổi biển.",
   },
   {
-    title: "Nộp hồ sơ và chờ xét duyệt",
+    title: "Tạo tài khoản Partner trên app",
     description:
-      "Hệ thống Xanh SM xét duyệt hồ sơ, đối chiếu cà vẹt xe và giấy tờ cá nhân. Thời gian xử lý thường 3–7 ngày làm việc; Cần Thơ EV theo dõi và cập nhật tiến độ cho bạn.",
+      "Dùng số điện thoại và email chưa từng đăng ký Xanh SM hay Grab. Cần Thơ EV hướng dẫn điền thông tin xe và khu vực hoạt động.",
   },
   {
-    title: "Kích hoạt app và nhận chuyến",
+    title: "Mở app và nhận chuyến",
     description:
-      "Sau khi được duyệt, tài khoản Partner được kích hoạt trên app. Xe có thể bắt đầu nhận chuyến ngay theo khu vực hoạt động đã đăng ký.",
+      "Hồ sơ đủ, xe đã mang biển vàng thì app mở được ngay. Một xe mở được cả Xanh SM Partner và Grab.",
   },
 ] as const;
 
@@ -120,38 +84,45 @@ export type XanhSmFaqItem = {
 
 export const XANHSM_FAQ: XanhSmFaqItem[] = [
   {
-    question: "Đăng ký tài xế Xanh SM Cần Thơ mất bao lâu?",
+    question: "Xanh SM Partner là gì?",
     answer:
-      "Thông thường quá trình xét duyệt mất từ 3–7 ngày làm việc kể từ khi nộp đủ hồ sơ hợp lệ. Khi đăng ký qua Cần Thơ EV, chúng tôi sẽ hỗ trợ theo dõi và thúc đẩy tiến độ cho bạn.",
+      "Là hình thức chạy dịch vụ trên nền tảng Xanh SM thông qua một công ty đối tác hoặc hợp tác xã vận tải, tài xế không ký trực tiếp với Xanh SM. Hình thức này dành cho người đang có xe ô tô VinFast.",
   },
   {
-    question: "Tôi không có xe có thể đăng ký không?",
-    answer:
-      "Có. Cần Thơ EV hỗ trợ tư vấn vay mua xe VinFast với lãi suất ưu đãi dành riêng cho tài xế Xanh SM. Bạn có thể vừa lái xe vừa trả góp từ thu nhập hàng tháng.",
+    question: "Mở app Xanh SM Partner qua Cần Thơ EV tốn bao nhiêu tiền?",
+    answer: "Không tốn phí đăng ký app. Anh chị cũng không phải ký quỹ.",
   },
   {
-    question: "Bằng lái hạng B1 có đăng ký được không?",
+    question: "Xe biển trắng có chạy Xanh SM Partner được không?",
     answer:
-      "Xanh SM yêu cầu tối thiểu bằng lái hạng B2. Nếu bạn chỉ có B1, cần nâng hạng trước. Cần Thơ EV có thể tư vấn trường đào tạo lái xe uy tín tại Cần Thơ.",
+      "Xe phải mang biển vàng mới chạy app được. Xe đang biển trắng thì Cần Thơ EV hỗ trợ làm thủ tục đổi sang biển vàng; nhắn Zalo để được hướng dẫn giấy tờ.",
   },
   {
-    question: "Tài xế nữ có được nhận không?",
-    answer:
-      "Hoàn toàn có. Xanh SM và Cần Thơ EV hoan nghênh tài xế nữ ứng tuyển. Nhiều tài xế nữ tại Cần Thơ đang có thu nhập ổn định từ 12–18 triệu/tháng.",
+    question: "Một xe mở được cả Xanh SM và Grab không?",
+    answer: "Được. Một xe ô tô VinFast mở được cả app Xanh SM Partner và Grab.",
   },
   {
-    question: "Đăng ký qua Cần Thơ EV có mất phí không?",
+    question: "Đang chạy Xanh SM Platform có chuyển sang Partner được không?",
     answer:
-      "Hoàn toàn miễn phí. Cần Thơ EV là đối tác hợp tác xã, không thu bất kỳ khoản phí nào từ tài xế trong quá trình đăng ký và đào tạo.",
+      "Không. Tài khoản đang chạy Platform, hoặc đã bị khoá app, thì không chuyển sang Partner được.",
   },
   {
-    question: "Xanh SM có hoạt động ở các quận huyện ngoài trung tâm Cần Thơ không?",
-    answer:
-      "Hiện tại Xanh SM Cần Thơ phục vụ toàn bộ khu vực nội thành gồm: Ninh Kiều, Bình Thủy, Cái Răng, Ô Môn, Thốt Nốt và đang mở rộng ra các huyện lân cận.",
+    question: "Bằng C1 mới cấp có đăng ký được không?",
+    answer: "Được. Bằng C1 mới cấp vẫn đăng ký app Partner.",
   },
   {
-    question: "Tôi có thể chạy part-time không?",
+    question: "Ở xa Cần Thơ có đăng ký online được không?",
     answer:
-      "Có. Xanh SM cho phép tài xế tự chủ giờ làm việc, phù hợp với người muốn chạy bán thời gian ngoài công việc chính.",
+      "Được. Anh chị gửi ảnh giấy tờ qua Zalo, Cần Thơ EV hướng dẫn từng bước, không cần lên văn phòng. Cần làm việc trực tiếp thì hệ thống hợp tác xã EV Green có chi nhánh ở các tỉnh.",
+  },
+  {
+    question: "Bao lâu thì có app?",
+    answer:
+      "Hồ sơ đủ và xe đã mang biển vàng thì app mở được ngay. Xe cần đổi biển thì cộng thêm thời gian làm thủ tục đổi biển.",
+  },
+  {
+    question: "Chưa có xe VinFast thì sao?",
+    answer:
+      "Cần Thơ EV có bán các dòng ô tô VinFast như VF 5, VF 6, Limo Green. Xem giá ở trang Ô tô VinFast hoặc nhắn Zalo để được báo giá.",
   },
 ];

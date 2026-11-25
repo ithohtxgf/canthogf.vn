@@ -59,12 +59,12 @@ export function NewsExitIntentPopup({ targets }: NewsExitIntentPopupProps) {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden"
+            className="bg-white rounded-xl w-full max-w-md overflow-hidden"
             role="dialog"
             aria-modal="true"
             aria-labelledby="exit-intent-title"
           >
-            <div className="bg-gradient-to-r from-primary-dark to-primary p-6 text-white relative">
+            <div className="bg-dark p-6 text-white relative">
               <button
                 type="button"
                 onClick={() => setOpen(false)}
@@ -73,8 +73,8 @@ export function NewsExitIntentPopup({ targets }: NewsExitIntentPopupProps) {
               >
                 <X className="w-6 h-6" />
               </button>
-              <Gift className="w-10 h-10 text-secondary mb-3" />
-              <h2 id="exit-intent-title" className="text-2xl font-black mb-2">
+              <Gift className="w-9 h-9 text-sky mb-3" />
+              <h2 id="exit-intent-title" className="text-2xl font-semibold mb-2">
                 {promo.headline ?? promo.title}
               </h2>
               {promo.subline && (
@@ -86,7 +86,7 @@ export function NewsExitIntentPopup({ targets }: NewsExitIntentPopupProps) {
                 <button
                   type="button"
                   onClick={handleCta}
-                  className="w-full bg-secondary hover:bg-secondary-dark text-dark font-bold py-3.5 rounded-xl transition-colors"
+                  className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-lg transition-colors"
                 >
                   {promo.ctaLabel ?? promo.title}
                 </button>
@@ -94,7 +94,7 @@ export function NewsExitIntentPopup({ targets }: NewsExitIntentPopupProps) {
                 <SeoLink
                   href={promo.link}
                   onClick={() => setOpen(false)}
-                  className="block w-full text-center bg-secondary hover:bg-secondary-dark text-dark font-bold py-3.5 rounded-xl transition-colors"
+                  className="block w-full text-center bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-lg transition-colors"
                 >
                   {promo.ctaLabel ?? promo.title}
                 </SeoLink>
@@ -102,9 +102,9 @@ export function NewsExitIntentPopup({ targets }: NewsExitIntentPopupProps) {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="w-full text-gray-500 text-sm py-2 hover:text-gray-700"
+                className="w-full text-steel text-sm py-2 hover:text-dark"
               >
-                Không, cảm ơn — Tôi sẽ đọc tiếp
+                Không, cảm ơn: Tôi sẽ đọc tiếp
               </button>
             </div>
           </motion.div>

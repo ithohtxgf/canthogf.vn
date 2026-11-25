@@ -30,14 +30,14 @@ export function NewsStickyBar({ targets }: NewsStickyBarProps) {
 
   return (
     <div
-      className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.12)] px-3 py-2.5"
+      className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-hairline px-3 py-2.5"
       role="complementary"
       aria-label="Liên hệ nhanh"
     >
       <div className="flex gap-2 max-w-lg mx-auto">
         <a
           href="tel:0969991177"
-          className="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold py-3 px-3 rounded-xl text-sm transition-colors"
+          className="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-3 rounded-lg text-sm transition-colors"
         >
           <Phone className="w-4 h-4 shrink-0" />
           Gọi ngay
@@ -45,7 +45,7 @@ export function NewsStickyBar({ targets }: NewsStickyBarProps) {
         <button
           type="button"
           onClick={handlePromoClick}
-          className="flex-1 flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-dark text-dark font-bold py-3 px-3 rounded-xl text-sm transition-colors"
+          className="flex-1 flex items-center justify-center gap-2 bg-white border border-primary text-primary hover:bg-tint-strong font-semibold py-3 px-3 rounded-lg text-sm transition-colors"
         >
           <Gift className="w-4 h-4 shrink-0" />
           {promoLabel}

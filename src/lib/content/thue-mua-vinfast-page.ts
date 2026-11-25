@@ -4,7 +4,7 @@ export const THUE_MUA_VINFAST_META_TITLE =
   "Thuê Mua Xe VinFast Cần Thơ 2026 – Chạy Xanh SM, Grab";
 
 export const THUE_MUA_VINFAST_META_DESCRIPTION =
-  "Thuê mua xe VinFast tại Cần Thơ: chỉ cần đối ứng, nhận xe 7–10 ngày, hỗ trợ chạy Xanh SM/Grab. Herio Green, VF5, VF6, Limo Green — sở hữu sau 5 năm.";
+  "Thuê mua xe VinFast tại Cần Thơ: chỉ cần đối ứng, nhận xe 7–10 ngày, hỗ trợ chạy Xanh SM/Grab. Herio Green, VF5, VF6, Limo Green: sở hữu sau 5 năm.";
 
 export const THUE_MUA_VINFAST_KEYWORDS = [
   "thuê mua xe vinfast cần thơ",
@@ -18,7 +18,7 @@ export const THUE_MUA_VINFAST_KEYWORDS = [
 ];
 
 export const THUE_MUA_VINFAST_PAGE_H1 =
-  "Thuê Mua Xe VinFast Chạy Dịch Vụ — Không Phát Sinh Chi Phí";
+  "Thuê Mua Xe VinFast Chạy Dịch Vụ: Không Phát Sinh Chi Phí";
 
 export const THUE_MUA_VINFAST_HERO_INTRO =
   "Chỉ cần đối ứng, nhận xe trong 7–10 ngày. Hỗ trợ đăng ký Xanh SM, Grab ngay. Sở hữu hoàn toàn sau 5 năm.";
@@ -159,11 +159,11 @@ export const THUE_MUA_BENEFITS = [
   },
   {
     title: "Phim cách nhiệt 3M",
-    description: "Dán full xe toàn bộ, trị giá 5–8 triệu — HTX tặng",
+    description: "Dán full xe toàn bộ, trị giá 5–8 triệu, HTX tặng",
   },
   {
     title: "Mở 2 app trong 24h",
-    description: "Xanh SM, Grab — HTX ký hợp đồng liên kết, cam kết chạy ngay",
+    description: "Xanh SM, Grab: HTX ký hợp đồng liên kết, cam kết chạy ngay",
   },
   {
     title: "Camera hành trình",
@@ -171,11 +171,11 @@ export const THUE_MUA_BENEFITS = [
   },
   {
     title: "Phù hiệu HTX 6 năm",
-    description: "Giấy phép kinh doanh vận tải — đăng ký biển vàng hợp pháp",
+    description: "Giấy phép kinh doanh vận tải: đăng ký biển vàng hợp pháp",
   },
   {
     title: "Thanh toán sớm",
-    description: "Sau 2 năm có thể tất toán sớm — không tính phí phạt",
+    description: "Sau 2 năm có thể tất toán sớm, không tính phí phạt",
   },
   {
     title: "Thủ tục sang tên",
@@ -183,7 +183,7 @@ export const THUE_MUA_BENEFITS = [
   },
   {
     title: "Thảm lót sàn full xe",
-    description: "Bộ thảm lót cao cấp bảo vệ nội thất — tặng kèm khi nhận xe",
+    description: "Bộ thảm lót cao cấp bảo vệ nội thất, tặng kèm khi nhận xe",
   },
 ] as const;
 
@@ -221,7 +221,7 @@ export const THUE_MUA_FAQ: ThueMuaFaqItem[] = [
   {
     question: "Thuê thương quyền xe VinFast là gì?",
     answer:
-      "Thuê thương quyền (franchise leasing) là mô hình bạn đặt một khoản đối ứng ban đầu, sử dụng xe trong 5 năm với tiền thuê giảm dần theo năm, và tự động sở hữu hoàn toàn xe sau hợp đồng — không cần vay ngân hàng, không lãi suất, không phát sinh thêm chi phí ngoài hợp đồng.",
+      "Thuê thương quyền (franchise leasing) là mô hình bạn đặt một khoản đối ứng ban đầu, sử dụng xe trong 5 năm với tiền thuê giảm dần theo năm, và tự động sở hữu hoàn toàn xe sau hợp đồng, không cần vay ngân hàng, không lãi suất, không phát sinh thêm chi phí ngoài hợp đồng.",
   },
   {
     question: "Chi phí đối ứng ban đầu là bao nhiêu?",
@@ -241,6 +241,6 @@ export const THUE_MUA_FAQ: ThueMuaFaqItem[] = [
   {
     question: "VF5 Plus hay Limo Green phù hợp chạy dịch vụ hơn?",
     answer:
-      "VF5 Plus phù hợp bác tài mới bắt đầu — chi phí đối ứng thấp (108tr), tiền thuê tháng từ 10.5–13tr, dễ hoàn vốn. Limo Green (749tr) phù hợp khách hàng muốn chạy phân khúc cao cấp Xanh SM 5 chỗ, thu nhập cao hơn nhưng chi phí ban đầu lớn hơn.",
+      "VF5 Plus phù hợp bác tài mới bắt đầu, chi phí đối ứng thấp (108tr), tiền thuê tháng từ 10.5–13tr, dễ hoàn vốn. Limo Green (749tr) phù hợp khách hàng muốn chạy phân khúc cao cấp Xanh SM 5 chỗ, thu nhập cao hơn nhưng chi phí ban đầu lớn hơn.",
   },
 ];

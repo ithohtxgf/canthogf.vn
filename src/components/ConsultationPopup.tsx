@@ -22,7 +22,7 @@ export function ConsultationPopup({ isOpen, onClose }: ConsultationPopupProps) {
     <AnimatePresence>
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[rgba(11,23,48,.55)]"
           role="dialog"
           aria-modal="true"
           aria-labelledby="consultation-popup-title"
@@ -32,80 +32,60 @@ export function ConsultationPopup({ isOpen, onClose }: ConsultationPopupProps) {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden"
+            className="relative w-full max-w-md overflow-hidden rounded-xl border border-hairline bg-white"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-primary-dark p-6 text-white relative">
+            {/* Đầu hộp thoại theo co-ev: nền Tint, nhãn có vạch xiên Sky, tiêu đề Navy */}
+            <div className="relative border-b border-hairline bg-tint px-6 pt-6 pb-5">
               <button
                 type="button"
                 onClick={onClose}
-                className="absolute top-4 right-4 text-white/80 hover:text-white"
+                className="absolute top-4 right-4 grid h-9 w-9 place-items-center rounded-lg text-navy hover:bg-tint-strong"
                 aria-label="Đóng"
               >
-                <X className="w-6 h-6" />
+                <X className="h-5 w-5" />
               </button>
-              <h2 id="consultation-popup-title" className="text-2xl font-bold mb-1 pr-10">
+              <p className="h-eyebrow">Tư vấn miễn phí</p>
+              <h2 id="consultation-popup-title" className="mb-1 pr-10 text-xl font-semibold text-navy">
                 Liên hệ tư vấn
               </h2>
-              <p className="text-white/80 text-sm">
-                Kết nối trực tiếp với Hợp tác xã vận tải Cần Thơ EV
-              </p>
+              <p className="m-0 text-sm text-steel">Kết nối trực tiếp với Hợp tác xã vận tải Cần Thơ EV</p>
             </div>
 
-            <div className="p-6 space-y-5">
+            <div className="space-y-5 p-6">
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">
-                  Đơn vị
-                </p>
-                <p className="text-lg font-bold text-dark leading-snug">{ORGANIZATION_NAME}</p>
-                <p className="text-sm text-gray-600 mt-1">
-                  MST: <span className="font-semibold text-dark">{CONTACT_TAX_ID}</span>
-                </p>
+                <p className="label">Đơn vị</p>
+                <p className="m-0 font-semibold leading-snug text-navy">{ORGANIZATION_NAME}</p>
+                <p className="m-0 mt-1 text-sm text-steel">MST {CONTACT_TAX_ID}</p>
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-ocean" strokeWidth={1.8} />
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">
-                    Địa chỉ
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">{CONTACT_ADDRESS}</p>
+                  <p className="label">Địa chỉ</p>
+                  <p className="m-0 text-sm leading-relaxed text-ink">{CONTACT_ADDRESS}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <Phone className="mt-0.5 h-5 w-5 shrink-0 text-ocean" strokeWidth={1.8} />
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">
-                    Hotline
-                  </p>
-                  <a
-                    href={`tel:${CONTACT_PHONE_TEL}`}
-                    className="text-lg font-bold text-primary-dark hover:text-primary transition-colors"
-                  >
+                  <p className="label">Tổng đài tư vấn</p>
+                  <a href={`tel:${CONTACT_PHONE_TEL}`} className="num text-xl font-semibold text-navy no-underline hover:text-ocean">
                     {CONTACT_PHONE}
                   </a>
                 </div>
               </div>
 
-              <a
-                href={CONTACT_ZALO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full bg-[#0068FF] hover:bg-[#0058d9] text-white font-bold py-4 px-6 rounded-xl transition-colors shadow-md"
-              >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white">
-                  <Image
-                    src="/logo_zalo.png"
-                    alt=""
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                    aria-hidden
-                  />
-                </span>
-                Kết nối Zalo với tư vấn viên
-              </a>
+              <div className="grid gap-2.5 sm:grid-cols-2">
+                <a href={`tel:${CONTACT_PHONE_TEL}`} className="btn">
+                  <Phone className="h-4 w-4" strokeWidth={1.8} /> Gọi tổng đài
+                </a>
+                <a href={CONTACT_ZALO_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+                  <Image src="/logo_zalo.png" alt="" width={18} height={18} className="object-contain" aria-hidden />
+                  Nhắn Zalo
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>

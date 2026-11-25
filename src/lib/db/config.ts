@@ -44,7 +44,7 @@ export function getDatabaseSetupStatus(): DatabaseSetupStatus {
       message:
         missing.length > 0
           ? `Production cần Supabase. Thêm trên Vercel: ${missing.join(", ")} → Redeploy.`
-          : "Production cần Supabase Postgres — SQLite không chạy trên Vercel.",
+          : "Production cần Supabase Postgres: SQLite không chạy trên Vercel.",
     };
   }
 

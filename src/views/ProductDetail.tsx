@@ -5,6 +5,8 @@ import { PromoBanner } from '@/components/ui/PromoBanner';
 import { getRichProductDetail } from '@/lib/content/product-details';
 import { dispatchConsultationPopup } from '@/lib/content/promotions';
 import { motion } from 'motion/react';
+import { PageHero } from '@/components/evg/PageHero';
+import { LineIcon } from '@/components/evg/Icons';
 import { CheckCircle2, ArrowLeft, Zap, Shield } from 'lucide-react';
 
 export default function ProductDetail({ id }: { id: string }) {
@@ -28,8 +30,8 @@ export default function ProductDetail({ id }: { id: string }) {
     'herio-green': {
       name: 'Herio Green',
       price: 'Từ 450.000.000 VNĐ',
-      image: '/herio-green.png',
-      desc: 'Định nghĩa lại trải nghiệm xe dịch vụ thời đại xanh. Herio Green sở hữu thiết kế hiện đại, trẻ trung, cá tính và nổi bật với các lựa chọn phối màu nội ngoại thất, đảm bảo cá nhân hóa theo phong cách sống, cá tính và sở thích của mỗi khách hàng.',
+      image: '/xe/herio-green.webp',
+      desc: 'Định nghĩa lại trải nghiệm xe dịch vụ thời đại xanh. Herio Green có thiết kế hiện đại, trẻ trung, cá tính, với các lựa chọn phối màu nội ngoại thất, đảm bảo cá nhân hóa theo phong cách sống, cá tính và sở thích của mỗi khách hàng.',
       priceTiers: [
         { label: 'Dòng Green', value: '450.000.000 – 469.000.000 VNĐ' }
       ],
@@ -61,7 +63,7 @@ export default function ProductDetail({ id }: { id: string }) {
     'vf5': {
       name: 'VF5',
       price: '496.000.000 VNĐ',
-      image: '/vf5.webp',
+      image: '/xe/vf5.webp',
       desc: 'Ngoại thất ấn tượng: Phong cách trẻ trung, năng động, cá tính. Nội thất tinh tế: Không gian rộng rãi, phối màu sành điệu, cuốn hút với các đường viền bắt mắt.',
       priceTiers: [
         { label: 'Giá niêm yết', value: '496.000.000 VNĐ' }
@@ -89,7 +91,7 @@ export default function ProductDetail({ id }: { id: string }) {
     'limo-green': {
       name: 'Limo Green',
       price: '699.000.000 VNĐ',
-      image: '/Limo-Green.png',
+      image: '/xe/limo-green.webp',
       desc: 'Xe điện 7 chỗ - "rộng mở không gian, kéo dài hành trình" - xe gia đình, xe của nhà mình. Tăng kích cỡ, tăng kinh tế: Limo Green với tầm di chuyển rộng phù hợp cho những bác tài chuyên nghiệp, chạy đường dài, liên tỉnh. Với mức cước cao hơn, Limo Green cho dòng tiền tốt hơn, thu nhập cao hơn.',
       priceTiers: [
         { label: 'Giá niêm yết', value: '699.000.000 VNĐ' }
@@ -124,7 +126,7 @@ export default function ProductDetail({ id }: { id: string }) {
     'ec-van': {
       name: 'EC Van',
       price: 'Từ 268.000.000 VNĐ',
-      image: '/ecvan.webp',
+      image: '/xe/ecvan.webp',
       desc: 'Vận tải đa năng, tiện dụng, sinh lời. Linh hoạt lưu thông nội đô, vận hành êm ái, giảm chi phí vận hành, tối đa lợi nhuận.',
       priceTiers: [
         { label: 'Giá niêm yết', value: '268.000.000 – 306.000.000 VNĐ' }
@@ -155,10 +157,10 @@ export default function ProductDetail({ id }: { id: string }) {
 
   if (!product) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
-        <h1 className="text-2xl font-bold text-dark mb-4">Sản phẩm không tồn tại</h1>
-        <p className="text-gray-600 mb-6">Xe VinFast bạn tìm không có trong danh mục Cần Thơ EV.</p>
-        <SeoLink href="/san-pham" className="text-primary font-bold hover:text-primary-dark">
+      <div className="wrap py-24 text-center">
+        <h1 className="text-2xl font-semibold text-dark mb-4">Sản phẩm không tồn tại</h1>
+        <p className="text-steel mb-6">Xe VinFast bạn tìm không có trong danh mục Cần Thơ EV.</p>
+        <SeoLink href="/san-pham" className="text-primary font-semibold hover:text-primary-dark">
           Xem danh sách ô tô VinFast Cần Thơ
         </SeoLink>
       </div>
@@ -166,42 +168,30 @@ export default function ProductDetail({ id }: { id: string }) {
   }
 
   return (
-    <div className="bg-light min-h-screen pb-20">
-      {/* Header */}
-      <section className="bg-primary-dark text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SeoLink href="/san-pham" className="inline-flex items-center text-gray-300 hover:text-white mb-6 transition-colors">
-            <ArrowLeft className="w-5 h-5 mr-2" /> Quay lại danh sách ô tô VinFast Cần Thơ
+    <>
+      <PageHero
+        title={product.name}
+        eyebrow="Ô tô VinFast Cần Thơ"
+        crumbs={[
+          { href: "/san-pham", label: "Ô tô VinFast" },
+          { href: `/san-pham/${id}`, label: product.name },
+        ]}
+        image={product.image}
+        meta={product.price}
+        summary={
+          <SeoLink href="/san-pham" className="inline-flex items-center">
+            <ArrowLeft className="w-4 h-4 mr-2" /> Quay lại danh sách ô tô VinFast Cần Thơ
           </SeoLink>
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4"
-          >
-            {product.name}
-          </motion.h1>
-          <div className="w-24 h-1 bg-secondary mb-6"></div>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-2xl font-bold text-secondary"
-          >
-            {product.price}
-          </motion.p>
-        </div>
-      </section>
+        }
+      />
 
       {/* Main Content */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="p-body">
+        <div className="wrap">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
             {/* Image & Overview */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-            >
-              <div className="rounded-3xl overflow-hidden shadow-2xl mb-8">
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="rounded-xl overflow-hidden border border-hairline mb-6">
                 <SeoContentImage
                   src={product.image}
                   alt={`Hình ảnh xe điện VinFast ${product.name} tại Cần Thơ EV`}
@@ -212,19 +202,17 @@ export default function ProductDetail({ id }: { id: string }) {
                   priority
                 />
               </div>
-              <div className="bg-white p-8 rounded-3xl shadow-sm">
-                <h3 className="text-2xl font-bold text-dark mb-4 uppercase tracking-tight">Tổng quan</h3>
-                <p className="text-gray-600 leading-relaxed text-lg">
-                  {product.desc}
-                </p>
+              <div className="bg-white p-6 md:p-7 rounded-xl border border-hairline">
+                <h3 className="text-xl font-semibold text-dark mb-3">Tổng quan</h3>
+                <p className="text-steel leading-relaxed">{product.desc}</p>
                 {product.priceTiers && (
-                  <div className="mt-8">
-                    <h4 className="text-xl font-bold text-dark mb-4 uppercase tracking-tight">Giá niêm yết</h4>
-                    <ul className="space-y-4">
+                  <div className="mt-6">
+                    <h4 className="text-base font-semibold text-dark mb-3">Giá niêm yết</h4>
+                    <ul className="space-y-3">
                       {product.priceTiers.map((tier, idx) => (
-                        <li key={idx} className="flex justify-between items-center border-b border-gray-100 pb-4 last:border-0 last:pb-0">
-                          <span className="text-gray-600 font-medium">{tier.label}</span>
-                          <span className="font-bold text-primary-dark text-lg">{tier.value}</span>
+                        <li key={idx} className="flex justify-between items-center gap-4 border-b border-hairline pb-3 last:border-0 last:pb-0">
+                          <span className="text-steel font-medium">{tier.label}</span>
+                          <span className="font-semibold text-dark text-right">{tier.value}</span>
                         </li>
                       ))}
                     </ul>
@@ -232,41 +220,41 @@ export default function ProductDetail({ id }: { id: string }) {
                 )}
               </div>
 
-              <PromoBanner productId={id} position="product-detail" className="mt-8" />
+              <PromoBanner productId={id} position="product-detail" className="mt-6" />
             </motion.div>
 
             {/* Specs & Features */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="space-y-8"
-            >
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
               {/* Specifications */}
-              <div className="bg-white p-8 rounded-3xl shadow-sm">
-                <div className="flex items-center mb-6">
-                  <Zap className="w-8 h-8 text-primary mr-3" />
-                  <h3 className="text-2xl font-bold text-dark uppercase tracking-tight">Thông số kỹ thuật</h3>
+              <div className="bg-white p-6 md:p-7 rounded-xl border border-hairline">
+                <div className="flex items-center mb-5">
+                  <span className="w-10 h-10 rounded-lg bg-tint-strong flex items-center justify-center mr-3">
+                    <Zap className="w-5 h-5 text-dark" />
+                  </span>
+                  <h3 className="text-xl font-semibold text-dark">Thông số kỹ thuật</h3>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {product.specs.map((spec, index) => (
-                    <div key={index} className="flex justify-between items-center border-b border-gray-100 pb-4 last:border-0 last:pb-0">
-                      <span className="text-gray-500">{spec.label}</span>
-                      <span className="font-bold text-dark text-right">{spec.value}</span>
+                    <div key={index} className="flex justify-between items-center gap-4 border-b border-hairline pb-3 last:border-0 last:pb-0 text-sm">
+                      <span className="text-steel">{spec.label}</span>
+                      <span className="font-semibold text-dark text-right">{spec.value}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Key Features */}
-              <div className="bg-white p-8 rounded-3xl shadow-sm">
-                <div className="flex items-center mb-6">
-                  <Shield className="w-8 h-8 text-primary mr-3" />
-                  <h3 className="text-2xl font-bold text-dark uppercase tracking-tight">Tính năng nổi bật</h3>
+              <div className="bg-white p-6 md:p-7 rounded-xl border border-hairline">
+                <div className="flex items-center mb-5">
+                  <span className="w-10 h-10 rounded-lg bg-tint-strong flex items-center justify-center mr-3">
+                    <Shield className="w-5 h-5 text-dark" />
+                  </span>
+                  <h3 className="text-xl font-semibold text-dark">Tính năng chính</h3>
                 </div>
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   {product.features.map((feature, index) => (
-                    <li key={index} className="flex items-start text-gray-700 font-medium">
-                      <CheckCircle2 className="w-6 h-6 text-primary mr-3 flex-shrink-0" />
+                    <li key={index} className="flex items-start text-ink text-sm">
+                      <CheckCircle2 className="w-5 h-5 text-sky mr-3 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -274,21 +262,18 @@ export default function ProductDetail({ id }: { id: string }) {
               </div>
 
               {/* CTA */}
-              <div className="bg-primary-dark p-8 rounded-3xl text-white text-center">
-                <h3 className="text-2xl font-bold mb-4">Bạn quan tâm đến {product.name}?</h3>
-                <p className="text-gray-300 mb-8">Liên hệ ngay với chúng tôi để nhận báo giá chi tiết và tư vấn các gói ưu đãi hiện có.</p>
-                <button 
-                  type="button"
-                  onClick={dispatchConsultationPopup}
-                  className="w-full bg-secondary hover:bg-secondary-dark text-dark font-bold py-4 rounded-xl transition-colors shadow-lg text-lg uppercase tracking-wider"
-                >
-                  Đăng ký nhận tư vấn
+              <div className="p-aside p-aside--wide !max-w-none">
+                <p className="h-eyebrow">Tư vấn miễn phí</p>
+                <h3 className="!text-white text-xl font-semibold mb-2">Bạn quan tâm đến {product.name}?</h3>
+                <p>Liên hệ ngay với chúng tôi để nhận báo giá chi tiết và tư vấn các gói ưu đãi hiện có.</p>
+                <button type="button" onClick={dispatchConsultationPopup} className="h-pill">
+                  Đăng ký nhận tư vấn <LineIcon name="arrow" />
                 </button>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

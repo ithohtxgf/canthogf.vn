@@ -1,12 +1,12 @@
 {
   "name": "Hợp tác xã vận tải Cần Thơ EV",
   "short_name": "Cần Thơ EV",
-  "description": "Đại lý ô tô VinFast Cần Thơ, đăng ký XanhSM — Hợp tác xã vận tải Cần Thơ EV",
+  "description": "Đại lý ô tô VinFast Cần Thơ, đăng ký XanhSM, Hợp tác xã vận tải Cần Thơ EV",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "lang": "vi",
-  "theme_color": "#103b7c",
+  "theme_color": "#0A3572",
   "background_color": "#ffffff",
   "icons": [
     {
@@ -22,7 +22,7 @@
       "purpose": "any"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/maskable-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

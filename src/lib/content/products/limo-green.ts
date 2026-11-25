@@ -3,13 +3,13 @@ import type { RichProductDetail } from "@/lib/content/product-details";
 export const LIMO_GREEN_DETAIL: RichProductDetail = {
   id: "limo-green",
   officialName: "VinFast Limo Green",
-  segment: "Xe thương mại dịch vụ xanh — Ô tô điện 7 chỗ",
+  segment: "Xe thương mại dịch vụ xanh: Ô tô điện 7 chỗ",
   shortName: "Limo Green",
   h1: "VinFast Limo Green: Ô Tô Điện 7 Chỗ Dịch Vụ Xanh Tại Cần Thơ",
   metaTitle:
     "VinFast Limo Green Cần Thơ: Giá, Thông Số & Màu Sắc 2026",
   metaDescription:
-    "VinFast Limo Green — xe điện 7 chỗ dịch vụ xanh, giá niêm yết 699 triệu. Quãng đường 450 km NEDC, sạc nhanh 30 phút. Tư vấn tại Cần Thơ EV.",
+    "VinFast Limo Green: xe điện 7 chỗ dịch vụ xanh, giá niêm yết 699 triệu. Quãng đường 450 km NEDC, sạc nhanh 30 phút. Tư vấn tại Cần Thơ EV.",
   keywords: [
     "vinfast limo green",
     "limo green cần thơ",
@@ -18,17 +18,17 @@ export const LIMO_GREEN_DETAIL: RichProductDetail = {
     "mua limo green cần thơ",
     "xe dịch vụ xanh vinfast",
   ],
-  image: "/Limo-Green.png",
+  image: "/xe/limo-green.webp",
   imageAlt:
-    "VinFast Limo Green — ô tô điện 7 chỗ dịch vụ xanh tại Cần Thơ EV",
+    "VinFast Limo Green: ô tô điện 7 chỗ dịch vụ xanh tại Cần Thơ EV",
   listPrice: 699_000_000,
   listPriceLabel: "699.000.000 VNĐ",
-  positioningHtml: `<p><strong>VinFast Limo Green</strong> thuộc phân khúc <em>xe thương mại dịch vụ xanh — ô tô điện 7 chỗ</em>, được thiết kế tối ưu tăng kích cỡ để tăng hiệu quả kinh tế cho bác tài chuyên nghiệp chạy đường dài, liên tỉnh, dịch vụ cao cấp và gia đình đông người tại <strong>Cần Thơ</strong> và <strong>Miền Tây</strong>.</p>`,
+  positioningHtml: `<p><strong>VinFast Limo Green</strong> thuộc phân khúc <em>xe thương mại dịch vụ xanh: ô tô điện 7 chỗ</em>, được thiết kế tối ưu tăng kích cỡ để tăng hiệu quả kinh tế cho bác tài chuyên nghiệp chạy đường dài, liên tỉnh, dịch vụ cao cấp và gia đình đông người tại <strong>Cần Thơ</strong> và <strong>Miền Tây</strong>.</p>`,
   highlights: [
-    "Ô tô điện 7 chỗ — không gian rộng cho gia đình đông người và dịch vụ cao cấp",
-    "Quãng đường 450 km (NEDC) — lý tưởng chạy liên tỉnh từ Cần Thơ đi các tỉnh Miền Tây",
-    "Tối ưu cho bác tài chuyên nghiệp: đường dài, cước cao, dòng tiền tốt hơn",
-    "Sạc nhanh DC 80 kW — 10% đến 70% chỉ 30 phút",
+    "Ô tô điện 7 chỗ: không gian rộng cho gia đình đông người và dịch vụ cao cấp",
+    "Quãng đường 450 km (NEDC): đủ chạy liên tỉnh từ Cần Thơ đi các tỉnh Miền Tây",
+    "Hợp chạy đường dài, liên tỉnh",
+    "Sạc nhanh DC 80 kW: 10% đến 70% chỉ 30 phút",
   ],
   specGroups: [
     {
@@ -84,7 +84,7 @@ export const LIMO_GREEN_DETAIL: RichProductDetail = {
     },
   ],
   batteryHighlight:
-    "450 km theo chuẩn NEDC — đủ tầm để chạy liên tỉnh từ Cần Thơ đến An Giang, Kiên Giang, Cà Mau hoặc TP.HCM mà không lo hết pin giữa đường.",
+    "450 km theo chuẩn NEDC: đủ tầm để chạy liên tỉnh từ Cần Thơ đến An Giang, Kiên Giang, Cà Mau hoặc TP.HCM mà không lo hết pin giữa đường.",
   exteriorColors: [
     { id: "jet-black", name: "Jet Black", nameVi: "Đen", hex: "#1a1a1a" },
     {
@@ -102,7 +102,7 @@ export const LIMO_GREEN_DETAIL: RichProductDetail = {
     },
   ],
   features: [
-    "Tăng sức chứa, tăng không gian kết nối — phù hợp nhóm bạn, gia đình đông người",
+    "Tăng sức chứa, tăng không gian kết nối, phù hợp nhóm bạn, gia đình đông người",
     "Đèn chiếu sáng phía trước LED",
     "Hệ thống điều hòa tự động 1 vùng",
     "Màn hình giải trí cảm ứng 10,1 inch",

@@ -3,10 +3,10 @@ import type { RichProductDetail } from "@/lib/content/product-details";
 export const VF8_DETAIL: RichProductDetail = {
   id: "vf8",
   officialName: "VinFast VF 8",
-  segment: "D-SUV (Luxury SUV 5 chỗ) — xe điện cao cấp",
+  segment: "D-SUV (Luxury SUV 5 chỗ): xe điện cao cấp",
   shortName: "VF 8",
   slogan: "Sự lựa chọn xứng tầm trong phân khúc SUV 5 chỗ",
-  h1: "VinFast VF 8 Cần Thơ: D-SUV Điện Cao Cấp — Giá Eco & Plus 2026",
+  h1: "VinFast VF 8 Cần Thơ: D-SUV Điện Cao Cấp, Giá Eco & Plus 2026",
   metaTitle:
     "VinFast VF 8 Cần Thơ: Giá Eco & Plus, 402 hp, ViVi 2.0",
   metaDescription:
@@ -21,16 +21,16 @@ export const VF8_DETAIL: RichProductDetail = {
     "vf8 all new 2026",
     "vf8 vs vf9",
   ],
-  image: "/vf8.webp",
-  imageAlt: "VinFast VF 8 — D-SUV điện cao cấp tại Cần Thơ EV",
+  image: "/xe/vf8.webp",
+  imageAlt: "VinFast VF 8: D-SUV điện cao cấp tại Cần Thơ EV",
   listPrice: 898_000_000,
   listPriceLabel: "VF 8 Eco: 898.000.000 – 910.000.000 VNĐ · VF 8 Plus: 1.079.000.000 VNĐ (Pin CATL)",
-  positioningHtml: `<p><strong>VinFast VF 8</strong> là D-SUV điện 5 chỗ theo triết lý <em>"Cân bằng động"</em>, hướng đến khách hàng cần một chiếc SUV điện cao cấp, mạnh mẽ và an toàn. Mẫu xe sở hữu công nghệ <strong>ViVi 2.0 AI</strong>, nội thất sang trọng và phiên bản Plus mạnh tới <strong>300 kW / 402 hp</strong>, mô-men xoắn <strong>620 Nm</strong>.</p>`,
+  positioningHtml: `<p><strong>VinFast VF 8</strong> là D-SUV điện 5 chỗ theo triết lý <em>"Cân bằng động"</em>, hướng đến khách hàng cần một chiếc SUV điện cao cấp, mạnh mẽ và an toàn. Xe có công nghệ <strong>ViVi 2.0 AI</strong>, nội thất sang trọng và phiên bản Plus mạnh tới <strong>300 kW / 402 hp</strong>, mô-men xoắn <strong>620 Nm</strong>.</p>`,
   highlights: [
     "VF 8 Eco từ 898 triệu · VF 8 Plus 1,079 tỷ (Pin CATL)",
     "VF 8 Plus: 300 kW / 402 hp, mô-men xoắn 620 Nm, 0-100 km/h 5,58 giây",
-    "11 túi khí trên VF 8 Plus — nổi bật trong phân khúc",
-    "Pin 87,7 kWh — Eco đạt 562 km (NEDC), Plus 457 km (WLTP)",
+    "11 túi khí trên VF 8 Plus",
+    "Pin 87,7 kWh: Eco đạt 562 km (NEDC), Plus 457 km (WLTP)",
     "ADAS nâng cao, camera 360, hỗ trợ lái cao tốc",
     "Thiết kế sang trọng, nội thất cao cấp, trợ lý ảo ViVi 2.0",
   ],
@@ -125,7 +125,7 @@ export const VF8_DETAIL: RichProductDetail = {
     "Hỗ trợ trụ sạc nhanh và bộ sạc di động",
     "Phụ kiện sạc tại nhà chính hãng sẵn có",
     "Ứng dụng VinFast hỗ trợ tìm trạm sạc và điều hướng",
-    "Chi phí sạc được tối ưu theo chương trình từng thời điểm",
+    "Chi phí sạc theo chương trình của VinFast từng thời điểm",
   ],
   exteriorColors: [
     { id: "infinity-blanc", name: "Infinity Blanc", nameVi: "Trắng", hex: "#F5F5F0" },
@@ -140,7 +140,7 @@ export const VF8_DETAIL: RichProductDetail = {
     { id: "mocha-brown", name: "Mocha Brown", nameVi: "Nâu", hex: "#6B4423" },
   ],
   exteriorFeatureList: [
-    "Triết lý Cân bằng động — ngoại thất sang trọng, khí động học",
+    "Triết lý Cân bằng động: ngoại thất sang trọng, khí động học",
     "Đèn pha LED tự động, điều chỉnh góc chiếu thông minh",
     "VF 8 Plus có đèn sương mù trước, đèn chiếu góc và cốp điện đá chân",
     "Cửa sổ trời toàn cảnh (Plus), kính trước cách âm 2 lớp",
@@ -181,7 +181,7 @@ export const VF8_DETAIL: RichProductDetail = {
       heading: "Công Nghệ Thông Minh & ViVi 2.0",
       headingLevel: 2,
       items: [
-        "Trợ lý ảo ViVi 2.0 AI tạo sinh — tương tác tiếng Việt tự nhiên",
+        "Trợ lý ảo ViVi 2.0 AI tạo sinh, tương tác tiếng Việt tự nhiên",
         "Điều khiển giọng nói, hỗ trợ tình trạng xe và xử lý sự cố",
         "OTA cập nhật tính năng mới từ xa, đồng bộ ứng dụng VinFast Mobile",
         "Giải trí trực tuyến, bản đồ EV, điều khiển xe từ xa qua app",

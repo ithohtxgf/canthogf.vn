@@ -3,14 +3,14 @@ import type { RichProductDetail } from "@/lib/content/product-details";
 export const VF3_DETAIL: RichProductDetail = {
   id: "vf3",
   officialName: "VinFast VF 3",
-  segment: "Mini car điện hàng đầu thị trường Việt Nam",
+  segment: "Mini car điện",
   shortName: "VF 3",
   slogan: "Xe nhỏ, giá trị lớn",
-  h1: "VinFast VF 3 Cần Thơ: Mini Car Điện — Giá Niêm Yết & Thông Số 2026",
+  h1: "VinFast VF 3 Cần Thơ: Mini Car Điện, Giá Niêm Yết & Thông Số 2026",
   metaTitle:
     "VinFast VF 3 Cần Thơ: Giá Tiêu Chuẩn & Plus, 7 Màu",
   metaDescription:
-    "VinFast VF 3 — mini car điện giá niêm yết từ 278 triệu (Eco), 296 triệu (Plus). Quãng đường 215 km, sạc nhanh 36 phút. Tư vấn tại Cần Thơ EV.",
+    "VinFast VF 3: mini car điện giá niêm yết từ 278 triệu (Eco), 296 triệu (Plus). Quãng đường 215 km, sạc nhanh 36 phút. Tư vấn tại Cần Thơ EV.",
   keywords: [
     "vinfast vf3",
     "vf3 cần thơ",
@@ -24,18 +24,18 @@ export const VF3_DETAIL: RichProductDetail = {
     "vf3 eco vs plus",
     "vf3 pin thuê hay mua",
   ],
-  image: "/vf3.jpg",
-  imageAlt: "VinFast VF 3 — mini car điện tại Cần Thơ EV",
+  image: "/xe/vf3.webp",
+  imageAlt: "VinFast VF 3: mini car điện tại Cần Thơ EV",
   listPrice: 278_000_000,
   listPriceLabel: "VF 3 Eco: 278.000.000 – 285.000.000 VNĐ · VF 3 Plus: 296.000.000 VNĐ",
   depositAmount: 15_000_000,
-  positioningHtml: `<p><strong>VinFast VF 3</strong> là <em>mini car điện</em> tiên tiến kết hợp công nghệ và thiết kế sáng tạo — phù hợp di chuyển đô thị <strong>Cần Thơ</strong>, phố hẹp <strong>Ninh Kiều</strong>, <strong>Cái Răng</strong> với chi phí vận hành siêu rẻ.</p>`,
+  positioningHtml: `<p><strong>VinFast VF 3</strong> là <em>mini car điện</em> tiên tiến kết hợp công nghệ và thiết kế sáng tạo, phù hợp di chuyển đô thị <strong>Cần Thơ</strong>, phố hẹp <strong>Ninh Kiều</strong>, <strong>Cái Răng</strong> với chi phí vận hành siêu rẻ.</p>`,
   highlights: [
     "Xe điện giá rẻ, phù hợp ngân sách đô thị",
     "Thiết kế nhỏ gọn, linh hoạt trong thành phố",
     "Chi phí vận hành siêu rẻ so với xe xăng",
     "Tính năng an toàn tiên tiến",
-    "Hiệu suất vận hành linh hoạt — dẫn động RWD cầu sau",
+    "Hiệu suất vận hành linh hoạt: dẫn động RWD cầu sau",
   ],
   priceVariants: [
     {
@@ -82,7 +82,7 @@ export const VF3_DETAIL: RichProductDetail = {
     },
   ],
   batteryHighlight:
-    "215 km mỗi lần sạc — đủ cho di chuyển nội thành Cần Thơ cả ngày. Hệ thống trạm sạc VinFast phủ 34 tỉnh thành, khoảng cách trung bình chỉ 3,5 km giữa hai trạm trong thành phố.",
+    "215 km mỗi lần sạc: đủ cho di chuyển nội thành Cần Thơ cả ngày. Hệ thống trạm sạc VinFast phủ 34 tỉnh thành, khoảng cách trung bình chỉ 3,5 km giữa hai trạm trong thành phố.",
   batterySectionTitle: "Pin & Hạ Tầng Sạc Điện",
   exteriorColors: [
     {
@@ -119,13 +119,13 @@ export const VF3_DETAIL: RichProductDetail = {
     },
   ],
   exteriorFeatureList: [
-    "La-zăng kích thước 16 inch — hiếm gặp trong phân khúc mini car",
+    "La-zăng kích thước 16 inch: hiếm gặp trong phân khúc mini car",
     "Thiết kế tối giản, nhỏ gọn, cá tính, năng động",
     "Ốp la-zăng có thể tùy chọn thêm",
   ],
   interiorFeatureList: [
     "Không gian 4 chỗ ngồi thoải mái",
-    "Thiết kế nội thất thông minh, tối ưu hóa",
+    "Nội thất gọn, nhiều hộc để đồ",
     "Màu sắc nội thất trang nhã, trẻ trung",
     "Chất liệu thân thiện và đặc biệt",
   ],
@@ -139,10 +139,10 @@ export const VF3_DETAIL: RichProductDetail = {
     },
   ],
   features: [
-    "Mini car điện — phù hợp ngân sách gia đình trẻ tại Cần Thơ",
+    "Mini car điện: phù hợp ngân sách gia đình trẻ tại Cần Thơ",
     "La-zăng 16 inch trong phân khúc",
-    "Dẫn động RWD cầu sau — linh hoạt trong phố",
+    "Dẫn động RWD cầu sau: linh hoạt trong phố",
     "7 tùy chọn màu ngoại thất cá tính",
-    "Chi phí sạc thấp — tiết kiệm so với xe xăng",
+    "Chi phí sạc thấp: tiết kiệm so với xe xăng",
   ],
 };

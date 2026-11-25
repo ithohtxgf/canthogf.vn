@@ -3,14 +3,14 @@ import type { RichProductDetail } from "@/lib/content/product-details";
 export const VF5_DETAIL: RichProductDetail = {
   id: "vf5",
   officialName: "VinFast VF 5",
-  segment: "A-SUV (Compact SUV) — Xe điện đô thị cho người trẻ năng động",
+  segment: "A-SUV (Compact SUV): Xe điện đô thị cho người trẻ năng động",
   shortName: "VF 5",
   slogan: "Cá nhân vượt trội, đồng hành hàng ngày",
-  h1: "VinFast VF 5 Cần Thơ: A-SUV Điện — Giá, Thông Số & ADAS 2026",
+  h1: "VinFast VF 5 Cần Thơ: A-SUV Điện, Giá, Thông Số & ADAS 2026",
   metaTitle:
     "VinFast VF 5 Cần Thơ: Giá 496 Triệu, 8 Màu & ViVi AI",
   metaDescription:
-    "VinFast VF 5 tại Cần Thơ — giá 496 triệu. Quãng đường 326 km, 6 túi khí, ADAS, trợ lý ảo ViVi. A-SUV điện lý tưởng cho đô thị. Tư vấn tại Cần Thơ EV.",
+    "VinFast VF 5 tại Cần Thơ: giá 496 triệu. Quãng đường 326 km, 6 túi khí, ADAS, trợ lý ảo ViVi. A-SUV điện hợp đi phố. Tư vấn tại Cần Thơ EV.",
   keywords: [
     "vinfast vf5",
     "vf5 cần thơ",
@@ -23,8 +23,8 @@ export const VF5_DETAIL: RichProductDetail = {
     "vf5 tài xế",
     "so sánh vf5 và vf3",
   ],
-  image: "/vf5.webp",
-  imageAlt: "VinFast VF 5 — A-SUV điện tại Cần Thơ EV",
+  image: "/xe/vf5.webp",
+  imageAlt: "VinFast VF 5: A-SUV điện tại Cần Thơ EV",
   listPrice: 496_000_000,
   listPriceLabel: "496.000.000 VNĐ (VF 5 Plus)",
   priceVariants: [
@@ -35,14 +35,14 @@ export const VF5_DETAIL: RichProductDetail = {
       promoPrice: 496_000_000,
     },
   ],
-  positioningHtml: `<p><strong>VinFast VF 5</strong> — <em>"Phong cách hợp ý, giá hợp ví"</em> — là xe điện đô thị lý tưởng cho người trẻ năng động tại <strong>Cần Thơ</strong>. Hội tụ thiết kế hiện đại, công nghệ thông minh (trợ lý ảo <strong>ViVi</strong>), vận hành mạnh mẽ 134 hp và an toàn 6 túi khí + ADAS.</p>`,
+  positioningHtml: `<p><strong>VinFast VF 5</strong>, <em>"Phong cách hợp ý, giá hợp ví"</em>, là xe điện đô thị hợp với người trẻ tại <strong>Cần Thơ</strong>. Hội tụ thiết kế hiện đại, công nghệ thông minh (trợ lý ảo <strong>ViVi</strong>), vận hành mạnh mẽ 134 hp và an toàn 6 túi khí + ADAS.</p>`,
   highlights: [
-    "Thiết kế hiện đại, độc đáo — cá nhân hóa 8 màu ngoại thất",
-    "Công suất 100 kW (134 hp) — tương đương xe xăng 1,6L",
-    "Quãng đường 326 km NEDC — sạc nhanh 33 phút (10%–70%)",
+    "Thiết kế hiện đại, độc đáo: cá nhân hóa 8 màu ngoại thất",
+    "Công suất 100 kW (134 hp): tương đương xe xăng 1,6L",
+    "Quãng đường 326 km NEDC: sạc nhanh 33 phút (10%–70%)",
     "6 túi khí + ADAS 6 tính năng hỗ trợ lái",
-    "Trợ lý ảo ViVi AI — nhận diện tiếng Việt 98%",
-    "Bảo hành xe 7 năm, pin 8 năm — hạ tầng sạc toàn quốc",
+    "Trợ lý ảo ViVi AI: nhận diện tiếng Việt 98%",
+    "Bảo hành xe 7 năm, pin 8 năm, hạ tầng sạc toàn quốc",
   ],
   specGroups: [
     {
@@ -104,7 +104,7 @@ export const VF5_DETAIL: RichProductDetail = {
     },
   ],
   batteryHighlight:
-    "326 km mỗi lần sạc — đủ cho tài xế XanhSM và gia đình Cần Thơ di chuyển cả ngày. Mạng lưới 150.000 cổng sạc toàn quốc, khoảng cách trung bình 3,5 km giữa các trạm trong thành phố.",
+    "326 km mỗi lần sạc: đủ cho tài xế XanhSM và gia đình Cần Thơ di chuyển cả ngày. Mạng lưới 150.000 cổng sạc toàn quốc, khoảng cách trung bình 3,5 km giữa các trạm trong thành phố.",
   batterySectionTitle: "Pin, Sạc & Hạ Tầng Toàn Quốc",
   chargingInfrastructure: [
     { label: "Cổng sạc toàn quốc", value: "150.000 cổng sạc" },
@@ -113,9 +113,9 @@ export const VF5_DETAIL: RichProductDetail = {
     { label: "Chương trình V-Green", value: "Miễn phí sạc (theo điều khoản)" },
   ],
   chargingSolutionItems: [
-    "Bộ sạc tại nhà — sạc mọi lúc, tiện lợi và an toàn",
+    "Bộ sạc tại nhà: sạc mọi lúc, tiện lợi và an toàn",
     "Trụ sạc nhanh phủ khắp toàn quốc",
-    "Bộ sạc di động — mang theo trên mọi hành trình",
+    "Bộ sạc di động: mang theo trên mọi hành trình",
     "Ứng dụng VinFast: tìm trạm sạc → chọn trạm → bản đồ → chỉ đường",
   ],
   exteriorColors: [
@@ -149,16 +149,16 @@ export const VF5_DETAIL: RichProductDetail = {
     },
   ],
   exteriorFeatureList: [
-    "Thiết kế chữ V mạ crom — dải đèn LED định vị hiện đại",
-    "Phối màu hai tông thân & nóc xe — ốp gương, tay nắm cửa đồng màu",
-    "Đuôi xe vuông vức — dải chữ V phản quang, cảm biến đỗ & camera lùi",
+    "Thiết kế chữ V mạ crom: dải đèn LED định vị hiện đại",
+    "Phối màu hai tông thân & nóc xe, ốp gương, tay nắm cửa đồng màu",
+    "Đuôi xe vuông vức: dải chữ V phản quang, cảm biến đỗ & camera lùi",
     "La-zăng hợp kim 17 inch, gương chỉnh điện tích hợp báo rẽ",
     "Kính chắn gió chống UV, cửa sổ chỉnh điện một chạm (cửa tài xế)",
   ],
   interiorFeatureList: [
-    "Thiết kế tối giản — phối màu đồng điệu nội ngoại thất",
+    "Thiết kế tối giản: phối màu đồng điệu nội ngoại thất",
     "Hai màn hình: đồng hồ kỹ thuật số 7 inch + màn trung tâm 8 inch cảm ứng",
-    "Ghế giả da — lái chỉnh cơ 6 hướng, phụ 4 hướng, ghế sau gập 60:40",
+    "Ghế giả da: lái chỉnh cơ 6 hướng, phụ 4 hướng, ghế sau gập 60:40",
     "Điều hòa chỉnh cơ 1 vùng, lọc bụi PM2.5, tan sương/tan băng",
     "4 loa, Android Auto & Apple CarPlay không dây, USB & Bluetooth",
   ],
@@ -170,7 +170,7 @@ export const VF5_DETAIL: RichProductDetail = {
       items: [
         "Độ chính xác 98% nhận diện tiếng Việt đa vùng miền",
         "Điều khiển bằng giọng nói: điều hòa, giải trí, bản đồ và hơn thế",
-        "Hỏi đáp tin tức, thời tiết, truyện cười — tương tác tự nhiên, cá nhân hóa",
+        "Hỏi đáp tin tức, thời tiết, truyện cười, tương tác tự nhiên, cá nhân hóa",
       ],
     },
     {
@@ -180,7 +180,7 @@ export const VF5_DETAIL: RichProductDetail = {
       items: [
         "Giám sát hành trình cơ bản & ga tự động",
         "Cảnh báo giao thông phía sau, điểm mù, mở cửa",
-        "Hỗ trợ đỗ phía sau — cảm biến phát hiện chướng ngại vật",
+        "Hỗ trợ đỗ phía sau: cảm biến phát hiện chướng ngại vật",
       ],
     },
     {
@@ -209,7 +209,7 @@ export const VF5_DETAIL: RichProductDetail = {
       heading: "So Sánh Chi Phí Với Xe Xăng",
       headingLevel: 2,
       items: [
-        "Chi phí sạc thấp — chương trình miễn phí sạc V-Green (theo điều khoản)",
+        "Chi phí sạc thấp: chương trình miễn phí sạc V-Green (theo điều khoản)",
         "Tiết kiệm đáng kể so với xăng RON 95 (~33.840đ/lít) hoặc Diesel",
         "VF 5 đã được kiểm chứng qua hàng trăm ngàn xe bán ra tại Việt Nam",
       ],
@@ -218,25 +218,25 @@ export const VF5_DETAIL: RichProductDetail = {
   warrantyItems: [
     "Bảo hành xe: 7 năm hoặc 160.000 km (điều kiện nào đến trước)",
     "Bảo hành pin cao áp: 8 năm hoặc 160.000 km",
-    "Nền tảng khung gầm toàn cầu VinFast — chất lượng kiểm chứng",
+    "Nền tảng khung gầm toàn cầu VinFast: chất lượng kiểm chứng",
   ],
   afterSalesItems: [
-    "Cứu hộ bằng xe kéo (RSA) — cứu hộ 24/7 trong thời gian bảo hành",
+    "Cứu hộ bằng xe kéo (RSA): cứu hộ 24/7 trong thời gian bảo hành",
     "Showroom & xưởng dịch vụ không ngày nghỉ",
     "Mạng lưới 150.000 cổng sạc toàn quốc",
   ],
   targetAudience: [
-    "Người trẻ năng động tại Cần Thơ — sinh viên, nhân viên văn phòng, tài xế XanhSM",
+    "Người trẻ năng động tại Cần Thơ: sinh viên, nhân viên văn phòng, tài xế XanhSM",
     "Gia đình 4–5 người cần A-SUV điện giá hợp lý",
-    "Khách hàng lần đầu chuyển sang xe điện — \"phong cách hợp ý, giá hợp ví\"",
+    "Khách hàng lần đầu chuyển sang xe điện, \"phong cách hợp ý, giá hợp ví\"",
   ],
   disclaimerNotes: [
     "Thông tin sản phẩm có thể thay đổi mà không cần báo trước.",
-    "Một số tính năng chưa kích hoạt tại thời điểm giao xe — cập nhật qua OTA, kết nối không dây hoặc tại xưởng dịch vụ VinFast.",
+    "Một số tính năng chưa kích hoạt tại thời điểm giao xe, cập nhật qua OTA, kết nối không dây hoặc tại xưởng dịch vụ VinFast.",
     "Quãng đường thực tế có thể thấp hơn NEDC tùy tốc độ, nhiệt độ, địa hình, thói quen lái và số hành khách.",
   ],
   features: [
-    "A-SUV điện bán chạy nhất Cần Thơ — phù hợp XanhSM & gia đình",
+    "A-SUV điện bán chạy nhất Cần Thơ: phù hợp XanhSM & gia đình",
     "Khoang hành lý 331L, gập ghế sau lên đến 1.015L",
     "ViVi AI + ADAS 6 tính năng",
     "326 km/lần sạc, la-zăng 17 inch",

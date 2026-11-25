@@ -1,20 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
+/* Hệ thiết kế EV Green 3.0, cùng giao diện với co-ev.vn (xem src/styles/evg-*.css). */
+@import "./styles/evg-base.css";
+@import "./styles/evg-site-theme.css";
+@import "./styles/evg-news.css";
 
+/*
+ * Màu Tailwind cũ của site được ánh xạ sang bảng màu EV Green, để các trang đang dùng
+ * class text-primary, bg-secondary… đổi tông theo co-ev.vn mà không phải sửa từng chỗ:
+ *   primary   → Ocean (nút, liên kết)      secondary → Sky (điểm nhấn, hình)
+ *   dark      → Navy (chữ tiêu đề)         light     → trắng
+ * Không dùng xanh lá (The No Green Rule).
+ */
 @theme {
-  --color-primary: #103B7C;
-  --color-primary-dark: #0A2B60;
-  --color-secondary: #00B5B8;
-  --color-secondary-dark: #009395;
-  --color-dark: #000000;
+  --color-primary: #0077C8;
+  --color-primary-dark: #0369A1;
+  --color-secondary: #0AA8F5;
+  --color-secondary-dark: #0077C8;
+  --color-dark: #0A3572;
   --color-light: #FFFFFF;
+  --color-navy: #0A3572;
+  --color-sky: #0AA8F5;
+  --color-ocean: #0077C8;
+  --color-ocean-deep: #0369A1;
+  --color-tint: #F3F9FE;
+  --color-tint-strong: #E6F5FE;
+  --color-ink: #0B1730;
+  --color-steel: #5B6B80;
+  --color-hairline: #DFE7F0;
+
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", "Segoe UI", Arial, system-ui, sans-serif;
+
+  /* The Three Weights Rule: chỉ 400 / 500 / 600 */
+  --font-weight-bold: 600;
+  --font-weight-extrabold: 600;
+  --font-weight-black: 600;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
   background-color: var(--color-light);
-  color: var(--color-dark);
+  color: var(--ink);
 }
+
+/*
+ * Website công khai (.site): phẳng như co-ev.vn — viền 1px thay bóng đổ, bo góc thẻ 12px.
+ * Trang quản trị không nằm trong .site nên giữ nguyên.
+ */
+.site {
+  --radius-xl: .75rem;
+  --radius-2xl: .75rem;
+  --radius-3xl: .75rem;
+}
+.site [class*="shadow-"]:not(.site-head *, .nav-drop, .nav-drop *, .h-cards4 *, .h-svc *, .h-news *, .hero-colors) {
+  --tw-shadow: 0 0 #0000;
+  box-shadow: none;
+}
+
+/* Logo Cần Thơ EV có thêm dòng "Hợp tác xã vận tải" nên cao hơn logo chữ EVG của co-ev */
+.site .brand img { height: 2.375rem; }
+.site .foot-logo { height: 2.75rem; }
+@media (max-width: 980px) {
+  .site .brand img { height: 2.25rem; }
+  .site .foot-logo { height: 2.5rem; }
+}
+/* Thẻ "Đăng ký tư vấn" trong menu điện thoại là nút (mở form), cùng kiểu thẻ liên kết của co-ev */
+.md-actions button {
+  display: flex; align-items: center; gap: .625rem; min-height: 4rem; padding: .75rem .875rem;
+  border-radius: .625rem; font: inherit; font-weight: var(--fw-strong); font-size: var(--fs-sm);
+  line-height: 1.25; text-align: left; cursor: pointer;
+}
+
+/* Thẻ dòng xe trên trang chủ: ảnh xe là ảnh chụp thật, giữ rõ xe nên không phủ lớp Navy như ảnh dịch vụ của co-ev */
+.h-svc-art.h-svc-art--car { background: var(--tint); height: 10.5rem; }
+.h-svc-art.h-svc-art--car::after { display: none; }
+.h-pill { border: 0; font-family: inherit; cursor: pointer; }
+html.menu-open .fab-stack { display: none; }
+.site a.text-white, .site a.text-white:hover { color: #fff; }
 
 /* Custom scrollbar for horizontal sections */
 .overflow-x-auto::-webkit-scrollbar {

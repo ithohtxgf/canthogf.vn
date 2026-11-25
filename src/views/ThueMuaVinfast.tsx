@@ -4,7 +4,6 @@ import type { ReactNode } from "react";
 import { motion } from "motion/react";
 import {
   ArrowRight,
-  Award,
   BadgeCheck,
   Calculator,
   CalendarCheck,
@@ -21,7 +20,7 @@ import {
   Video,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { SeoBannerImage } from "@/components/SeoImage";
+import { PageHero } from "@/components/evg/PageHero";
 import { SeoLink } from "@/components/SeoLink";
 import { ThueMuaFaq } from "@/components/thue-mua-vinfast/ThueMuaFaq";
 import { ThueMuaPriceSection } from "@/components/thue-mua-vinfast/ThueMuaPriceSection";
@@ -31,6 +30,7 @@ import {
   THUE_MUA_RELATED_ARTICLES,
   THUE_MUA_VINFAST_HERO_INTRO,
   THUE_MUA_VINFAST_PAGE_H1,
+  THUE_MUA_VINFAST_PAGE_PATH,
   THUE_MUA_VINFAST_STATS,
 } from "@/lib/content/thue-mua-vinfast-page";
 import {
@@ -72,7 +72,7 @@ function CtaButton({
     <button
       type="button"
       onClick={dispatchConsultationPopup}
-      className={`inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg text-base sm:text-lg ${className}`}
+      className={`h-pill h-pill--solid ${className}`}
     >
       {children}
     </button>
@@ -81,112 +81,82 @@ function CtaButton({
 
 export default function ThueMuaVinfast() {
   return (
-    <div className="bg-light min-h-screen pb-20">
-      <section className="relative bg-gradient-to-br from-primary-dark via-primary to-green-600 text-white py-16 sm:py-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <SeoBannerImage
-            src="/banner-homepage.webp"
-            alt="Thuê mua xe VinFast Cần Thơ — Cần Thơ EV"
-            className="object-cover opacity-20"
-            priority
-          />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 bg-white/15 border border-white/30 rounded-full px-4 py-1.5 mb-6 text-sm"
-          >
-            <Award className="w-4 h-4" />
-            HTX Vận Tải Cần Thơ EV – Chính Hãng
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight mb-6"
-          >
-            {THUE_MUA_VINFAST_PAGE_H1}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="text-lg text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto"
-          >
-            {THUE_MUA_VINFAST_HERO_INTRO}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25 }}
-          >
-            <a
-              href="#bang-gia-thue-mua"
-              className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg"
-            >
-              <Car className="w-5 h-5" />
+    <>
+      <PageHero
+        title={THUE_MUA_VINFAST_PAGE_H1}
+        eyebrow="HTX Vận Tải Cần Thơ EV – Chính Hãng"
+        crumbs={[{ href: THUE_MUA_VINFAST_PAGE_PATH, label: "Thuê mua VinFast" }]}
+        image="/banner-homepage.webp"
+        summary={
+          <>
+            <span className="block mb-6">{THUE_MUA_VINFAST_HERO_INTRO}</span>
+            <a href="#bang-gia-thue-mua" className="h-pill">
+              <Car className="w-4 h-4" />
               Xem bảng giá ngay
             </a>
-          </motion.div>
-        </div>
-      </section>
+          </>
+        }
+      />
 
-      <section className="py-8 sm:py-10 bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <section className="p-body">
+        <div className="wrap">
+          <dl className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {THUE_MUA_VINFAST_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-gray-50 rounded-2xl px-4 py-5 text-center border border-gray-100"
+                className="bg-white rounded-xl px-4 py-5 text-center border border-hairline flex flex-col"
               >
-                <div className="text-xl sm:text-2xl font-black text-primary-dark">{stat.value}</div>
-                <div className="text-xs sm:text-sm text-gray-500 mt-1">{stat.label}</div>
+                <dd className="order-1 text-xl sm:text-2xl font-semibold text-dark tabular-nums">{stat.value}</dd>
+                <dt className="order-2 text-xs sm:text-sm text-steel mt-1">{stat.label}</dt>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="h-sec !pt-12">
+        <div className="wrap">
           <ThueMuaPriceSection />
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-black text-dark mb-1">HTX hỗ trợ toàn diện</h2>
-          <p className="text-gray-600 text-sm sm:text-base mb-8">
-            8 quyền lợi bao gồm trong hợp đồng — không phát sinh thêm
+      <section className="h-sec">
+        <div className="wrap">
+          <p className="h-eyebrow">Quyền lợi</p>
+          <h2 className="text-dark">HTX hỗ trợ toàn diện</h2>
+          <p className="text-steel text-sm sm:text-base mb-8">
+            8 quyền lợi bao gồm trong hợp đồng, không phát sinh thêm
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {THUE_MUA_BENEFITS.map((benefit, index) => {
               const Icon = BENEFIT_ICONS[index] ?? Shield;
               return (
-                <div
+                <motion.div
                   key={benefit.title}
-                  className="bg-white rounded-2xl border border-gray-100 p-5 flex gap-4 shadow-sm"
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: (index % 4) * 0.05 }}
+                  className="bg-white rounded-xl border border-hairline hover:border-sky transition-colors p-5"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <Icon className="w-6 h-6 text-primary" />
+                  <div className="w-11 h-11 rounded-lg bg-tint-strong flex items-center justify-center mb-3">
+                    <Icon className="w-5 h-5 text-dark" />
                   </div>
-                  <div>
-                    <h3 className="font-bold text-dark text-base mb-1.5">{benefit.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{benefit.description}</p>
-                  </div>
-                </div>
+                  <h3 className="font-semibold text-dark text-base mb-1.5">{benefit.title}</h3>
+                  <p className="text-sm text-steel leading-relaxed">{benefit.description}</p>
+                </motion.div>
               );
             })}
           </div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-black text-dark mb-1">Giấy tờ cần chuẩn bị</h2>
-          <p className="text-gray-600 text-sm sm:text-base mb-8">
-            7 loại giấy tờ đơn giản — không yêu cầu chứng minh tài chính phức tạp
+      <section className="h-sec">
+        <div className="wrap">
+          <p className="h-eyebrow">Hồ sơ</p>
+          <h2 className="text-dark">Giấy tờ cần chuẩn bị</h2>
+          <p className="text-steel text-sm sm:text-base mb-8">
+            7 loại giấy tờ đơn giản: không yêu cầu chứng minh tài chính phức tạp
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {THUE_MUA_DOCUMENTS.map((doc, index) => {
@@ -194,9 +164,11 @@ export default function ThueMuaVinfast() {
               return (
                 <div
                   key={doc}
-                  className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-4 text-base text-dark border border-gray-100"
+                  className="flex items-center gap-3 bg-white rounded-xl px-4 py-4 text-base text-dark border border-hairline"
                 >
-                  <Icon className="w-6 h-6 text-primary shrink-0" />
+                  <span className="w-9 h-9 rounded-lg bg-tint-strong flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 text-dark" />
+                  </span>
                   {doc}
                 </div>
               );
@@ -205,35 +177,25 @@ export default function ThueMuaVinfast() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-black text-dark mb-1">Bài viết liên quan</h2>
-          <p className="text-gray-600 text-sm sm:text-base mb-8">
+      <section className="h-sec">
+        <div className="wrap">
+          <p className="h-eyebrow">Tin tức</p>
+          <h2 className="text-dark">Bài viết liên quan</h2>
+          <p className="text-steel text-sm sm:text-base mb-8">
             Kiến thức xe điện, chạy dịch vụ và chương trình thuê mua từ blog Cần Thơ EV
           </p>
           {THUE_MUA_RELATED_ARTICLES.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="index">
               {THUE_MUA_RELATED_ARTICLES.map((item) => (
-                <article
-                  key={item.articleId}
-                  className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm"
-                >
-                  <span className="inline-block text-[10px] font-semibold bg-green-50 text-green-800 px-2 py-0.5 rounded-full mb-2">
-                    {item.keyword}
-                  </span>
-                  <h3 className="font-bold text-dark text-sm leading-snug mb-3">{item.title}</h3>
-                  <SeoLink
-                    href={`/tin-tuc/${item.articleId}`}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
-                  >
-                    Đọc bài viết
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </SeoLink>
-                </article>
+                <SeoLink key={item.articleId} href={`/tin-tuc/${item.articleId}`}>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary">{item.keyword}</span>
+                  <h3 className="index-title !text-[0.9375rem] !m-0">{item.title}</h3>
+                  <span className="index-desc">Đọc bài viết</span>
+                </SeoLink>
               ))}
             </div>
           ) : (
-            <p className="text-sm text-gray-500 bg-white rounded-2xl border border-dashed border-gray-200 px-6 py-8 text-center">
+            <p className="text-sm text-steel bg-white rounded-xl border border-dashed border-hairline px-6 py-8 text-center">
               Các bài viết liên quan sẽ được cập nhật trên{" "}
               <SeoLink href="/tin-tuc" className="text-primary font-semibold hover:underline">
                 tin tức Cần Thơ EV
@@ -244,59 +206,59 @@ export default function ThueMuaVinfast() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-black text-dark mb-1 text-center">
-            Câu hỏi thường gặp
-          </h2>
-          <p className="text-gray-600 text-sm text-center mb-8">
+      <section className="h-sec">
+        <div className="wrap">
+          <p className="h-eyebrow">Hỏi đáp</p>
+          <h2 className="text-dark">Câu hỏi thường gặp</h2>
+          <p className="text-steel text-sm mb-8">
             Tối ưu cho Google featured snippets với từ khóa tìm kiếm cao
           </p>
           <ThueMuaFaq />
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-primary-dark text-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-black mb-4">Sẵn sàng bắt đầu hành trình?</h2>
-          <p className="text-gray-300 mb-2 flex items-center justify-center gap-2 flex-wrap">
-            <MapPin className="w-4 h-4 text-secondary shrink-0" />
-            {CONTACT_ADDRESS}
-          </p>
-          <p className="text-gray-300 mb-8">
-            Hotline/Zalo:{" "}
-            <a
-              href={CONTACT_ZALO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-secondary font-semibold hover:underline"
-            >
-              {CONTACT_PHONE}
-            </a>
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CtaButton>
-              <Calculator className="w-5 h-5" />
-              Tư vấn hoàn vốn VF5 Plus
-              <ArrowRight className="w-5 h-5" />
-            </CtaButton>
-            <button
-              type="button"
-              onClick={dispatchConsultationPopup}
-              className="inline-flex items-center justify-center gap-2 border border-white/40 text-white font-semibold py-4 px-8 rounded-xl hover:bg-white/10 transition-colors"
-            >
-              So sánh chương trình Limo
-            </button>
+      <section className="h-sec">
+        <div className="wrap">
+          <div className="h-cta">
+            <div>
+              <p className="h-eyebrow">Thuê mua VinFast</p>
+              <h2 className="text-dark">Sẵn sàng bắt đầu hành trình?</h2>
+              <p className="flex items-center gap-2 flex-wrap mb-1">
+                <MapPin className="w-4 h-4 text-sky shrink-0" />
+                {CONTACT_ADDRESS}
+              </p>
+              <p className="mb-1">
+                Hotline/Zalo:{" "}
+                <a
+                  href={CONTACT_ZALO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-semibold hover:underline"
+                >
+                  {CONTACT_PHONE}
+                </a>
+              </p>
+              <p className="text-sm">
+                Muốn chạy Xanh SM? Xem thêm{" "}
+                <SeoLink href="/dang-ky-xanhsm" className="text-primary hover:underline font-semibold">
+                  hướng dẫn đăng ký tài xế Xanh SM Cần Thơ
+                </SeoLink>
+                .
+              </p>
+            </div>
+            <div className="flex flex-col gap-3">
+              <CtaButton>
+                <Calculator className="w-4 h-4" />
+                Tư vấn hoàn vốn VF5 Plus
+                <ArrowRight className="w-4 h-4" />
+              </CtaButton>
+              <button type="button" onClick={dispatchConsultationPopup} className="btn btn-ghost !rounded-full">
+                So sánh chương trình Limo
+              </button>
+            </div>
           </div>
-          <p className="mt-8 text-sm text-gray-400">
-            Muốn chạy Xanh SM? Xem thêm{" "}
-            <SeoLink href="/dang-ky-xanhsm" className="text-secondary hover:underline font-semibold">
-              hướng dẫn đăng ký tài xế Xanh SM Cần Thơ
-            </SeoLink>
-            .
-          </p>
         </div>
       </section>
-    </div>
+    </>
   );
 }

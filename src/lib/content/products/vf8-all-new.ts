@@ -3,9 +3,9 @@ import type { RichProductDetail } from "@/lib/content/product-details";
 export const VF8_ALL_NEW_DETAIL: RichProductDetail = {
   id: "vf8-all-new",
   officialName: "VinFast VF 8 Thế Hệ Mới",
-  segment: "D-SUV điện (Luxury SUV 5 chỗ) — The All New 2026",
+  segment: "D-SUV điện (Luxury SUV 5 chỗ): The All New 2026",
   shortName: "VF 8 All New",
-  slogan: "Tech Fluid — Dòng chảy công nghệ",
+  slogan: "Tech Fluid: Dòng chảy công nghệ",
   h1: "VinFast VF 8 All New 2026 Cần Thơ: D-SUV Điện Thế Hệ Mới",
   metaTitle:
     "VinFast VF 8 All New 2026 Cần Thơ: 500 km, ADAS, OTA",
@@ -19,11 +19,11 @@ export const VF8_ALL_NEW_DETAIL: RichProductDetail = {
     "vinfast vf8 2026",
     "mua vf8 all new",
   ],
-  image: "/vf8-all-new.png",
+  image: "/xe/vf8-all-new.webp",
   imageAlt: "VinFast VF 8 Thế Hệ Mới 2026 tại Cần Thơ EV",
   listPrice: 899_000_000,
   listPriceLabel: "899.000.000 VNĐ (giá niêm yết)",
-  positioningHtml: `<p><strong>VinFast VF 8 Thế Hệ Hoàn Toàn Mới 2026</strong> được phát triển theo triết lý <em>Tech Fluid — Dòng chảy công nghệ</em>, mang dáng SUV điện cỡ D hiện đại với đường nét liền mạch, khí động học thể thao và khoang nội thất tối giản cao cấp. Mẫu xe hướng đến khách hàng cần một chiếc SUV điện thông minh, hiệu năng tốt, vận hành êm ái và an toàn toàn diện.</p>`,
+  positioningHtml: `<p><strong>VinFast VF 8 Thế Hệ Hoàn Toàn Mới 2026</strong> được phát triển theo triết lý <em>Tech Fluid: Dòng chảy công nghệ</em>, mang dáng SUV điện cỡ D hiện đại với đường nét liền mạch, khí động học thể thao và khoang nội thất tối giản cao cấp. Mẫu xe hướng đến khách hàng cần một chiếc SUV điện thông minh, hiệu năng tốt, vận hành êm ái và an toàn toàn diện.</p>`,
   highlights: [
     "Thiết kế Tech Fluid hoàn toàn mới, dải đèn cánh chim kéo dài",
     "Động cơ 170 kW, mô-men xoắn 330 Nm, dẫn động FWD",

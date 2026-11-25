@@ -13,10 +13,10 @@ function YearRows({ years }: { years: ThueMuaYearRate[] }) {
     <div className="flex flex-col gap-1.5">
       {years.map((year) => (
         <div key={year.label} className="flex items-center gap-2 text-sm">
-          <span className="w-14 shrink-0 text-gray-500">{year.label}</span>
-          <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+          <span className="w-14 shrink-0 text-steel">{year.label}</span>
+          <div className="flex-1 h-1.5 bg-tint-strong rounded-full overflow-hidden">
             <div
-              className="h-full bg-primary rounded-full transition-all duration-300"
+              className="h-full bg-sky rounded-full transition-all duration-300"
               style={{ width: `${year.barPercent}%` }}
             />
           </div>
@@ -36,21 +36,21 @@ export function ThueMuaPriceSection() {
 
   return (
     <section id="bang-gia-thue-mua" className="scroll-mt-24">
-      <h2 className="text-2xl sm:text-3xl font-black text-dark mb-1">
+      <h2 className="text-dark">
         Bảng giá thuê thương quyền
       </h2>
-      <p className="text-gray-600 text-sm sm:text-base mb-6">
-        Giá thuê hàng tháng giảm dần theo từng năm — sở hữu hoàn toàn cuối năm 5
+      <p className="text-steel text-sm sm:text-base mb-6">
+        Giá thuê hàng tháng giảm dần theo từng năm, sở hữu hoàn toàn cuối năm 5
       </p>
 
       <div className="flex flex-wrap gap-2 mb-6">
         <button
           type="button"
           onClick={() => setTab("main")}
-          className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-colors ${
+          className={`px-4 py-2 rounded-full text-sm font-semibold border transition-colors ${
             tab === "main"
-              ? "bg-primary-dark text-white border-primary-dark"
-              : "bg-white text-gray-600 border-gray-200 hover:border-primary/40"
+              ? "bg-dark text-white border-dark"
+              : "bg-white text-dark border-hairline hover:border-sky"
           }`}
         >
           4 dòng xe chính
@@ -58,13 +58,13 @@ export function ThueMuaPriceSection() {
         <button
           type="button"
           onClick={() => setTab("limo")}
-          className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-colors ${
+          className={`px-4 py-2 rounded-full text-sm font-semibold border transition-colors ${
             tab === "limo"
-              ? "bg-primary-dark text-white border-primary-dark"
-              : "bg-white text-gray-600 border-gray-200 hover:border-primary/40"
+              ? "bg-dark text-white border-dark"
+              : "bg-white text-dark border-hairline hover:border-sky"
           }`}
         >
-          Limo Green — 2 chương trình mới
+          Limo Green: 2 chương trình mới
         </button>
       </div>
 
@@ -73,8 +73,8 @@ export function ThueMuaPriceSection() {
           {THUE_MUA_MAIN_PLANS.map((plan) => (
             <div
               key={plan.id}
-              className={`relative bg-white rounded-2xl border p-5 shadow-sm ${
-                plan.featured ? "border-2 border-primary ring-1 ring-primary/20" : "border-gray-100"
+              className={`relative bg-white rounded-xl border p-5 ${
+                plan.featured ? "border-sky" : "border-hairline"
               }`}
             >
               {plan.badge && (
@@ -82,27 +82,27 @@ export function ThueMuaPriceSection() {
                   {plan.badge}
                 </span>
               )}
-              <div className="flex items-center gap-2 font-bold text-dark text-base mb-1.5">
+              <div className="flex items-center gap-2 font-semibold text-dark text-base mb-1.5">
                 <Car className="w-5 h-5 text-primary shrink-0" />
                 {plan.name}
               </div>
-              <p className="text-sm text-gray-500 mb-0.5">{plan.priceLabel}</p>
-              <p className="text-sm text-gray-600 font-medium mb-4">{plan.downPaymentLabel}</p>
+              <p className="text-sm text-steel mb-0.5">{plan.priceLabel}</p>
+              <p className="text-sm text-steel font-medium mb-4">{plan.downPaymentLabel}</p>
               <YearRows years={plan.years} />
             </div>
           ))}
         </div>
       ) : (
         <>
-          <p className="text-sm text-gray-600 mb-4">
-            Xe Limo Green 749tr — 2 gói mới, tổng 5 năm bằng nhau
+          <p className="text-sm text-steel mb-4">
+            Xe Limo Green 749tr: 2 gói mới, tổng 5 năm bằng nhau
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {THUE_MUA_LIMO_PROGRAMS.map((prog) => (
               <div
                 key={prog.id}
-                className={`relative bg-white rounded-2xl border p-5 shadow-sm ${
-                  prog.featured ? "border-2 border-primary ring-1 ring-primary/20" : "border-gray-100"
+                className={`relative bg-white rounded-xl border p-5 ${
+                  prog.featured ? "border-sky" : "border-hairline"
                 }`}
               >
                 {prog.badge && (
@@ -110,10 +110,10 @@ export function ThueMuaPriceSection() {
                     {prog.badge}
                   </span>
                 )}
-                <span className="inline-block text-sm font-semibold text-primary-dark bg-primary/10 px-2.5 py-1 rounded-full mb-3">
+                <span className="inline-block text-sm font-semibold text-dark bg-tint-strong px-2.5 py-1 rounded-full mb-3">
                   {prog.name}
                 </span>
-                <p className="text-sm text-gray-600 leading-relaxed mb-4">{prog.description}</p>
+                <p className="text-sm text-steel leading-relaxed mb-4">{prog.description}</p>
                 <YearRows years={prog.years} />
               </div>
             ))}

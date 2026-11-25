@@ -128,7 +128,7 @@ export const HOME_KEYWORDS = [
 export const DEFAULT_OG_IMAGE = "/api/og";
 export const DEFAULT_OG_IMAGE_WIDTH = 1200;
 export const DEFAULT_OG_IMAGE_HEIGHT = 630;
-export const DEFAULT_OG_IMAGE_ALT = `${ORGANIZATION_NAME} — ${SITE_NAME}`;
+export const DEFAULT_OG_IMAGE_ALT = `${ORGANIZATION_NAME}: ${SITE_NAME}`;
 
 export const baseMetadata: Metadata = {
   /** Bắt buộc — sinh canonical / Open Graph dạng URL tuyệt đối */
