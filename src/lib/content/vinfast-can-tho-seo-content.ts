@@ -20,7 +20,7 @@ export const VINFAST_SEO_MODELS = {
     },
     {
       name: "VinFast VF 5 Plus",
-      body: `VF 5 Plus là SUV điện cỡ B bán chạy nhất tại đại lý VinFast Cần Thơ của chúng tôi. Mẫu xe này cân bằng giữa không gian cabin, quãng đường 326 km và chi phí sạc hợp lý, phù hợp gia đình trẻ, tài xế XanhSM khu Cái Răng và người kinh doanh vận tải nội thành. Khi tính giá lăn bánh, VF 5 thường là lựa chọn có tỷ suất thu hồi vốn tốt nhờ chính sách trả góp 80–85% và nhu cầu thuê mua cao trên thị trường xe cũ.`,
+      body: `VF 5 Plus là SUV điện cỡ B bán chạy nhất tại đại lý VinFast Cần Thơ của chúng tôi. Mẫu xe này cân bằng giữa không gian cabin, quãng đường 326 km và chi phí sạc hợp lý, phù hợp gia đình trẻ, tài xế XanhSM khu Cái Răng và người kinh doanh vận tải nội thành. Khi tính giá lăn bánh, VF 5 thường là lựa chọn có tỷ suất thu hồi vốn tốt nhờ chính sách trả góp 80–85% và giữ giá tốt trên thị trường xe cũ.`,
     },
     {
       name: "VinFast VF 6",

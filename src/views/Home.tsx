@@ -8,7 +8,6 @@ import { getNewsArticles, type NewsArticle } from "@/lib/content/news";
 import { PRODUCTS_SEO } from "@/lib/content/products";
 import { XANHSM_PARTNER_CITIES } from "@/lib/content/xanhsm-partner-cities";
 import { CONTACT_PHONE, dispatchConsultationPopup } from "@/lib/contact";
-import { THUE_MUA_VINFAST_PAGE_PATH } from "@/lib/content/thue-mua-vinfast-page";
 import { HeroMotion } from "@/components/evg/HeroMotion";
 import { Icon, LineIcon, type LineIconName } from "@/components/evg/Icons";
 
@@ -21,7 +20,7 @@ const PLATE_ITEMS = [
 
 const STEPS: { t: string; d: string; icon: LineIconName }[] = [
   { t: "Gọi tổng đài hoặc để lại số", d: "Nói cho chúng tôi biết bạn mua xe gia đình hay chạy dịch vụ.", icon: "phone" },
-  { t: "Chọn xe, tính giá lăn bánh", d: "So sánh các dòng VinFast, tính giá lăn bánh tại Cần Thơ, trả góp hoặc thuê mua.", icon: "car" },
+  { t: "Chọn xe, tính giá lăn bánh", d: "So sánh các dòng VinFast, tính giá lăn bánh tại Cần Thơ, trả góp.", icon: "car" },
   { t: "Làm hồ sơ vận doanh", d: "Biển số, phù hiệu, định vị, đăng ký Xanh SM qua hợp tác xã.", icon: "docs" },
   { t: "Nhận xe và bắt đầu chạy", d: "Bàn giao xe tại Cần Thơ, hướng dẫn sạc và vận hành.", icon: "callback" },
 ];
@@ -62,8 +61,7 @@ export default function Home({ newsArticles: newsArticlesProp }: { newsArticles?
             </div>
             <p className="h-lead">
               <strong>Cần Thơ EV</strong> là <strong>hợp tác xã vận tải Cần Thơ</strong>, tư vấn{" "}
-              <SeoLink href="/vinfast-can-tho">ô tô VinFast Cần Thơ</SeoLink>, chương trình{" "}
-              <SeoLink href={THUE_MUA_VINFAST_PAGE_PATH}>thuê mua VinFast</SeoLink> và hỗ trợ đăng ký{" "}
+              <SeoLink href="/vinfast-can-tho">ô tô VinFast Cần Thơ</SeoLink> và hỗ trợ đăng ký{" "}
               <SeoLink href="/dang-ky-xanhsm">Xanh SM Cần Thơ</SeoLink> cho tài xế miền Tây.
             </p>
           </div>

@@ -8,7 +8,6 @@ export type MatchedRoute =
   | { page: "xanhsm" }
   | { page: "xanhsmPartnerHub" }
   | { page: "xanhsmPartnerCity"; citySlug: string }
-  | { page: "thueMuaVinfast" }
   | { page: "vinfastCanTho" }
   | { page: "news" }
   | { page: "newsArticle"; id: string }
@@ -46,10 +45,6 @@ export function matchRoute(pathname: string): MatchedRoute {
         return { page: "xanhsmPartnerCity", citySlug: second };
       }
       return { page: "notFound" };
-    case "thue-mua-xe-vinfast":
-      return segments.length === 1
-        ? { page: "thueMuaVinfast" }
-        : { page: "notFound" };
     case "vinfast-can-tho":
       return segments.length === 1
         ? { page: "vinfastCanTho" }

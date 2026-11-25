@@ -301,7 +301,6 @@ export const SITEMAP_ROUTES = [
     changeFrequency: "weekly" as const,
     priority: 0.8,
   })),
-  { path: "/thue-mua-xe-vinfast", changeFrequency: "weekly" as const, priority: 0.9 },
   { path: "/tin-tuc", changeFrequency: "weekly" as const, priority: 0.7 },
   { path: "/lien-he", changeFrequency: "monthly" as const, priority: 0.8 },
   {

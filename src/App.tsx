@@ -17,7 +17,6 @@ import Products from "./views/Products";
 import Privacy from "./views/Privacy";
 import Terms from "./views/Terms";
 import VinfastCanTho from "./views/VinfastCanTho";
-import ThueMuaVinfast from "./views/ThueMuaVinfast";
 import XanhSM from "./views/XanhSM";
 import XanhSmPartnerHub from "./views/XanhSmPartnerHub";
 import XanhSmPartnerCity from "./views/XanhSmPartnerCity";
@@ -57,8 +56,6 @@ function renderPage(route: MatchedRoute, initialData: PageInitialData) {
       return <XanhSmPartnerHub />;
     case "xanhsmPartnerCity":
       return <XanhSmPartnerCity citySlug={route.citySlug} />;
-    case "thueMuaVinfast":
-      return <ThueMuaVinfast />;
     case "vinfastCanTho":
       return <VinfastCanTho />;
     case "news":

@@ -35,7 +35,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/thue-mua-vinfast",
-        destination: "/thue-mua-xe-vinfast",
+        destination: "/san-pham",
+        permanent: true,
+      },
+      {
+        source: "/thue-mua-xe-vinfast",
+        destination: "/san-pham",
         permanent: true,
       },
     ];

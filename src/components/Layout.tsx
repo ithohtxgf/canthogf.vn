@@ -19,7 +19,6 @@ import {
   CONTACT_ZALO_URL,
   CONTACT_MAPS_SHARE_URL,
 } from "@/lib/contact";
-import { THUE_MUA_VINFAST_PAGE_PATH } from "@/lib/content/thue-mua-vinfast-page";
 import { ConsultationPopup } from "./ConsultationPopup";
 import { FloatingContactButtons } from "./FloatingContactButtons";
 import { DesktopNav, HeadScrollState, MobileNav, type NavItem } from "./evg/SiteNav";
@@ -27,7 +26,6 @@ import { DesktopNav, HeadScrollState, MobileNav, type NavItem } from "./evg/Site
 const NAV_ITEMS: NavItem[] = [
   { href: "/gioi-thieu", label: "Giới thiệu", icon: "about" },
   { href: "/san-pham", label: "Ô tô VinFast", icon: "car" },
-  { href: THUE_MUA_VINFAST_PAGE_PATH, label: "Thuê mua VinFast", icon: "steps" },
   { href: "/dang-ky-xanhsm", label: "Đăng ký Xanh SM", icon: "wheel" },
   { href: "/tin-tuc", label: "Tin tức", icon: "news" },
   { href: "/lien-he", label: "Liên hệ", icon: "mail" },
