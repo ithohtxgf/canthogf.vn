@@ -277,7 +277,7 @@ function getVinfastCanThoAutoDealerJsonLd(path: string) {
   return {
     "@type": "AutoDealer",
     "@id": `${url}#autodealer`,
-    name: "Cần Thơ EV — VinFast Cần Thơ",
+    name: "Cần Thơ EV: VinFast Cần Thơ",
     url,
     telephone,
     email: CONTACT_EMAIL,
@@ -547,7 +547,7 @@ async function buildGraphForRoute(
       const rich = getRichProductDetail(route.id);
       const path = `/san-pham/${route.id}`;
       const pageTitle =
-        rich?.metaTitle ?? product.metaTitle ?? `${product.name} — ${product.price}`;
+        rich?.metaTitle ?? product.metaTitle ?? `${product.name}: ${product.price}`;
       const pageDescription =
         rich?.metaDescription ?? product.metaDescription ?? product.description;
       graph.push(

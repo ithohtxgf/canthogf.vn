@@ -36,7 +36,7 @@ export const CONTACT_HOURS_SUNDAY = "Chủ nhật: Nghỉ";
 /** Giờ mở cửa chuẩn cho JSON-LD schema (Mo–Sa, Chủ nhật nghỉ) */
 export const SCHEMA_OPENING_HOURS = "Mo-Sa 08:00-17:30";
 export const CONTACT_RESPONSE_PROMISE =
-  "Chúng tôi thường phản hồi trong vòng 15 phút — Hotline & Zalo hỗ trợ 24/7";
+  "Chúng tôi thường phản hồi trong vòng 15 phút, Hotline & Zalo hỗ trợ 24/7";
 
 export const CONTACT_MAPS_EMBED_URL =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d982.287304834181!2d105.79074292127355!3d10.004530519224737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a063dc2df92e1f%3A0x76e2d9ad0836811f!2zSFRYIFbhuq1uIFThuqBpIEPhuqduIFRoxqEgR0Y!5e0!3m2!1svi!2s!4v1779978540577!5m2!1svi!2s";
@@ -59,7 +59,7 @@ export const CONTACT_FAQ_ITEMS = [
   {
     question: "Có được lái thử xe trước khi mua không?",
     answer:
-      "Có. Bạn đăng ký lái thử miễn phí qua hotline 0969 99 11 77 hoặc form liên hệ — chúng tôi sắp lịch và chuẩn bị xe phù hợp.",
+      "Có. Bạn đăng ký lái thử miễn phí qua hotline 0969 99 11 77 hoặc form liên hệ, chúng tôi sắp lịch và chuẩn bị xe phù hợp.",
   },
   {
     question: "Showroom mở cửa những ngày nào?",

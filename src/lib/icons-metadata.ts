@@ -13,6 +13,9 @@ export const iconsMetadata: Pick<Metadata, "manifest" | "icons" | "appleWebApp" 
         { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
         { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
         { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+        { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+        { url: "/favicon-144x144.png", sizes: "144x144", type: "image/png" },
+        { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
       ],
       apple: [
         {
@@ -30,7 +33,7 @@ export const iconsMetadata: Pick<Metadata, "manifest" | "icons" | "appleWebApp" 
     },
     other: {
       "msapplication-TileImage": "/android-chrome-192x192.png",
-      "msapplication-TileColor": "#103b7c",
+      "msapplication-TileColor": "#0A3572",
     },
   };
 
@@ -38,12 +41,12 @@ export const PWA_MANIFEST = {
   name: ORGANIZATION_NAME,
   short_name: SITE_NAME,
   description:
-    "Đại lý ô tô VinFast Cần Thơ, đăng ký XanhSM — Hợp tác xã vận tải Cần Thơ EV",
+    "Đại lý ô tô VinFast Cần Thơ, đăng ký XanhSM, Hợp tác xã vận tải Cần Thơ EV",
   start_url: "/",
   scope: "/",
   display: "standalone" as const,
   lang: "vi",
-  theme_color: "#103b7c",
+  theme_color: "#0A3572",
   background_color: "#ffffff",
   icons: [
     {
@@ -59,7 +62,7 @@ export const PWA_MANIFEST = {
       purpose: "any",
     },
     {
-      src: "/android-chrome-512x512.png",
+      src: "/maskable-512x512.png",
       sizes: "512x512",
       type: "image/png",
       purpose: "maskable",

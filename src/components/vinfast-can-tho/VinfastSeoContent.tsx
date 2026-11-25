@@ -13,10 +13,10 @@ import {
 export function VinfastSeoContent() {
   return (
     <section
-      className="py-12 sm:py-16 lg:py-20 bg-white border-t border-gray-100"
+      className="h-sec"
       aria-label="Thông tin đại lý VinFast Cần Thơ"
     >
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-gray prose-headings:text-dark prose-headings:font-black prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700">
+      <div className="wrap"><div className="prose !pt-0">
 
         <article>
           <h2 className="text-2xl sm:text-3xl !mt-0">
@@ -32,7 +32,7 @@ export function VinfastSeoContent() {
           <p>{VINFAST_SEO_MODELS.intro}</p>
           {VINFAST_SEO_MODELS.models.map((model) => (
             <div key={model.name}>
-              <h3 className="text-xl font-bold text-primary-dark !mt-6">
+              <h3 className="text-xl font-semibold text-dark !mt-6">
                 {model.name}
               </h3>
               <p>{model.body}</p>
@@ -60,22 +60,22 @@ export function VinfastSeoContent() {
             Câu hỏi thường gặp về VinFast Cần Thơ
           </h2>
           <p>
-            Dưới đây là các câu hỏi khách hàng thường đặt khi tìm hiểu{" "}
+            Những câu khách hàng hay hỏi khi tìm hiểu{" "}
             <strong>đại lý VinFast Cần Thơ</strong> và{" "}
             <strong>giá xe VinFast tại Cần Thơ</strong> trong năm 2026:
           </p>
           <dl className="space-y-6 not-prose">
             {VINFAST_CAN_THO_FAQ.map((item) => (
               <div key={item.question}>
-                <dt className="text-lg font-bold text-dark mb-2">
+                <dt className="text-base font-semibold text-dark mb-2">
                   {item.question}
                 </dt>
-                <dd className="text-gray-700 leading-relaxed">{item.answer}</dd>
+                <dd className="text-ink leading-relaxed">{item.answer}</dd>
               </div>
             ))}
           </dl>
         </article>
-      </div>
+      </div></div>
     </section>
   );
 }

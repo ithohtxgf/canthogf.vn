@@ -21,7 +21,7 @@ const defaultSelection = getDefaultChietTinhSelection();
 export function VinfastChietTinhForm() {
   const [modelId, setModelId] = useState(defaultSelection.modelId);
   const [variantId, setVariantId] = useState(defaultSelection.variantId);
-  const [discountPct, setDiscountPct] = useState(9);
+  const discountPct = 0;
   const [insExchange, setInsExchange] = useState(15_000_000);
   const [registrationPct, setRegistrationPct] = useState(0);
   const [phiDangKi, setPhiDangKi] = useState(200_000);
@@ -81,26 +81,26 @@ export function VinfastChietTinhForm() {
   );
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+    <div className="bg-white rounded-xl border border-hairline overflow-hidden">
       {/* Header */}
-      <div className="bg-primary-dark px-5 py-4 flex items-center gap-3">
-        <FileText className="w-5 h-5 text-secondary shrink-0" />
-        <p className="text-white font-bold">Chiết Tính Mua Xe VinFast — Cần Thơ EV</p>
+      <div className="bg-tint-strong border-b border-hairline px-5 py-4 flex items-center gap-3">
+        <FileText className="w-5 h-5 text-primary shrink-0" />
+        <p className="text-dark font-semibold">Chiết Tính Mua Xe VinFast: Cần Thơ EV</p>
       </div>
 
       {/* Inputs */}
-      <div className="px-5 py-4 border-b border-gray-100 space-y-3">
+      <div className="px-5 py-4 border-b border-hairline space-y-3">
         {/* Vehicle */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="flex flex-col gap-1">
-            <label htmlFor="ct-model" className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+            <label htmlFor="ct-model" className="text-xs font-semibold text-steel uppercase tracking-wide">
               Dòng xe
             </label>
             <select
               id="ct-model"
               value={modelId}
               onChange={(e) => setModelId(e.target.value)}
-              className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+              className="w-full rounded-lg border border-hairline bg-tint px-3 py-2.5 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
             >
               {CHIET_TINH_MODEL_LINES.map((line) => (
                 <option key={line.id} value={line.id}>
@@ -111,14 +111,14 @@ export function VinfastChietTinhForm() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <label htmlFor="ct-variant" className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+            <label htmlFor="ct-variant" className="text-xs font-semibold text-steel uppercase tracking-wide">
               Phiên bản
             </label>
             <select
               id="ct-variant"
               value={selectedVariant?.id ?? variantId}
               onChange={(e) => setVariantId(e.target.value)}
-              className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+              className="w-full rounded-lg border border-hairline bg-tint px-3 py-2.5 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
             >
               {modelLine.variants.map((variant) => (
                 <option key={variant.id} value={variant.id}>
@@ -130,38 +130,21 @@ export function VinfastChietTinhForm() {
         </div>
 
         <div className="flex flex-col gap-1">
-          <label htmlFor="ct-list-price" className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+          <label htmlFor="ct-list-price" className="text-xs font-semibold text-steel uppercase tracking-wide">
             Giá niêm yết
           </label>
           <input
             id="ct-list-price"
             readOnly
             value={formatVnd(q.listPrice)}
-            className="w-full rounded-lg border border-gray-200 bg-gray-100 px-3 py-2.5 text-sm font-semibold text-primary-dark focus:outline-none"
+            className="w-full rounded-lg border border-hairline bg-tint px-3 py-2.5 text-sm font-semibold text-dark focus:outline-none"
           />
         </div>
 
-        {/* Discount + Insurance exchange */}
-        <div className="grid grid-cols-2 gap-3">
+        {/* Insurance exchange */}
+        <div className="grid grid-cols-1 gap-3">
           <div className="flex flex-col gap-1">
-            <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-              Ưu đãi (%)
-            </label>
-            <div className="relative">
-              <input
-                type="number"
-                value={discountPct}
-                min={0}
-                max={50}
-                step={0.5}
-                onChange={(e) => setDiscountPct(clampPercent(Number(e.target.value), 50))}
-                className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 pr-8 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
-              />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-gray-400">%</span>
-            </div>
-          </div>
-          <div className="flex flex-col gap-1">
-            <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+            <label className="text-xs font-semibold text-steel uppercase tracking-wide">
               Quy đổi bảo hiểm (đ)
             </label>
             <input
@@ -170,7 +153,7 @@ export function VinfastChietTinhForm() {
               min={0}
               step={500_000}
               onChange={(e) => setInsExchange(clampNonNegative(Number(e.target.value)))}
-              className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+              className="w-full rounded-lg border border-hairline bg-tint px-3 py-2.5 text-sm font-medium text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
             />
           </div>
         </div>
@@ -180,20 +163,20 @@ export function VinfastChietTinhForm() {
           type="button"
           onClick={() => setShowFees((v) => !v)}
           aria-expanded={showFees}
-          className={`w-full flex items-center justify-between gap-3 px-4 py-3 rounded-xl border-2 transition-all text-left shadow-sm ${
+          className={`w-full flex items-center justify-between gap-3 px-4 py-3 rounded-xl border transition-all text-left ${
             showFees
-              ? "border-primary/30 bg-primary/5 hover:bg-primary/10"
-              : "border-secondary/50 bg-secondary/10 hover:bg-secondary/15 hover:border-secondary/70"
+              ? "border-hairline bg-tint hover:bg-tint-strong"
+              : "border-hairline bg-tint-strong hover:bg-tint-strong hover:border-sky"
           }`}
         >
-          <span className="text-xs sm:text-sm font-bold leading-snug text-primary-dark">
+          <span className="text-xs sm:text-sm font-semibold leading-snug text-dark">
             {showFees
-              ? "Thu gọn — ẩn các khoản phí tùy chỉnh"
+              ? "Thu gọn: ẩn các khoản phí tùy chỉnh"
               : "Bấm vào đây để tùy chỉnh phí lăn bánh (trước bạ, đăng ký, bảo hiểm…)"}
           </span>
           <span
             className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
-              showFees ? "bg-primary/10 text-primary" : "bg-secondary/20 text-primary-dark"
+              showFees ? "bg-tint-strong text-primary" : "bg-tint-strong text-dark"
             }`}
           >
             {showFees ? (
@@ -217,7 +200,7 @@ export function VinfastChietTinhForm() {
               { label: "BH thân xe 1 năm (đ)", value: phiBhThanXe, set: setPhiBhThanXe, step: 100_000 },
             ].map(({ label, value, set, step, suffix }) => (
               <div key={label} className="flex flex-col gap-1">
-                <label className="text-xs text-gray-500">{label}</label>
+                <label className="text-xs text-steel">{label}</label>
                 <div className="relative">
                   <input
                     type="number"
@@ -229,10 +212,10 @@ export function VinfastChietTinhForm() {
                       if (suffix === "%") set(clampPercent(n));
                       else set(clampNonNegative(n));
                     }}
-                    className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+                    className="w-full rounded-lg border border-hairline bg-white px-3 py-2 text-sm text-dark focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
                   />
                   {suffix && (
-                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">{suffix}</span>
+                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-steel">{suffix}</span>
                   )}
                 </div>
               </div>
@@ -245,148 +228,148 @@ export function VinfastChietTinhForm() {
       <div className="overflow-x-auto">
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-[#4472C4] text-white">
-              <th className="w-10 px-3 py-2.5 text-center font-bold border border-[#3a62b0]">STT</th>
-              <th className="px-3 py-2.5 text-center font-bold border border-[#3a62b0]">LOẠI XE</th>
-              <th className="px-3 py-2.5 text-center font-bold border border-[#3a62b0]">PHIÊN BẢN</th>
-              <th className="px-3 py-2.5 text-center font-bold border border-[#3a62b0] whitespace-nowrap">THÀNH TIỀN</th>
+            <tr className="bg-dark text-white">
+              <th className="w-10 px-3 py-2.5 text-center font-semibold border border-white/15">STT</th>
+              <th className="px-3 py-2.5 text-center font-semibold border border-white/15">LOẠI XE</th>
+              <th className="px-3 py-2.5 text-center font-semibold border border-white/15">PHIÊN BẢN</th>
+              <th className="px-3 py-2.5 text-center font-semibold border border-white/15 whitespace-nowrap">THÀNH TIỀN</th>
             </tr>
           </thead>
           <tbody>
             {/* Vehicle row */}
-            <tr className="border-b border-gray-200">
-              <td className="px-3 py-2 text-center border border-gray-200"></td>
-              <td className="px-3 py-2 text-center font-medium border border-gray-200">
+            <tr className="border-b border-hairline">
+              <td className="px-3 py-2 text-center border border-hairline"></td>
+              <td className="px-3 py-2 text-center font-medium border border-hairline">
                 {selectedVariant?.modelName ?? modelLine.name}
               </td>
-              <td className="px-3 py-2 text-center border border-gray-200">
+              <td className="px-3 py-2 text-center border border-hairline">
                 {selectedVariant?.variantName ?? "—"}
               </td>
-              <td className="px-3 py-2 text-right font-medium border border-gray-200 whitespace-nowrap">
+              <td className="px-3 py-2 text-right font-medium border border-hairline whitespace-nowrap">
                 {formatVnd(q.listPrice)}
               </td>
             </tr>
 
             {/* Discount row */}
             {q.discountAmt > 0 && (
-              <tr className="border-b border-gray-200">
-                <td className="px-3 py-2 border border-gray-200"></td>
-                <td colSpan={2} className="px-3 py-2 text-center font-bold text-red-600 border border-gray-200">
+              <tr className="border-b border-hairline">
+                <td className="px-3 py-2 border border-hairline"></td>
+                <td colSpan={2} className="px-3 py-2 text-center font-semibold text-red-600 border border-hairline">
                   Ưu đãi {discountPct}%
                 </td>
-                <td className="px-3 py-2 text-right font-bold text-red-600 border border-gray-200 whitespace-nowrap">
+                <td className="px-3 py-2 text-right font-semibold text-red-600 border border-hairline whitespace-nowrap">
                   − {formatVnd(q.discountAmt)}
                 </td>
               </tr>
             )}
 
             {/* Empty separator */}
-            <tr className="border-b border-gray-200 h-2">
-              <td colSpan={4} className="border border-gray-200"></td>
+            <tr className="border-b border-hairline h-2">
+              <td colSpan={4} className="border border-hairline"></td>
             </tr>
 
             {/* Insurance exchange row */}
             {q.insExchange > 0 && (
-              <tr className="border-b border-gray-200">
-                <td className="px-3 py-2 border border-gray-200"></td>
-                <td colSpan={2} className="px-3 py-2 text-center font-bold text-red-600 border border-gray-200">
+              <tr className="border-b border-hairline">
+                <td className="px-3 py-2 border border-hairline"></td>
+                <td colSpan={2} className="px-3 py-2 text-center font-semibold text-red-600 border border-hairline">
                   Quy đổi bảo hiểm
                 </td>
-                <td className="px-3 py-2 text-right font-bold text-red-600 border border-gray-200 whitespace-nowrap">
+                <td className="px-3 py-2 text-right font-semibold text-red-600 border border-hairline whitespace-nowrap">
                   − {formatVnd(q.insExchange)}
                 </td>
               </tr>
             )}
 
-            {/* Car value row — green */}
-            <tr className="bg-[#92D050]/30 border-b border-gray-200">
-              <td className="px-3 py-2.5 text-center font-bold border border-gray-200">1</td>
-              <td colSpan={2} className="px-3 py-2.5 font-bold border border-gray-200">
+            {/* Car value row: highlight */}
+            <tr className="bg-tint-strong border-b border-hairline">
+              <td className="px-3 py-2.5 text-center font-semibold border border-hairline">1</td>
+              <td colSpan={2} className="px-3 py-2.5 font-semibold border border-hairline">
                 Giá trị xe (đã có VAT):
               </td>
-              <td className="px-3 py-2.5 text-right font-black text-primary-dark border border-gray-200 whitespace-nowrap underline underline-offset-2">
+              <td className="px-3 py-2.5 text-right font-semibold text-dark border border-hairline whitespace-nowrap underline underline-offset-2">
                 {formatVnd(q.carValue)}
               </td>
             </tr>
 
             {/* Phu luc header row */}
-            <tr className="border-b border-gray-200">
-              <td className="px-3 py-2.5 text-center font-bold border border-gray-200">1</td>
-              <td colSpan={2} className="px-3 py-2.5 font-bold border border-gray-200">
+            <tr className="border-b border-hairline">
+              <td className="px-3 py-2.5 text-center font-semibold border border-hairline">1</td>
+              <td colSpan={2} className="px-3 py-2.5 font-semibold border border-hairline">
                 Phụ Lục{" "}
-                <span className="font-normal text-gray-500 text-xs">
+                <span className="font-normal text-steel text-xs">
                   (Đăng kí xe tạm tính, quyết toán theo chứng từ thực tế)
                 </span>
               </td>
-              <td className="px-3 py-2.5 text-right font-black text-dark border border-gray-200 whitespace-nowrap underline underline-offset-2">
+              <td className="px-3 py-2.5 text-right font-semibold text-dark border border-hairline whitespace-nowrap underline underline-offset-2">
                 {formatVnd(q.phuLucFees)}
               </td>
             </tr>
 
             {/* Phu luc sub-rows */}
-            <tr className="border-b border-gray-100 bg-gray-50/60">
-              <td className="border border-gray-200"></td>
-              <td className="px-3 py-1.5 italic text-gray-600 border border-gray-200">+ Phí trước bạ (tạm tính):</td>
-              <td className="px-3 py-1.5 text-center text-gray-500 border border-gray-200">{registrationPct}%</td>
-              <td className="px-3 py-1.5 text-right text-gray-600 border border-gray-200 whitespace-nowrap">
+            <tr className="border-b border-hairline bg-tint">
+              <td className="border border-hairline"></td>
+              <td className="px-3 py-1.5 italic text-steel border border-hairline">+ Phí trước bạ (tạm tính):</td>
+              <td className="px-3 py-1.5 text-center text-steel border border-hairline">{registrationPct}%</td>
+              <td className="px-3 py-1.5 text-right text-steel border border-hairline whitespace-nowrap">
                 {q.regFee > 0 ? formatVnd(q.regFee) : "— VNĐ"}
               </td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50/60">
-              <td className="border border-gray-200"></td>
-              <td className="px-3 py-1.5 italic text-gray-600 border border-gray-200">+ Phí đăng kí</td>
-              <td className="border border-gray-200"></td>
-              <td className="px-3 py-1.5 text-right text-gray-600 border border-gray-200 whitespace-nowrap">{phiDangKi.toLocaleString("vi-VN")}  VNĐ</td>
+            <tr className="border-b border-hairline bg-tint">
+              <td className="border border-hairline"></td>
+              <td className="px-3 py-1.5 italic text-steel border border-hairline">+ Phí đăng kí</td>
+              <td className="border border-hairline"></td>
+              <td className="px-3 py-1.5 text-right text-steel border border-hairline whitespace-nowrap">{phiDangKi.toLocaleString("vi-VN")}  VNĐ</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50/60">
-              <td className="border border-gray-200"></td>
-              <td className="px-3 py-1.5 italic text-gray-600 border border-gray-200">+ Phí ép biển số (không có chứng từ)</td>
-              <td className="border border-gray-200"></td>
-              <td className="px-3 py-1.5 text-right text-gray-600 border border-gray-200 whitespace-nowrap">{phiEpBien.toLocaleString("vi-VN")}  VNĐ</td>
+            <tr className="border-b border-hairline bg-tint">
+              <td className="border border-hairline"></td>
+              <td className="px-3 py-1.5 italic text-steel border border-hairline">+ Phí ép biển số (không có chứng từ)</td>
+              <td className="border border-hairline"></td>
+              <td className="px-3 py-1.5 text-right text-steel border border-hairline whitespace-nowrap">{phiEpBien.toLocaleString("vi-VN")}  VNĐ</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50/60">
-              <td className="border border-gray-200"></td>
-              <td className="px-3 py-1.5 italic text-gray-600 border border-gray-200">+ Phí đăng kiểm:</td>
-              <td className="border border-gray-200"></td>
-              <td className="px-3 py-1.5 text-right text-gray-600 border border-gray-200 whitespace-nowrap">{phiDangKiem.toLocaleString("vi-VN")}  VNĐ</td>
+            <tr className="border-b border-hairline bg-tint">
+              <td className="border border-hairline"></td>
+              <td className="px-3 py-1.5 italic text-steel border border-hairline">+ Phí đăng kiểm:</td>
+              <td className="border border-hairline"></td>
+              <td className="px-3 py-1.5 text-right text-steel border border-hairline whitespace-nowrap">{phiDangKiem.toLocaleString("vi-VN")}  VNĐ</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50/60">
-              <td className="border border-gray-200"></td>
-              <td className="px-3 py-1.5 italic text-gray-600 border border-gray-200">+ Phí dịch vụ:</td>
-              <td className="border border-gray-200"></td>
-              <td className="px-3 py-1.5 text-right text-gray-600 border border-gray-200 whitespace-nowrap">{phiDichVu.toLocaleString("vi-VN")}  VNĐ</td>
+            <tr className="border-b border-hairline bg-tint">
+              <td className="border border-hairline"></td>
+              <td className="px-3 py-1.5 italic text-steel border border-hairline">+ Phí dịch vụ:</td>
+              <td className="border border-hairline"></td>
+              <td className="px-3 py-1.5 text-right text-steel border border-hairline whitespace-nowrap">{phiDichVu.toLocaleString("vi-VN")}  VNĐ</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50/60">
-              <td className="border border-gray-200"></td>
-              <td className="px-3 py-1.5 italic text-gray-600 border border-gray-200">+ Phí BH trách nhiệm dân sự 1 năm:</td>
-              <td className="px-3 py-1.5 text-center text-gray-500 text-xs border border-gray-200">DL 7 chỗ</td>
-              <td className="px-3 py-1.5 text-right text-gray-600 border border-gray-200 whitespace-nowrap">{phiBhTnds.toLocaleString("vi-VN")}  VNĐ</td>
+            <tr className="border-b border-hairline bg-tint">
+              <td className="border border-hairline"></td>
+              <td className="px-3 py-1.5 italic text-steel border border-hairline">+ Phí BH trách nhiệm dân sự 1 năm:</td>
+              <td className="px-3 py-1.5 text-center text-steel text-xs border border-hairline">DL 7 chỗ</td>
+              <td className="px-3 py-1.5 text-right text-steel border border-hairline whitespace-nowrap">{phiBhTnds.toLocaleString("vi-VN")}  VNĐ</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50/60">
-              <td className="border border-gray-200"></td>
-              <td className="px-3 py-1.5 italic text-gray-600 border border-gray-200">+ Phí bảo trì đường bộ (tạm tính)</td>
-              <td className="px-3 py-1.5 text-center text-gray-500 text-xs border border-gray-200">Cá nhân, 12 tháng</td>
-              <td className="px-3 py-1.5 text-right text-gray-600 border border-gray-200 whitespace-nowrap">{phiDuongBo.toLocaleString("vi-VN")}  VNĐ</td>
+            <tr className="border-b border-hairline bg-tint">
+              <td className="border border-hairline"></td>
+              <td className="px-3 py-1.5 italic text-steel border border-hairline">+ Phí bảo trì đường bộ (tạm tính)</td>
+              <td className="px-3 py-1.5 text-center text-steel text-xs border border-hairline">Cá nhân, 12 tháng</td>
+              <td className="px-3 py-1.5 text-right text-steel border border-hairline whitespace-nowrap">{phiDuongBo.toLocaleString("vi-VN")}  VNĐ</td>
             </tr>
 
             {/* Body insurance */}
-            <tr className="border-b border-gray-200">
-              <td className="px-3 py-2 text-center font-bold border border-gray-200">2</td>
-              <td colSpan={2} className="px-3 py-2 border border-gray-200">
+            <tr className="border-b border-hairline">
+              <td className="px-3 py-2 text-center font-semibold border border-hairline">2</td>
+              <td colSpan={2} className="px-3 py-2 border border-hairline">
                 Bảo hiểm thân xe 1 năm{" "}
-                <span className="text-gray-500 text-xs">(tạm tính)</span>
+                <span className="text-steel text-xs">(tạm tính)</span>
               </td>
-              <td className="px-3 py-2 text-right font-medium text-gray-700 border border-gray-200 whitespace-nowrap">
+              <td className="px-3 py-2 text-right font-medium text-ink border border-hairline whitespace-nowrap">
                 {formatVnd(q.bodyIns)}
               </td>
             </tr>
 
-            {/* Total cash — green */}
-            <tr className="bg-[#92D050]/30">
-              <td colSpan={3} className="px-4 py-3 text-center font-black uppercase text-sm tracking-wide border border-gray-300">
+            {/* Total cash: highlight */}
+            <tr className="bg-tint-strong">
+              <td colSpan={3} className="px-4 py-3 text-center font-semibold uppercase text-sm tracking-wide border border-hairline">
                 Tổng thanh toán: Giá trị xe + Phụ lục + BH thân xe
               </td>
-              <td className="px-4 py-3 text-right font-black text-primary-dark text-base border border-gray-300 whitespace-nowrap underline underline-offset-2">
+              <td className="px-4 py-3 text-right font-semibold text-dark text-base border border-hairline whitespace-nowrap underline underline-offset-2">
                 {formatVnd(q.totalCash)}
               </td>
             </tr>
@@ -395,10 +378,10 @@ export function VinfastChietTinhForm() {
       </div>
 
       {/* Disclaimer */}
-      <div className="mx-5 mb-4 flex items-start gap-2 rounded-lg border border-amber-200/80 bg-amber-50 px-3 py-2.5">
-        <Info className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" aria-hidden />
-        <p className="text-xs leading-relaxed text-amber-950">
-          <span className="font-bold">Lưu ý:</span> Phí thủ tục tạm tính — quyết toán theo chứng từ thực tế tại thời điểm đăng kí.
+      <div className="mx-5 mb-4 flex items-start gap-2 rounded-lg border border-hairline bg-tint px-3 py-2.5">
+        <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+        <p className="text-xs leading-relaxed text-ink">
+          <span className="font-semibold">Lưu ý:</span> Phí thủ tục tạm tính: quyết toán theo chứng từ thực tế tại thời điểm đăng kí.
         </p>
       </div>
 
@@ -408,14 +391,14 @@ export function VinfastChietTinhForm() {
           href={CONTACT_ZALO_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 inline-flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-dark text-dark font-bold py-3 px-5 rounded-xl transition-colors shadow-sm text-sm"
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-white border border-primary text-primary hover:bg-tint-strong font-semibold py-3 px-5 rounded-lg transition-colors text-sm"
         >
           <MessageCircle className="w-4 h-4" />
           Nhận báo giá qua Zalo
         </a>
         <a
           href={`tel:${CONTACT_PHONE_TEL}`}
-          className="flex-1 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold py-3 px-5 rounded-xl transition-colors shadow-sm text-sm"
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-5 rounded-lg transition-colors text-sm"
         >
           <Phone className="w-4 h-4" />
           Gọi ngay {CONTACT_PHONE}

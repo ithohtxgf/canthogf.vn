@@ -34,11 +34,11 @@ function SectionImage({
         alt={image.alt}
         width={1200}
         height={675}
-        className="w-full h-auto rounded-xl shadow-md object-cover aspect-[16/9]"
+        className="w-full h-auto rounded-xl border border-hairline object-cover aspect-[16/9]"
         sizes="(max-width: 896px) 100vw, 896px"
       />
       {image.caption && (
-        <figcaption className="text-sm text-gray-500 text-center italic mt-3 px-2">
+        <figcaption className="text-sm text-steel text-center mt-3 px-2">
           {image.caption}
         </figcaption>
       )}
@@ -55,16 +55,16 @@ export function NewsArticleBody({ article }: NewsArticleBodyProps) {
     <article>
       <RichHtml
         html={article.sapoHtml}
-        className="text-lg text-gray-700 leading-relaxed mb-8 border-l-4 border-primary pl-6"
+        className="text-lg text-dark leading-relaxed mb-8 border-l-2 border-sky pl-5"
       />
 
       {tocItems.length > 0 && (
         <nav
           aria-label="Mục lục bài viết"
-          className="bg-gray-50 rounded-2xl p-6 md:p-8 mb-6 border border-gray-100"
+          className="bg-tint rounded-xl p-6 md:p-7 mb-6 border border-hairline"
         >
-          <p className="font-bold text-dark text-lg mb-4">📋 Mục lục</p>
-          <ol className="space-y-2 list-decimal list-inside text-gray-700">
+          <p className="font-semibold text-dark text-base mb-3">Mục lục</p>
+          <ol className="space-y-2 list-decimal list-inside text-steel !p-0">
             {tocItems.map((section) => (
               <li key={section.id}>
                 <a
@@ -90,7 +90,7 @@ export function NewsArticleBody({ article }: NewsArticleBodyProps) {
                 href="#ket-luan"
                 className="text-primary hover:text-primary-dark font-medium hover:underline"
               >
-                Kết luận
+                Chốt lại
               </a>
             </li>
           </ol>
@@ -104,17 +104,17 @@ export function NewsArticleBody({ article }: NewsArticleBodyProps) {
         alt={article.imageAlt}
         width={1200}
         height={630}
-        className="w-full h-auto rounded-xl shadow-md mb-4 object-cover max-h-[500px]"
+        className="w-full h-auto rounded-xl border border-hairline mb-4 object-cover max-h-[500px]"
         sizes="(max-width: 896px) 100vw, 896px"
         priority
       />
       {article.imageCaption && (
-        <p className="text-sm text-gray-500 text-center italic mb-10">
+        <p className="text-sm text-steel text-center mb-10">
           {article.imageCaption}
         </p>
       )}
 
-      <div className="prose prose-lg max-w-none text-gray-700">
+      <div className="prose max-w-none text-ink">
         {article.sections.map((section) => {
           const HeadingTag = section.level === 2 ? "h2" : "h3";
           const currentH2Index =
@@ -128,7 +128,7 @@ export function NewsArticleBody({ article }: NewsArticleBodyProps) {
           return (
             <div key={section.id}>
               <section id={section.id} className="mb-10 scroll-mt-24">
-                <HeadingTag className="text-2xl font-bold text-dark mb-4">
+                <HeadingTag className="text-2xl font-semibold text-dark mb-4">
                   {section.heading}
                 </HeadingTag>
 
@@ -180,16 +180,16 @@ export function NewsArticleBody({ article }: NewsArticleBodyProps) {
 
         {article.faqs.length > 0 && (
           <section id="cau-hoi-thuong-gap" className="mb-10 scroll-mt-24">
-            <h2 className="text-2xl font-bold text-dark mb-6">
-              ❓ Câu hỏi thường gặp
+            <h2 className="text-2xl font-semibold text-dark mb-6">
+              Câu hỏi thường gặp
             </h2>
             {article.faqs.map((faq, idx) => (
               <div key={idx} className="mb-6">
-                <h3 className="text-xl font-bold text-dark mb-2">
+                <h3 className="text-lg font-semibold text-dark mb-2">
                   {faq.question}
                 </h3>
                 <RichHtml
-                  html={`<p class="leading-relaxed text-gray-700">${faq.answerHtml}</p>`}
+                  html={`<p class="leading-relaxed text-ink">${faq.answerHtml}</p>`}
                 />
               </div>
             ))}
@@ -197,26 +197,26 @@ export function NewsArticleBody({ article }: NewsArticleBodyProps) {
         )}
 
         <section id="ket-luan" className="mb-10 scroll-mt-24">
-          <h2 className="text-2xl font-bold text-dark mb-4">Kết luận</h2>
+          <h2 className="text-2xl font-semibold text-dark mb-4">Chốt lại</h2>
           <RichHtml
             html={article.conclusionHtml}
-            className="leading-relaxed text-gray-700 mb-8"
+            className="leading-relaxed text-ink mb-8"
           />
           <PromoBanner targets={targets} position="bottom" />
         </section>
       </div>
 
-      <aside className="mt-12 pt-8 border-t border-gray-100">
-        <div className="flex items-start gap-4 bg-gray-50 rounded-2xl p-6">
-          <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+      <aside className="mt-12 pt-8 border-t border-hairline">
+        <div className="flex items-start gap-4 bg-tint border border-hairline rounded-xl p-6">
+          <div className="w-14 h-14 rounded-full bg-tint-strong flex items-center justify-center shrink-0">
             <span className="text-2xl">👤</span>
           </div>
           <div>
-            <p className="font-bold text-dark text-lg">{article.author.name}</p>
+            <p className="font-semibold text-dark text-lg">{article.author.name}</p>
             <p className="text-primary text-sm font-semibold mb-2">
               {article.author.role}
             </p>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-steel text-sm leading-relaxed">
               {article.author.bio}
             </p>
           </div>

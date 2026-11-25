@@ -39,12 +39,12 @@ function PromoCtaButton({
   const label = promo.ctaLabel ?? promo.title;
   const sizeClass =
     size === "lg"
-      ? "py-4 px-8 text-lg"
+      ? "py-3.5 px-7 text-base"
       : size === "sm"
         ? "py-2 px-4 text-sm"
         : "py-3 px-6 text-base";
 
-  const className = `inline-flex items-center justify-center bg-secondary hover:bg-secondary-dark text-dark font-bold rounded-xl transition-colors shadow-md ${sizeClass}`;
+  const className = `inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-colors ${sizeClass}`;
 
   const inner = (
     <>
@@ -86,7 +86,7 @@ function PromotionRenderer({ promo }: { promo: Promotion }) {
     return (
       <aside
         aria-label={promo.title}
-        className="my-8 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+        className="my-8 rounded-xl overflow-hidden border border-hairline hover:border-sky transition-colors"
       >
         <SeoLink href={promo.link} className="block">
           <SeoContentImage
@@ -106,16 +106,16 @@ function PromotionRenderer({ promo }: { promo: Promotion }) {
     return (
       <aside
         aria-label={promo.title}
-        className="mb-10 rounded-xl overflow-hidden border border-secondary/40 shadow-sm"
+        className="mb-10 rounded-xl overflow-hidden border border-hairline"
       >
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 bg-gradient-to-r from-secondary/20 via-secondary/10 to-primary/5 px-4 py-3 sm:py-2.5">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 bg-tint-strong px-4 py-3 sm:py-2.5">
           {promo.badge && (
-            <span className="shrink-0 inline-flex items-center gap-1 bg-red-600 text-white text-xs font-black px-2.5 py-1 rounded-md uppercase tracking-wide">
+            <span className="shrink-0 inline-flex items-center gap-1 bg-dark text-white text-xs font-semibold px-2.5 py-1 rounded-md uppercase tracking-wide">
               <Tag className="w-3 h-3" />
               {promo.badge}
             </span>
           )}
-          <p className="flex-1 text-sm md:text-base font-bold text-dark leading-snug">
+          <p className="flex-1 text-sm md:text-base font-semibold text-dark leading-snug">
             {promo.headline ?? promo.title}
           </p>
           <div className="flex items-center gap-3 shrink-0">
@@ -133,25 +133,24 @@ function PromotionRenderer({ promo }: { promo: Promotion }) {
     return (
       <aside
         aria-label={promo.title}
-        className="my-10 rounded-2xl overflow-hidden shadow-lg border border-primary/20"
+        className="my-10 rounded-xl overflow-hidden"
       >
-        <div className="bg-gradient-to-br from-primary-dark via-primary to-primary-dark p-6 md:p-8 text-white relative">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="bg-dark p-6 md:p-8 text-white relative">
           <div className="relative">
             {promo.badge && (
-              <span className="inline-flex items-center gap-1 bg-secondary text-dark text-xs font-black px-3 py-1 rounded-full mb-4">
-                <Sparkles className="w-3.5 h-3.5" />
+              <span className="inline-flex items-center gap-1 bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                <Sparkles className="w-3.5 h-3.5 text-sky" />
                 {promo.badge}
               </span>
             )}
-            <p className="text-2xl md:text-3xl font-black mb-2 leading-tight">
+            <p className="text-2xl md:text-3xl font-semibold mb-2 leading-tight !text-white">
               {promo.headline ?? promo.title}
             </p>
             {promo.subline && (
               <p className="text-white/85 mb-4">{promo.subline}</p>
             )}
             {promo.highlight && (
-              <p className="inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-lg px-4 py-2 text-secondary font-black text-lg mb-6">
+              <p className="inline-block bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white font-semibold text-lg mb-6">
                 {promo.highlight}
               </p>
             )}
@@ -174,19 +173,19 @@ function PromotionRenderer({ promo }: { promo: Promotion }) {
     return (
       <aside
         aria-label={promo.title}
-        className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-3xl shadow-sm border border-green-100"
+        className="bg-tint p-7 rounded-xl border border-hairline"
       >
         <div className="flex items-center mb-6">
           <Gift className="w-8 h-8 text-primary mr-3 shrink-0" />
-          <h3 className="text-2xl font-bold text-dark uppercase tracking-tight">
+          <h3 className="text-xl font-semibold text-dark">
             {promo.headline ?? promo.title}
           </h3>
         </div>
         {promo.benefits && promo.benefits.length > 0 && (
           <ul className="space-y-4 mb-6">
             {promo.benefits.map((item, idx) => (
-              <li key={idx} className="flex items-start text-gray-800 font-medium">
-                <CheckCircle2 className="w-6 h-6 text-primary mr-3 flex-shrink-0" />
+              <li key={idx} className="flex items-start text-ink font-medium">
+                <CheckCircle2 className="w-5 h-5 text-sky mr-3 mt-0.5 flex-shrink-0" />
                 {item}
               </li>
             ))}
@@ -206,30 +205,30 @@ function PromotionRenderer({ promo }: { promo: Promotion }) {
     return (
       <aside
         aria-label={promo.title}
-        className="my-8 rounded-2xl border-2 border-primary/30 overflow-hidden bg-white shadow-md"
+        className="my-8 rounded-xl border border-hairline overflow-hidden bg-white"
       >
-        <div className="bg-primary/10 px-5 py-4 border-b border-primary/20">
-          <p className="font-black text-dark text-lg">
+        <div className="bg-tint-strong px-5 py-4 border-b border-hairline">
+          <p className="font-semibold text-dark text-lg">
             {promo.headline ?? promo.title}
           </p>
           {promo.subline && (
-            <p className="text-sm text-gray-600 mt-1">{promo.subline}</p>
+            <p className="text-sm text-steel mt-1">{promo.subline}</p>
           )}
         </div>
         {promo.priceRows && promo.priceRows.length > 0 && (
-          <div className="divide-y divide-gray-100">
+          <div className="divide-y divide-hairline">
             {promo.priceRows.map((row, idx) => (
               <div
                 key={idx}
                 className={`flex justify-between items-center px-5 py-3 text-sm ${
-                  row.highlight ? "bg-secondary/10 font-bold" : ""
+                  row.highlight ? "bg-tint font-semibold" : ""
                 }`}
               >
-                <span className="text-gray-700">{row.label}</span>
+                <span className="text-ink">{row.label}</span>
                 <span
                   className={
                     row.highlight
-                      ? "text-primary font-black"
+                      ? "text-primary font-semibold"
                       : "text-dark font-semibold"
                   }
                 >
@@ -240,16 +239,16 @@ function PromotionRenderer({ promo }: { promo: Promotion }) {
           </div>
         )}
         {promo.benefits && promo.benefits.length > 0 && (
-          <ul className="px-5 py-4 bg-gray-50 space-y-2 border-t border-gray-100">
+          <ul className="px-5 py-4 bg-tint space-y-2 border-t border-hairline">
             {promo.benefits.map((b, idx) => (
-              <li key={idx} className="flex items-center text-sm text-gray-700">
+              <li key={idx} className="flex items-center text-sm text-ink">
                 <span className="text-primary mr-2">✓</span>
                 {b}
               </li>
             ))}
           </ul>
         )}
-        <div className="px-5 py-4 bg-primary/5 text-center">
+        <div className="px-5 py-4 bg-white border-t border-hairline text-center">
           <PromoCtaButton promo={promo} pulse />
         </div>
       </aside>
@@ -259,21 +258,21 @@ function PromotionRenderer({ promo }: { promo: Promotion }) {
   return (
     <aside
       aria-label={promo.title}
-      className="rounded-2xl overflow-hidden shadow-xl border-2 border-secondary"
+      className="rounded-xl overflow-hidden"
     >
-      <div className="bg-gradient-to-r from-primary-dark to-primary p-6 md:p-10 text-center text-white">
+      <div className="bg-dark p-6 md:p-10 text-center text-white">
         {promo.badge && (
-          <span className="inline-flex items-center gap-2 bg-secondary text-dark font-black text-sm px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-flex items-center gap-2 bg-white/10 text-white font-semibold text-sm px-4 py-1.5 rounded-full mb-4">
             <Gift className="w-4 h-4" />
             {promo.badge}
           </span>
         )}
         {promo.voucherText && (
-          <p className="text-4xl md:text-5xl font-black text-secondary mb-3 tracking-tight">
+          <p className="text-3xl md:text-4xl font-semibold text-sky mb-3">
             {promo.voucherText}
           </p>
         )}
-        <p className="text-xl md:text-2xl font-black mb-3">
+        <p className="text-xl md:text-2xl font-semibold mb-3">
           {promo.headline ?? promo.title}
         </p>
         {promo.subline && (
@@ -283,7 +282,7 @@ function PromotionRenderer({ promo }: { promo: Promotion }) {
           <PromoCtaButton promo={promo} size="lg" pulse />
           <a
             href="tel:0969991177"
-            className="inline-flex items-center justify-center bg-white/15 hover:bg-white/25 border border-white/40 text-white font-bold py-4 px-8 rounded-xl transition-colors"
+            className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold py-3.5 px-7 rounded-lg transition-colors"
           >
             Gọi Hotline 0969 99 11 77
           </a>

@@ -37,7 +37,7 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
     ],
     h1: "Đăng Ký Xanh SM Partner Tại TPHCM – Hướng Dẫn Chủ Xe VinFast",
     intro:
-      "Bạn đang sở hữu xe điện VinFast tại TPHCM và muốn đăng ký làm Đối tác (Partner) cho Xanh SM hoặc Grab? Với mật độ giao chuyến rất cao ở khu vực nội thành và các quận lân cận, TPHCM là thị trường Xanh SM Partner sôi động nhất cả nước. Cần Thơ EV hỗ trợ tư vấn từ xa qua Zalo/hotline, giúp bạn chuẩn bị hồ sơ đúng chuẩn ngay lần đầu để rút ngắn thời gian kích hoạt app.",
+      "Bạn đang có xe điện VinFast tại TPHCM và muốn đăng ký làm Đối tác (Partner) cho Xanh SM hoặc Grab? Với mật độ giao chuyến rất cao ở khu vực nội thành và các quận lân cận, TPHCM là thị trường Xanh SM Partner sôi động nhất cả nước. Cần Thơ EV hỗ trợ tư vấn từ xa qua Zalo/hotline, giúp bạn chuẩn bị hồ sơ đúng chuẩn ngay lần đầu để rút ngắn thời gian kích hoạt app.",
     localNote:
       "Xe VinFast chạy dịch vụ tại TPHCM cần lưu ý khu vực đăng ký hộ khẩu/tạm trú trùng khớp với hồ sơ khi nộp app để tránh bị từ chối duyệt.",
     faq: [
@@ -64,7 +64,7 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
       {
         question: "Có thể vừa chạy Xanh SM Partner vừa chạy Grab tại TPHCM không?",
         answer:
-          "Có. Nhiều chủ xe tại TPHCM đăng ký song song cả hai nền tảng để tối ưu số chuyến, miễn tuân thủ quy định riêng của từng app về thời gian và khu vực hoạt động.",
+          "Có. Nhiều chủ xe tại TPHCM đăng ký song song cả hai nền tảng để có thêm chuyến; mỗi app có quy định riêng về thời gian và khu vực hoạt động.",
       },
     ],
   },
@@ -87,7 +87,7 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
     intro:
       "Vũng Tàu là điểm đến du lịch quanh năm với lượng khách di chuyển bằng xe công nghệ lớn, đặc biệt vào cuối tuần và mùa hè. Nếu bạn có sẵn xe điện VinFast và muốn tận dụng nhu cầu này để chạy Xanh SM Partner hoặc Grab, Cần Thơ EV sẽ hướng dẫn bạn hoàn tất thủ tục đăng ký app từ xa, không cần di chuyển.",
     localNote:
-      "Khu vực trung tâm thành phố và các tuyến ven biển thường có mật độ khách đặt xe cao vào cuối tuần — nên khai đúng khu vực hoạt động khi đăng ký để hệ thống phân bổ chuyến phù hợp.",
+      "Khu vực trung tâm thành phố và các tuyến ven biển thường có mật độ khách đặt xe cao vào cuối tuần, nên khai đúng khu vực hoạt động khi đăng ký để hệ thống phân bổ chuyến phù hợp.",
     faq: [
       {
         question: "Đăng ký Xanh SM Partner ở Vũng Tàu có khác TPHCM không?",
@@ -135,7 +135,7 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
     intro:
       "Phú Quốc là đảo du lịch với lượng khách quốc tế và nội địa lớn quanh năm, nhu cầu di chuyển bằng xe điện ngày càng tăng nhờ hình ảnh xanh, sạch phù hợp định hướng du lịch bền vững của đảo. Nếu bạn có xe điện VinFast tại Phú Quốc, Cần Thơ EV hỗ trợ hướng dẫn đăng ký Xanh SM Partner từ xa qua Zalo/hotline.",
     localNote:
-      "Vì là địa bàn đảo, một số giấy tờ (như lý lịch tư pháp, xác nhận cư trú) có thể mất thời gian xử lý lâu hơn đất liền — nên chuẩn bị hồ sơ sớm để không ảnh hưởng tiến độ kích hoạt app.",
+      "Vì là địa bàn đảo, một số giấy tờ (như lý lịch tư pháp, xác nhận cư trú) có thể mất thời gian xử lý lâu hơn đất liền, nên chuẩn bị hồ sơ sớm để không ảnh hưởng tiến độ kích hoạt app.",
     faq: [
       {
         question: "Ở đảo Phú Quốc có đăng ký Xanh SM Partner từ xa được không?",
@@ -145,12 +145,12 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
       {
         question: "Xe VinFast chạy Xanh SM Partner ở Phú Quốc có phù hợp chở khách du lịch không?",
         answer:
-          "Rất phù hợp. Nhiều đối tác tại Phú Quốc chọn chạy khung giờ cao điểm đón/trả sân bay và khu du lịch để tối ưu thu nhập.",
+          "Rất phù hợp. Nhiều đối tác tại Phú Quốc chọn chạy khung giờ cao điểm đón/trả sân bay và khu du lịch.",
       },
       {
         question: "Chi phí vận chuyển xe ra đảo Phú Quốc để đăng ký Partner có tốn kém không?",
         answer:
-          "Nếu xe đã có sẵn tại Phú Quốc thì không phát sinh chi phí này. Trường hợp mua xe từ đất liền, bạn cần tính thêm phí vận chuyển qua phà hoặc cảng — Cần Thơ EV có thể tư vấn phương án tối ưu chi phí.",
+          "Nếu xe đã có sẵn tại Phú Quốc thì không phát sinh chi phí này. Trường hợp mua xe từ đất liền, bạn cần tính thêm phí vận chuyển qua phà hoặc cảng, Cần Thơ EV có thể tư vấn phương án ít tốn kém.",
       },
       {
         question: "Thu nhập chạy Xanh SM Partner tại Phú Quốc có ổn định quanh năm không?",
@@ -183,7 +183,7 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
     intro:
       "Tây Ninh có lượng khách hành hương và du lịch tâm linh lớn quanh khu vực núi Bà Đen quanh năm, tạo nhu cầu di chuyển ổn định cho xe công nghệ. Nếu bạn có xe điện VinFast tại Tây Ninh, Cần Thơ EV hướng dẫn đăng ký Xanh SM Partner từ xa, không mất phí.",
     localNote:
-      "Khu vực gần núi Bà Đen và trung tâm thành phố thường có nhu cầu đặt xe cao vào cuối tuần, lễ hội — nên cân nhắc khi khai báo khu vực hoạt động.",
+      "Khu vực gần núi Bà Đen và trung tâm thành phố thường có nhu cầu đặt xe cao vào cuối tuần, lễ hội, nên cân nhắc khi khai báo khu vực hoạt động.",
     faq: [
       {
         question: "Xanh SM đã hoạt động tại Tây Ninh chưa?",
@@ -208,7 +208,7 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
       {
         question: "Xe VinFast tại Tây Ninh có cần đăng kiểm riêng để chạy Xanh SM Partner không?",
         answer:
-          "Không cần đăng kiểm riêng cho việc chạy Partner — chỉ cần xe còn hạn đăng kiểm thông thường và giấy tờ đầy đủ theo quy định hiện hành.",
+          "Không cần đăng kiểm riêng cho việc chạy Partner, chỉ cần xe còn hạn đăng kiểm thông thường và giấy tờ đầy đủ theo quy định hiện hành.",
       },
     ],
   },
@@ -231,7 +231,7 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
     intro:
       "Long An là cửa ngõ giữa TPHCM và miền Tây, nhiều tài xế chọn chạy Xanh SM Partner kết hợp cả tuyến nội tỉnh lẫn các chuyến liên tỉnh về TPHCM. Nếu bạn có xe điện VinFast tại Long An, Cần Thơ EV hướng dẫn đăng ký app Partner từ xa qua Zalo/hotline.",
     localNote:
-      "Khu vực giáp ranh TPHCM (như Bến Lức, Đức Hòa) thường có mật độ chuyến cao hơn các huyện xa trung tâm — nên cân nhắc khu vực đăng ký hoạt động phù hợp.",
+      "Khu vực giáp ranh TPHCM (như Bến Lức, Đức Hòa) thường có mật độ chuyến cao hơn các huyện xa trung tâm, nên cân nhắc khu vực đăng ký hoạt động phù hợp.",
     faq: [
       {
         question: "Ở Long An có thể vừa chạy nội tỉnh vừa chạy sang TPHCM không?",
@@ -277,9 +277,9 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
     ],
     h1: "Đăng Ký Xanh SM Partner Tại Tiền Giang – Hướng Dẫn Chủ Xe VinFast",
     intro:
-      "Tiền Giang nằm trên trục Quốc lộ 1A nối TPHCM với các tỉnh miền Tây, lượng khách di chuyển và du lịch miệt vườn quanh năm khá ổn định. Nếu bạn có xe điện VinFast tại Tiền Giang và muốn đăng ký Xanh SM Partner, Cần Thơ EV — đơn vị hoạt động tại khu vực Đồng bằng sông Cửu Long — sẽ hướng dẫn bạn hoàn tất thủ tục từ xa.",
+      "Tiền Giang nằm trên trục Quốc lộ 1A nối TPHCM với các tỉnh miền Tây, lượng khách di chuyển và du lịch miệt vườn quanh năm khá ổn định. Nếu bạn có xe điện VinFast tại Tiền Giang và muốn đăng ký Xanh SM Partner, Cần Thơ EV, đơn vị hoạt động tại khu vực Đồng bằng sông Cửu Long, sẽ hướng dẫn bạn hoàn tất thủ tục từ xa.",
     localNote:
-      "Khu vực TP Mỹ Tho và các trục quốc lộ chính thường có nhu cầu đặt xe ổn định hơn các xã vùng sâu — nên khai đúng khu vực hoạt động khi đăng ký.",
+      "Khu vực TP Mỹ Tho và các trục quốc lộ chính thường có nhu cầu đặt xe ổn định hơn các xã vùng sâu, nên khai đúng khu vực hoạt động khi đăng ký.",
     faq: [
       {
         question: "Cần Thơ EV có hỗ trợ trực tiếp tại Tiền Giang không?",
@@ -327,7 +327,7 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
     intro:
       "Đồng Nai là tỉnh công nghiệp lớn giáp TPHCM, tập trung nhiều khu công nghiệp và dân cư đông đúc, nhu cầu di chuyển bằng xe công nghệ ngày càng tăng. Nếu bạn có xe điện VinFast tại Đồng Nai và muốn đăng ký Xanh SM Partner, Cần Thơ EV hướng dẫn thủ tục hoàn toàn từ xa qua Zalo/hotline.",
     localNote:
-      "Khu vực Biên Hòa và các khu công nghiệp lân cận thường có nhu cầu đặt xe giờ cao điểm đi làm lớn — phù hợp cho tài xế chạy khung giờ hành chính.",
+      "Khu vực Biên Hòa và các khu công nghiệp lân cận thường có nhu cầu đặt xe giờ cao điểm đi làm lớn, phù hợp cho tài xế chạy khung giờ hành chính.",
     faq: [
       {
         question: "Xe VinFast chạy khu công nghiệp ở Đồng Nai có phù hợp Xanh SM Partner không?",
@@ -343,7 +343,7 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
         question:
           "Xanh SM Partner tại Đồng Nai có phù hợp chạy khung giờ công nhân khu công nghiệp không?",
         answer:
-          "Rất phù hợp. Các khu công nghiệp lớn tại Biên Hòa, Nhơn Trạch, Long Thành có nhu cầu đặt xe ổn định vào giờ cao điểm đi làm và tan ca, giúp tài xế tối ưu số chuyến trong ngày.",
+          "Rất phù hợp. Các khu công nghiệp lớn tại Biên Hòa, Nhơn Trạch, Long Thành có nhu cầu đặt xe ổn định vào giờ cao điểm đi làm và tan ca, tài xế chạy được nhiều chuyến trong ngày.",
       },
       {
         question: "Thu nhập chạy Xanh SM Partner tại Đồng Nai khoảng bao nhiêu?",

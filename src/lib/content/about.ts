@@ -9,13 +9,13 @@ export const ABOUT_HERO = {
 };
 
 export const ABOUT_VISION = {
-  title: "Tầm nhìn & Sứ mệnh: Khi Sắc Xanh Lên Ngôi",
+  title: "Tầm nhìn và sứ mệnh",
   paragraphs: [
-    `Thế giới đang chuyển mình, và ngành vận tải cũng không đứng ngoài làn sóng đó. Tại thủ phủ miền Tây – Cần Thơ, ${ORGANIZATION_NAME} ra đời không chỉ với tư cách là một đơn vị quản lý vận tải đơn thuần, mà chúng tôi định vị mình là cầu nối xanh, tiên phong đưa các dòng xe điện thông minh VinFast đến với cộng đồng tài xế tại địa phương.`,
-    "Chúng tôi tin rằng, tương lai của giao thông đô thị thuộc về năng lượng sạch. Bằng việc phân phối các dòng xe xanh VinFast, Cần Thơ EV đang cùng các bác tài đặt những viên gạch đầu tiên cho một hệ sinh thái vận tải bền vững, giảm thiểu khí thải và bảo vệ môi trường sông nước Mekong.",
+    `${ORGANIZATION_NAME} là hợp tác xã vận tải ở Cần Thơ. Chúng tôi quản lý xe chạy dịch vụ và bán các dòng ô tô điện VinFast cho tài xế trong vùng.`,
+    "Xe điện không xả khói khi chạy, chi phí sạc thấp hơn tiền xăng trên cùng quãng đường. Vì vậy Cần Thơ EV chọn bán xe VinFast và hỗ trợ tài xế mở app Xanh SM, Grab cho xe điện.",
   ],
   image: "/banner-homepage.webp",
-  imageAlt: "Xe điện VinFast — hành trình xanh cùng HTX Vận Tải Cần Thơ EV",
+  imageAlt: "Xe điện VinFast: hành trình xanh cùng HTX Vận Tải Cần Thơ EV",
 };
 
 export const ABOUT_SERVICE_FLOW = [
@@ -25,15 +25,15 @@ export const ABOUT_SERVICE_FLOW = [
     title: "Xe VinFast",
     short: "Xe điện xanh",
     description:
-      "Cung cấp và phân phối các dòng xe điện VinFast tối tân — tối ưu chi phí vận hành, nâng cao trải nghiệm hành khách.",
+      "Bán các dòng xe điện VinFast, chi phí sạc thấp hơn tiền xăng, xe êm cho hành khách.",
   },
   {
     step: "02",
     icon: "badge" as const,
     title: "Phù hiệu HTX",
-    short: "Pháp lý vững vàng",
+    short: "Pháp lý rõ ràng",
     description:
-      "Hỗ trợ toàn bộ quy trình đăng ký phù hiệu hợp tác xã nhanh chóng, đúng pháp luật — xe lăn bánh hợp pháp trong thời gian ngắn nhất.",
+      "Hỗ trợ toàn bộ quy trình đăng ký phù hiệu hợp tác xã nhanh chóng, đúng pháp luật, xe lăn bánh hợp pháp trong thời gian ngắn nhất.",
   },
   {
     step: "03",
@@ -41,13 +41,13 @@ export const ABOUT_SERVICE_FLOW = [
     title: "App Xanh SM",
     short: "Nguồn khách ổn định",
     description:
-      "Hướng dẫn đăng ký app vận doanh Xanh SM Platform — tiếp cận lượng khách hàng khổng lồ từ nền tảng gọi xe hàng đầu Việt Nam.",
+      "Hướng dẫn đăng ký app vận doanh Xanh SM Platform, tiếp cận lượng khách hàng khổng lồ từ app gọi xe Xanh SM.",
   },
 ] as const;
 
 export const ABOUT_CORE_INTRO = {
   title: "Giá trị cốt lõi: Tận Tâm Đồng Hành – Kiến Tạo Tương Lai",
-  lead: `Tại Cần Thơ EV, chúng tôi không tìm kiếm những người chỉ muốn chạy xe kiếm sống tạm thời. Chúng tôi chào đón những bác tài nghiêm túc — coi vô lăng là sự nghiệp, có trách nhiệm với khách hàng và khao khát thay đổi chất lượng cuộc sống.`,
+  lead: `Tại Cần Thơ EV, chúng tôi không tìm kiếm những người chỉ muốn chạy xe kiếm sống tạm thời. Chúng tôi chào đón những bác tài nghiêm túc, coi vô lăng là sự nghiệp, có trách nhiệm với khách hàng và khao khát thay đổi chất lượng cuộc sống.`,
   solutionTitle: 'Giải pháp "Toàn diện từ A đến Z"',
 };
 
@@ -58,12 +58,12 @@ export const ABOUT_COMMITMENTS = {
     {
       title: "Đảm bảo thu nhập ổn định",
       description:
-        "Kết hợp hiệu suất xe điện VinFast và nguồn khách dồi dào từ Xanh SM — đồng hành tối ưu doanh thu, thu nhập vững vàng cho gia đình.",
+        "Xe điện VinFast chạy trên app Xanh SM, hợp tác xã lo giấy tờ, phù hiệu để tài xế chỉ việc chạy.",
     },
     {
       title: "Môi trường cạnh tranh lành mạnh",
       description:
-        "Nói KHÔNG với chèo kéo, ép doanh số tiêu cực. Xây dựng cộng đồng tài xế văn minh — tôn trọng, hỗ trợ và học hỏi lẫn nhau.",
+        "Nói KHÔNG với chèo kéo, ép doanh số tiêu cực. Xây dựng cộng đồng tài xế văn minh, tôn trọng, hỗ trợ và học hỏi lẫn nhau.",
     },
     {
       title: "Bệ phóng khởi nghiệp thực thụ",
@@ -76,6 +76,6 @@ export const ABOUT_COMMITMENTS = {
 export const ABOUT_CLOSING = {
   slogan: "HTX Vận Tải Cần Thơ EV – Vững tay lái, Trọn niềm tin, Xanh tương lai.",
   paragraph:
-    "Nếu bạn là bác tài có tâm với nghề, sẵn sàng đón đầu xu hướng xe điện và mong muốn môi trường làm việc chuyên nghiệp, minh bạch tại Cần Thơ — Cần Thơ EV chính là ngôi nhà dành cho bạn.",
+    "Nếu bạn là bác tài có tâm với nghề, sẵn sàng đón đầu xu hướng xe điện và muốn chỗ làm rõ ràng, minh bạch tại Cần Thơ, Cần Thơ EV là ngôi nhà dành cho bạn.",
   ctaLabel: "Đăng ký gia nhập HTX ngay",
 };

@@ -19,7 +19,7 @@ export const VF9_DETAIL: RichProductDetail = {
     "suv điện 7 chỗ vinfast",
     "mua vf9 cần thơ",
   ],
-  image: "/vf9.webp",
+  image: "/xe/vf9.webp",
   imageAlt: "VinFast VF 9 SUV điện 7 chỗ hạng sang tại Cần Thơ EV",
   listPrice: 1_348_000_000,
   listPriceLabel: "VF 9 Eco: 1.348.000.000 VNĐ · Plus (trần thép): 1.529.000.000 VNĐ",
@@ -38,7 +38,7 @@ export const VF9_DETAIL: RichProductDetail = {
       promoPrice: 1_529_000_000,
     },
   ],
-  positioningHtml: `<p><strong>VinFast VF 9</strong> là SUV điện 7 chỗ hạng sang, thiết kế bởi studio <strong>Pininfarina</strong> (Ý), lấy cảm hứng từ du thuyền hạng sang. Xe nổi bật với logo chữ V, dải đèn LED nhận diện thương hiệu, phong cách mạnh mẽ và hiện đại.</p>`,
+  positioningHtml: `<p><strong>VinFast VF 9</strong> là SUV điện 7 chỗ hạng sang, thiết kế bởi studio <strong>Pininfarina</strong> (Ý), lấy cảm hứng từ du thuyền hạng sang. Xe có logo chữ V, dải đèn LED nhận diện thương hiệu, phong cách mạnh mẽ và hiện đại.</p>`,
   highlights: [
     "VF 9 Eco: 1,348 tỷ · Plus (trần thép): 1,529 tỷ",
     "Đặt cọc 50.000.000 đ",
@@ -213,7 +213,7 @@ export const VF9_DETAIL: RichProductDetail = {
     "150.000 cổng sạc phủ 34/34 tỉnh thành",
   ],
   targetAudience: [
-    "Người thành đạt, tiên phong",
+    "Doanh nhân, gia đình cần xe 7 chỗ cỡ lớn",
     "Khách hàng cần SUV điện 7 chỗ hạng sang",
   ],
   disclaimerNotes: [

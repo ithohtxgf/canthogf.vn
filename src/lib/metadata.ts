@@ -57,7 +57,7 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
   "/gioi-thieu": {
     title: "Giới thiệu HTX Vận Tải Cần Thơ EV",
     description:
-      "Câu chuyện HTX Vận Tải Cần Thơ EV — hành trình xanh cùng bác tài: xe VinFast, phù hiệu HTX, app Xanh SM. Vững tay lái, trọn niềm tin, xanh tương lai.",
+      "Câu chuyện HTX Vận Tải Cần Thơ EV, hành trình xanh cùng bác tài: xe VinFast, phù hiệu HTX, app Xanh SM. Vững tay lái, trọn niềm tin, xanh tương lai.",
     keywords: [
       "giới thiệu cần thơ ev",
       "hợp tác xã vận tải cần thơ",
@@ -134,7 +134,7 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
   "/lien-he": {
     title: "Liên hệ",
     description:
-      "Liên hệ Cần Thơ EV — showroom Cần Thơ, hotline 0969 99 11 77, email htxcanthogf@gmail.com. Tư vấn mua xe VinFast và XanhSM.",
+      "Liên hệ Cần Thơ EV: showroom Cần Thơ, hotline 0969 99 11 77, email htxcanthogf@gmail.com. Tư vấn mua xe VinFast và XanhSM.",
     keywords: ["liên hệ cần thơ ev", "showroom vinfast cần thơ"],
   },
   "/chinh-sach-bao-mat": {
@@ -264,7 +264,7 @@ export async function resolveMetadataFromSlug(
     const product = getProductById(productId);
     if (product) {
       const title =
-        rich?.metaTitle ?? product.metaTitle ?? `${product.name} — ${product.price}`;
+        rich?.metaTitle ?? product.metaTitle ?? `${product.name}: ${product.price}`;
       const description =
         rich?.metaDescription ?? product.metaDescription ?? product.description;
       const keywords = rich?.keywords ?? product.keywords ?? [
@@ -278,7 +278,7 @@ export async function resolveMetadataFromSlug(
         path,
         keywords,
         image: product.image,
-        imageAlt: rich?.imageAlt ?? `${product.name} — ${SITE_NAME}`,
+        imageAlt: rich?.imageAlt ?? `${product.name}: ${SITE_NAME}`,
       });
     }
   }

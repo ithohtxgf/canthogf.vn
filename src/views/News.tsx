@@ -3,9 +3,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
-import { Calendar, User, ArrowRight, Search, X } from "lucide-react";
+import { User, ArrowRight, Search, X } from "lucide-react";
+import { PageHero } from "@/components/evg/PageHero";
 import { SeoLink } from "@/components/SeoLink";
-import { SeoBannerImage, SeoContentImage } from "@/components/SeoImage";
+import { SeoContentImage } from "@/components/SeoImage";
 import {
   getNewsArticles,
   getNewsCategoryLabel,
@@ -59,56 +60,51 @@ export default function News({ articles: articlesProp }: { articles?: NewsArticl
   });
 
   return (
-    <div className="bg-light min-h-screen pb-20">
-      <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <SeoBannerImage
-            src="/banner-homepage.webp"
-            alt="Tin tức VinFast và hoạt động Cần Thơ EV"
-            className="object-cover opacity-30"
-          />
-        </div>
-        <div className="absolute inset-0 bg-primary-dark/80 z-0" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-6"
-          >
-            Tin tức & Sự kiện
-          </motion.h1>
-          <div className="w-24 h-1 bg-secondary mx-auto mb-6" />
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
-          >
-            Cập nhật những thông tin mới nhất về VinFast, hoạt động của Cần
-            Thơ EV và kiến thức hữu ích về xe điện.
-          </motion.p>
-        </div>
-      </section>
+    <>
+      <PageHero
+        title="Tin tức & Sự kiện"
+        eyebrow="Tin tức"
+        crumbs={[{ href: "/tin-tuc", label: "Tin tức" }]}
+        image="/banner-homepage.webp"
+        summary="Cập nhật những thông tin mới nhất về VinFast, hoạt động của Cần Thơ EV và kiến thức hữu ích về xe điện."
+      />
 
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-xl mx-auto mb-8">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+      <section className="p-body">
+        <div className="wrap">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+            <div className="flex flex-wrap gap-2" role="group" aria-label="Lọc theo chuyên mục">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setActiveCategory(cat.id)}
+                  aria-pressed={activeCategory === cat.id}
+                  className={`px-4 py-2 rounded-full font-semibold text-sm border transition-colors ${
+                    activeCategory === cat.id
+                      ? "bg-dark border-dark text-white"
+                      : "bg-white text-dark border-hairline hover:border-sky"
+                  }`}
+                >
+                  {cat.name}
+                </button>
+              ))}
+            </div>
+            <div className="relative w-full md:max-w-sm">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-steel pointer-events-none" />
               <input
                 type="search"
                 value={searchInput}
                 onChange={(e) => handleSearch(e.target.value)}
                 placeholder="Tìm kiếm bài viết VinFast, Cần Thơ EV..."
                 aria-label="Tìm kiếm bài viết"
-                className="w-full pl-12 pr-12 py-3 rounded-full border border-gray-200 bg-white shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
+                className="w-full !pl-10 !pr-10"
               />
               {searchInput && (
                 <button
                   type="button"
                   onClick={() => handleSearch("")}
                   aria-label="Xóa tìm kiếm"
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-steel hover:text-dark"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -116,80 +112,47 @@ export default function News({ articles: articlesProp }: { articles?: NewsArticl
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`px-6 py-2.5 rounded-full font-bold text-sm transition-colors ${
-                  activeCategory === cat.id
-                    ? "bg-primary text-white shadow-md"
-                    : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
-                }`}
-              >
-                {cat.name}
-              </button>
-            ))}
-          </div>
-
           <h2 className="sr-only">Danh sách bài viết tin tức</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <ul className="h-news">
             {filteredNews.map((item, index) => (
-              <motion.div
+              <motion.li
                 key={item.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
               >
-                <SeoLink
-                  href={`/tin-tuc/${item.id}`}
-                  className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full group cursor-pointer block"
-                  aria-label={`Đọc tin: ${item.title}`}
-                >
-                  <div className="relative h-60 overflow-hidden">
+                <SeoLink href={`/tin-tuc/${item.id}`} aria-label={`Đọc tin: ${item.title}`}>
+                  <span className="h-news-art">
                     <SeoContentImage
                       src={item.image}
                       alt={item.imageAlt}
                       width={800}
                       height={500}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-primary-dark font-bold px-3 py-1 rounded-md text-xs uppercase tracking-wider">
-                      {getNewsCategoryLabel(item.category)}
-                    </div>
-                  </div>
-
-                  <div className="p-8 flex-grow flex flex-col">
-                    <div className="flex items-center text-sm text-gray-500 mb-4 space-x-4">
-                      <span className="flex items-center">
-                        <Calendar className="w-4 h-4 mr-1" /> {item.date}
-                      </span>
-                      <span className="flex items-center">
-                        <User className="w-4 h-4 mr-1" /> {item.author.name}
-                      </span>
-                    </div>
-
-                    <h3 className="text-xl font-bold text-dark mb-4 group-hover:text-primary transition-colors line-clamp-2">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-gray-600 mb-6 flex-grow line-clamp-3">
-                      {item.excerpt}
-                    </p>
-
-                    <div className="text-primary font-bold flex items-center mt-auto group-hover:text-primary-dark transition-colors">
-                      Đọc tiếp <ArrowRight className="ml-2 w-4 h-4" />
-                    </div>
-                  </div>
+                  </span>
+                  <time>{item.date}</time>
+                  <span className="mx-[1.375rem] mt-3 text-xs font-semibold uppercase tracking-wider text-primary">
+                    {getNewsCategoryLabel(item.category)}
+                  </span>
+                  <h3 className="line-clamp-2 !mt-1.5">{item.title}</h3>
+                  <span className="h-news-desc line-clamp-3 !mb-3">{item.excerpt}</span>
+                  <span className="mx-[1.375rem] mb-5 mt-auto flex items-center justify-between gap-3 text-sm">
+                    <span className="flex items-center text-steel">
+                      <User className="w-4 h-4 mr-1" /> {item.author.name}
+                    </span>
+                    <span className="flex items-center font-semibold text-primary">
+                      Đọc tiếp <ArrowRight className="ml-1.5 w-4 h-4" />
+                    </span>
+                  </span>
                 </SeoLink>
-              </motion.div>
+              </motion.li>
             ))}
-          </div>
+          </ul>
 
           {filteredNews.length === 0 && (
-            <div className="text-center py-20 text-gray-500 text-lg">
+            <div className="text-center py-16 text-steel text-base">
               {searchQuery
                 ? `Không tìm thấy bài viết nào cho "${searchQuery}".`
                 : "Không tìm thấy bài viết nào trong danh mục này."}
@@ -197,6 +160,6 @@ export default function News({ articles: articlesProp }: { articles?: NewsArticl
           )}
         </div>
       </section>
-    </div>
+    </>
   );
 }

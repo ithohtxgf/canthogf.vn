@@ -3,10 +3,10 @@ import type { RichProductDetail } from "@/lib/content/product-details";
 export const VF7_DETAIL: RichProductDetail = {
   id: "vf7",
   officialName: "VinFast VF 7",
-  segment: "C-SUV điện (Coupe-SUV) — Better Choice Awards 2024",
+  segment: "C-SUV điện (Coupe-SUV): Better Choice Awards 2024",
   shortName: "VF 7",
   slogan: "Mẫu xe hàng đầu phân khúc",
-  h1: "VinFast VF 7 Cần Thơ: Coupe-SUV Điện — Giá Eco/Plus/AWD 2026",
+  h1: "VinFast VF 7 Cần Thơ: Coupe-SUV Điện, Giá Eco/Plus/AWD 2026",
   metaTitle:
     "VinFast VF 7 Cần Thơ: Giá Eco & Plus, AWD 349 hp, ADAS",
   metaDescription:
@@ -21,11 +21,11 @@ export const VF7_DETAIL: RichProductDetail = {
     "mua vf7 cần thơ",
     "vf7 vs vf6",
   ],
-  image: "/vf7.webp",
-  imageAlt: "VinFast VF 7 — Coupe-SUV điện tại Cần Thơ EV",
+  image: "/xe/vf7.webp",
+  imageAlt: "VinFast VF 7: Coupe-SUV điện tại Cần Thơ EV",
   listPrice: 740_000_000,
   listPriceLabel: "VF 7 Eco: 740.000.000 – 750.000.000 VNĐ · Plus trần thép: 830.000.000 – 920.000.000 VNĐ · Plus trần kính: 850.000.000 – 909.000.000 VNĐ",
-  positioningHtml: `<p><strong>VinFast VF 7</strong> là C-SUV điện phong cách coupe với triết lý thiết kế <em>"Vũ Trụ Phi Đối Xứng"</em>, lấy cảm hứng từ vũ trụ và vật thể bay. Xe đạt <strong>Better Choice Awards 2024</strong>, nổi bật nhờ thiết kế cá tính, hiệu suất cao (bản AWD đạt <strong>260 kW / 349 hp</strong>, mô-men xoắn <strong>500 Nm</strong>) cùng gói an toàn <strong>ADAS 20 tính năng</strong>.</p>`,
+  positioningHtml: `<p><strong>VinFast VF 7</strong> là C-SUV điện phong cách coupe với triết lý thiết kế <em>"Vũ Trụ Phi Đối Xứng"</em>, lấy cảm hứng từ vũ trụ và vật thể bay. Xe đạt <strong>Better Choice Awards 2024</strong> nhờ thiết kế cá tính, hiệu suất cao (bản AWD đạt <strong>260 kW / 349 hp</strong>, mô-men xoắn <strong>500 Nm</strong>) cùng gói an toàn <strong>ADAS 20 tính năng</strong>.</p>`,
   highlights: [
     "Giá niêm yết: Eco từ 740 triệu · Plus trần thép từ 830 triệu · Plus trần kính từ 850 triệu",
     "VF 7 Plus AWD: 260 kW / 349 hp, mô-men xoắn 500 Nm",
@@ -124,8 +124,8 @@ export const VF7_DETAIL: RichProductDetail = {
     { label: "Khoảng cách trung bình", value: "3,5 km giữa hai trạm trong thành phố" },
   ],
   chargingSolutionItems: [
-    "Sạc tại nhà AFS 7,4 kW — phù hợp sạc overnight",
-    "Sạc di động AFS 3,5 kW — linh hoạt khi đi xa",
+    "Sạc tại nhà AFS 7,4 kW: phù hợp sạc overnight",
+    "Sạc di động AFS 3,5 kW: linh hoạt khi đi xa",
     "Sạc nhanh DC: Eco 25 phút · Plus 28 phút · AWD 37 phút (10%–70%)",
     "Miễn phí lệ phí trước bạ 2 năm (theo Nghị định số 51/2025/NĐ-CP từ 01/03/2025)",
     "Miễn phí sạc pin đến hết 10/02/2029 (áp dụng điều kiện chương trình)",
@@ -142,7 +142,7 @@ export const VF7_DETAIL: RichProductDetail = {
     { id: "mocha-brown", name: "Mocha Brown", nameVi: "Nâu", hex: "#6B4423" },
   ],
   exteriorFeatureList: [
-    "Triết lý thiết kế Vũ Trụ Phi Đối Xứng — cảm hứng từ vũ trụ",
+    "Triết lý thiết kế Vũ Trụ Phi Đối Xứng, cảm hứng từ vũ trụ",
     "Dáng coupe vuốt khí động học, nắp capo thấp, thân xe cơ bắp",
     "Tay nắm cửa ẩn tăng tính liền mạch khí động học",
     "Đèn pha LED tự động bật/tắt & chiếu xa (Plus), đèn hậu LED",
@@ -194,7 +194,7 @@ export const VF7_DETAIL: RichProductDetail = {
       headingLevel: 2,
       items: [
         "VF 7 Eco: 130 kW / 174 hp · VF 7 Plus: 150 kW / 201 hp",
-        "VF 7 Plus AWD: 260 kW / 349 hp và 500 Nm — mạnh nhất dải sản phẩm VinFast hiện tại",
+        "VF 7 Plus AWD: 260 kW / 349 hp và 500 Nm, mạnh nhất dải sản phẩm VinFast hiện tại",
         "3 chế độ lái Eco / Normal / Sport, phanh tái sinh tiết kiệm năng lượng",
         "Hệ treo đa điểm cho hành trình ổn định, êm ái ở tốc độ cao",
       ],
@@ -209,7 +209,7 @@ export const VF7_DETAIL: RichProductDetail = {
     "Cứu hộ 24/7",
     "Xưởng dịch vụ không ngày nghỉ",
     "Sửa chữa lưu động",
-    "Phụ tùng chính hãng và hỗ trợ kỹ thuật chuyên nghiệp",
+    "Phụ tùng chính hãng và hỗ trợ kỹ thuật",
   ],
   targetAudience: [
     "Người trẻ năng động yêu tốc độ và công nghệ",
