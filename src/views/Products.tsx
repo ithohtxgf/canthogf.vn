@@ -114,11 +114,19 @@ export default function Products() {
   return (
     <>
       <PageHero
-        title="Ô tô VinFast"
+        title="Bảng giá xe ô tô VinFast tại Cần Thơ"
         eyebrow="VinFast Cần Thơ"
         crumbs={[{ href: "/san-pham", label: "Ô tô VinFast" }]}
         image="/banner-homepage.webp"
-        summary="Khám phá danh sách các dòng xe ô tô điện thông minh VinFast đang được phân phối chính hãng tại Cần Thơ EV."
+        summary={
+          <>
+            Giá niêm yết từng mẫu ô tô điện VinFast đang bán tại Cần Thơ EV. Muốn biết giá lăn bánh, xem trang{" "}
+            <SeoLink href="/vinfast-can-tho" className="underline font-semibold">
+              VinFast Cần Thơ
+            </SeoLink>
+            .
+          </>
+        }
       />
 
       {/* Product List */}

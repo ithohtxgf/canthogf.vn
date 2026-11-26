@@ -3,9 +3,9 @@
 export const VINFAST_SEO_INTRO = {
   heading: "Cần Thơ EV: đại lý VinFast tại Cái Răng, Cần Thơ",
   paragraphs: [
-    `Hợp tác xã vận tải Cần Thơ EV (CanThoEV) là đại lý VinFast Cần Thơ là nơi khách hàng và tài xế XanhSM đến khi cần tư vấn mua xe, báo giá lăn bánh và hỗ trợ thủ tục đăng ký xe tại khu vực Đồng bằng sông Cửu Long. Với showroom tại Phường Cái Răng, đội ngũ tư vấn am hiểu thị trường địa phương và quy trình làm việc minh bạch, chúng tôi giúp khách hàng nắm rõ từng khoản phí trước khi quyết định, không cần chờ báo giá qua điện thoại mới biết con số cuối cùng.`,
-    `Khác với việc chỉ xem giá niêm yết trên website chính hãng, khi làm việc với đại lý VinFast Cần Thơ tại CanThoEV, bạn được tổng hợp đầy đủ: giá xe, phí biển số, phí đường bộ, bảo hiểm TNDS, lệ phí trước bạ (nếu áp dụng). Đây là lợi thế thực tế cho ai đang cân nhắc mua xe VinFast Cần Thơ 2026 mà muốn biết tổng chi phí lăn bánh ngay từ đầu.`,
-    `Ngoài bán xe du lịch, HTX Cần Thơ EV còn đồng hành cùng tài xế vận tải qua dịch vụ đăng ký XanhSM, tư vấn trả góp qua ngân hàng đối tác và hỗ trợ lái thử tại nhà hoặc tại showroom. Mục tiêu của chúng tôi là trở thành địa chỉ đáng tin cậy nhất khi nhắc đến VinFast Cần Thơ, từ khách mua xe gia đình đến hộ kinh doanh vận tải cần xe điện thương mại.`,
+    `Hợp tác xã vận tải Cần Thơ EV tư vấn và bán ô tô điện VinFast tại phường Cái Răng, TP. Cần Thơ. Giá lăn bánh từng mẫu xe tính được ngay trên trang này, gồm giá xe, phí biển số, phí đường bộ, bảo hiểm trách nhiệm dân sự và lệ phí trước bạ nếu có.`,
+    `Cần báo giá đúng phiên bản, màu xe và ngày nhận xe thì gọi tổng đài 0969 99 11 77 hoặc để lại số điện thoại ở cuối trang. Nhân viên gọi lại và gửi bảng giá chi tiết qua Zalo.`,
+    `Ngoài xe gia đình, Cần Thơ EV hỗ trợ tài xế có ô tô VinFast đăng ký chạy Xanh SM, làm thủ tục vào hợp tác xã và hẹn lái thử tại nhà hoặc tại cửa hàng.`,
   ],
 } as const;
 
@@ -20,7 +20,7 @@ export const VINFAST_SEO_MODELS = {
     },
     {
       name: "VinFast VF 5 Plus",
-      body: `VF 5 Plus là SUV điện cỡ B bán chạy nhất tại đại lý VinFast Cần Thơ của chúng tôi. Mẫu xe này cân bằng giữa không gian cabin, quãng đường 326 km và chi phí sạc hợp lý, phù hợp gia đình trẻ, tài xế XanhSM khu Cái Răng và người kinh doanh vận tải nội thành. Khi tính giá lăn bánh, VF 5 thường là lựa chọn có tỷ suất thu hồi vốn tốt nhờ chính sách trả góp 80–85% và giữ giá tốt trên thị trường xe cũ.`,
+      body: `VF 5 Plus là SUV điện cỡ B bán chạy nhất tại đại lý VinFast Cần Thơ của chúng tôi. Mẫu xe này cân bằng giữa không gian cabin, quãng đường 326 km và chi phí sạc hợp lý, phù hợp gia đình trẻ, tài xế XanhSM khu Cái Răng và người kinh doanh vận tải nội thành. Khi tính giá lăn bánh, VF 5 thường là lựa chọn có tỷ suất thu hồi vốn tốt nhờ chính sách trả góp 80–85% và giữ giá tốt trên thị trường xe cũ. VinFast cũng đã mở đặt cọc VF 5 mới, có bản Green làm riêng cho xe dịch vụ, giá niêm yết 460 triệu đồng, chạy 320 km mỗi lần sạc theo chuẩn NEDC, giao xe dự kiến sau Tết Nguyên đán 2027.`,
     },
     {
       name: "VinFast VF 6",

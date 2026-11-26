@@ -1,5 +1,4 @@
 import { SeoLink } from "@/components/SeoLink";
-import { VINFAST_CAN_THO_FAQ } from "@/lib/content/vinfast-can-tho";
 import {
   VINFAST_SEO_INTRO,
   VINFAST_SEO_MODELS,
@@ -55,26 +54,6 @@ export function VinfastSeoContent() {
           ))}
         </article>
 
-        <article className="mt-10" id="faq-noi-dung">
-          <h2 className="text-2xl sm:text-3xl">
-            Câu hỏi thường gặp về VinFast Cần Thơ
-          </h2>
-          <p>
-            Những câu khách hàng hay hỏi khi tìm hiểu{" "}
-            <strong>đại lý VinFast Cần Thơ</strong> và{" "}
-            <strong>giá xe VinFast tại Cần Thơ</strong> trong năm 2026:
-          </p>
-          <dl className="space-y-6 not-prose">
-            {VINFAST_CAN_THO_FAQ.map((item) => (
-              <div key={item.question}>
-                <dt className="text-base font-semibold text-dark mb-2">
-                  {item.question}
-                </dt>
-                <dd className="text-ink leading-relaxed">{item.answer}</dd>
-              </div>
-            ))}
-          </dl>
-        </article>
       </div></div>
     </section>
   );

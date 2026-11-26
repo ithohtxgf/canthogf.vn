@@ -60,9 +60,9 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
     ],
   },
   "/san-pham": {
-    title: "Ô tô VinFast Cần Thơ",
+    title: "Bảng giá xe ô tô VinFast tại Cần Thơ 2026",
     description:
-      "Danh mục xe điện VinFast tại Cần Thơ EV: VF 3, Herio Green, VF5, Limo Green, EC Van. Tư vấn giá, khuyến mãi và trả góp.",
+      "Giá niêm yết ô tô điện VinFast tại Cần Thơ EV: VF 3, VF 5, VF 6, VF 7, VF 8, VF 9, Limo Green, EC Van. Bấm từng xe xem thông số, nhận báo giá lăn bánh.",
     keywords: [
       "ô tô vinfast cần thơ",
       "xe điện vinfast",

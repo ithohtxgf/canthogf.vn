@@ -81,7 +81,7 @@ export default function VinfastCanTho() {
               id="reviews-heading"
               className="text-dark"
             >
-              Đánh Giá Các Dòng Xe VinFast Phù Hợp Với Đường Phố Cần Thơ
+              Giá Các Mẫu VinFast Đang Bán Tại Cần Thơ EV
             </h2>
             <p className="text-steel">
               VF3 nhỏ gọn chạy phố, VF5 Plus chạy dịch vụ XanhSM, EC Van giao
@@ -106,7 +106,7 @@ export default function VinfastCanTho() {
         </div>
       </section>
 
-      {/* FAQ: accordion tương tác, nội dung đồng bộ với #faq-noi-dung */}
+      {/* FAQ: thẻ details, nội dung trùng với FAQPage trong JSON-LD */}
       <section
         className="h-sec"
         aria-labelledby="faq-heading"
@@ -116,7 +116,7 @@ export default function VinfastCanTho() {
             id="faq-heading"
             className="text-dark mb-6"
           >
-            Hỏi &amp; Đáp Nhanh: Tư Vấn Mua Xe VinFast Cần Thơ
+            Câu Hỏi Thường Gặp Về VinFast Cần Thơ
           </h2>
           <VinfastFaq />
         </div>
