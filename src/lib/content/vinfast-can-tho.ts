@@ -256,10 +256,7 @@ export const VINFAST_SPOKE_ARTICLES = [
     id: "ban-do-tram-sac-vinfast-ninh-kieu-cai-rang",
     title: "Bản đồ các trạm sạc VinFast tại quận Ninh Kiều và Cái Răng",
   },
-  {
-    id: "thu-tuc-vay-ngan-hang-mua-vf3-tra-gop-can-tho",
-    title: "Thủ tục vay ngân hàng mua xe VF3 trả góp tại Cần Thơ",
-  },
+  // Bỏ bài "Thủ tục vay ngân hàng mua VF3 trả góp" khỏi danh sách: quy tắc truyền thông không nói vay, trả góp (CLAUDE.md, 10/11/2026).
   {
     id: "bang-gia-lan-banh-vinfast-vf5-can-tho-2026",
     title: "Bảng giá lăn bánh VinFast VF5 tại Cần Thơ, Cập nhật 2026",

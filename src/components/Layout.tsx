@@ -111,6 +111,9 @@ export default function Layout({
                 Thành viên hệ thống hợp tác xã vận tải ô tô điện{" "}
                 <a href="https://co-ev.vn" target="_blank" rel="noopener">EV Green</a>
               </li>
+              {/* Liên kết chéo đi qua co-ev.vn (trang chủ quản), không trỏ thẳng site HTX khác: xem website/HE-THONG-LIEN-KET.md */}
+              <li><a href="https://co-ev.vn/hop-tac-xa/van-tai-evg" rel="noopener">HTX Vận tải EVG, TP Hồ Chí Minh</a></li>
+              <li><a href="https://co-ev.vn/hop-tac-xa/van-tai-vung-tau-ev" rel="noopener">HTX Vận tải Vũng Tàu EV, Bà Rịa – Vũng Tàu</a></li>
             </ul>
           </div>
           <div>

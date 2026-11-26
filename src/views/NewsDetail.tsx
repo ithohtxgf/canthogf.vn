@@ -2,6 +2,7 @@ import { SeoLink } from "@/components/SeoLink";
 import { PageHero } from "@/components/evg/PageHero";
 import { NewsArticleBody } from "@/components/news/NewsArticleBody";
 import { NewsArticleCro } from "@/components/news/NewsArticleCro";
+import { NewsRelated } from "@/components/news/NewsRelated";
 import { getNewsById, type NewsArticle } from "@/lib/content/news";
 import { Calendar, User, ArrowLeft } from "lucide-react";
 
@@ -45,6 +46,8 @@ export default function NewsDetail({
         <div className="wrap">
           <div className="max-w-[48rem]">
             <NewsArticleBody article={article} />
+
+            <NewsRelated article={article} />
 
             <div className="mt-12 pt-8 border-t border-hairline">
               <SeoLink href="/tin-tuc" className="btn btn-ghost">

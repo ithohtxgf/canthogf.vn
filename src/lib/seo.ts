@@ -246,7 +246,15 @@ export function getLocalBusinessJsonLd() {
       CONTACT_TIKTOK_URL,
       CONTACT_YOUTUBE_URL,
       CONTACT_ZALO_URL,
+      "https://co-ev.vn/hop-tac-xa/van-tai-can-tho-ev",
     ],
+    // co-ev.vn khai báo HTX là subOrganization của EV Green; bên này khai báo chiều ngược lại.
+    parentOrganization: {
+      "@type": "Organization",
+      "@id": "https://co-ev.vn/#to-chuc",
+      name: "Công ty Cổ phần EV Green",
+      url: "https://co-ev.vn",
+    },
     knowsAbout: [
       "Hợp tác xã vận tải ô tô",
       "Ô tô điện VinFast",
