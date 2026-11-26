@@ -43,6 +43,17 @@ const nextConfig: NextConfig = {
         destination: "/san-pham",
         permanent: true,
       },
+      // 26/11/2026: TP.HCM do co-ev.vn (HTX EVG) phụ trách, Vũng Tàu do vungtauev.vn, để ba website không tranh từ khóa.
+      {
+        source: "/dang-ky-xanhsm-partner/tphcm",
+        destination: "https://co-ev.vn/dang-ky-xanh-sm-tphcm",
+        permanent: true,
+      },
+      {
+        source: "/dang-ky-xanhsm-partner/vung-tau",
+        destination: "https://vungtauev.vn/dang-ky-green-sm",
+        permanent: true,
+      },
     ];
   },
 };
