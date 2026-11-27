@@ -23,47 +23,48 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
     slug: "phu-quoc",
     name: "Phú Quốc",
     displayName: "Phú Quốc",
-    region: "Đồng bằng sông Cửu Long",
+    region: "An Giang",
     metaTitle:
-      "Đăng Ký Xanh SM Partner Phú Quốc 2026 – Hướng Dẫn Chủ Xe",
+      "Đăng ký Xanh SM Partner Phú Quốc (An Giang) cho chủ xe VinFast",
     metaDescription:
-      "Chủ xe VinFast tại Phú Quốc muốn đăng ký Xanh SM Partner? Cần Thơ EV hướng dẫn thủ tục, hồ sơ cần chuẩn bị, tư vấn online miễn phí toàn quốc.",
+      "Chủ xe ô tô VinFast ở đặc khu Phú Quốc, An Giang đăng ký Xanh SM Partner (Green SM) qua Cần Thơ EV: gửi hồ sơ qua Zalo, phí mở app miễn phí, xe biển trắng được hỗ trợ đổi biển vàng.",
     keywords: [
       "đăng ký xanh sm partner phú quốc",
       "xanh sm partner phú quốc",
       "đăng ký đối tác xanh sm phú quốc",
       "chủ xe vinfast chạy xanh sm phú quốc",
     ],
-    h1: "Đăng Ký Xanh SM Partner Tại Phú Quốc – Hướng Dẫn Chủ Xe VinFast",
+    h1:
+      "Đăng ký Xanh SM Partner tại Phú Quốc cho chủ xe VinFast",
     intro:
-      "Phú Quốc là đảo du lịch với lượng khách quốc tế và nội địa lớn quanh năm, nhu cầu di chuyển bằng xe điện ngày càng tăng nhờ hình ảnh xanh, sạch phù hợp định hướng du lịch bền vững của đảo. Nếu bạn có xe điện VinFast tại Phú Quốc, Cần Thơ EV hỗ trợ hướng dẫn đăng ký Xanh SM Partner từ xa qua Zalo/hotline.",
+      "Từ 01/7/2025, Phú Quốc là đặc khu thuộc tỉnh An Giang (trước đó thuộc Kiên Giang). Chủ xe ô tô VinFast ở Phú Quốc đăng ký Xanh SM Partner (nay là Green SM Partner) qua Cần Thơ EV mà không cần vào đất liền: hồ sơ gửi qua Zalo, phí mở app miễn phí.",
     localNote:
-      "Vì là địa bàn đảo, một số giấy tờ (như lý lịch tư pháp, xác nhận cư trú) có thể mất thời gian xử lý lâu hơn đất liền, nên chuẩn bị hồ sơ sớm để không ảnh hưởng tiến độ kích hoạt app.",
+      "Xe chạy app phải mang biển vàng. Xe đang biển trắng thì hợp tác xã hỗ trợ làm thủ tục đổi sang biển vàng; hỏi trước khi nộp hồ sơ để biết giấy tờ cần mang theo.",
     faq: [
       {
-        question: "Ở đảo Phú Quốc có đăng ký Xanh SM Partner từ xa được không?",
+        question: "Ở Phú Quốc có đăng ký Xanh SM Partner từ xa được không?",
         answer:
-          "Được. Bạn chỉ cần gửi hồ sơ scan/chụp ảnh qua Zalo, Cần Thơ EV hướng dẫn và theo dõi tiến độ hộ bạn, không cần di chuyển vào đất liền.",
+          "Được. Anh chị chụp hồ sơ gửi qua Zalo; Cần Thơ EV kiểm giấy tờ, nộp hồ sơ và báo tiến độ duyệt app.",
       },
       {
-        question: "Xe VinFast chạy Xanh SM Partner ở Phú Quốc có phù hợp chở khách du lịch không?",
+        question: "Phú Quốc nay thuộc tỉnh nào, khai hồ sơ ghi thế nào?",
         answer:
-          "Rất phù hợp. Nhiều đối tác tại Phú Quốc chọn chạy khung giờ cao điểm đón/trả sân bay và khu du lịch.",
+          "Từ 01/7/2025 Phú Quốc là đặc khu thuộc tỉnh An Giang. Giấy tờ cũ còn ghi Kiên Giang vẫn dùng được; khi khai khu vực chạy xe thì ghi đặc khu Phú Quốc, tỉnh An Giang.",
       },
       {
-        question: "Chi phí vận chuyển xe ra đảo Phú Quốc để đăng ký Partner có tốn kém không?",
+        question: "Đăng ký mở app có mất phí không?",
         answer:
-          "Nếu xe đã có sẵn tại Phú Quốc thì không phát sinh chi phí này. Trường hợp mua xe từ đất liền, bạn cần tính thêm phí vận chuyển qua phà hoặc cảng, Cần Thơ EV có thể tư vấn phương án ít tốn kém.",
+          "Không. Phí đăng ký app Green SM Partner và Grab qua hợp tác xã là miễn phí.",
       },
       {
-        question: "Thu nhập chạy Xanh SM Partner tại Phú Quốc có ổn định quanh năm không?",
+        question: "Xe biển trắng có chạy Partner được không?",
         answer:
-          "Phú Quốc có lượng khách du lịch quanh năm nên nhu cầu tương đối ổn định, cao điểm nhất vào mùa khô (tháng 11–4) và các kỳ nghỉ lễ. Tài xế có thể đạt 15–22 triệu đồng/tháng tùy khung giờ chạy.",
+          "Xe phải biển vàng. Xe biển trắng thì hợp tác xã hỗ trợ đổi sang biển vàng trước khi kích hoạt app.",
       },
       {
-        question: "Xe điện VinFast có gặp khó khăn gì khi chạy trên đảo Phú Quốc không?",
+        question: "Mua xe ở đất liền rồi đưa ra đảo thì có tốn thêm không?",
         answer:
-          "Không. Hạ tầng trạm sạc VinFast tại Phú Quốc đã phủ các khu vực trung tâm và điểm du lịch chính, đủ đáp ứng nhu cầu sạc hàng ngày của tài xế Partner.",
+          "Có thêm phí đưa xe qua phà hoặc tàu. Xe đã có sẵn ở Phú Quốc thì không phát sinh khoản này.",
       },
     ],
   },
@@ -71,47 +72,48 @@ export const XANHSM_PARTNER_CITIES: PartnerCity[] = [
     slug: "tien-giang",
     name: "Tiền Giang",
     displayName: "Tiền Giang",
-    region: "Đồng bằng sông Cửu Long",
+    region: "Đồng Tháp",
     metaTitle:
-      "Đăng Ký Xanh SM Partner Tiền Giang 2026 – Hướng Dẫn Chủ Xe",
+      "Đăng ký Xanh SM Partner Tiền Giang cũ (Đồng Tháp) cho chủ xe VinFast",
     metaDescription:
-      "Chủ xe VinFast tại Tiền Giang muốn đăng ký Xanh SM Partner, Grab? Cần Thơ EV hướng dẫn thủ tục, hồ sơ cần chuẩn bị, tư vấn online miễn phí.",
+      "Chủ xe ô tô VinFast ở Mỹ Tho, Gò Công, Cai Lậy (Tiền Giang cũ, nay thuộc Đồng Tháp) đăng ký Xanh SM Partner (Green SM), Grab qua Cần Thơ EV: hồ sơ qua Zalo, mở app miễn phí.",
     keywords: [
       "đăng ký xanh sm partner tiền giang",
       "xanh sm partner tiền giang",
       "đăng ký đối tác xanh sm tiền giang",
       "chủ xe vinfast chạy xanh sm tiền giang",
     ],
-    h1: "Đăng Ký Xanh SM Partner Tại Tiền Giang – Hướng Dẫn Chủ Xe VinFast",
+    h1:
+      "Đăng ký Xanh SM Partner tại Tiền Giang cũ (nay thuộc Đồng Tháp)",
     intro:
-      "Tiền Giang nằm trên trục Quốc lộ 1A nối TPHCM với các tỉnh miền Tây, lượng khách di chuyển và du lịch miệt vườn quanh năm khá ổn định. Nếu bạn có xe điện VinFast tại Tiền Giang và muốn đăng ký Xanh SM Partner, Cần Thơ EV, đơn vị hoạt động tại khu vực Đồng bằng sông Cửu Long, sẽ hướng dẫn bạn hoàn tất thủ tục từ xa.",
+      "Từ 01/7/2025, Tiền Giang sáp nhập vào tỉnh Đồng Tháp. Chủ xe ô tô VinFast ở Mỹ Tho, Gò Công, Cai Lậy và các xã của Tiền Giang cũ đăng ký Xanh SM Partner (nay là Green SM Partner) hoặc Grab qua Cần Thơ EV. Hồ sơ gửi qua Zalo, không phải lên văn phòng ở Cần Thơ, và phí mở app là miễn phí.",
     localNote:
-      "Khu vực TP Mỹ Tho và các trục quốc lộ chính thường có nhu cầu đặt xe ổn định hơn các xã vùng sâu, nên khai đúng khu vực hoạt động khi đăng ký.",
+      "Xe chạy app phải mang biển vàng. Xe đang biển trắng thì hợp tác xã hỗ trợ đổi sang biển vàng. Khi khai khu vực chạy xe, ghi theo tên mới (tỉnh Đồng Tháp) cho khớp địa chỉ trên app.",
     faq: [
       {
-        question: "Cần Thơ EV có hỗ trợ trực tiếp tại Tiền Giang không?",
+        question: "Cần Thơ EV có hỗ trợ tài xế ở Tiền Giang cũ không?",
         answer:
-          "Cần Thơ EV hỗ trợ tư vấn và xử lý hồ sơ từ xa qua Zalo/hotline cho tài xế tại Tiền Giang, không yêu cầu bạn phải đến văn phòng tại Cần Thơ.",
+          "Có. Cần Thơ EV nhận hồ sơ qua Zalo hoặc hotline, anh chị không phải lên văn phòng ở Cần Thơ.",
       },
       {
-        question: "Tôi cần chuẩn bị gì trước khi liên hệ đăng ký?",
+        question: "Tiền Giang nay thuộc tỉnh nào, khai hồ sơ ghi thế nào?",
         answer:
-          "Chuẩn bị CCCD, cavet xe, giấy phép lái xe (2 mặt) và số điện thoại/email chưa từng đăng ký app để quá trình xử lý nhanh hơn.",
+          "Từ 01/7/2025 Tiền Giang thuộc tỉnh Đồng Tháp. Giấy tờ cũ còn ghi Tiền Giang vẫn dùng được; khu vực chạy xe thì ghi tỉnh Đồng Tháp.",
       },
       {
-        question: "Xanh SM đã phủ sóng đầy đủ khu vực Tiền Giang chưa?",
+        question: "Cần chuẩn bị gì trước khi liên hệ?",
         answer:
-          "Xanh SM đang tiếp tục mở rộng vùng phủ sóng. Liên hệ Cần Thơ EV để được cập nhật tình trạng phủ sóng mới nhất tại khu vực bạn dự định chạy trước khi nộp hồ sơ.",
+          "CCCD, cà vẹt xe, giấy phép lái xe (chụp 2 mặt), cùng số điện thoại và email chưa từng đăng ký app Xanh SM hay Grab.",
       },
       {
-        question: "Thu nhập chạy Xanh SM Partner tại Tiền Giang khoảng bao nhiêu mỗi tháng?",
+        question: "Xe biển trắng có chạy được không?",
         answer:
-          "Khu vực TP Mỹ Tho và trục Quốc lộ 1A có nhu cầu đặt xe ổn định, tài xế Partner có thể đạt 10–16 triệu đồng/tháng tùy khung giờ hoạt động.",
+          "Xe phải biển vàng. Xe biển trắng thì hợp tác xã hỗ trợ đổi sang biển vàng trước khi kích hoạt app.",
       },
       {
-        question: "Xe VinFast tại Tiền Giang có cần chạy thử trước khi được duyệt Partner không?",
+        question: "Duyệt xong có phải chạy thử không?",
         answer:
-          "Không bắt buộc chạy thử. Sau khi hồ sơ được duyệt và tài khoản kích hoạt, xe có thể nhận chuyến ngay theo khu vực đã đăng ký.",
+          "Không bắt buộc. Tài khoản kích hoạt xong là xe nhận chuyến theo khu vực đã đăng ký.",
       },
     ],
   },
