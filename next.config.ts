@@ -54,6 +54,17 @@ const nextConfig: NextConfig = {
         destination: "https://vungtauev.vn/dang-ky-green-sm",
         permanent: true,
       },
+      // 27/11/2026: Đồng Nai, Long An, Tây Ninh do co-ev.vn (HTX EVG) phụ trách. Long An nay thuộc Tây Ninh.
+      {
+        source: "/dang-ky-xanhsm-partner/dong-nai",
+        destination: "https://co-ev.vn/dang-ky-xanh-sm-dong-nai",
+        permanent: true,
+      },
+      {
+        source: "/dang-ky-xanhsm-partner/:tinh(long-an|tay-ninh)",
+        destination: "https://co-ev.vn/dang-ky-xanh-sm-tay-ninh",
+        permanent: true,
+      },
     ];
   },
 };

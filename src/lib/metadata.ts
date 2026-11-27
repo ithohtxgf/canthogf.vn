@@ -101,7 +101,7 @@ export const STATIC_PAGE_METADATA: Record<string, StaticPageConfig> = {
     title: "Đăng Ký Xanh SM Partner Theo Khu Vực – Cần Thơ EV",
     absoluteTitle: true,
     description:
-      "Chủ xe VinFast muốn đăng ký Xanh SM Partner tại Phú Quốc, Tây Ninh, Long An và nhiều tỉnh thành? Cần Thơ EV hướng dẫn thủ tục, hồ sơ, tư vấn online miễn phí.",
+      "Chủ xe VinFast muốn đăng ký Xanh SM Partner tại Phú Quốc, Tiền Giang và nhiều tỉnh thành? Cần Thơ EV hướng dẫn thủ tục, hồ sơ, tư vấn online miễn phí.",
     keywords: [
       "đăng ký xanh sm partner",
       "xanh sm partner theo khu vực",
